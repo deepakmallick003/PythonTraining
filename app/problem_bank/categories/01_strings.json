@@ -1,0 +1,868 @@
+{
+  "category_id": "strings",
+  "category_name": "Strings",
+  "sequence": 1,
+  "source_reference": "01_strings.py",
+  "problems": [
+    {
+      "id": "strings_01_basic-indexing",
+      "sequence": 1,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Basic Indexing",
+      "description": "Given a string, write a function that prints the 5th character of the string (0-indexed). If the string is shorter than 5 characters, handle the case appropriately.",
+      "prompt": "Print the 5th character.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'HelloWorld'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[4])\n\nif __name__ == \"__main__\":\n    text = 'HelloWorld'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'HelloWorld'",
+          "output": "o"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'HelloWorld'",
+          "expected_output": "o",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'JgnnqYqtnf'",
+          "expected_output": "q",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'KhoorZruog'",
+          "expected_output": "r",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "strings_02_negative-indexing",
+      "sequence": 2,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Negative Indexing",
+      "description": "Print the last character using negative indexing.",
+      "prompt": "Print the last character using negative indexing.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'Python'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[-1])\n\nif __name__ == \"__main__\":\n    text = 'Python'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'Python'",
+          "output": "n"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'Python'",
+          "expected_output": "n",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'Ravjqp'",
+          "expected_output": "p",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'Sbwkrq'",
+          "expected_output": "q",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "strings_03_slicing",
+      "sequence": 3,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Slicing",
+      "description": "Given a string, use slicing to extract and print the substring 'gram' from it.",
+      "prompt": "Extract and print 'gram'.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'Programming'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[3:7])\n\nif __name__ == \"__main__\":\n    text = 'Programming'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'Programming'",
+          "output": "gram"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'Programming'",
+          "expected_output": "gram",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'Rtqitcookpi'",
+          "expected_output": "itco",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'Surjudpplqj'",
+          "expected_output": "judp",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "strings_04_slicing-with-steps",
+      "sequence": 4,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Slicing with Steps",
+      "description": "Given a string, write a function that prints every second character starting from the first character.",
+      "prompt": "Print every second character.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'abcdefgh'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[1::2])\n\nif __name__ == \"__main__\":\n    text = 'abcdefgh'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'abcdefgh'",
+          "output": "bdfh"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'abcdefgh'",
+          "expected_output": "bdfh",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'cdefghij'",
+          "expected_output": "dfhj",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'defghijk'",
+          "expected_output": "egik",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "strings_05_reverse-a-string",
+      "sequence": 5,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Reverse a String",
+      "description": "Print the string in reverse.",
+      "prompt": "Print the string in reverse.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'DataScience'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[::-1])\n\nif __name__ == \"__main__\":\n    text = 'DataScience'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'DataScience'",
+          "output": "ecneicSataD"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'DataScience'",
+          "expected_output": "ecneicSataD",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'FcvcUekgpeg'",
+          "expected_output": "gepgkeUcvcF",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'GdwdVflhqfh'",
+          "expected_output": "hfqhlfVdwdG",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "strings_06_concatenation",
+      "sequence": 6,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Concatenation",
+      "description": "Concatenate and print the result.",
+      "prompt": "Concatenate and print the result.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text1, text2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text1 = 'Python'\n\n    text2 = 'Programming'\n    main(text1, text2)\n",
+      "solution": "def main(text1, text2):\n    print(text1 + text2)\n\nif __name__ == \"__main__\":\n    text1 = 'Python'\n\n    text2 = 'Programming'\n    main(text1, text2)\n",
+      "examples": [
+        {
+          "input": "text1 = 'Python'\n\ntext2 = 'Programming'",
+          "output": "PythonProgramming"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text1 = 'Python'\n\ntext2 = 'Programming'",
+          "expected_output": "PythonProgramming",
+          "call": "main(text1, text2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text1 = 'Ravjqp'\ntext2 = 'Rtqitcookpi'",
+          "expected_output": "RavjqpRtqitcookpi",
+          "call": "main(text1, text2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text1 = 'Sbwkrq'\ntext2 = 'Surjudpplqj'",
+          "expected_output": "SbwkrqSurjudpplqj",
+          "call": "main(text1, text2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "strings_07_length-of-string",
+      "sequence": 7,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Length of String",
+      "description": "Find and print the length of the string.",
+      "prompt": "Find and print the length of the string.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'ArtificialIntelligence'\n    main(text)\n",
+      "solution": "def main(text):\n    print(len(text))\n\nif __name__ == \"__main__\":\n    text = 'ArtificialIntelligence'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'ArtificialIntelligence'",
+          "output": "22"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'ArtificialIntelligence'",
+          "expected_output": "22",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'CtvkhkekcnKpvgnnkigpeg'",
+          "expected_output": "22",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'DuwlilfldoLqwhooljhqfh'",
+          "expected_output": "22",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "strings_08_substring-presence",
+      "sequence": 8,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Substring Presence",
+      "description": "Check if 'code' is in the string.",
+      "prompt": "Check if 'code' is in the string.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'coding in Python'\n    main(text)\n",
+      "solution": "def main(text):\n    print(\"code\" in text)\n\nif __name__ == \"__main__\":\n    text = 'coding in Python'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'coding in Python'",
+          "output": "False"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'coding in Python'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'eqfkpi kp Ravjqp'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'frglqj lq Sbwkrq'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 8
+      }
+    },
+    {
+      "id": "strings_09_replace-substring",
+      "sequence": 9,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Replace Substring",
+      "description": "Replace 'Java' with 'Python' and print it.",
+      "prompt": "Replace 'Java' with 'Python' and print it.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'I love Java'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.replace(\"Java\", \"Python\"))\n\nif __name__ == \"__main__\":\n    text = 'I love Java'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'I love Java'",
+          "output": "I love Python"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'I love Java'",
+          "expected_output": "I love Python",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'K nqxg Lcxc'",
+          "expected_output": "K nqxg Lcxc",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'L oryh Mdyd'",
+          "expected_output": "L oryh Mdyd",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 9
+      }
+    },
+    {
+      "id": "strings_10_uppercase-conversion",
+      "sequence": 10,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "UpperCase Conversion",
+      "description": "Given a string, write a function that converts all characters to uppercase and prints the result.",
+      "prompt": "Convert to uppercase.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'machine learning'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.upper())\n\nif __name__ == \"__main__\":\n    text = 'machine learning'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'machine learning'",
+          "output": "MACHINE LEARNING"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'machine learning'",
+          "expected_output": "MACHINE LEARNING",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'ocejkpg ngctpkpi'",
+          "expected_output": "OCEJKPG NGCTPKPI",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'pdfklqh ohduqlqj'",
+          "expected_output": "PDFKLQH OHDUQLQJ",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 10
+      }
+    },
+    {
+      "id": "strings_11_lowercase-conversion",
+      "sequence": 11,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "LowerCase Conversion",
+      "description": "Given a string, write a function that converts all characters to lowercase and prints the result.",
+      "prompt": "Convert to lowercase.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'DEEP LEARNING'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.lower())\n\nif __name__ == \"__main__\":\n    text = 'DEEP LEARNING'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'DEEP LEARNING'",
+          "output": "deep learning"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'DEEP LEARNING'",
+          "expected_output": "deep learning",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'FGGR NGCTPKPI'",
+          "expected_output": "fggr ngctpkpi",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'GHHS OHDUQLQJ'",
+          "expected_output": "ghhs ohduqlqj",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 11
+      }
+    },
+    {
+      "id": "strings_12_startswith",
+      "sequence": 12,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "StartsWith",
+      "description": "Check if it starts with 'ana'.",
+      "prompt": "Check if it starts with 'ana'.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'analytics'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[:3] == \"ana\")\n\nif __name__ == \"__main__\":\n    text = 'analytics'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'analytics'",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'analytics'",
+          "expected_output": "True",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'cpcnavkeu'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'dqdobwlfv'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 12
+      }
+    },
+    {
+      "id": "strings_13_endswith",
+      "sequence": 13,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "EndsWith",
+      "description": "Check if it ends with 'tion'.",
+      "prompt": "Check if it ends with 'tion'.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'visualization'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[-4:] == \"tion\")\n\nif __name__ == \"__main__\":\n    text = 'visualization'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'visualization'",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'visualization'",
+          "expected_output": "True",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'xkuwcnkbcvkqp'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'ylvxdolcdwlrq'",
+          "expected_output": "False",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 13
+      }
+    },
+    {
+      "id": "strings_14_strip-whitespaces",
+      "sequence": 14,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Strip Whitespaces",
+      "description": "Remove leading and trailing whitespaces.",
+      "prompt": "Remove leading and trailing whitespaces.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = '   data   '\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.strip())\n\nif __name__ == \"__main__\":\n    text = '   data   '\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = '   data   '",
+          "output": "data"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = '   data   '",
+          "expected_output": "data",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = '   fcvc   '",
+          "expected_output": "fcvc",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = '   gdwd   '",
+          "expected_output": "gdwd",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 14
+      }
+    },
+    {
+      "id": "strings_15_find-position",
+      "sequence": 15,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Find Position",
+      "description": "Find the position of 'a'.",
+      "prompt": "Find the position of 'a'.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'database'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.find(\"a\"))\n\nif __name__ == \"__main__\":\n    text = 'database'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'database'",
+          "output": "1"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'database'",
+          "expected_output": "1",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'fcvcdcug'",
+          "expected_output": "-1",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'gdwdedvh'",
+          "expected_output": "-1",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 15
+      }
+    },
+    {
+      "id": "strings_16_count-substring",
+      "sequence": 16,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Count Substring",
+      "description": "Count how many times 'a' appears.",
+      "prompt": "Count how many times 'a' appears.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'data analysis'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.count(\"a\"))\n\nif __name__ == \"__main__\":\n    text = 'data analysis'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'data analysis'",
+          "output": "4"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'data analysis'",
+          "expected_output": "4",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'fcvc cpcnauku'",
+          "expected_output": "1",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'gdwd dqdobvlv'",
+          "expected_output": "0",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 16
+      }
+    },
+    {
+      "id": "strings_17_split-string",
+      "sequence": 17,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Split String",
+      "description": "Given a comma-separated string, write a function that splits the string on commas and prints the resulting list.",
+      "prompt": "Split on commas.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'split,this,string'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text.split(\",\"))\n\nif __name__ == \"__main__\":\n    text = 'split,this,string'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'split,this,string'",
+          "output": "['split', 'this', 'string']"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'split,this,string'",
+          "expected_output": "['split', 'this', 'string']",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'urnkv,vjku,uvtkpi'",
+          "expected_output": "['urnkv', 'vjku', 'uvtkpi']",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'vsolw,wklv,vwulqj'",
+          "expected_output": "['vsolw', 'wklv', 'vwulqj']",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 17
+      }
+    },
+    {
+      "id": "strings_18_join-elements",
+      "sequence": 18,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Join Elements",
+      "description": "Join elements with a space.",
+      "prompt": "Join elements with a space.",
+      "difficulty": "Easy",
+      "starter_code": "def main(list_elements):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
+      "solution": "def main(list_elements):\n    print(\" \".join(list_elements))\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
+      "examples": [
+        {
+          "input": "list_elements = ['join', 'these', 'words']",
+          "output": "join these words"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "list_elements = ['join', 'these', 'words']",
+          "expected_output": "join these words",
+          "call": "main(list_elements)",
+          "label": "Test 1"
+        },
+        {
+          "input": "list_elements = ['lqkp', 'vjgug', 'yqtfu']",
+          "expected_output": "lqkp vjgug yqtfu",
+          "call": "main(list_elements)",
+          "label": "Test 2"
+        },
+        {
+          "input": "list_elements = ['mrlq', 'wkhvh', 'zrugv']",
+          "expected_output": "mrlq wkhvh zrugv",
+          "call": "main(list_elements)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 18
+      }
+    },
+    {
+      "id": "strings_19_slicing-to-end",
+      "sequence": 19,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Slicing to End",
+      "description": "Slice from index 6 to the end.",
+      "prompt": "Slice from index 6 to the end.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'slice this string'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[6:])\n\nif __name__ == \"__main__\":\n    text = 'slice this string'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'slice this string'",
+          "output": "this string"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'slice this string'",
+          "expected_output": "this string",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'unkeg vjku uvtkpi'",
+          "expected_output": "vjku uvtkpi",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'volfh wklv vwulqj'",
+          "expected_output": "wklv vwulqj",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 19
+      }
+    },
+    {
+      "id": "strings_20_slicing-from-start",
+      "sequence": 20,
+      "category_id": "strings",
+      "category_name": "Strings",
+      "title": "Slicing from Start",
+      "description": "Slice from the start to index 9.",
+      "prompt": "Slice from the start to index 9.",
+      "difficulty": "Easy",
+      "starter_code": "def main(text):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    text = 'beginning to end'\n    main(text)\n",
+      "solution": "def main(text):\n    print(text[:9])\n\nif __name__ == \"__main__\":\n    text = 'beginning to end'\n    main(text)\n",
+      "examples": [
+        {
+          "input": "text = 'beginning to end'",
+          "output": "beginning"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "text = 'beginning to end'",
+          "expected_output": "beginning",
+          "call": "main(text)",
+          "label": "Test 1"
+        },
+        {
+          "input": "text = 'dgikppkpi vq gpf'",
+          "expected_output": "dgikppkpi",
+          "call": "main(text)",
+          "label": "Test 2"
+        },
+        {
+          "input": "text = 'ehjlqqlqj wr hqg'",
+          "expected_output": "ehjlqqlqj",
+          "call": "main(text)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_strings.py",
+        "question": 20
+      }
+    }
+  ]
+}

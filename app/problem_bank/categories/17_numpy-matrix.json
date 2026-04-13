@@ -1,0 +1,155 @@
+{
+  "category_id": "numpy-matrix",
+  "category_name": "NumPy Matrix",
+  "sequence": 17,
+  "source_reference": "17_numpy_matrix.py",
+  "problems": [
+    {
+      "id": "numpy-matrix_01_1-d-array-creation",
+      "sequence": 1,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "1-D Array Creation",
+      "description": "Create a 1-D array with elements [1, 2, 3], and display its dtype and ndim. Expected output: dtype: int32, ndim: 1",
+      "prompt": "Create a 1-D array with elements [1, 2, 3], and display its dtype and ndim. Expected output: dtype: int32, ndim: 1",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(arr):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n    main(arr)\n",
+      "solution": "from numpy import *\n\ndef main(arr):\n    print(arr.dtype)\n    print(arr.ndim)\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n    main(arr)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmph24rwd0a.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "numpy-matrix_02_2-d-array-creation",
+      "sequence": 2,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "2-D Array Creation",
+      "description": "Create a 2-D array with elements [[1, 2], [3, 4]], and display its shape and size. Expected output: shape: (2, 2), size: 4",
+      "prompt": "Create a 2-D array with elements [[1, 2], [3, 4]], and display its shape and size. Expected output: shape: (2, 2), size: 4",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(arr2d):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr2d = array([[1, 2], [3, 4]])\n    main(arr2d)\n",
+      "solution": "from numpy import *\n\ndef main(arr2d):\n    print(arr2d.shape)\n    print(arr2d.size)\n\nif __name__ == \"__main__\":\n    arr2d = array([[1, 2], [3, 4]])\n    main(arr2d)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp_dmmwlgm.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "numpy-matrix_03_array-reshaping-1-d-to-2-d",
+      "sequence": 3,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "Array Reshaping 1-D to 2-D",
+      "description": "Reshape the 1-D array [1, 2, 3, 4] to a 2-D array of shape (2, 2). Expected output: [[1 2] [3 4]]",
+      "prompt": "Reshape the 1-D array [1, 2, 3, 4] to a 2-D array of shape (2, 2). Expected output: [[1 2] [3 4]]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n\n    input_2 = 2\n\n    input_3 = 2\n    main(input_1, input_2, input_3)\n",
+      "solution": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    arr_reshape = array(input_1).reshape(input_2, input_3)\n    print(arr_reshape)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n\n    input_2 = 2\n\n    input_3 = 2\n    main(input_1, input_2, input_3)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpdm5abvz_.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "numpy-matrix_04_array-reshaping-1-d-to-3-d",
+      "sequence": 4,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "Array Reshaping 1-D to 3-D",
+      "description": "Reshape the 1-D array [1, 2, 3, 4, 5, 6, 7, 8] to a 3-D array of shape (2, 2, 2). Expected output: [[[1 2] [3 4]] [[5 6] [7 8]]]",
+      "prompt": "Reshape the 1-D array [1, 2, 3, 4, 5, 6, 7, 8] to a 3-D array of shape (2, 2, 2). Expected output: [[[1 2] [3 4]] [[5 6] [7 8]]]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3, input_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4, 5, 6, 7, 8]\n\n    input_2 = 2\n\n    input_3 = 2\n\n    input_4 = 2\n    main(input_1, input_2, input_3, input_4)\n",
+      "solution": "from numpy import *\n\ndef main(input_1, input_2, input_3, input_4):\n    arr3d = array(input_1).reshape(input_2, input_3, input_4)\n    print(arr3d)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4, 5, 6, 7, 8]\n\n    input_2 = 2\n\n    input_3 = 2\n\n    input_4 = 2\n    main(input_1, input_2, input_3, input_4)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpaujvt3hp.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "numpy-matrix_05_matrix-creation-from-array",
+      "sequence": 5,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "Matrix Creation from Array",
+      "description": "Convert the 2-D array [[1, 2], [3, 4]] to a matrix. Expected output: matrix([[1, 2], [3, 4]])",
+      "prompt": "Convert the 2-D array [[1, 2], [3, 4]] to a matrix. Expected output: matrix([[1, 2], [3, 4]])",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [[1, 2], [3, 4]]\n    main(input_1)\n",
+      "solution": "from numpy import *\n\ndef main(input_1):\n    matrix_from_arr = matrix(input_1)\n    print(matrix_from_arr)\n\nif __name__ == \"__main__\":\n    input_1 = [[1, 2], [3, 4]]\n    main(input_1)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmphag05u7l.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "numpy-matrix_06_matrix-diagonal",
+      "sequence": 6,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "Matrix Diagonal",
+      "description": "Print the diagonal elements of the matrix [[1, 2], [3, 4]]. Expected output: [1 4]",
+      "prompt": "Print the diagonal elements of the matrix [[1, 2], [3, 4]]. Expected output: [1 4]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(matrix_diag):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    matrix_diag = matrix('1 2; 3 4')\n    main(matrix_diag)\n",
+      "solution": "from numpy import *\n\ndef main(matrix_diag):\n    matrix_diag.diagonal()\n    print(matrix_diag.diagonal())\n\nif __name__ == \"__main__\":\n    matrix_diag = matrix('1 2; 3 4')\n    main(matrix_diag)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpoih0yx8k.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "numpy-matrix_07_direct-matrix-creation",
+      "sequence": 7,
+      "category_id": "numpy-matrix",
+      "category_name": "NumPy Matrix",
+      "title": "Direct Matrix Creation",
+      "description": "Create a matrix directly using the 'matrix()' attribute with the input '1 2 3 6 ; 4 5 6 7'. Expected output: matrix([[1, 2, 3, 6], [4, 5, 6, 7]])",
+      "prompt": "Create a matrix directly using the 'matrix()' attribute with the input '1 2 3 6 ; 4 5 6 7'. Expected output: matrix([[1, 2, 3, 6], [4, 5, 6, 7]])",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = '1 2 3 6 ; 4 5 6 7'\n    main(input_1)\n",
+      "solution": "from numpy import *\n\ndef main(input_1):\n    mat = matrix(input_1)\n    print(mat)\n\nif __name__ == \"__main__\":\n    input_1 = '1 2 3 6 ; 4 5 6 7'\n    main(input_1)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpiv45pm18.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "17_numpy_matrix.py",
+        "question": 7
+      }
+    }
+  ]
+}

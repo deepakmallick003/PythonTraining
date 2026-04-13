@@ -1,0 +1,266 @@
+{
+  "category_id": "lambda",
+  "category_name": "Lambda",
+  "sequence": 21,
+  "source_reference": "21_lambda.py",
+  "problems": [
+    {
+      "id": "lambda_01_squaring-numbers",
+      "sequence": 1,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Squaring Numbers",
+      "description": "Square each element of the list [1, 2, 3]. Expected output: [1, 4, 9]",
+      "prompt": "Square each element of the list [1, 2, 3]. Expected output: [1, 4, 9]",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n    main(input_1)\n",
+      "solution": "from functools import reduce\n\ndef main(input_1):\n    squared = list(map(lambda x: x ** 2, input_1))\n    print(squared)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n    main(input_1)\n",
+      "examples": [
+        {
+          "input": "input_1 = [1, 2, 3]",
+          "output": "[1, 4, 9]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "input_1 = [1, 2, 3]",
+          "expected_output": "[1, 4, 9]",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [3, 4, 5]",
+          "expected_output": "[9, 16, 25]",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [4, 5, 6]",
+          "expected_output": "[16, 25, 36]",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "lambda_02_adding-numbers",
+      "sequence": 2,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Adding Numbers",
+      "description": "Add 3 and 4 using a lambda function. Expected output: 7",
+      "prompt": "Add 3 and 4 using a lambda function. Expected output: 7",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(x, y):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    x = 3\n\n    y = 4\n    main(x, y)\n",
+      "solution": "from functools import reduce\n\ndef main(x, y):\n    add = lambda x, y: x + y\n    result = add(x, y)\n    print(result)\n\nif __name__ == \"__main__\":\n    x = 3\n\n    y = 4\n    main(x, y)\n",
+      "examples": [
+        {
+          "input": "x = 3\n\ny = 4",
+          "output": "7"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "x = 3\n\ny = 4",
+          "expected_output": "7",
+          "call": "main(x, y)",
+          "label": "Test 1"
+        },
+        {
+          "input": "x = 5\ny = 6",
+          "expected_output": "11",
+          "call": "main(x, y)",
+          "label": "Test 2"
+        },
+        {
+          "input": "x = 6\ny = 7",
+          "expected_output": "13",
+          "call": "main(x, y)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "lambda_03_sorting-tuples",
+      "sequence": 3,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Sorting Tuples",
+      "description": "Sort the list of tuples [(2, 'b'), (1, 'a')] by the second element. Expected output: [(1, 'a'), (2, 'b')]",
+      "prompt": "Sort the list of tuples [(2, 'b'), (1, 'a')] by the second element. Expected output: [(1, 'a'), (2, 'b')]",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [(2, 'b'), (1, 'a')]\n    main(input_1)\n",
+      "solution": "from functools import reduce\n\ndef main(input_1):\n    sorted_tuples = sorted(input_1, key=lambda x: x[1])\n    print(sorted_tuples)\n\nif __name__ == \"__main__\":\n    input_1 = [(2, 'b'), (1, 'a')]\n    main(input_1)\n",
+      "examples": [
+        {
+          "input": "input_1 = [(2, 'b'), (1, 'a')]",
+          "output": "[(1, 'a'), (2, 'b')]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "input_1 = [(2, 'b'), (1, 'a')]",
+          "expected_output": "[(1, 'a'), (2, 'b')]",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [(4, 'd'), (3, 'c')]",
+          "expected_output": "[(3, 'c'), (4, 'd')]",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [(5, 'e'), (4, 'd')]",
+          "expected_output": "[(4, 'd'), (5, 'e')]",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "lambda_04_filtering-even-numbers",
+      "sequence": 4,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Filtering Even Numbers",
+      "description": "Filter out the even numbers from the list [3, 2, 6, 8, 4, 6, 2, 9]. Expected output: [2, 6, 8, 4, 6, 2]",
+      "prompt": "Filter out the even numbers from the list [3, 2, 6, 8, 4, 6, 2, 9]. Expected output: [2, 6, 8, 4, 6, 2]",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [3, 2, 6, 8, 4, 6, 2, 9]\n    main(nums)\n",
+      "solution": "from functools import reduce\n\ndef main(nums):\n    evens = list(filter(lambda n: n % 2 == 0, nums))\n    print(evens)\n\nif __name__ == \"__main__\":\n    nums = [3, 2, 6, 8, 4, 6, 2, 9]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [3, 2, 6, 8, 4, 6, 2, 9]",
+          "output": "[2, 6, 8, 4, 6, 2]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [3, 2, 6, 8, 4, 6, 2, 9]",
+          "expected_output": "[2, 6, 8, 4, 6, 2]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [5, 4, 8, 10, 6, 8, 4, 11]",
+          "expected_output": "[4, 8, 10, 6, 8, 4]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [6, 5, 9, 11, 7, 9, 5, 12]",
+          "expected_output": "[6, 12]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "lambda_05_summation-with-reduce",
+      "sequence": 5,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Summation with Reduce",
+      "description": "Use the reduce function to compute the sum of the list [1, 2, 3, 4, 5]. Expected output: 15",
+      "prompt": "Use the reduce function to compute the sum of the list [1, 2, 3, 4, 5]. Expected output: 15",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    from functools import reduce\n\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "from functools import reduce\n\ndef main(nums):\n    sum_of_nums = reduce(lambda a, b: a + b, nums)\n    print(sum_of_nums)\n\nif __name__ == \"__main__\":\n    from functools import reduce\n\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "from functools import reduce\n\nnums = [1, 2, 3, 4, 5]",
+          "output": "15"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "from functools import reduce\n\nnums = [1, 2, 3, 4, 5]",
+          "expected_output": "15",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "from functools import reduce\nnums = [3, 4, 5, 6, 7]",
+          "expected_output": "25",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "from functools import reduce\nnums = [4, 5, 6, 7, 8]",
+          "expected_output": "30",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "lambda_06_maximum-with-reduce",
+      "sequence": 6,
+      "category_id": "lambda",
+      "category_name": "Lambda",
+      "title": "Maximum with Reduce",
+      "description": "Use the reduce function to find the maximum number in the list [47, 11, 42, 102, 13]. Expected output: 102",
+      "prompt": "Use the reduce function to find the maximum number in the list [47, 11, 42, 102, 13]. Expected output: 102",
+      "difficulty": "Easy",
+      "starter_code": "from functools import reduce\n\ndef main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    from functools import reduce\n\n    nums = [47, 11, 42, 102, 13]\n    main(nums)\n",
+      "solution": "from functools import reduce\n\ndef main(nums):\n    max_num = reduce(lambda a, b: a if a > b else b, nums)\n    print(max_num)\n\nif __name__ == \"__main__\":\n    from functools import reduce\n\n    nums = [47, 11, 42, 102, 13]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "from functools import reduce\n\nnums = [47, 11, 42, 102, 13]",
+          "output": "102"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "from functools import reduce\n\nnums = [47, 11, 42, 102, 13]",
+          "expected_output": "102",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "from functools import reduce\nnums = [49, 13, 44, 104, 15]",
+          "expected_output": "104",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "from functools import reduce\nnums = [50, 14, 45, 105, 16]",
+          "expected_output": "105",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_lambda.py",
+        "question": 6
+      }
+    }
+  ]
+}

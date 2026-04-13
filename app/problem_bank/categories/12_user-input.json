@@ -1,0 +1,118 @@
+{
+  "category_id": "user-input",
+  "category_name": "User Input",
+  "sequence": 12,
+  "source_reference": "12_user-input.py",
+  "problems": [
+    {
+      "id": "user-input_01_input-function",
+      "sequence": 1,
+      "category_id": "user-input",
+      "category_name": "User Input",
+      "title": "Input Function",
+      "description": "How to Get User Input.",
+      "prompt": "How to Get User Input.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def input_function():\n        print('\\n--- How to Get User Input ---')\n        print('Getting user input in Python is straightforward. You can use the input() function')\n        print('to get input from the user. The input function takes a single argument, which is the')\n        print('prompt message displayed to the user.')\n\n        def example_input():\n            x = input('Enter first number: ')\n            y = input('Enter second number: ')\n            z = x + y\n            print(z)\n            pass\n\n    input_function()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank.",
+        "Tests are disabled because this example expects live user input or command-line arguments."
+      ],
+      "source_reference": {
+        "file": "12_user-input.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "user-input_02_input-data-types",
+      "sequence": 2,
+      "category_id": "user-input",
+      "category_name": "User Input",
+      "title": "Input Data Types",
+      "description": "Write a Python function to types of input data and print the result.",
+      "prompt": "Types of Input Data.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def input_data_types():\n        print('\\n--- Types of Input Data ---')\n        print('The input() function always returns a string, regardless of what the user enters.')\n\n        def example_input_data_types():\n            x = input('Enter first number: ')\n            a = int(x)\n            print(a)\n            pass\n\n    input_data_types()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank.",
+        "Tests are disabled because this example expects live user input or command-line arguments."
+      ],
+      "source_reference": {
+        "file": "12_user-input.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "user-input_03_using-index-value",
+      "sequence": 3,
+      "category_id": "user-input",
+      "category_name": "User Input",
+      "title": "Using Index Value",
+      "description": "When to Use Index Value.",
+      "prompt": "When to Use Index Value.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def using_index_value():\n        print('\\n--- When to Use Index Value ---')\n        print('If you want to get a single character from the user, you can use the input() function and index the result.')\n\n        def example_index_value():\n            ch = input('Enter a character: ')[0]\n            print(ch)\n            pass\n\n    using_index_value()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank.",
+        "Tests are disabled because this example expects live user input or command-line arguments."
+      ],
+      "source_reference": {
+        "file": "12_user-input.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "user-input_04_eval-function-example",
+      "sequence": 4,
+      "category_id": "user-input",
+      "category_name": "User Input",
+      "title": "Eval Function Example",
+      "description": "Write a Python function to eval function and print the result.",
+      "prompt": "Eval Function.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def eval_function_example():\n        print('\\n--- Eval Function ---')\n        print('The eval() function in Python is used to evaluate an expression entered by the user as a string.')\n\n        def example_eval_function():\n            x = eval(input('Enter an expression: '))\n            typeOf = type(x)\n            print(typeOf)\n            pass\n\n    eval_function_example()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank.",
+        "Tests are disabled because this example expects live user input or command-line arguments."
+      ],
+      "source_reference": {
+        "file": "12_user-input.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "user-input_05_passing-command-line-values",
+      "sequence": 5,
+      "category_id": "user-input",
+      "category_name": "User Input",
+      "title": "Passing Command Line Values",
+      "description": "Passing Values from Command Line.",
+      "prompt": "Passing Values from Command Line.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def passing_command_line_values():\n        print('\\n--- Passing Values from Command Line ---')\n        print('The sys module provides access to any command-line arguments via the sys.argv list.')\n\n        def example_command_line_values():\n            import sys\n            x = sys.argv[1]\n            y = sys.argv[2]\n            z = x + y\n            print(z)\n            pass\n\n    passing_command_line_values()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank.",
+        "Tests are disabled because this example expects live user input or command-line arguments."
+      ],
+      "source_reference": {
+        "file": "12_user-input.py",
+        "question": 5
+      }
+    }
+  ]
+}

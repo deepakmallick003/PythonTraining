@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Coding Practice UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .settings-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .settings-header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .settings-section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-section h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .user-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .user-stats {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-danger {
+            background: #ff4444;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dd0000;
+        }
+
+        .btn-secondary {
+            background: #666;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .logout-btn {
+            background: #ff7043;
+            color: white;
+        }
+
+        .logout-btn:hover {
+            background: #ff6b35;
+        }
+
+        .success {
+            background: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+            <h1 class="logo"><i class="fas fa-code"></i> Python Practice</h1>
+        </div>
+    </div>
+
+    <div class="settings-container">
+        <div class="settings-header">
+            <h1><i class="fas fa-cog"></i> Settings</h1>
+            <div style="display: flex; gap: 10px;">
+                <span style="color: #666; align-self: center;">Logged in as: <strong>{{ current_user }}</strong></span>
+                <a href="{{ url_for('main.logout') }}" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+
+        <div class="success" id="successMessage">
+            <i class="fas fa-check-circle"></i> <span id="successText"></span>
+        </div>
+
+        <!-- User Management Section -->
+        <div class="settings-section">
+            <h2><i class="fas fa-users"></i> User Management</h2>
+            {% if users %}
+                <div id="usersList">
+                    {% for user in users %}
+                    <div class="user-row">
+                        <div class="user-info">
+                            <div class="user-name">{{ user.username }}</div>
+                            <div class="user-stats">
+                                <i class="fas fa-check"></i> {{ user_progress.get(user.username, 0) }} problems solved
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn btn-secondary" onclick="resetProgress('{{ user.username }}')">
+                                <i class="fas fa-redo"></i> Reset Progress
+                            </button>
+                            {% if user.username != current_user %}
+                            <button class="btn btn-danger" onclick="deleteUser('{{ user.username }}')">
+                                <i class="fas fa-trash"></i> Delete User
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-users"></i>
+                    <p>No users yet</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function showSuccess(message) {
+            const el = document.getElementById('successMessage');
+            document.getElementById('successText').textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 3000);
+        }
+
+        function deleteUser(username) {
+            if (!confirm(`Delete user "${username}" and all their progress?`)) return;
+            
+            fetch('/api/user/settings/delete-user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showSuccess(`User "${username}" deleted`);
+                    setTimeout(() => location.reload(), 500);
+                }
+            })
+            .catch(e => alert('Error: ' + e));
+        }
+
+        function resetProgress(username) {
+            if (!confirm(`Reset progress for user "${username}"?`)) return;
+            
+            fetch('/api/user/settings/reset-progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showSuccess(`Progress reset for "${username}"`);
+                    setTimeout(() => location.reload(), 500);
+                }
+            })
+            .catch(e => alert('Error: ' + e));
+        }
+    </script>
+</body>
+</html>

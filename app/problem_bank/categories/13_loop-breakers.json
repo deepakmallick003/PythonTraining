@@ -1,0 +1,50 @@
+{
+  "category_id": "loop-breakers",
+  "category_name": "Loop Breakers",
+  "sequence": 13,
+  "source_reference": "13_loop-breakers.py",
+  "problems": [
+    {
+      "id": "loop-breakers_01_explain-continue",
+      "sequence": 1,
+      "category_id": "loop-breakers",
+      "category_name": "Loop Breakers",
+      "title": "Explain Continue",
+      "description": "Write a Python function to explain continue and print the result.",
+      "prompt": "Explain Continue.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def explain_continue():\n        print('\\n--- Explain Continue ---')\n        print(\"The 'continue' statement skips the current iteration of a loop and proceeds to the next iteration.\")\n        for i in range(5):\n            if i == 2:\n                continue\n            print(i)\n\n    explain_continue()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank."
+      ],
+      "source_reference": {
+        "file": "13_loop-breakers.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "loop-breakers_02_explain-pass",
+      "sequence": 2,
+      "category_id": "loop-breakers",
+      "category_name": "Loop Breakers",
+      "title": "Explain Pass",
+      "description": "Write a Python function to explain pass and print the result.",
+      "prompt": "Explain Pass.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def explain_pass():\n        print('\\n--- Explain Pass ---')\n        print(\"The 'pass' statement is a null operation; it's a placeholder used when a statement is syntactically required but you don't want any command or code to execute.\")\n        for i in range(5):\n            if i == 2:\n                pass\n            print(i)\n\n    explain_pass()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This category uses standalone demo snippets in the problem bank."
+      ],
+      "source_reference": {
+        "file": "13_loop-breakers.py",
+        "question": 2
+      }
+    }
+  ]
+}

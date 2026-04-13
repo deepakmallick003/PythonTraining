@@ -1,0 +1,155 @@
+{
+  "category_id": "numpy-2",
+  "category_name": "NumPy 2",
+  "sequence": 16,
+  "source_reference": "16_numpy-2.py",
+  "problems": [
+    {
+      "id": "numpy-2_01_vectorized-addition",
+      "sequence": 1,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Vectorized Addition",
+      "description": "Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]",
+      "prompt": "Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1, value):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n\n    value = 5\n    main(input_1, value)\n",
+      "solution": "from numpy import *\n\ndef main(input_1, value):\n    arr = array(input_1) + value\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n\n    value = 5\n    main(input_1, value)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmph8goij58.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "numpy-2_02_array-mathematical-operations",
+      "sequence": 2,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Array Mathematical Operations",
+      "description": "Find the sine of each element in the array [\u03c0/2, \u03c0, 3\u03c0/2]. Expected output: [1. 0. -1.]",
+      "prompt": "Find the sine of each element in the array [\u03c0/2, \u03c0, 3\u03c0/2]. Expected output: [1. 0. -1.]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "solution": "from numpy import *\n\ndef main(value, value_2, value_3):\n    arr = sin(array([pi / value, pi, value_2 * pi / value_3]))\n    print(arr)\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpr7tpxy54.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "numpy-2_03_sum-of-array-elements",
+      "sequence": 3,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Sum of Array Elements",
+      "description": "Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10",
+      "prompt": "Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n    main(input_1)\n",
+      "solution": "from numpy import *\n\ndef main(input_1):\n    arr = sum(array(input_1))\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n    main(input_1)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpyc66r9nw.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "numpy-2_04_array-concatenation",
+      "sequence": 4,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Array Concatenation",
+      "description": "Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]",
+      "prompt": "Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(input_1, input_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2]\n\n    input_2 = [3, 4]\n    main(input_1, input_2)\n",
+      "solution": "from numpy import *\n\ndef main(input_1, input_2):\n    arr = concatenate((array(input_1), array(input_2)))\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2]\n\n    input_2 = [3, 4]\n    main(input_1, input_2)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpj7_6l1w8.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "numpy-2_05_aliasing-arrays",
+      "sequence": 5,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Aliasing Arrays",
+      "description": "Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]",
+      "prompt": "Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(arr, arr_alias):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n\n    arr_alias = arr\n    main(arr, arr_alias)\n",
+      "solution": "from numpy import *\n\ndef main(arr, arr_alias):\n    arr_alias[0] = 10\n    print(arr, 'Alias:', arr_alias)\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n\n    arr_alias = arr\n    main(arr, arr_alias)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpiixteugq.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "numpy-2_06_shallow-copy",
+      "sequence": 6,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Shallow Copy",
+      "description": "Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]",
+      "prompt": "Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(arr1, arr2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr1 = array([1, 2, 3])\n\n    arr2 = arr1.view()\n    main(arr1, arr2)\n",
+      "solution": "from numpy import *\n\ndef main(arr1, arr2):\n    arr2[0] = 10\n    print(arr1, 'Copy:', arr2)\n\nif __name__ == \"__main__\":\n    arr1 = array([1, 2, 3])\n\n    arr2 = arr1.view()\n    main(arr1, arr2)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpx5g5paoy.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "numpy-2_07_deep-copy",
+      "sequence": 7,
+      "category_id": "numpy-2",
+      "category_name": "NumPy 2",
+      "title": "Deep Copy",
+      "description": "Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]",
+      "prompt": "Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]",
+      "difficulty": "Easy",
+      "starter_code": "from numpy import *\n\ndef main(arr3, arr4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr3 = array([1, 2, 3])\n\n    arr4 = arr3.copy()\n    main(arr3, arr4)\n",
+      "solution": "from numpy import *\n\ndef main(arr3, arr4):\n    arr4[0] = 10\n    print(arr3, 'Copy:', arr4)\n\nif __name__ == \"__main__\":\n    arr3 = array([1, 2, 3])\n\n    arr4 = arr3.copy()\n    main(arr3, arr4)\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpu_mb9b9c.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      ],
+      "source_reference": {
+        "file": "16_numpy-2.py",
+        "question": 7
+      }
+    }
+  ]
+}

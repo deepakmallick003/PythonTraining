@@ -1,0 +1,1083 @@
+{
+  "category_id": "operators-precedence",
+  "category_name": "Operator Precedence",
+  "sequence": 9,
+  "source_reference": "09_operators-precedence.py",
+  "problems": [
+    {
+      "id": "operators-precedence_01_3-4-5",
+      "sequence": 1,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "3 + 4 * 5",
+      "description": "Multiplication (*) has higher precedence than addition (+).",
+      "prompt": "Multiplication (*) has higher precedence than addition (+).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value + value_2 * value_3)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5",
+          "output": "23"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5",
+          "expected_output": "23",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 7",
+          "expected_output": "47",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 7\nvalue_3 = 8",
+          "expected_output": "62",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "operators-precedence_02_3-4-5",
+      "sequence": 2,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "(3 + 4) * 5",
+      "description": "Parentheses alter the natural precedence, making addition (+) evaluated before multiplication (*).",
+      "prompt": "Parentheses alter the natural precedence, making addition (+) evaluated before multiplication (*).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print((value + value_2) * value_3)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5",
+          "output": "35"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5",
+          "expected_output": "35",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 7",
+          "expected_output": "77",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 7\nvalue_3 = 8",
+          "expected_output": "104",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "operators-precedence_03_3-2",
+      "sequence": 3,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "-3 ** 2",
+      "description": "Exponentiation (**) has higher precedence than unary minus (-).",
+      "prompt": "Exponentiation (**) has higher precedence than unary minus (-).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n    main(value, value_2)\n",
+      "solution": "def main(value, value_2):\n    print(-value ** value_2)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n    main(value, value_2)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2",
+          "output": "-9"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2",
+          "expected_output": "-9",
+          "call": "main(value, value_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 4",
+          "expected_output": "-625",
+          "call": "main(value, value_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 5",
+          "expected_output": "-7776",
+          "call": "main(value, value_2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "operators-precedence_04_10-2-3",
+      "sequence": 4,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "10 / 2 * 3",
+      "description": "Division (/) and multiplication (*) have the same precedence and are evaluated left to right.",
+      "prompt": "Division (/) and multiplication (*) have the same precedence and are evaluated left to right.",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 10\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value / value_2 * value_3)\n\nif __name__ == \"__main__\":\n    value = 10\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 10\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "output": "15.0"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 10\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "expected_output": "15.0",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 12\nvalue_2 = 4\nvalue_3 = 5",
+          "expected_output": "15.0",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 13\nvalue_2 = 5\nvalue_3 = 6",
+          "expected_output": "15.600000000000001",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "operators-precedence_05_4-2-3",
+      "sequence": 5,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "4 ** 2 ** 3",
+      "description": "Exponentiation (**) is right associative.",
+      "prompt": "Exponentiation (**) is right associative.",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value ** value_2 ** value_3)\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 4\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "output": "65536"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 4\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "expected_output": "65536",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 4\nvalue_3 = 5",
+          "expected_output": "67124396309528000740141897322590239481386545519122861413940212538264765045894227785804651972514654499529925859328293557615698068986678523193131340472173415365758537510244514553887251327089883299322548908844761580561121094084788677864216937931753251692089781590481303780390619922804280908216481219552730548329932371790115837650795778121069908005147805341711806528925274845747566497175952452417510563506458530485235462242604366952751531326401157213859942671737619262329404719490533141390781687183664964155339581521435803946217475425861702684685742453989366533766815633282617146124013017528490125887698133205239603904954188172286507673980840453941939264641062643690183343919960897731226616395159214617096138861846706745934890388068180526708653543589287572372513333902997461657323312863235396018896896",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 4\n\nvalue_2 = 2\n\nvalue_3 = 3\n# Variant 3",
+          "expected_output": "65536",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "operators-precedence_06_5-3-and-4-7",
+      "sequence": 6,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "5 > 3 and 4 < 7",
+      "description": "Comparison operators have higher precedence than logical operators.",
+      "prompt": "Comparison operators have higher precedence than logical operators.",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 4\n\n    value_4 = 7\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value > value_2 and value_3 < value_4)\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 4\n\n    value_4 = 7\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 4\n\nvalue_4 = 7",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 4\n\nvalue_4 = 7",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 5\nvalue_3 = 6\nvalue_4 = 9",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 8\nvalue_2 = 6\nvalue_3 = 7\nvalue_4 = 10",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "operators-precedence_07_5-3-2",
+      "sequence": 7,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "5 & 3 | 2",
+      "description": "Bitwise AND (&) has higher precedence than bitwise OR (|).",
+      "prompt": "Bitwise AND (&) has higher precedence than bitwise OR (|).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value & value_2 | value_3)\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "output": "3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "expected_output": "3",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 5\nvalue_3 = 4",
+          "expected_output": "5",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 8\nvalue_2 = 6\nvalue_3 = 5",
+          "expected_output": "5",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "operators-precedence_08_2-3-2",
+      "sequence": 8,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "2 + 3 << 2",
+      "description": "Bitwise shift (<<) has lower precedence than addition (+).",
+      "prompt": "Bitwise shift (<<) has lower precedence than addition (+).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value + value_2 << value_3)\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "output": "20"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "expected_output": "20",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 4\nvalue_2 = 5\nvalue_3 = 4",
+          "expected_output": "144",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 5",
+          "expected_output": "352",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 8
+      }
+    },
+    {
+      "id": "operators-precedence_09_not-true-or-false",
+      "sequence": 9,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "not True or False",
+      "description": "Logical NOT (not) has higher precedence than logical OR (or).",
+      "prompt": "Logical NOT (not) has higher precedence than logical OR (or).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = True\n\n    value_2 = False\n    main(value, value_2)\n",
+      "solution": "def main(value, value_2):\n    print(not value or value_2)\n\nif __name__ == \"__main__\":\n    value = True\n\n    value_2 = False\n    main(value, value_2)\n",
+      "examples": [
+        {
+          "input": "value = True\n\nvalue_2 = False",
+          "output": "False"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = True\n\nvalue_2 = False",
+          "expected_output": "False",
+          "call": "main(value, value_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = True\nvalue_2 = False",
+          "expected_output": "False",
+          "call": "main(value, value_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = False\nvalue_2 = True",
+          "expected_output": "True",
+          "call": "main(value, value_2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 9
+      }
+    },
+    {
+      "id": "operators-precedence_10_true-not-false",
+      "sequence": 10,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "True == (not False)",
+      "description": "Logical NOT (not) has higher precedence than comparison (==). Parentheses ensure the 'not' operation is evaluated first.",
+      "prompt": "Logical NOT (not) has higher precedence than comparison (==). Parentheses ensure the 'not' operation is evaluated first.",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = True\n\n    value_2 = False\n    main(value, value_2)\n",
+      "solution": "def main(value, value_2):\n    print(value == (not value_2))\n\nif __name__ == \"__main__\":\n    value = True\n\n    value_2 = False\n    main(value, value_2)\n",
+      "examples": [
+        {
+          "input": "value = True\n\nvalue_2 = False",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = True\n\nvalue_2 = False",
+          "expected_output": "True",
+          "call": "main(value, value_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = True\nvalue_2 = False",
+          "expected_output": "True",
+          "call": "main(value, value_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = False\nvalue_2 = True",
+          "expected_output": "True",
+          "call": "main(value, value_2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 10
+      }
+    },
+    {
+      "id": "operators-precedence_11_2-3-4-5",
+      "sequence": 11,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "2 + 3 * 4 - 5",
+      "description": "Multiplication (*) has higher precedence than addition (+) and subtraction (-).",
+      "prompt": "Multiplication (*) has higher precedence than addition (+) and subtraction (-).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 4\n\n    value_4 = 5\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value + value_2 * value_3 - value_4)\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 4\n\n    value_4 = 5\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 4\n\nvalue_4 = 5",
+          "output": "9"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 4\n\nvalue_4 = 5",
+          "expected_output": "9",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 4\nvalue_2 = 5\nvalue_3 = 6\nvalue_4 = 7",
+          "expected_output": "27",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 7\nvalue_4 = 8",
+          "expected_output": "39",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 11
+      }
+    },
+    {
+      "id": "operators-precedence_12_4-2-3",
+      "sequence": 12,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "4 | 2 & 3",
+      "description": "Bitwise AND (&) has higher precedence than bitwise OR (|).",
+      "prompt": "Bitwise AND (&) has higher precedence than bitwise OR (|).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value | value_2 & value_3)\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 2\n\n    value_3 = 3\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 4\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "output": "6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 4\n\nvalue_2 = 2\n\nvalue_3 = 3",
+          "expected_output": "6",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 4\nvalue_3 = 5",
+          "expected_output": "6",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 5\nvalue_3 = 6",
+          "expected_output": "7",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 12
+      }
+    },
+    {
+      "id": "operators-precedence_13_4-3",
+      "sequence": 13,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "~4 + 3",
+      "description": "Bitwise NOT (~) has higher precedence than arithmetic operators like addition (+).",
+      "prompt": "Bitwise NOT (~) has higher precedence than arithmetic operators like addition (+).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 3\n    main(value, value_2)\n",
+      "solution": "def main(value, value_2):\n    print(~value + value_2)\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 3\n    main(value, value_2)\n",
+      "examples": [
+        {
+          "input": "value = 4\n\nvalue_2 = 3",
+          "output": "-2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 4\n\nvalue_2 = 3",
+          "expected_output": "-2",
+          "call": "main(value, value_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 5",
+          "expected_output": "-2",
+          "call": "main(value, value_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 6",
+          "expected_output": "-2",
+          "call": "main(value, value_2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 13
+      }
+    },
+    {
+      "id": "operators-precedence_14_3-4-and-5-2-or-6-7",
+      "sequence": 14,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "3 < 4 and 5 >= 2 or 6 != 7",
+      "description": "Comparison operators have higher precedence than logical operators (and, or).",
+      "prompt": "Comparison operators have higher precedence than logical operators (and, or).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n\n    value_4 = 2\n\n    value_5 = 6\n\n    value_6 = 7\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "solution": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    print(value < value_2 and value_3 >= value_4 or value_5 != value_6)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n\n    value_4 = 2\n\n    value_5 = 6\n\n    value_6 = 7\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5\n\nvalue_4 = 2\n\nvalue_5 = 6\n\nvalue_6 = 7",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5\n\nvalue_4 = 2\n\nvalue_5 = 6\n\nvalue_6 = 7",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 7\nvalue_4 = 4\nvalue_5 = 8\nvalue_6 = 9",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 7\nvalue_3 = 8\nvalue_4 = 5\nvalue_5 = 9\nvalue_6 = 10",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 14
+      }
+    },
+    {
+      "id": "operators-precedence_15_5-3-2",
+      "sequence": 15,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "5 * 3 >> 2",
+      "description": "Arithmetic multiplication (*) has higher precedence than bitwise right shift (>>).",
+      "prompt": "Arithmetic multiplication (*) has higher precedence than bitwise right shift (>>).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value * value_2 >> value_3)\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "output": "3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "expected_output": "3",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 5\nvalue_3 = 4",
+          "expected_output": "2",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 8\nvalue_2 = 6\nvalue_3 = 5",
+          "expected_output": "1",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 15
+      }
+    },
+    {
+      "id": "operators-precedence_16_3-2-4",
+      "sequence": 16,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "3 ** 2 * 4",
+      "description": "Exponentiation (**) has higher precedence than multiplication (*).",
+      "prompt": "Exponentiation (**) has higher precedence than multiplication (*).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n\n    value_3 = 4\n    main(value, value_2, value_3)\n",
+      "solution": "def main(value, value_2, value_3):\n    print(value ** value_2 * value_3)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n\n    value_3 = 4\n    main(value, value_2, value_3)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2\n\nvalue_3 = 4",
+          "output": "36"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2\n\nvalue_3 = 4",
+          "expected_output": "36",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 4\nvalue_3 = 6",
+          "expected_output": "3750",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 5\nvalue_3 = 7",
+          "expected_output": "54432",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 16
+      }
+    },
+    {
+      "id": "operators-precedence_17_4-5-3-2",
+      "sequence": 17,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "4 + 5 << 3 - 2",
+      "description": "Arithmetic operators (+, -) have higher precedence than bitwise shift (<<).",
+      "prompt": "Arithmetic operators (+, -) have higher precedence than bitwise shift (<<).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 5\n\n    value_3 = 3\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value + value_2 << value_3 - value_4)\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 5\n\n    value_3 = 3\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 4\n\nvalue_2 = 5\n\nvalue_3 = 3\n\nvalue_4 = 2",
+          "output": "18"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 4\n\nvalue_2 = 5\n\nvalue_3 = 3\n\nvalue_4 = 2",
+          "expected_output": "18",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 7\nvalue_3 = 5\nvalue_4 = 4",
+          "expected_output": "26",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 8\nvalue_3 = 6\nvalue_4 = 5",
+          "expected_output": "30",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 17
+      }
+    },
+    {
+      "id": "operators-precedence_18_7-5-3-2",
+      "sequence": 18,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "7 & 5 | 3 ^ 2",
+      "description": "Bitwise AND (&) and XOR (^) have higher precedence than bitwise OR (|).",
+      "prompt": "Bitwise AND (&) and XOR (^) have higher precedence than bitwise OR (|).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 7\n\n    value_2 = 5\n\n    value_3 = 3\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value & value_2 | value_3 ^ value_4)\n\nif __name__ == \"__main__\":\n    value = 7\n\n    value_2 = 5\n\n    value_3 = 3\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 7\n\nvalue_2 = 5\n\nvalue_3 = 3\n\nvalue_4 = 2",
+          "output": "5"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 7\n\nvalue_2 = 5\n\nvalue_3 = 3\n\nvalue_4 = 2",
+          "expected_output": "5",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 9\nvalue_2 = 7\nvalue_3 = 5\nvalue_4 = 4",
+          "expected_output": "1",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 10\nvalue_2 = 8\nvalue_3 = 6\nvalue_4 = 5",
+          "expected_output": "11",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 18
+      }
+    },
+    {
+      "id": "operators-precedence_19_3-4-5-2",
+      "sequence": 19,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "(3 + 4) * 5 ^ 2",
+      "description": "Parentheses alter precedence; followed by exponentiation (^), then multiplication (*).",
+      "prompt": "Parentheses alter precedence; followed by exponentiation (^), then multiplication (*).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print((value + value_2) * value_3 ^ value_4)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 4\n\n    value_3 = 5\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5\n\nvalue_4 = 2",
+          "output": "33"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 4\n\nvalue_3 = 5\n\nvalue_4 = 2",
+          "expected_output": "33",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 7\nvalue_4 = 4",
+          "expected_output": "73",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 7\nvalue_3 = 8\nvalue_4 = 5",
+          "expected_output": "109",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 19
+      }
+    },
+    {
+      "id": "operators-precedence_20_3-2-7-2",
+      "sequence": 20,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "-3 * 2 + 7 // 2",
+      "description": "Unary minus (-) has higher precedence than multiplication (*), division (//), and addition (+).",
+      "prompt": "Unary minus (-) has higher precedence than multiplication (*), division (//), and addition (+).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n\n    value_3 = 7\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(-value * value_2 + value_3 // value_4)\n\nif __name__ == \"__main__\":\n    value = 3\n\n    value_2 = 2\n\n    value_3 = 7\n\n    value_4 = 2\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2\n\nvalue_3 = 7\n\nvalue_4 = 2",
+          "output": "-3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 3\n\nvalue_2 = 2\n\nvalue_3 = 7\n\nvalue_4 = 2",
+          "expected_output": "-3",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 4\nvalue_3 = 9\nvalue_4 = 4",
+          "expected_output": "-18",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 5\nvalue_3 = 10\nvalue_4 = 5",
+          "expected_output": "-28",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 20
+      }
+    },
+    {
+      "id": "operators-precedence_21_2-3-5-1",
+      "sequence": 21,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "2 + 3 > 5 - 1",
+      "description": "Arithmetic operators (+, -) are evaluated before comparison operators (>).",
+      "prompt": "Arithmetic operators (+, -) are evaluated before comparison operators (>).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 5\n\n    value_4 = 1\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value + value_2 > value_3 - value_4)\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 5\n\n    value_4 = 1\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 5\n\nvalue_4 = 1",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 5\n\nvalue_4 = 1",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 4\nvalue_2 = 5\nvalue_3 = 7\nvalue_4 = 3",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 8\nvalue_4 = 4",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 21
+      }
+    },
+    {
+      "id": "operators-precedence_22_4-3-2-3",
+      "sequence": 22,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "4 * 3 == 2 ** 3",
+      "description": "Arithmetic operators (*, **) are evaluated before the equality operator (==).",
+      "prompt": "Arithmetic operators (*, **) are evaluated before the equality operator (==).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 3\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value * value_2 == value_3 ** value_4)\n\nif __name__ == \"__main__\":\n    value = 4\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 3\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 4\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 3",
+          "output": "False"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 4\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 3",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 6\nvalue_2 = 5\nvalue_3 = 4\nvalue_4 = 5",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 6\nvalue_3 = 5\nvalue_4 = 6",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 22
+      }
+    },
+    {
+      "id": "operators-precedence_23_7-3-2-1",
+      "sequence": 23,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "7 // 3 != 2 | 1",
+      "description": "Arithmetic division (//) and bitwise OR (|) are evaluated before the non-equality operator (!=).",
+      "prompt": "Arithmetic division (//) and bitwise OR (|) are evaluated before the non-equality operator (!=).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 7\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 1\n    main(value, value_2, value_3, value_4)\n",
+      "solution": "def main(value, value_2, value_3, value_4):\n    print(value // value_2 != value_3 | value_4)\n\nif __name__ == \"__main__\":\n    value = 7\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 1\n    main(value, value_2, value_3, value_4)\n",
+      "examples": [
+        {
+          "input": "value = 7\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 1",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 7\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 1",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 9\nvalue_2 = 5\nvalue_3 = 4\nvalue_4 = 3",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 10\nvalue_2 = 6\nvalue_3 = 5\nvalue_4 = 4",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 23
+      }
+    },
+    {
+      "id": "operators-precedence_24_5-3-2-and-4-2-2",
+      "sequence": 24,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "5 <= 3 + 2 and 4 >= 2 * 2",
+      "description": "Arithmetic operators (+, *) are evaluated before comparison operators (<=, >=) and logical AND (and).",
+      "prompt": "Arithmetic operators (+, *) are evaluated before comparison operators (<=, >=) and logical AND (and).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 4\n\n    value_5 = 2\n\n    value_6 = 2\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "solution": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    print(value <= value_2 + value_3 and value_4 >= value_5 * value_6)\n\nif __name__ == \"__main__\":\n    value = 5\n\n    value_2 = 3\n\n    value_3 = 2\n\n    value_4 = 4\n\n    value_5 = 2\n\n    value_6 = 2\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "examples": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 4\n\nvalue_5 = 2\n\nvalue_6 = 2",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 5\n\nvalue_2 = 3\n\nvalue_3 = 2\n\nvalue_4 = 4\n\nvalue_5 = 2\n\nvalue_6 = 2",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 7\nvalue_2 = 5\nvalue_3 = 4\nvalue_4 = 6\nvalue_5 = 4\nvalue_6 = 4",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 8\nvalue_2 = 6\nvalue_3 = 5\nvalue_4 = 7\nvalue_5 = 5\nvalue_6 = 5",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 24
+      }
+    },
+    {
+      "id": "operators-precedence_25_6-3-0-or-5-2-2",
+      "sequence": 25,
+      "category_id": "operators-precedence",
+      "category_name": "Operator Precedence",
+      "title": "6 % 3 == 0 or 5 // 2 == 2",
+      "description": "Modulus (%) and floor division (//) are evaluated before equality (==) and logical OR (or).",
+      "prompt": "Modulus (%) and floor division (//) are evaluated before equality (==) and logical OR (or).",
+      "difficulty": "Easy",
+      "starter_code": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 6\n\n    value_2 = 3\n\n    value_3 = 0\n\n    value_4 = 5\n\n    value_5 = 2\n\n    value_6 = 2\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "solution": "def main(value, value_2, value_3, value_4, value_5, value_6):\n    print(value % value_2 == value_3 or value_4 // value_5 == value_6)\n\nif __name__ == \"__main__\":\n    value = 6\n\n    value_2 = 3\n\n    value_3 = 0\n\n    value_4 = 5\n\n    value_5 = 2\n\n    value_6 = 2\n    main(value, value_2, value_3, value_4, value_5, value_6)\n",
+      "examples": [
+        {
+          "input": "value = 6\n\nvalue_2 = 3\n\nvalue_3 = 0\n\nvalue_4 = 5\n\nvalue_5 = 2\n\nvalue_6 = 2",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "value = 6\n\nvalue_2 = 3\n\nvalue_3 = 0\n\nvalue_4 = 5\n\nvalue_5 = 2\n\nvalue_6 = 2",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 8\nvalue_2 = 5\nvalue_3 = 2\nvalue_4 = 7\nvalue_5 = 4\nvalue_6 = 4",
+          "expected_output": "False",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 9\nvalue_2 = 6\nvalue_3 = 3\nvalue_4 = 8\nvalue_5 = 5\nvalue_6 = 5",
+          "expected_output": "True",
+          "call": "main(value, value_2, value_3, value_4, value_5, value_6)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "09_operators-precedence.py",
+        "question": 25
+      }
+    }
+  ]
+}

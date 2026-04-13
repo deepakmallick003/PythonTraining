@@ -1,0 +1,72 @@
+from numpy import *
+
+print()
+print("Vectorized Addition - Question 1")
+print("Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]")
+arr = array([1, 2, 3]) + 5
+print('Input:\n arr = array([1, 2, 3]) + 5')
+print('Code: \n arr = array([1, 2, 3]) + 5')
+print('Output:\n', arr)
+print('-'*20)
+print()
+
+print("Array Mathematical Operations - Question 2")
+print("Find the sine of each element in the array [π/2, π, 3π/2]. Expected output: [1. 0. -1.]")
+arr = sin(array([pi/2, pi, 3*pi/2]))
+print('Input:\n sin(array([pi/2, pi, 3*pi/2]))')
+print('Code: \n arr = sin(array([pi/2, pi, 3*pi/2]))')
+print('Output:\n', arr)
+print('-'*20)
+print()
+
+print("Sum of Array Elements - Question 3")
+print("Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10")
+arr = sum(array([1, 2, 3, 4]))
+print('Input:\n sum(array([1, 2, 3, 4]))')
+print('Code: \n arr = sum(array([1, 2, 3, 4]))')
+print('Output:\n', arr)
+print('-'*20)
+print()
+
+print("Array Concatenation - Question 4")
+print("Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]")
+arr = concatenate((array([1, 2]), array([3, 4])))
+print('Input:\n concatenate((array([1, 2]), array([3, 4])))')
+print('Code: \n arr = concatenate((array([1, 2]), array([3, 4])))')
+print('Output:\n', arr)
+print('-'*20)
+print()
+
+print()
+print("Aliasing Arrays - Question 5")
+print("Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]")
+arr = array([1, 2, 3])
+arr_alias = arr
+arr_alias[0] = 10
+print('Input:\n arr = array([1, 2, 3])\n arr_alias = arr')
+print('Code: \n arr_alias[0] = 10')
+print('Output:\n Original:', arr, 'Alias:', arr_alias)
+print('-'*20)
+print()
+
+print("Shallow Copy - Question 6")
+print("Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]")
+arr1 = array([1, 2, 3])
+arr2 = arr1.view()
+arr2[0] = 10
+print('Input:\n arr1 = array([1, 2, 3])\n arr2 = arr1.view()')
+print('Code: \n arr2[0] = 10')
+print('Output:\n Original:', arr1, 'Copy:', arr2)
+print('-'*20)
+print()
+
+print("Deep Copy - Question 7")
+print("Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]")
+arr3 = array([1, 2, 3])
+arr4 = arr3.copy()
+arr4[0] = 10
+print('Input:\n arr3 = array([1, 2, 3])\n arr4 = arr3.copy()')
+print('Code: \n arr4[0] = 10')
+print('Output:\n Original:', arr3, 'Copy:', arr4)
+print('-'*20)
+print()

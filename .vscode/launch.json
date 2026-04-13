@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Practice App",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/venv/bin/python",
+            "console": "integratedTerminal",
+            "env": {
+                "PORT": "5000",
+                "FLASK_DEBUG": "0"
+            },
+            "justMyCode": true
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "python": "${workspaceFolder}/venv/bin/python",
+            "console": "integratedTerminal"
+        }
+    ]
+}

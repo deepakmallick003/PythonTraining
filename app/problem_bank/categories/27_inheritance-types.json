@@ -1,0 +1,71 @@
+{
+  "category_id": "inheritance-types",
+  "category_name": "Inheritance Types",
+  "sequence": 27,
+  "source_reference": "27_inheritance_types.py",
+  "problems": [
+    {
+      "id": "inheritance-types_01_single-inheritance",
+      "sequence": 1,
+      "category_id": "inheritance-types",
+      "category_name": "Inheritance Types",
+      "title": "Single Inheritance",
+      "description": "Write a Python function to single inheritance and print the result.",
+      "prompt": "Single Inheritance.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    class Animal:\n\n        def speak(self):\n            print('Animal speaks')\n\n    class Dog(Animal):\n\n        def bark(self):\n            print('Dog barks')\n\n    buddy = Dog()\n\n    buddy.speak()\n\n    buddy.bark()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a standalone inheritance demo."
+      ],
+      "source_reference": {
+        "file": "27_inheritance_types.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "inheritance-types_02_multilevel-inheritance",
+      "sequence": 2,
+      "category_id": "inheritance-types",
+      "category_name": "Inheritance Types",
+      "title": "Multilevel Inheritance",
+      "description": "Write a Python function to multilevel inheritance and print the result.",
+      "prompt": "Multilevel Inheritance.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    class Animal:\n\n        def speak(self):\n            print('Animal speaks')\n\n    class Dog(Animal):\n\n        def bark(self):\n            print('Dog barks')\n\n    class Puppy(Dog):\n\n        def weep(self):\n            print('Puppy weeps')\n\n    tiny = Puppy()\n\n    tiny.speak()\n\n    tiny.bark()\n\n    tiny.weep()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a standalone inheritance demo."
+      ],
+      "source_reference": {
+        "file": "27_inheritance_types.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "inheritance-types_03_multiple-inheritance",
+      "sequence": 3,
+      "category_id": "inheritance-types",
+      "category_name": "Inheritance Types",
+      "title": "Multiple Inheritance",
+      "description": "Write a Python function to multiple inheritance and print the result.",
+      "prompt": "Multiple Inheritance.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    class Father:\n\n        def height(self):\n            print('Height from father')\n\n    class Mother:\n\n        def intelligence(self):\n            print('Intelligence from mother')\n\n    class Child(Father, Mother):\n        pass\n\n    child = Child()\n\n    child.height()\n\n    child.intelligence()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a standalone inheritance demo."
+      ],
+      "source_reference": {
+        "file": "27_inheritance_types.py",
+        "question": 3
+      }
+    }
+  ]
+}

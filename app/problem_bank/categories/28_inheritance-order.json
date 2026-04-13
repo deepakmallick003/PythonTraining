@@ -1,0 +1,29 @@
+{
+  "category_id": "inheritance-order",
+  "category_name": "Inheritance Order",
+  "sequence": 28,
+  "source_reference": "28_inheritance_order.py",
+  "problems": [
+    {
+      "id": "inheritance-order_01_method-resolution-order",
+      "sequence": 1,
+      "category_id": "inheritance-order",
+      "category_name": "Inheritance Order",
+      "title": "Method Resolution Order",
+      "description": "Write a Python function to method resolution order and print the result.",
+      "prompt": "Method Resolution Order.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    '\\nDuring inheritance, the constructor (__init__) of the parent class is not automatically called;\\nit must be called explicitly if the child class defines its own constructor.\\n\\nMRO is the order in which Python looks for a method in a hierarchy of classes.\\n\\nIt follows the depth-first, left-to-right rule.\\n\\n__init__ method resolution follows MRO; the first __init__ found in the MRO chain will be executed.\\n'\n\n    class A:\n\n        def __init__(self):\n            print('A __init__')\n\n    class B(A):\n\n        def __init__(self):\n            print('B __init__')\n            super().__init__()\n\n    class C(A):\n\n        def __init__(self):\n            print('C __init__')\n            super().__init__()\n\n    class D(B, C):\n\n        def __init__(self):\n            print('D __init__')\n            super().__init__()\n\n    d = D()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "28_inheritance_order.py",
+        "question": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "category_id": "datatypes",
+  "category_name": "Data Types",
+  "sequence": 7,
+  "source_reference": "07_datatypes.py",
+  "problems": [
+    {
+      "id": "datatypes_01_nonetype",
+      "sequence": 1,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Nonetype",
+      "description": "Write a Python function to nonetype and print the result.",
+      "prompt": "Nonetype.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- NoneType ---')\n\n    print('Represents the absence of a value, similar to null in other languages.')\n\n    a = None\n\n    print('Example: a =', a)\n\n    print('Type of a:', type(a))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "datatypes_02_numbers",
+      "sequence": 2,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Numbers",
+      "description": "Write a Python function to numbers and print the result.",
+      "prompt": "Numbers.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Numbers ---')\n\n    print('Can be integers, floating-point numbers, or complex numbers.')\n\n    a = 5\n\n    print('\\nInteger Example: a =', a)\n\n    print('Type of a:', type(a))\n\n    num = 2.5\n\n    print('\\nFloat Example: num =', num)\n\n    print('Type of num:', type(num))\n\n    num = 2 + 9j\n\n    print('\\nComplex Example: num =', num)\n\n    print('Type of num:', type(num))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "datatypes_03_type-conversion",
+      "sequence": 3,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Type Conversion",
+      "description": "Write a Python function to type conversion and print the result.",
+      "prompt": "Type Conversion.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Type Conversion ---')\n\n    print('Converting one data type to another.')\n\n    a = 5.6\n\n    b = int(a)\n\n    k = float(b)\n\n    c = complex(4, 5)\n\n    print('Converted int:', b, 'Type:', type(b))\n\n    print('Converted float:', k, 'Type:', type(k))\n\n    print('Converted complex:', c, 'Type:', type(c))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "datatypes_04_booleans",
+      "sequence": 4,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Booleans",
+      "description": "Write a Python function to booleans and print the result.",
+      "prompt": "Booleans.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Booleans ---')\n\n    print('Represent True or False.')\n\n    a = True\n\n    bool_val = 3 < 5\n\n    print('Boolean Example: a =', a, 'Type:', type(a))\n\n    print('Boolean Expression: 3 < 5 is', bool_val, 'Type:', type(bool_val))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "datatypes_05_sequence-data-types",
+      "sequence": 5,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Sequence Data Types",
+      "description": "Write a Python function to sequence data types and print the result.",
+      "prompt": "Sequence Data Types.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Sequence Data Types ---')\n\n    print('Can hold multiple values: List, Tuple, Set, String, Range.')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "datatypes_06_list",
+      "sequence": 6,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "List",
+      "description": "Write a Python function to list and print the result.",
+      "prompt": "List.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- List ---')\n\n    print('Ordered and mutable sequence of objects enclosed in square brackets.')\n\n    lst = [25, 36, 45, 12]\n\n    print('Example: lst =', lst)\n\n    print('Type of lst:', type(lst))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "datatypes_07_tuple",
+      "sequence": 7,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Tuple",
+      "description": "Write a Python function to tuple and print the result.",
+      "prompt": "Tuple.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Tuple ---')\n\n    print('Ordered and immutable sequence of objects enclosed in parentheses.')\n\n    t = (25, 36, 45, 12, 7)\n\n    print('Example: t =', t)\n\n    print('Type of t:', type(t))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "datatypes_08_set",
+      "sequence": 8,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Set",
+      "description": "Write a Python function to set and print the result.",
+      "prompt": "Set.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Set ---')\n\n    print('Unordered collection of unique elements enclosed in curly braces.')\n\n    s = {25, 36, 45, 12, 25, 36}\n\n    print('Example: s =', s)\n\n    print('Type of s:', type(s))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 8
+      }
+    },
+    {
+      "id": "datatypes_09_string",
+      "sequence": 9,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "String",
+      "description": "Write a Python function to string and print the result.",
+      "prompt": "String.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- String ---')\n\n    print('Sequence of characters enclosed in single or double quotes.')\n\n    str_val = 'hello'\n\n    print('Example: str_val =', str_val)\n\n    print('Type of str_val:', type(str_val))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 9
+      }
+    },
+    {
+      "id": "datatypes_10_range",
+      "sequence": 10,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Range",
+      "description": "Write a Python function to range and print the result.",
+      "prompt": "Range.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Range ---')\n\n    print('Immutable and iterable sequence of numbers.')\n\n    r = range(10)\n\n    print('Example: r =', r)\n\n    print('Type of r:', type(r))\n\n    print('List converted from range:', list(range(2, 10, 2)))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 10
+      }
+    },
+    {
+      "id": "datatypes_11_dictionary",
+      "sequence": 11,
+      "category_id": "datatypes",
+      "category_name": "Data Types",
+      "title": "Dictionary",
+      "description": "Write a Python function to dictionary and print the result.",
+      "prompt": "Dictionary.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    print('\\n--- Dictionary ---')\n\n    print('Collection of key-value pairs enclosed in curly braces.')\n\n    d = {1: 'a', 2: 'b', 3: 'c'}\n\n    print('Example: d =', d)\n\n    print('Type of d:', type(d))\n\n    d1 = {'navin': 'samsung', 'rahul': 'iphone', 'kiran': 'oneplus'}\n\n    print('Example: d1 =', d1)\n\n    print('Values of d1:', d1.values())\n\n    print('Keys of d1:', d1.keys())\n\n    print(\"Accessing element by key 'rahul':\", d1['rahul'])\n\n    print(\"Using get method for key 'kiran':\", d1.get('kiran'))\n\n    print('\\n' + '-' * 50 + '\\n')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "This section is stored as a standalone reference snippet."
+      ],
+      "source_reference": {
+        "file": "07_datatypes.py",
+        "question": 11
+      }
+    }
+  ]
+}

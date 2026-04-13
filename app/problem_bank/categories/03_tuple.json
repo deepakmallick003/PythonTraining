@@ -1,0 +1,725 @@
+{
+  "category_id": "tuple",
+  "category_name": "Tuples",
+  "sequence": 3,
+  "source_reference": "03_tuple.py",
+  "problems": [
+    {
+      "id": "tuple_01_create-tuple",
+      "sequence": 1,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Create Tuple",
+      "description": "Create a tuple with elements (1, 2, 3). Expected output: (1, 2, 3)",
+      "prompt": "Create a tuple with elements (1, 2, 3). Expected output: (1, 2, 3)",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    print(tuple1)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "output": "(1, 2, 3)"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "expected_output": "(1, 2, 3)",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5)",
+          "expected_output": "(3, 4, 5)",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6)",
+          "expected_output": "(4, 5, 6)",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "tuple_02_count-element",
+      "sequence": 2,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Count Element",
+      "description": "Count how many times '3' appears in the tuple. Expected output: 1",
+      "prompt": "Count how many times '3' appears in the tuple. Expected output: 1",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    count = tuple1.count(3)\n    print(count)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 3)",
+          "output": "2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 3)",
+          "expected_output": "2",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 5)",
+          "expected_output": "1",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6, 7, 6)",
+          "expected_output": "0",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "tuple_03_index-of-element",
+      "sequence": 3,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Index of Element",
+      "description": "Find the index of the first element equal to 3. Expected output: 2",
+      "prompt": "Find the index of the first element equal to 3. Expected output: 2",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    index = tuple1.index(3)\n    print(index)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 3)",
+          "output": "2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 3)",
+          "expected_output": "2",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 5)",
+          "expected_output": "0",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 3)\n# Variant 3",
+          "expected_output": "2",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "tuple_04_unpacking-tuple",
+      "sequence": 4,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Unpacking Tuple",
+      "description": "Unpack the tuple into three variables a, b, c. Expected output: a=1, b=2, c=3",
+      "prompt": "Unpack the tuple into three variables a, b, c. Expected output: a=1, b=2, c=3",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    a, b, c = tuple1\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "output": ""
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "expected_output": "",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5)",
+          "expected_output": "",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6)",
+          "expected_output": "",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "tuple_05_concatenate-tuples",
+      "sequence": 5,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Concatenate Tuples",
+      "description": "Concatenate two tuples. Expected output: (1, 2, 3, 4, 5)",
+      "prompt": "Concatenate two tuples. Expected output: (1, 2, 3, 4, 5)",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1, tuple2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    tuple2 = (4, 5)\n    main(tuple1, tuple2)\n",
+      "solution": "import time\n\ndef main(tuple1, tuple2):\n    tuple3 = tuple1 + tuple2\n    print(tuple3)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    tuple2 = (4, 5)\n    main(tuple1, tuple2)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3)\n\ntuple2 = (4, 5)",
+          "output": "(1, 2, 3, 4, 5)"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3)\n\ntuple2 = (4, 5)",
+          "expected_output": "(1, 2, 3, 4, 5)",
+          "call": "main(tuple1, tuple2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5)\ntuple2 = (6, 7)",
+          "expected_output": "(3, 4, 5, 6, 7)",
+          "call": "main(tuple1, tuple2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6)\ntuple2 = (7, 8)",
+          "expected_output": "(4, 5, 6, 7, 8)",
+          "call": "main(tuple1, tuple2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "tuple_06_check-element-in-tuple",
+      "sequence": 6,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Check Element in Tuple",
+      "description": "Check if '4' is in the tuple. Expected output: True",
+      "prompt": "Check if '4' is in the tuple. Expected output: True",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    exists = 4 in tuple1\n    print(exists)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "expected_output": "True",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "expected_output": "True",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "expected_output": "True",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "tuple_07_tuple-length",
+      "sequence": 7,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Tuple Length",
+      "description": "Find the length of the tuple. Expected output: 5",
+      "prompt": "Find the length of the tuple. Expected output: 5",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    length = len(tuple1)\n    print(length)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "output": "5"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "expected_output": "5",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "expected_output": "5",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "expected_output": "5",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "tuple_08_nested-tuple-access",
+      "sequence": 8,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Nested Tuple Access",
+      "description": "Access the element 'b' from the nested tuple. Expected output: 'b'",
+      "prompt": "Access the element 'b' from the nested tuple. Expected output: 'b'",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, ('a', 'b', 'c'), 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    element = tuple1[1][1]\n    print(element)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, ('a', 'b', 'c'), 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, ('a', 'b', 'c'), 3)",
+          "output": "b"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, ('a', 'b', 'c'), 3)",
+          "expected_output": "b",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, ('c', 'd', 'e'), 5)",
+          "expected_output": "d",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, ('d', 'e', 'f'), 6)",
+          "expected_output": "e",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 8
+      }
+    },
+    {
+      "id": "tuple_09_tuple-to-list-conversion",
+      "sequence": 9,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Tuple to List Conversion",
+      "description": "Convert the tuple to a list. Expected output: [1, 2, 3, 4, 5]",
+      "prompt": "Convert the tuple to a list. Expected output: [1, 2, 3, 4, 5]",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    list1 = list(tuple1)\n    print(list1)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "output": "[1, 2, 3, 4, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "expected_output": "[1, 2, 3, 4, 5]",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "expected_output": "[3, 4, 5, 6, 7]",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "expected_output": "[4, 5, 6, 7, 8]",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 9
+      }
+    },
+    {
+      "id": "tuple_10_immutable-nature-of-tuples",
+      "sequence": 10,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Immutable Nature of Tuples",
+      "description": "Attempt to change the first element of the tuple to 100. Expected output: TypeError",
+      "prompt": "Attempt to change the first element of the tuple to 100. Expected output: TypeError",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1, value, value_2, input_3, input_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    value = 0\n\n    value_2 = 100\n\n    input_3 = 'Code: \\n tuple1[0] = 100'\n\n    input_4 = 'Output:\\n'\n    main(tuple1, value, value_2, input_3, input_4)\n",
+      "solution": "import time\n\ndef main(tuple1, value, value_2, input_3, input_4):\n    try:\n        tuple1[value] = value_2\n    except TypeError as e:\n        print(input_3)\n        print(input_4, e)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    value = 0\n\n    value_2 = 100\n\n    input_3 = 'Code: \\n tuple1[0] = 100'\n\n    input_4 = 'Output:\\n'\n    main(tuple1, value, value_2, input_3, input_4)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3)\n\nvalue = 0\n\nvalue_2 = 100\n\ninput_3 = 'Code: \\n tuple1[0] = 100'\n\ninput_4 = 'Output:\\n'",
+          "output": "Code: \n tuple1[0] = 100\nOutput:\n 'tuple' object does not support item assignment"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3)\n\nvalue = 0\n\nvalue_2 = 100\n\ninput_3 = 'Code: \\n tuple1[0] = 100'\n\ninput_4 = 'Output:\\n'",
+          "expected_output": "Code: \n tuple1[0] = 100\nOutput:\n 'tuple' object does not support item assignment",
+          "call": "main(tuple1, value, value_2, input_3, input_4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5)\nvalue = 2\nvalue_2 = 102\ninput_3 = 'Eqfg: \\n vwrng3[2] = 322'\ninput_4 = 'Qwvrwv:\\n'",
+          "expected_output": "Eqfg: \n vwrng3[2] = 322\nQwvrwv:\n 'tuple' object does not support item assignment",
+          "call": "main(tuple1, value, value_2, input_3, input_4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6)\nvalue = 3\nvalue_2 = 103\ninput_3 = 'Frgh: \\n wxsoh4[3] = 433'\ninput_4 = 'Rxwsxw:\\n'",
+          "expected_output": "Frgh: \n wxsoh4[3] = 433\nRxwsxw:\n 'tuple' object does not support item assignment",
+          "call": "main(tuple1, value, value_2, input_3, input_4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 10
+      }
+    },
+    {
+      "id": "tuple_11_tuple-repetition",
+      "sequence": 11,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Tuple Repetition",
+      "description": "Repeat the elements of the tuple three times. Expected output: (1, 2, 3, 1, 2, 3, 1, 2, 3)",
+      "prompt": "Repeat the elements of the tuple three times. Expected output: (1, 2, 3, 1, 2, 3, 1, 2, 3)",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    repeated_tuple = tuple1 * 3\n    print(repeated_tuple)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "output": "(1, 2, 3, 1, 2, 3, 1, 2, 3)"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3)",
+          "expected_output": "(1, 2, 3, 1, 2, 3, 1, 2, 3)",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5)",
+          "expected_output": "(3, 4, 5, 3, 4, 5, 3, 4, 5)",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6)",
+          "expected_output": "(4, 5, 6, 4, 5, 6, 4, 5, 6)",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 11
+      }
+    },
+    {
+      "id": "tuple_12_minimum-and-maximum",
+      "sequence": 12,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Minimum and Maximum",
+      "description": "Find the minimum and maximum values in the tuple. Expected output: Min: 1, Max: 5",
+      "prompt": "Find the minimum and maximum values in the tuple. Expected output: Min: 1, Max: 5",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (2, 3, 5, 1, 4)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    min_val = min(tuple1)\n    max_val = max(tuple1)\n    print(min_val, ', Max:', max_val)\n\nif __name__ == \"__main__\":\n    tuple1 = (2, 3, 5, 1, 4)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (2, 3, 5, 1, 4)",
+          "output": "1 , Max: 5"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (2, 3, 5, 1, 4)",
+          "expected_output": "1 , Max: 5",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (4, 5, 7, 3, 6)",
+          "expected_output": "3 , Max: 7",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (5, 6, 8, 4, 7)",
+          "expected_output": "4 , Max: 8",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 12
+      }
+    },
+    {
+      "id": "tuple_13_tuple-and-list-conversion",
+      "sequence": 13,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Tuple and List Conversion",
+      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
+      "prompt": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
+      "solution": "import time\n\ndef main(list1):\n    tuple_converted = tuple(list1)\n    list_converted = list(tuple_converted)\n    print(tuple_converted, ', List:', list_converted)\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
+      "examples": [
+        {
+          "input": "list1 = [1, 2, 3]",
+          "output": "(1, 2, 3) , List: [1, 2, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "list1 = [1, 2, 3]",
+          "expected_output": "(1, 2, 3) , List: [1, 2, 3]",
+          "call": "main(list1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "list1 = [3, 4, 5]",
+          "expected_output": "(3, 4, 5) , List: [3, 4, 5]",
+          "call": "main(list1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "list1 = [4, 5, 6]",
+          "expected_output": "(4, 5, 6) , List: [4, 5, 6]",
+          "call": "main(list1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 13
+      }
+    },
+    {
+      "id": "tuple_14_tuple-slicing",
+      "sequence": 14,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Tuple Slicing",
+      "description": "Slice the tuple to get the first three elements. Expected output: (1, 2, 3)",
+      "prompt": "Slice the tuple to get the first three elements. Expected output: (1, 2, 3)",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    sliced_tuple = tuple1[:3]\n    print(sliced_tuple)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
+      "examples": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "output": "(1, 2, 3)"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "tuple1 = (1, 2, 3, 4, 5)",
+          "expected_output": "(1, 2, 3)",
+          "call": "main(tuple1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "expected_output": "(3, 4, 5)",
+          "call": "main(tuple1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "expected_output": "(4, 5, 6)",
+          "call": "main(tuple1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 14
+      }
+    },
+    {
+      "id": "tuple_15_nested-tuples",
+      "sequence": 15,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "Nested Tuples",
+      "description": "Create a nested tuple and access the second element of the first tuple. Expected output: 'b'",
+      "prompt": "Create a nested tuple and access the second element of the first tuple. Expected output: 'b'",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main(nested_tuple):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nested_tuple = (('a', 'b'), ('c', 'd'))\n    main(nested_tuple)\n",
+      "solution": "import time\n\ndef main(nested_tuple):\n    element = nested_tuple[0][1]\n    print(element)\n\nif __name__ == \"__main__\":\n    nested_tuple = (('a', 'b'), ('c', 'd'))\n    main(nested_tuple)\n",
+      "examples": [
+        {
+          "input": "nested_tuple = (('a', 'b'), ('c', 'd'))",
+          "output": "b"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nested_tuple = (('a', 'b'), ('c', 'd'))",
+          "expected_output": "b",
+          "call": "main(nested_tuple)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nested_tuple = (('c', 'd'), ('e', 'f'))",
+          "expected_output": "d",
+          "call": "main(nested_tuple)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nested_tuple = (('d', 'e'), ('f', 'g'))",
+          "expected_output": "e",
+          "call": "main(nested_tuple)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 15
+      }
+    },
+    {
+      "id": "tuple_16_list-vs-tuple-performance-comparison",
+      "sequence": 16,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "List vs Tuple - Performance Comparison",
+      "description": "List vs Tuple - Performance Comparison",
+      "prompt": "List vs Tuple - Performance Comparison",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import time\n\ndef main():\n    print('Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.')\n\n    large_list = list(range(1000000))\n\n    large_tuple = tuple(range(1000000))\n\n    def access_elements(collection):\n        for element in collection:\n            _ = element\n\n    start_time = time.time()\n\n    access_elements(large_list)\n\n    list_time = time.time() - start_time\n\n    print('List Access Time:\\n {:.6f} seconds'.format(list_time))\n\n    start_time = time.time()\n\n    access_elements(large_tuple)\n\n    tuple_time = time.time() - start_time\n\n    print('Tuple Access Time:\\n {:.6f} seconds'.format(tuple_time))\n\n    print('-' * 20)\n\n    print()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.",
+        "Stored as a standalone snippet because the block is not a simple hidden-setup exercise."
+      ],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 16
+      }
+    },
+    {
+      "id": "tuple_17_list-vs-tuple-data-integrity-and-mutability",
+      "sequence": 17,
+      "category_id": "tuple",
+      "category_name": "Tuples",
+      "title": "List vs Tuple - Data Integrity and Mutability",
+      "description": "List vs Tuple - Data Integrity and Mutability",
+      "prompt": "List vs Tuple - Data Integrity and Mutability",
+      "difficulty": "Easy",
+      "starter_code": "import time\n\ndef add_item_to_inventory(inventory, item):\n    inventory.append(item)\n\ndef display_coordinates(coords):\n    print('Coordinates:\\n Latitude:', coords[0], '\\n Longitude:', coords[1])\n\ninventory = ['apples', 'oranges', 'bananas']\n\ndef main(coordinates):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    coordinates = (40.7128, -74.006)\n    main(coordinates)\n",
+      "solution": "import time\n\ndef add_item_to_inventory(inventory, item):\n    inventory.append(item)\n\ndef display_coordinates(coords):\n    print('Coordinates:\\n Latitude:', coords[0], '\\n Longitude:', coords[1])\n\ninventory = ['apples', 'oranges', 'bananas']\n\ndef main(coordinates):\n    add_item_to_inventory(inventory, \"grapes\")\n    display_coordinates(coordinates)\n\nif __name__ == \"__main__\":\n    coordinates = (40.7128, -74.006)\n    main(coordinates)\n",
+      "examples": [
+        {
+          "input": "coordinates = (40.7128, -74.006)",
+          "output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "coordinates = (40.7128, -74.006)",
+          "expected_output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006",
+          "call": "main(coordinates)",
+          "label": "Test 1"
+        },
+        {
+          "input": "coordinates = (42.7128, -76.006)",
+          "expected_output": "Coordinates:\n Latitude: 42.7128 \n Longitude: -76.006",
+          "call": "main(coordinates)",
+          "label": "Test 2"
+        },
+        {
+          "input": "coordinates = (43.7128, -77.006)",
+          "expected_output": "Coordinates:\n Latitude: 43.7128 \n Longitude: -77.006",
+          "call": "main(coordinates)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [
+        "Compare the use of a list for mutable data and a tuple for immutable data.",
+        "--- Scenario 1: Mutable Data (List) ---",
+        "Manage an inventory of items where quantities change over time.",
+        "Updated Inventory:",
+        "--- Scenario 2: Immutable Data (Tuple) ---",
+        "Store fixed geographical coordinates that should not change."
+      ],
+      "source_reference": {
+        "file": "03_tuple.py",
+        "question": 17
+      }
+    }
+  ]
+}

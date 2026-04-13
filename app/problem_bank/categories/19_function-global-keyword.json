@@ -1,0 +1,94 @@
+{
+  "category_id": "function-global-keyword",
+  "category_name": "Function Global Keyword",
+  "sequence": 19,
+  "source_reference": "19_function-global-keyword.py",
+  "problems": [
+    {
+      "id": "function-global-keyword_01_global-keyword",
+      "sequence": 1,
+      "category_id": "function-global-keyword",
+      "category_name": "Function Global Keyword",
+      "title": "Global Keyword",
+      "description": "Modify a global variable 'x' inside a function using the global keyword. Expected output: Global x: 15, Outside x: 15",
+      "prompt": "Modify a global variable 'x' inside a function using the global keyword. Expected output: Global x: 15, Outside x: 15",
+      "difficulty": "Easy",
+      "starter_code": "def main(x):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    x = 10\n    main(x)\n",
+      "solution": "def main(x):\n    def func():\n        global x\n        x = 15\n        print('Global x:', x)\n    func()\n\nif __name__ == \"__main__\":\n    x = 10\n    main(x)\n",
+      "examples": [
+        {
+          "input": "x = 10",
+          "output": "Global x: 15"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "x = 10",
+          "expected_output": "Global x: 15",
+          "call": "main(x)",
+          "label": "Test 1"
+        },
+        {
+          "input": "x = 12",
+          "expected_output": "Global x: 15",
+          "call": "main(x)",
+          "label": "Test 2"
+        },
+        {
+          "input": "x = 13",
+          "expected_output": "Global x: 15",
+          "call": "main(x)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "19_function-global-keyword.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "function-global-keyword_02_globals-function",
+      "sequence": 2,
+      "category_id": "function-global-keyword",
+      "category_name": "Function Global Keyword",
+      "title": "globals() Function",
+      "description": "Access and modify a global variable 'x' inside a function in the presence of a local variable with the same name. Expected output: Local x: 15, Global x: 10, Modified Global x: 20",
+      "prompt": "Access and modify a global variable 'x' inside a function in the presence of a local variable with the same name. Expected output: Local x: 15, Global x: 10, Modified Global x: 20",
+      "difficulty": "Easy",
+      "starter_code": "def main(x):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    x = 10\n    main(x)\n",
+      "solution": "def main(x):\n    def func():\n        x = 15\n        print('Local x:', x)\n        y = globals()['x']\n        print('Global x:', y)\n        globals()['x'] = 20\n    func()\n\nif __name__ == \"__main__\":\n    x = 10\n    main(x)\n",
+      "examples": [
+        {
+          "input": "x = 10",
+          "output": "Local x: 15\nGlobal x: 10"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "x = 10",
+          "expected_output": "Local x: 15\nGlobal x: 10",
+          "call": "main(x)",
+          "label": "Test 1"
+        },
+        {
+          "input": "x = 12",
+          "expected_output": "Local x: 15\nGlobal x: 12",
+          "call": "main(x)",
+          "label": "Test 2"
+        },
+        {
+          "input": "x = 13",
+          "expected_output": "Local x: 15\nGlobal x: 13",
+          "call": "main(x)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "19_function-global-keyword.py",
+        "question": 2
+      }
+    }
+  ]
+}

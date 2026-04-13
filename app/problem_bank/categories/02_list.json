@@ -1,0 +1,1427 @@
+{
+  "category_id": "list",
+  "category_name": "Lists",
+  "sequence": 2,
+  "source_reference": "02_list.py",
+  "problems": [
+    {
+      "id": "list_01_basic-append",
+      "sequence": 1,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Basic Append",
+      "description": "Append '4' to the list. Expected output: [1, 2, 3, 4]",
+      "prompt": "Append '4' to the list. Expected output: [1, 2, 3, 4]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.append(4)\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[1, 2, 3, 4]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[1, 2, 3, 4]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "[3, 4, 5, 4]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "[4, 5, 6, 4]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "list_02_clear-list",
+      "sequence": 2,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Clear List",
+      "description": "Clear the entire list. Expected output: []",
+      "prompt": "Clear the entire list. Expected output: []",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.clear()\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "list_03_copy-list",
+      "sequence": 3,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Copy List",
+      "description": "Create a copy of the list. Expected output: [1, 2, 3]",
+      "prompt": "Create a copy of the list. Expected output: [1, 2, 3]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums_copy = nums.copy()\n    print(nums_copy)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[1, 2, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[1, 2, 3]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "[3, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "[4, 5, 6]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "list_04_count-element",
+      "sequence": 4,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Count Element",
+      "description": "Count how many times '2' appears in the list. Expected output: 2",
+      "prompt": "Count how many times '2' appears in the list. Expected output: 2",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 2, 4]\n    main(nums)\n",
+      "solution": "def main(nums):\n    count = nums.count(2)\n    print(count)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 2, 4]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 2, 4]",
+          "output": "2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 2, 4]",
+          "expected_output": "2",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 4, 6]",
+          "expected_output": "0",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 5, 7]",
+          "expected_output": "0",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "list_05_extend-list",
+      "sequence": 5,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Extend List",
+      "description": "Extend the list by appending elements from the iterable. Expected output: [1, 2, 3, 4, 5, 6]",
+      "prompt": "Extend the list by appending elements from the iterable. Expected output: [1, 2, 3, 4, 5, 6]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums, to_add):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n\n    to_add = [4, 5, 6]\n    main(nums, to_add)\n",
+      "solution": "def main(nums, to_add):\n    nums.extend(to_add)\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n\n    to_add = [4, 5, 6]\n    main(nums, to_add)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]\n\nto_add = [4, 5, 6]",
+          "output": "[1, 2, 3, 4, 5, 6]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]\n\nto_add = [4, 5, 6]",
+          "expected_output": "[1, 2, 3, 4, 5, 6]",
+          "call": "main(nums, to_add)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]\nto_add = [6, 7, 8]",
+          "expected_output": "[3, 4, 5, 6, 7, 8]",
+          "call": "main(nums, to_add)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]\nto_add = [7, 8, 9]",
+          "expected_output": "[4, 5, 6, 7, 8, 9]",
+          "call": "main(nums, to_add)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "list_06_index-of-element",
+      "sequence": 6,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Index of Element",
+      "description": "Find the index of the first element equal to 3. Expected output: 2",
+      "prompt": "Find the index of the first element equal to 3. Expected output: 2",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 3, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    index = nums.index(3)\n    print(index)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 3, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 3, 5]",
+          "output": "2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 3, 5]",
+          "expected_output": "2",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 5, 7]",
+          "expected_output": "0",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [1, 2, 3, 4, 3, 5]\n# Variant 3",
+          "expected_output": "2",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "list_07_insert-element",
+      "sequence": 7,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Insert Element",
+      "description": "Insert '4' at position 2. Expected output: [1, 2, 4, 3]",
+      "prompt": "Insert '4' at position 2. Expected output: [1, 2, 4, 3]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.insert(2, 4)\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[1, 2, 4, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[1, 2, 4, 3]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "[3, 4, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "[4, 5, 4, 6]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "list_08_pop-element",
+      "sequence": 8,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Pop Element",
+      "description": "Remove and return the last item. Expected output: 3, and nums becomes [1, 2]",
+      "prompt": "Remove and return the last item. Expected output: 3, and nums becomes [1, 2]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    popped = nums.pop()\n    print(popped, nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "3 [1, 2]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "3 [1, 2]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "5 [3, 4]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "6 [4, 5]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 8
+      }
+    },
+    {
+      "id": "list_09_remove-element",
+      "sequence": 9,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Remove Element",
+      "description": "Remove the first item from the list whose value is 2. Expected output: [1, 3]",
+      "prompt": "Remove the first item from the list whose value is 2. Expected output: [1, 3]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.remove(2)\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[1, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[1, 3]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [1, 2, 3]\n# Variant 2",
+          "expected_output": "[1, 3]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [1, 2, 3]\n# Variant 3",
+          "expected_output": "[1, 3]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 9
+      }
+    },
+    {
+      "id": "list_10_reverse-list",
+      "sequence": 10,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Reverse List",
+      "description": "Reverse the elements of the list in place. Expected output: [3, 2, 1]",
+      "prompt": "Reverse the elements of the list in place. Expected output: [3, 2, 1]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.reverse()\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[3, 2, 1]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[3, 2, 1]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "[5, 4, 3]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "[6, 5, 4]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 10
+      }
+    },
+    {
+      "id": "list_11_sort-list",
+      "sequence": 11,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Sort List",
+      "description": "Sort the list in ascending order. Expected output: [1, 2, 3, 4, 5]",
+      "prompt": "Sort the list in ascending order. Expected output: [1, 2, 3, 4, 5]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [3, 1, 4, 2, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums.sort()\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [3, 1, 4, 2, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [3, 1, 4, 2, 5]",
+          "output": "[1, 2, 3, 4, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [3, 1, 4, 2, 5]",
+          "expected_output": "[1, 2, 3, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [5, 3, 6, 4, 7]",
+          "expected_output": "[3, 4, 5, 6, 7]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [6, 4, 7, 5, 8]",
+          "expected_output": "[4, 5, 6, 7, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 11
+      }
+    },
+    {
+      "id": "list_12_slicing-get-part-of-list",
+      "sequence": 12,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Slicing - Get Part of List",
+      "description": "Slice the list to get elements from index 1 to 3. Expected output: [2, 3, 4]",
+      "prompt": "Slice the list to get elements from index 1 to 3. Expected output: [2, 3, 4]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    sliced = nums[1:4]\n    print(sliced)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[2, 3, 4]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[2, 3, 4]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[4, 5, 6]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[5, 6, 7]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 12
+      }
+    },
+    {
+      "id": "list_13_slicing-negative-indices",
+      "sequence": 13,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Slicing - Negative Indices",
+      "description": "Use negative indices to get the last three elements. Expected output: [3, 4, 5]",
+      "prompt": "Use negative indices to get the last three elements. Expected output: [3, 4, 5]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    sliced = nums[-3:]\n    print(sliced)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[3, 4, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[3, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[5, 6, 7]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[6, 7, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 13
+      }
+    },
+    {
+      "id": "list_14_slicing-with-steps",
+      "sequence": 14,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Slicing with Steps",
+      "description": "Print every second element of the list. Expected output: [1, 3, 5]",
+      "prompt": "Print every second element of the list. Expected output: [1, 3, 5]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    stepped = nums[::2]\n    print(stepped)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[1, 3, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[1, 3, 5]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[3, 5, 7]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[4, 6, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 14
+      }
+    },
+    {
+      "id": "list_15_slicing-reverse-list",
+      "sequence": 15,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Slicing - Reverse List",
+      "description": "Use slicing to reverse the list. Expected output: [5, 4, 3, 2, 1]",
+      "prompt": "Use slicing to reverse the list. Expected output: [5, 4, 3, 2, 1]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    reversed_list = nums[::-1]\n    print(reversed_list)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[5, 4, 3, 2, 1]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[5, 4, 3, 2, 1]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[7, 6, 5, 4, 3]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[8, 7, 6, 5, 4]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 15
+      }
+    },
+    {
+      "id": "list_16_delete-element",
+      "sequence": 16,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Delete Element",
+      "description": "Delete the element at index 2. Expected output: [1, 2, 4, 5]",
+      "prompt": "Delete the element at index 2. Expected output: [1, 2, 4, 5]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    del nums[2]\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[1, 2, 4, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[1, 2, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[3, 4, 6, 7]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[4, 5, 7, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 16
+      }
+    },
+    {
+      "id": "list_17_delete-slice-of-list",
+      "sequence": 17,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Delete Slice of List",
+      "description": "Delete elements from index 1 to 3. Expected output: [1, 5]",
+      "prompt": "Delete elements from index 1 to 3. Expected output: [1, 5]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    del nums[1:4]\n    print(nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[1, 5]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[1, 5]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[3, 7]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[4, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 17
+      }
+    },
+    {
+      "id": "list_18_convert-to-set",
+      "sequence": 18,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Convert to Set",
+      "description": "Convert the list to a set to remove duplicates. Expected output: {1, 2, 3}",
+      "prompt": "Convert the list to a set to remove duplicates. Expected output: {1, 2, 3}",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 2, 3, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    nums_set = set(nums)\n    print(nums_set)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 2, 3, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 2, 3, 3]",
+          "output": "{1, 2, 3}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 2, 3, 3]",
+          "expected_output": "{1, 2, 3}",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 4, 5, 5]",
+          "expected_output": "{3, 4, 5}",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 5, 6, 6]",
+          "expected_output": "{4, 5, 6}",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 18
+      }
+    },
+    {
+      "id": "list_19_list-comprehension",
+      "sequence": 19,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "List Comprehension",
+      "description": "Create a new list with each element squared. Expected output: [1, 4, 9, 16, 25]",
+      "prompt": "Create a new list with each element squared. Expected output: [1, 4, 9, 16, 25]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    squared = [x**2 for x in nums]\n    print(squared)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[1, 4, 9, 16, 25]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[1, 4, 9, 16, 25]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[9, 16, 25, 36, 49]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[16, 25, 36, 49, 64]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 19
+      }
+    },
+    {
+      "id": "list_20_zip-two-lists",
+      "sequence": 20,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Zip Two Lists",
+      "description": "Combine two lists element-wise. Expected output: [(1, 'a'), (2, 'b'), (3, 'c')]",
+      "prompt": "Combine two lists element-wise. Expected output: [(1, 'a'), (2, 'b'), (3, 'c')]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums, chars):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n\n    chars = ['a', 'b', 'c']\n    main(nums, chars)\n",
+      "solution": "def main(nums, chars):\n    zipped = list(zip(nums, chars))\n    print(zipped)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n\n    chars = ['a', 'b', 'c']\n    main(nums, chars)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]\n\nchars = ['a', 'b', 'c']",
+          "output": "[(1, 'a'), (2, 'b'), (3, 'c')]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]\n\nchars = ['a', 'b', 'c']",
+          "expected_output": "[(1, 'a'), (2, 'b'), (3, 'c')]",
+          "call": "main(nums, chars)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]\nchars = ['c', 'd', 'e']",
+          "expected_output": "[(3, 'c'), (4, 'd'), (5, 'e')]",
+          "call": "main(nums, chars)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]\nchars = ['d', 'e', 'f']",
+          "expected_output": "[(4, 'd'), (5, 'e'), (6, 'f')]",
+          "call": "main(nums, chars)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 20
+      }
+    },
+    {
+      "id": "list_24_sum-of-elements",
+      "sequence": 24,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Sum of Elements",
+      "description": "Calculate the sum of all elements in the list. Expected output: 15",
+      "prompt": "Calculate the sum of all elements in the list. Expected output: 15",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    total = sum(nums)\n    print(total)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "15"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "15",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "25",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "30",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 24
+      }
+    },
+    {
+      "id": "list_25_minimum-element",
+      "sequence": 25,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Minimum Element",
+      "description": "Find the minimum element in the list. Expected output: 1",
+      "prompt": "Find the minimum element in the list. Expected output: 1",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [5, 3, 8, 1, 4]\n    main(nums)\n",
+      "solution": "def main(nums):\n    minimum = min(nums)\n    print(minimum)\n\nif __name__ == \"__main__\":\n    nums = [5, 3, 8, 1, 4]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [5, 3, 8, 1, 4]",
+          "output": "1"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [5, 3, 8, 1, 4]",
+          "expected_output": "1",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [7, 5, 10, 3, 6]",
+          "expected_output": "3",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [8, 6, 11, 4, 7]",
+          "expected_output": "4",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 25
+      }
+    },
+    {
+      "id": "list_26_maximum-element",
+      "sequence": 26,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Maximum Element",
+      "description": "Find the maximum element in the list. Expected output: 9",
+      "prompt": "Find the maximum element in the list. Expected output: 9",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [7, 2, 5, 9, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    maximum = max(nums)\n    print(maximum)\n\nif __name__ == \"__main__\":\n    nums = [7, 2, 5, 9, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [7, 2, 5, 9, 3]",
+          "output": "9"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [7, 2, 5, 9, 3]",
+          "expected_output": "9",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [9, 4, 7, 11, 5]",
+          "expected_output": "11",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [10, 5, 8, 12, 6]",
+          "expected_output": "12",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 26
+      }
+    },
+    {
+      "id": "list_27_list-length",
+      "sequence": 27,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "List Length",
+      "description": "Find the length of the list. Expected output: 6",
+      "prompt": "Find the length of the list. Expected output: 6",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5, 6]\n    main(nums)\n",
+      "solution": "def main(nums):\n    length = len(nums)\n    print(length)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5, 6]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5, 6]",
+          "output": "6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5, 6]",
+          "expected_output": "6",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7, 8]",
+          "expected_output": "6",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8, 9]",
+          "expected_output": "6",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 27
+      }
+    },
+    {
+      "id": "list_28_check-if-element-exists",
+      "sequence": 28,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Check if Element Exists",
+      "description": "Check if '4' is in the list. Expected output: True",
+      "prompt": "Check if '4' is in the list. Expected output: True",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    exists = 4 in nums\n    print(exists)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "True",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "True",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "True",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 28
+      }
+    },
+    {
+      "id": "list_29_convert-list-to-string",
+      "sequence": 29,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Convert List to String",
+      "description": "Convert the list of characters to a string. Expected output: 'Python'",
+      "prompt": "Convert the list of characters to a string. Expected output: 'Python'",
+      "difficulty": "Easy",
+      "starter_code": "def main(chars):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    chars = ['P', 'y', 't', 'h', 'o', 'n']\n    main(chars)\n",
+      "solution": "def main(chars):\n    string = ''.join(chars)\n    print(string)\n\nif __name__ == \"__main__\":\n    chars = ['P', 'y', 't', 'h', 'o', 'n']\n    main(chars)\n",
+      "examples": [
+        {
+          "input": "chars = ['P', 'y', 't', 'h', 'o', 'n']",
+          "output": "Python"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "chars = ['P', 'y', 't', 'h', 'o', 'n']",
+          "expected_output": "Python",
+          "call": "main(chars)",
+          "label": "Test 1"
+        },
+        {
+          "input": "chars = ['R', 'a', 'v', 'j', 'q', 'p']",
+          "expected_output": "Ravjqp",
+          "call": "main(chars)",
+          "label": "Test 2"
+        },
+        {
+          "input": "chars = ['S', 'b', 'w', 'k', 'r', 'q']",
+          "expected_output": "Sbwkrq",
+          "call": "main(chars)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 29
+      }
+    },
+    {
+      "id": "list_30_nested-list-access-element",
+      "sequence": 30,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Nested List - Access Element",
+      "description": "Access the number '5' from the nested list. Expected output: 5",
+      "prompt": "Access the number '5' from the nested list. Expected output: 5",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n    main(nums)\n",
+      "solution": "def main(nums):\n    number = nums[1][1]\n    print(number)\n\nif __name__ == \"__main__\":\n    nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+          "output": "5"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+          "expected_output": "5",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [[3, 4, 5], [6, 7, 8], [9, 10, 11]]",
+          "expected_output": "7",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [[4, 5, 6], [7, 8, 9], [10, 11, 12]]",
+          "expected_output": "8",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 30
+      }
+    },
+    {
+      "id": "list_31_flatten-a-nested-list",
+      "sequence": 31,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Flatten a Nested List",
+      "description": "Flatten the nested list. Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+      "prompt": "Flatten the nested list. Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nested_nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nested_nums = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]\n    main(nested_nums)\n",
+      "solution": "def main(nested_nums):\n    flattened = [num for sublist in nested_nums for num in sublist]\n    print(flattened)\n\nif __name__ == \"__main__\":\n    nested_nums = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]\n    main(nested_nums)\n",
+      "examples": [
+        {
+          "input": "nested_nums = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]",
+          "output": "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nested_nums = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]",
+          "expected_output": "[1, 2, 3, 4, 5, 6, 7, 8, 9]",
+          "call": "main(nested_nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nested_nums = [[3, 4, 5], [6, 7], [8, 9, 10, 11]]",
+          "expected_output": "[3, 4, 5, 6, 7, 8, 9, 10, 11]",
+          "call": "main(nested_nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nested_nums = [[4, 5, 6], [7, 8], [9, 10, 11, 12]]",
+          "expected_output": "[4, 5, 6, 7, 8, 9, 10, 11, 12]",
+          "call": "main(nested_nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 31
+      }
+    },
+    {
+      "id": "list_32_list-multiplication",
+      "sequence": 32,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "List Multiplication",
+      "description": "Repeat the list elements 3 times. Expected output: [1, 2, 3, 1, 2, 3, 1, 2, 3]",
+      "prompt": "Repeat the list elements 3 times. Expected output: [1, 2, 3, 1, 2, 3, 1, 2, 3]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "solution": "def main(nums):\n    repeated = nums * 3\n    print(repeated)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "output": "[1, 2, 3, 1, 2, 3, 1, 2, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3]",
+          "expected_output": "[1, 2, 3, 1, 2, 3, 1, 2, 3]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5]",
+          "expected_output": "[3, 4, 5, 3, 4, 5, 3, 4, 5]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6]",
+          "expected_output": "[4, 5, 6, 4, 5, 6, 4, 5, 6]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 32
+      }
+    },
+    {
+      "id": "list_33_list-comprehension-with-condition",
+      "sequence": 33,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "List Comprehension with Condition",
+      "description": "Create a new list with only even numbers. Expected output: [2, 4, 6]",
+      "prompt": "Create a new list with only even numbers. Expected output: [2, 4, 6]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5, 6]\n    main(nums)\n",
+      "solution": "def main(nums):\n    even_nums = [num for num in nums if num % 2 == 0]\n    print(even_nums)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5, 6]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5, 6]",
+          "output": "[2, 4, 6]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5, 6]",
+          "expected_output": "[2, 4, 6]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7, 8]",
+          "expected_output": "[4, 6, 8]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8, 9]",
+          "expected_output": "[4, 6, 8]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 33
+      }
+    },
+    {
+      "id": "list_34_enumerate-list",
+      "sequence": 34,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Enumerate List",
+      "description": "Enumerate the list elements. Expected output: [(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd')]",
+      "prompt": "Enumerate the list elements. Expected output: [(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd')]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = ['a', 'b', 'c', 'd']\n    main(nums)\n",
+      "solution": "def main(nums):\n    enumerated = list(enumerate(nums))\n    print(enumerated)\n\nif __name__ == \"__main__\":\n    nums = ['a', 'b', 'c', 'd']\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = ['a', 'b', 'c', 'd']",
+          "output": "[(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd')]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = ['a', 'b', 'c', 'd']",
+          "expected_output": "[(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd')]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = ['c', 'd', 'e', 'f']",
+          "expected_output": "[(0, 'c'), (1, 'd'), (2, 'e'), (3, 'f')]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = ['d', 'e', 'f', 'g']",
+          "expected_output": "[(0, 'd'), (1, 'e'), (2, 'f'), (3, 'g')]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 34
+      }
+    },
+    {
+      "id": "list_35_convert-string-to-list-of-characters",
+      "sequence": 35,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "Convert String to List of Characters",
+      "description": "Convert the string into a list of characters. Expected output: ['h', 'e', 'l', 'l', 'o']",
+      "prompt": "Convert the string into a list of characters. Expected output: ['h', 'e', 'l', 'l', 'o']",
+      "difficulty": "Easy",
+      "starter_code": "def main(string):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    string = 'hello'\n    main(string)\n",
+      "solution": "def main(string):\n    chars = list(string)\n    print(chars)\n\nif __name__ == \"__main__\":\n    string = 'hello'\n    main(string)\n",
+      "examples": [
+        {
+          "input": "string = 'hello'",
+          "output": "['h', 'e', 'l', 'l', 'o']"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "string = 'hello'",
+          "expected_output": "['h', 'e', 'l', 'l', 'o']",
+          "call": "main(string)",
+          "label": "Test 1"
+        },
+        {
+          "input": "string = 'jgnnq'",
+          "expected_output": "['j', 'g', 'n', 'n', 'q']",
+          "call": "main(string)",
+          "label": "Test 2"
+        },
+        {
+          "input": "string = 'khoor'",
+          "expected_output": "['k', 'h', 'o', 'o', 'r']",
+          "call": "main(string)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 35
+      }
+    },
+    {
+      "id": "list_36_list-slicing-remove-last-element",
+      "sequence": 36,
+      "category_id": "list",
+      "category_name": "Lists",
+      "title": "List Slicing - Remove Last Element",
+      "description": "Remove the last element using slicing. Expected output: [1, 2, 3, 4]",
+      "prompt": "Remove the last element using slicing. Expected output: [1, 2, 3, 4]",
+      "difficulty": "Easy",
+      "starter_code": "def main(nums):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "solution": "def main(nums):\n    sliced = nums[:-1]\n    print(sliced)\n\nif __name__ == \"__main__\":\n    nums = [1, 2, 3, 4, 5]\n    main(nums)\n",
+      "examples": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "output": "[1, 2, 3, 4]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "nums = [1, 2, 3, 4, 5]",
+          "expected_output": "[1, 2, 3, 4]",
+          "call": "main(nums)",
+          "label": "Test 1"
+        },
+        {
+          "input": "nums = [3, 4, 5, 6, 7]",
+          "expected_output": "[3, 4, 5, 6]",
+          "call": "main(nums)",
+          "label": "Test 2"
+        },
+        {
+          "input": "nums = [4, 5, 6, 7, 8]",
+          "expected_output": "[4, 5, 6, 7]",
+          "call": "main(nums)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_list.py",
+        "question": 36
+      }
+    }
+  ]
+}

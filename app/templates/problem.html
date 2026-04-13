@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ problem.title }} - Coding Practice UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <style>
+        .problem-nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .problem-nav button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .problem-nav button:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .problem-nav button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-separator {
+            width: 1px;
+            background: #ddd;
+            margin: 0 5px;
+        }
+
+        .solved-badge {
+            display: inline-block;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .solved-badge i {
+            color: #4caf50;
+            font-size: 20px;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-menu a {
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .user-menu a:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .user-menu a.logout {
+            background: #ff7043;
+            color: white;
+        }
+
+        .user-menu a.logout:hover {
+            background: #ff6b35;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+            </div>
+            <h1 class="logo"><i class="fas fa-code"></i> Python Practice</h1>
+            <div class="user-menu">
+                <span><i class="fas fa-user-circle"></i> {{ current_user }}</span>
+                <a href="{{ url_for('main.settings') }}"><i class="fas fa-cog"></i> Settings</a>
+                <a href="{{ url_for('main.logout') }}" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-container">
+        <div class="problem-panel">
+            <div class="problem-header">
+                <div>
+                    <p class="problem-eyebrow">{{ problem.category_name }} • Q{{ problem.sequence }}</p>
+                    <h1>{{ problem.title }}
+                        {% if problem.solved %}
+                        <span class="solved-badge"><i class="fas fa-check-circle"></i></span>
+                        {% endif %}
+                    </h1>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="problem-nav">
+                        <!-- Previous/Next Problem -->
+                        <button onclick="navigateTo('{{ problem.nav.prev_problem_id }}' || null)" {% if not problem.nav.prev_problem_id %}disabled{% endif %}>
+                            <i class="fas fa-chevron-left"></i> Previous Problem
+                        </button>
+                        <button onclick="navigateTo('{{ problem.nav.next_problem_id }}' || null)" {% if not problem.nav.next_problem_id %}disabled{% endif %}>
+                            Next Problem <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <div class="nav-separator"></div>
+                        
+                        <!-- Previous/Next Category -->
+                        <button onclick="navigateToCategory('{{ problem.nav.prev_category_id }}' || null)" {% if not problem.nav.prev_category_id %}disabled{% endif %}>
+                            <i class="fas fa-folder-open"></i> Previous Category
+                        </button>
+                        <button onclick="navigateToCategory('{{ problem.nav.next_category_id }}' || null)" {% if not problem.nav.next_category_id %}disabled{% endif %}>
+                            Next Category <i class="fas fa-folder-open"></i>
+                        </button>
+                    </div>
+                </div>
+                <span class="difficulty difficulty-{{ problem.difficulty.lower() }}">{{ problem.difficulty }}</span>
+            </div>
+
+            <div class="problem-description">
+                <h3>Description</h3>
+                <p>{{ problem.description }}</p>
+                {% if problem.source_reference %}
+                <p class="problem-source">Source: {{ problem.source_reference.file }}</p>
+                {% endif %}
+            </div>
+
+            {% if problem.notes %}
+            <div class="examples">
+                <h3>Notes</h3>
+                {% for note in problem.notes %}
+                <div class="example">
+                    <p>{{ note }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if problem.examples %}
+            <div class="examples">
+                <h3>Examples</h3>
+                {% for example in problem.examples %}
+                <div class="example">
+                    <div class="example-input">
+                        <strong>Input:</strong>
+                        <pre><code>{{ example.input }}</code></pre>
+                    </div>
+                    <div class="example-output">
+                        <strong>Output:</strong>
+                        <pre><code>{{ example.output }}</code></pre>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="editor-panel">
+            <div class="editor-header">
+                <h3>Solution</h3>
+                <span class="char-count" id="charCount">0 characters</span>
+            </div>
+
+            <textarea id="codeEditor" class="code-editor" placeholder="Write your Python code here...">{{ problem.starter_code }}</textarea>
+
+            <div class="editor-controls">
+                <button id="runBtn" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    {% if problem.test_cases %}Run Tests{% else %}Run Code{% endif %}
+                </button>
+                <button id="resetBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset</button>
+                <button id="solutionBtn" class="btn btn-info"><i class="fas fa-lightbulb"></i> Show Solution</button>
+            </div>
+
+            <!-- Test Results -->
+            <div id="testResults" class="test-results" style="display: none;">
+                <div class="test-results-header">
+                    <span class="test-results-title"><i class="fas fa-check-square"></i> Test Results</span>
+                    <button id="closeResults" class="close-btn">&times;</button>
+                </div>
+                <div class="test-results-summary" id="testResultsSummary"></div>
+                <div class="test-cases-container" id="testCasesContainer"></div>
+            </div>
+
+            <!-- Simple Output -->
+            <div id="output" class="output" style="display: none;">
+                <div class="output-header">
+                    <span class="output-title"><i class="fas fa-terminal"></i> Output</span>
+                    <button id="closeOutput" class="close-btn">&times;</button>
+                </div>
+                <div class="output-content">
+                    <pre id="outputText"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solution Modal -->
+    <div id="solutionModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Solution</h2>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button id="themeToggle" class="btn btn-secondary" style="font-size: 14px; padding: 5px 10px;">
+                        <i class="fas fa-moon"></i> Dark
+                    </button>
+                    <button class="modal-close" id="closeSolutionModal">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <pre><code class="language-python" id="solutionCode">{{ problem.solution }}</code></pre>
+            </div>
+            <div class="modal-footer">
+                <button id="copySolutionBtn" class="btn btn-primary"><i class="fas fa-copy"></i> Copy Solution</button>
+                <button id="applySolutionBtn" class="btn btn-success"><i class="fas fa-check"></i> Apply to Editor</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('solutionModal').style.display='none'">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal for Reset -->
+    <div id="confirmModal" class="modal" style="display: none;">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Confirm Reset</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to reset the code? This cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmResetBtn" class="btn btn-danger"><i class="fas fa-trash"></i> Reset</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('confirmModal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(problemId) {
+            if (problemId && problemId !== 'null') {
+                window.location.href = '/problem/' + problemId;
+            }
+        }
+
+        function navigateToCategory(categoryId) {
+            if (categoryId && categoryId !== 'null') {
+                window.location.href = '/category/' + categoryId;
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+    <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+</body>
+</html>

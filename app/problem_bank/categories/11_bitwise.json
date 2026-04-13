@@ -1,0 +1,176 @@
+{
+  "category_id": "bitwise",
+  "category_name": "Bitwise",
+  "sequence": 11,
+  "source_reference": "11_bitwise.py",
+  "problems": [
+    {
+      "id": "bitwise_01_given-two-security-products-with-feature-codes-find-the-comm",
+      "sequence": 1,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Given Two Security Products With Feature Codes, Find The Common Features",
+      "description": ": Given two security products with feature codes, find the common features.",
+      "prompt": ": Given two security products with feature codes, find the common features.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def common_security_features(product1, product2):\n        return product1 & product2\n\n    print(common_security_features(12, 10))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "bitwise_02_mask-sensitive-data-using-a-specific-pattern",
+      "sequence": 2,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Mask Sensitive Data Using A Specific Pattern",
+      "description": ": Mask sensitive data using a specific pattern.",
+      "prompt": ": Mask sensitive data using a specific pattern.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def mask_sensitive_data(data, mask):\n        return data & mask\n\n    print(mask_sensitive_data(15, 6))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 2
+      }
+    },
+    {
+      "id": "bitwise_03_combine-user-and-group-permissions-into-a-single-permission-",
+      "sequence": 3,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Combine User And Group Permissions Into A Single Permission Set",
+      "description": ": Combine user and group permissions into a single permission set.",
+      "prompt": ": Combine user and group permissions into a single permission set.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def combine_permissions(user, group):\n        return user | group\n\n    print(combine_permissions(9, 4))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 3
+      }
+    },
+    {
+      "id": "bitwise_04_activate-new-features-in-a-system-without-altering-existing-",
+      "sequence": 4,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Activate New Features In A System Without Altering Existing Ones",
+      "description": ": Activate new features in a system without altering existing ones.",
+      "prompt": ": Activate new features in a system without altering existing ones.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def activate_features(current, new):\n        return current | new\n\n    print(activate_features(2, 5))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 4
+      }
+    },
+    {
+      "id": "bitwise_05_toggle-specific-system-modes-using-a-toggle-code",
+      "sequence": 5,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Toggle Specific System Modes Using A Toggle Code",
+      "description": ": Toggle specific system modes using a toggle code.",
+      "prompt": ": Toggle specific system modes using a toggle code.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def toggle_system_modes(current_mode, toggle):\n        return current_mode ^ toggle\n\n    print(toggle_system_modes(14, 9))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 5
+      }
+    },
+    {
+      "id": "bitwise_06_simple-encryption-decryption-of-data-using-xor",
+      "sequence": 6,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Simple Encryption/Decryption Of Data Using Xor",
+      "description": ": Simple encryption/decryption of data using XOR.",
+      "prompt": ": Simple encryption/decryption of data using XOR.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def encrypt_decrypt_data(data, key):\n        return data ^ key\n\n    print(encrypt_decrypt_data(5, 15))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 6
+      }
+    },
+    {
+      "id": "bitwise_07_invert-display-settings-for-a-dark-light-mode-toggle",
+      "sequence": 7,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Invert Display Settings For A Dark/Light Mode Toggle",
+      "description": ": Invert display settings for a dark/light mode toggle.",
+      "prompt": ": Invert display settings for a dark/light mode toggle.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def invert_display_settings(settings):\n        return ~settings & 15\n\n    print(invert_display_settings(4))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 7
+      }
+    },
+    {
+      "id": "bitwise_08_find-the-4-bit-complement-of-a-given-number",
+      "sequence": 8,
+      "category_id": "bitwise",
+      "category_name": "Bitwise",
+      "title": ": Find The 4 Bit Complement Of A Given Number",
+      "description": ": Find the 4-bit complement of a given number.",
+      "prompt": ": Find the 4-bit complement of a given number.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def find_complement_number(number):\n        return ~number & 15\n\n    print(find_complement_number(3))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Stored as a runnable standalone snippet from the bitwise reference material."
+      ],
+      "source_reference": {
+        "file": "11_bitwise.py",
+        "question": 8
+      }
+    }
+  ]
+}

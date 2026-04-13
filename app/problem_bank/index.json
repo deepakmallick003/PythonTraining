@@ -1,0 +1,236 @@
+{
+  "categories": [
+    {
+      "id": "strings",
+      "name": "Strings",
+      "sequence": 1,
+      "file": "categories/01_strings.json",
+      "problem_count": 20,
+      "source_reference": "01_strings.py"
+    },
+    {
+      "id": "list",
+      "name": "Lists",
+      "sequence": 2,
+      "file": "categories/02_list.json",
+      "problem_count": 33,
+      "source_reference": "02_list.py"
+    },
+    {
+      "id": "tuple",
+      "name": "Tuples",
+      "sequence": 3,
+      "file": "categories/03_tuple.json",
+      "problem_count": 17,
+      "source_reference": "03_tuple.py"
+    },
+    {
+      "id": "set",
+      "name": "Sets",
+      "sequence": 4,
+      "file": "categories/04_set.json",
+      "problem_count": 12,
+      "source_reference": "04_set.py"
+    },
+    {
+      "id": "dictionary",
+      "name": "Dictionaries",
+      "sequence": 5,
+      "file": "categories/05_dictionary.json",
+      "problem_count": 20,
+      "source_reference": "05_dictionary.py"
+    },
+    {
+      "id": "variables",
+      "name": "Variables",
+      "sequence": 6,
+      "file": "categories/06_variables.json",
+      "problem_count": 3,
+      "source_reference": "06_variables.py"
+    },
+    {
+      "id": "datatypes",
+      "name": "Data Types",
+      "sequence": 7,
+      "file": "categories/07_datatypes.json",
+      "problem_count": 11,
+      "source_reference": "07_datatypes.py"
+    },
+    {
+      "id": "operators",
+      "name": "Operators",
+      "sequence": 8,
+      "file": "categories/08_operators.json",
+      "problem_count": 7,
+      "source_reference": "08_operators.py"
+    },
+    {
+      "id": "operators-precedence",
+      "name": "Operator Precedence",
+      "sequence": 9,
+      "file": "categories/09_operators-precedence.json",
+      "problem_count": 25,
+      "source_reference": "09_operators-precedence.py"
+    },
+    {
+      "id": "numbersystem-conversion",
+      "name": "Number System Conversion",
+      "sequence": 10,
+      "file": "categories/10_numbersystem-conversion.json",
+      "problem_count": 6,
+      "source_reference": "10_numbersystem-conversion.py"
+    },
+    {
+      "id": "bitwise",
+      "name": "Bitwise",
+      "sequence": 11,
+      "file": "categories/11_bitwise.json",
+      "problem_count": 8,
+      "source_reference": "11_bitwise.py"
+    },
+    {
+      "id": "user-input",
+      "name": "User Input",
+      "sequence": 12,
+      "file": "categories/12_user-input.json",
+      "problem_count": 5,
+      "source_reference": "12_user-input.py"
+    },
+    {
+      "id": "loop-breakers",
+      "name": "Loop Breakers",
+      "sequence": 13,
+      "file": "categories/13_loop-breakers.json",
+      "problem_count": 2,
+      "source_reference": "13_loop-breakers.py"
+    },
+    {
+      "id": "arrays",
+      "name": "Arrays",
+      "sequence": 14,
+      "file": "categories/14_arrays.json",
+      "problem_count": 15,
+      "source_reference": "14_arrays.py"
+    },
+    {
+      "id": "numpy-1",
+      "name": "NumPy 1",
+      "sequence": 15,
+      "file": "categories/15_numpy-1.json",
+      "problem_count": 6,
+      "source_reference": "15_numpy-1.py"
+    },
+    {
+      "id": "numpy-2",
+      "name": "NumPy 2",
+      "sequence": 16,
+      "file": "categories/16_numpy-2.json",
+      "problem_count": 7,
+      "source_reference": "16_numpy-2.py"
+    },
+    {
+      "id": "numpy-matrix",
+      "name": "NumPy Matrix",
+      "sequence": 17,
+      "file": "categories/17_numpy-matrix.json",
+      "problem_count": 7,
+      "source_reference": "17_numpy_matrix.py"
+    },
+    {
+      "id": "functions-argument-types",
+      "name": "Function Argument Types",
+      "sequence": 18,
+      "file": "categories/18_functions-argument-types.json",
+      "problem_count": 5,
+      "source_reference": "18_functions-argument-types.py"
+    },
+    {
+      "id": "function-global-keyword",
+      "name": "Function Global Keyword",
+      "sequence": 19,
+      "file": "categories/19_function-global-keyword.json",
+      "problem_count": 2,
+      "source_reference": "19_function-global-keyword.py"
+    },
+    {
+      "id": "functions-mutable-immutable",
+      "name": "Functions Mutable vs Immutable",
+      "sequence": 20,
+      "file": "categories/20_functions-mutable-immutable.json",
+      "problem_count": 7,
+      "source_reference": "20_functions-mutable-immutable.py"
+    },
+    {
+      "id": "lambda",
+      "name": "Lambda",
+      "sequence": 21,
+      "file": "categories/21_lambda.json",
+      "problem_count": 6,
+      "source_reference": "21_lambda.py"
+    },
+    {
+      "id": "decorator",
+      "name": "Decorator",
+      "sequence": 22,
+      "file": "categories/22_decorator.json",
+      "problem_count": 1,
+      "source_reference": "22_decorator.py"
+    },
+    {
+      "id": "underscore-and-dunder",
+      "name": "Underscore and Dunder",
+      "sequence": 23,
+      "file": "categories/23_underscore-and-dunder.json",
+      "problem_count": 5,
+      "source_reference": "23_underscore-and-dunder.py"
+    },
+    {
+      "id": "special-variable-name",
+      "name": "Special Variable __name__",
+      "sequence": 24,
+      "file": "categories/24_special-variable-name.json",
+      "problem_count": 1,
+      "source_reference": "24_special_variable_name.py"
+    },
+    {
+      "id": "methodtypes",
+      "name": "Method Types",
+      "sequence": 25,
+      "file": "categories/25_methodtypes.json",
+      "problem_count": 1,
+      "source_reference": "25_methodtypes.py"
+    },
+    {
+      "id": "innerclass",
+      "name": "Inner Class",
+      "sequence": 26,
+      "file": "categories/26_innerclass.json",
+      "problem_count": 1,
+      "source_reference": "26_innerclass.py"
+    },
+    {
+      "id": "inheritance-types",
+      "name": "Inheritance Types",
+      "sequence": 27,
+      "file": "categories/27_inheritance-types.json",
+      "problem_count": 3,
+      "source_reference": "27_inheritance_types.py"
+    },
+    {
+      "id": "inheritance-order",
+      "name": "Inheritance Order",
+      "sequence": 28,
+      "file": "categories/28_inheritance-order.json",
+      "problem_count": 1,
+      "source_reference": "28_inheritance_order.py"
+    },
+    {
+      "id": "polymorphism-ducktyping",
+      "name": "Polymorphism and Duck Typing",
+      "sequence": 29,
+      "file": "categories/29_polymorphism-ducktyping.json",
+      "problem_count": 5,
+      "source_reference": "29_polymorphism-ducktyping.py"
+    }
+  ]
+}
