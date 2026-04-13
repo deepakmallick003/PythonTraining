@@ -107,7 +107,7 @@ def _terminate_stale_project_servers(port: int) -> list[int]:
 
 
 def _open_browser(host: str, port: int) -> None:
-    display_host = '127.0.0.1' if host == '0.0.0.0' else host
+    display_host = '127.0.0.1' if host == '0.0.0.0' else 'localhost'
     url = f'http://{display_host}:{port}'
 
     try:
