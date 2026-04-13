@@ -92,7 +92,7 @@
     <div class="navbar">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="{{ url_for('main.category', category_id=problem.nav.category_id) }}" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
             </div>
             <h1 class="logo"><i class="fas fa-code"></i> Python Practice</h1>
             <div class="user-menu">
