@@ -37,6 +37,7 @@ That split keeps the runtime simple while still making the content maintainable.
 - at least 3 test cases for test-backed exercises
 - unique input variants for generated tests
 - local login and progress tracking
+- last successful code state is saved per problem and restored on revisit
 - VS Code launch configuration for one-click app startup
 
 ## Project Layout
@@ -77,6 +78,7 @@ PythonTraining/
 3. The browser loads starter code and test metadata from `/api/problem/<problem_id>`.
 4. Submitted code is executed by `CodeExecutor` in a subprocess with timeout protection.
 5. If a test-backed problem passes fully, user progress is recorded in `app/data/progress.json`.
+6. The last successfully run code for a problem is also saved and restored on future visits.
 
 ## Requirements
 
@@ -117,6 +119,12 @@ That config:
 - launches `run.py`
 - targets port `5000`
 
+## Demo
+
+A visible demo of the running app:
+
+![Python Practice app demo](app/assets/PythonTrainingDemo.gif)
+
 ## First Login
 
 The app currently uses simple local demo authentication.
@@ -124,6 +132,7 @@ The app currently uses simple local demo authentication.
 - entering a new username creates a local user automatically
 - progress is stored in `app/data/progress.json`
 - users are stored in `app/data/users.json`
+- the last successfully run solution for each problem is saved in `app/data/progress.json` and restored when you revisit that problem
 
 This is intended for local practice only and is not production-grade authentication.
 
@@ -206,6 +215,13 @@ This codebase is intentionally simple and local-first. If you want to scale it, 
 - move from Flask dev server to Gunicorn or another WSGI server
 - put a reverse proxy in front
 - externalize persistent state into a database and object storage
+
+## Latest Updates
+
+- Added per-user persistence of the last successfully run solution for each problem.
+- Problem editor now restores previous successful code instead of always resetting to starter code.
+- Navigation now warns before leaving a problem if the current code has unsaved or failed changes.
+- The browser favicon now matches the desktop app icon.
 
 ## Troubleshooting
 

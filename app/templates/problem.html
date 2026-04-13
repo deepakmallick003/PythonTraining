@@ -184,7 +184,7 @@
                 <span class="char-count" id="charCount">0 characters</span>
             </div>
 
-            <textarea id="codeEditor" class="code-editor" placeholder="Write your Python code here...">{{ problem.starter_code }}</textarea>
+            <textarea id="codeEditor" class="code-editor" placeholder="Write your Python code here...">{{ problem.saved_code or problem.starter_code }}</textarea>
 
             <div class="editor-controls">
                 <button id="runBtn" class="btn btn-primary">

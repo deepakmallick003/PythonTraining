@@ -113,13 +113,32 @@ class UserManager:
         progress = self._read_progress()
         if username not in progress:
             progress[username] = {}
-        
+
+        existing = progress[username].get(problem_id, {})
         progress[username][problem_id] = {
+            **existing,
             'solved': True,
             'solved_at': datetime.now().isoformat()
         }
         self._write_progress(progress)
-    
+
+    def save_problem_code(self, username, problem_id, code):
+        """Save a user's last successful code for a problem"""
+        progress = self._read_progress()
+        if username not in progress:
+            progress[username] = {}
+
+        entry = progress[username].get(problem_id, {})
+        entry['saved_code'] = code
+        entry['code_saved_at'] = datetime.now().isoformat()
+        progress[username][problem_id] = entry
+        self._write_progress(progress)
+
+    def get_saved_code(self, username, problem_id):
+        """Get the last successful code saved for a problem"""
+        progress = self._read_progress()
+        return progress.get(username, {}).get(problem_id, {}).get('saved_code')
+
     def get_user_progress(self, username):
         """Get user's progress"""
         progress = self._read_progress()

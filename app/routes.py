@@ -136,10 +136,11 @@ def problem(problem_id):
     problem_data = ProblemLoader.get_problem(problem_id)
     if not problem_data:
         return render_template('404.html'), 404
-    
+
     problem_data['solved'] = user_manager.is_problem_solved(user, problem_id)
+    problem_data['saved_code'] = user_manager.get_saved_code(user, problem_id)
     problem_data['nav'] = _get_navigation_data(problem_id)
-    
+
     return render_template('problem.html', problem=problem_data, current_user=user)
 
 
@@ -188,10 +189,14 @@ def run_code():
     # Execute the code with test cases if provided
     result = CodeExecutor.execute(code, test_cases=test_cases)
     
+    # Save the successful code state for this problem if it ran cleanly
+    user = _get_current_user()
+    if user and problem_id and result.get('status') == 'success':
+        user_manager.save_problem_code(user, problem_id, code)
+
     # Mark problem as solved if all tests pass
-    if result.get('status') == 'success' and test_cases and problem_id:
-        user = _get_current_user()
-        if user and result.get('passed') == result.get('total'):
+    if user and result.get('status') == 'success' and test_cases and problem_id:
+        if result.get('passed') == result.get('total'):
             user_manager.mark_problem_solved(user, problem_id)
             result['problem_marked_solved'] = True
     

@@ -45,7 +45,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get problem ID from URL
     const problemId = window.location.pathname.split('/').pop();
     const starterCode = getEditorValue();
-    
+    let savedCode = starterCode;
+    let dirty = false;
+
+    function updateDirtyState() {
+        dirty = getEditorValue() !== savedCode;
+    }
+
+    function attemptNavigation(url) {
+        if (dirty) {
+            const leave = confirm('You have unsaved changes. If you leave this page, your current code will be lost. Continue?');
+            if (!leave) {
+                return;
+            }
+        }
+        window.location.href = url;
+    }
+
+    window.addEventListener('beforeunload', function(event) {
+        if (!dirty) return;
+        event.preventDefault();
+        event.returnValue = 'You have unsaved changes. If you leave this page, your current code will be lost.';
+    });
+
     // Fetch problem data to get test cases
     let problemData = {};
     let defaultRunLabel = '<i class="fas fa-play"></i> Run Tests';
@@ -72,11 +94,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (editorInstance) {
-        editorInstance.on('change', updateCharCount);
+        editorInstance.on('change', function() {
+            updateCharCount();
+            updateDirtyState();
+        });
     } else {
-        codeEditor.addEventListener('input', updateCharCount);
+        codeEditor.addEventListener('input', function() {
+            updateCharCount();
+            updateDirtyState();
+        });
     }
     updateCharCount();
+    updateDirtyState();
 
     if (window.hljs) {
         hljs.highlightAll();
@@ -112,6 +141,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const data = await response.json();
             
+            if (data.status === 'success') {
+                savedCode = code;
+                updateDirtyState();
+            }
+
             if (testCases.length > 0 && data.results) {
                 // Show test results
                 showTestResults(data);
@@ -247,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('confirmResetBtn').addEventListener('click', function() {
         setEditorValue(starterCode);
         updateCharCount();
+        updateDirtyState();
         output.style.display = 'none';
         testResults.style.display = 'none';
         document.getElementById('confirmModal').style.display = 'none';
@@ -308,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const solutionCode = document.getElementById('solutionCode').textContent;
         setEditorValue(solutionCode);
         updateCharCount();
+        updateDirtyState();
         document.getElementById('solutionModal').style.display = 'none';
         showOutput('Solution applied to editor!', 'success');
     });
