@@ -22,8 +22,9 @@ from pathlib import Path
 from typing import Iterable
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 REFERENCE_DIR = BASE_DIR / "reference" / "pythonbasics"
+REFERENCE_ALGOS_DIR = BASE_DIR / "reference" / "algos"
 PROBLEM_BANK_DIR = BASE_DIR / "app" / "problem_bank"
 PROBLEM_BANK_CATEGORIES_DIR = PROBLEM_BANK_DIR / "categories"
 
@@ -67,6 +68,361 @@ TITLE_FROM_FILENAME_MAP = {
     "25_methodtypes.py": "Instance, Class, and Static Methods",
     "26_innerclass.py": "Student with Nested Laptop Class",
     "28_inheritance_order.py": "Method Resolution Order",
+}
+
+PROMPT_OVERRIDES = {
+    "06_variables.py": {
+        "Concept 1: Variables And Memory": "Inside main(), assign `x = 10`, copy it into `y`, then reassign `x = 15`. Print the values and object identities with `id()` to show that rebinding `x` does not change `y`.",
+        "Concept 2: Garbage Collection": "Inside main(), assign `z = 20`, print its identity with `id()`, then reassign `z = 25` and print the new identity. Use the output to demonstrate how Python can discard objects that are no longer referenced.",
+        "Concept 3: Constants And Types": "Inside main(), demonstrate three ideas: print the type of a constant like `PI`, create a simple `Car` object and print its type, and show that two list variables can reference the same list by mutating one and printing both.",
+    },
+    "07_datatypes.py": {
+        "Nonetype": "Inside main(), assign `a = None`, then print the value and its type to show how Python represents the absence of a value.",
+        "Numbers": "Inside main(), create one integer, one float, and one complex number. Print each value and its type so the learner can compare the three numeric data types.",
+        "Type Conversion": "Inside main(), convert a float to an int, convert that int back to a float, and create a complex number. Print each converted value together with its type.",
+        "Booleans": "Inside main(), store `True` in one variable and evaluate `3 < 5` in another. Print both values and their types to show how booleans work in Python.",
+        "Sequence Data Types": "Inside main(), print a short explanation that lists the common sequence-style containers shown in this lesson: list, tuple, set, string, and range.",
+        "List": "Inside main(), create the sample list `lst = [25, 36, 45, 12]`, then print the list and its type.",
+        "Tuple": "Inside main(), create the sample tuple `t = (25, 36, 45, 12, 7)`, then print the tuple and its type.",
+        "Set": "Inside main(), create the sample set `{25, 36, 45, 12, 25, 36}` and print the resulting set and its type so the learner can see that duplicates are removed.",
+        "String": "Inside main(), assign `str_val = \"hello\"`, then print the string and its type.",
+        "Range": "Inside main(), create `r = range(10)`, print the range object and its type, then print `list(range(2, 10, 2))` to show the generated values.",
+        "Dictionary": "Inside main(), create the sample dictionaries, then print the dictionary, its type, its keys, its values, direct access with `['rahul']`, and access with `.get('kiran')`.",
+    },
+    "08_operators.py": {
+        "Arithmetic Operators": "Inside main(), print worked examples for the arithmetic operators `+`, `-`, `*`, `/`, `//`, `%`, and `**` using the numbers `5` and `3`.",
+        "Comparison Operators": "Inside main(), print worked examples for the comparison operators `==`, `!=`, `>`, `<`, `>=`, and `<=` using the numbers `5` and `3`.",
+        "Logical Operators": "Inside main(), print worked examples for `and`, `or`, and `not` using boolean expressions based on `5`, `3`, and `4`.",
+        "Bitwise Operators": "Inside main(), print worked examples for the bitwise operators `&`, `|`, `^`, `~`, `<<`, and `>>` using `5` and `3`.",
+        "Membership Operators": "Inside main(), print worked examples that show how `in` and `not in` behave with the strings `'Hello'`, `'Goodbye'`, and `'Hello World'`.",
+        "Identity Operators": "Inside main(), print worked examples that show the difference between `is` and `is not` using two separate empty lists.",
+        "Assignment Operators": "Inside main(), demonstrate assignment operators by updating `x` step by step and printing the result after each one: `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `//=`, `**=`, `&=`, `|=`, `^=`, `>>=`, and `<<=`.",
+    },
+    "10_numbersystem-conversion.py": {
+        "Decimal To Binary": "Inside main(), convert `decimal_number = 5` to binary using `bin()` and print the labeled result.",
+        "Binary To Decimal": "Inside main(), convert `binary_number = '0b101'` to decimal using `int(..., 2)` and print the labeled result.",
+        "Decimal To Hexadecimal": "Inside main(), convert `decimal_number = 255` to hexadecimal using `hex()` and print the labeled result.",
+        "Hexadecimal To Decimal": "Inside main(), convert `hexadecimal_number = '0xff'` to decimal using `int(..., 16)` and print the labeled result.",
+        "Decimal To Octal": "Inside main(), convert `decimal_number = 64` to octal using `oct()` and print the labeled result.",
+        "Octal To Decimal": "Inside main(), convert `octal_number = '0o100'` to decimal using `int(..., 8)` and print the labeled result.",
+    },
+    "22_decorator.py": {
+        "Smart Division Decorator": "Create a `div(a, b)` function and a `smart_div` decorator. The decorator should swap the numbers when `a < b`, then call the original function so dividing `2` and `4` still prints the result of `4 / 2`.",
+    },
+    "23_underscore-and-dunder.py": {
+        "Single Underscore for Internal Use": "Create a `Car` class with an internal `_engine_type` attribute and a `start()` method. Inside main(), instantiate the class and print both the start message and the internal attribute to demonstrate the underscore convention.",
+        "Single Underscore as an Ignored Variable": "Use `_` as the ignored loop variable in a `for` loop and print `Hello!` five times inside main().",
+        "Double Underscore Name Mangling": "Create `Vehicle` and `Car` classes to demonstrate double-underscore name mangling. Print the parent identification value and the child-specific identification value to show that they stay separate.",
+        "Dunder Special Methods": "Create a `Book` class with `__init__` and `__str__`. Inside main(), instantiate a book and print it so Python uses the custom string representation.",
+        "Module __name__ Value": "Inside main(), print the module `__name__` value so the learner can see what Python sets for the current module.",
+    },
+    "24_special_variable_name.py": {
+        "The __name__ Guard": "Inside main(), print a short explanation of the `__name__` variable and show the common `if __name__ == \"__main__\":` guard pattern.",
+    },
+    "25_methodtypes.py": {
+        "Instance, Class, and Static Methods": "Create a `Student` class with three marks, an `avg()` instance method, a `get_school()` class method, and an `info()` static method. Inside main(), create a student, print the average, print the school name, and call the static method.",
+    },
+    "26_innerclass.py": {
+        "Student with Nested Laptop Class": "Create a `Student` class that owns a nested `Laptop` class. Inside main(), create a student object and print the student details followed by the laptop brand, CPU, and RAM.",
+    },
+    "28_inheritance_order.py": {
+        "Method Resolution Order": "Create classes `A`, `B`, `C`, and `D` where `D` inherits from `B` and `C`. Use `super()` inside each constructor so instantiating `D()` prints the constructor call order and demonstrates Python's method resolution order.",
+    },
+    "29_polymorphism-ducktyping.py": {
+        "Save Data with Duck Typing": "Create two saver classes that both expose a `save(data)` method. Inside main(), write a helper that accepts any saver object, then call it once with a file saver and once with a console saver to demonstrate duck typing.",
+        "Compose with Any Writer": "Create two classes, `Pen` and `Keyboard`, that both implement `write()`. Inside main(), pass each one into a shared `compose()` function and print the output from both objects.",
+        "Runtime Type Checking with hasattr": "Create a `Dog` class with `bark()` and a `pet_speak()` helper that checks for `bark()` using `hasattr`. Inside main(), call it once with a dog and once with a string to show both branches.",
+        "Error Potential When Methods Are Missing": "Create a `Car` class with `drive()` and a `start_trip()` helper that expects any object passed to it to implement `drive()`. Inside main(), show the successful car call and then catch and print the `AttributeError` raised by passing a plain string.",
+        "hasattr and getattr in Practice": "Create a `Calculator` class with a `calculate()` method and a helper that uses `hasattr()` and `getattr()` to call an operation by name. Inside main(), demonstrate one supported operation and one unsupported one.",
+    },
+}
+
+INTERNAL_NOTE_PREFIXES = (
+    "Stored as a standalone",
+    "This section is stored as",
+    "This category uses standalone",
+    "This problem is stored as",
+    "Stored as a runnable standalone",
+)
+
+ALGO_CATEGORY_CONFIG = {
+    "searching": {"id": "algos-searching", "name": "Searching Algorithms", "sequence": 30},
+    "sorting": {"id": "algos-sorting", "name": "Sorting Algorithms", "sequence": 31},
+    "graph": {"id": "algos-graph", "name": "Graph Algorithms", "sequence": 32},
+    "dp": {"id": "algos-dp", "name": "Dynamic Programming", "sequence": 33},
+    "greedy": {"id": "algos-greedy", "name": "Greedy Algorithms", "sequence": 34},
+    "string": {"id": "algos-string", "name": "String Algorithms", "sequence": 35},
+    "backtracking": {"id": "algos-backtracking", "name": "Backtracking Algorithms", "sequence": 36},
+    "maths": {"id": "algos-maths", "name": "Math Algorithms", "sequence": 37},
+    "misc": {"id": "algos-recursion", "name": "Recursion Foundations", "sequence": 38},
+}
+
+ALGO_PROMPT_BY_GROUP = {
+    "searching": "Implement {title} inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+    "sorting": "Implement {title} inside main() using the sample input shown below, then print the sorted result in the same format as the example.",
+    "graph": "Implement {title} inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+    "dp": "Implement {title} inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+    "greedy": "Implement {title} inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+    "string": "Implement {title} inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+    "backtracking": "Implement {title} inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example.",
+    "maths": "Implement {title} inside main() using the sample values shown below, then print the mathematical result in the same format as the example.",
+    "misc": "Implement {title} inside main() using the sample values shown below, then print the computed result or generated sequence in the same format as the example.",
+}
+
+ALGO_SOURCE_FALLBACKS = {
+    "48_string_boyer-moore.py": """
+def create_bad_char_table(pattern):
+    table = {}
+    length = len(pattern)
+    for index, char in enumerate(pattern):
+        table[char] = max(1, length - index - 1)
+    return table
+
+
+def boyer_moore_search(text, pattern):
+    bad_char_table = create_bad_char_table(pattern)
+    text_index = 0
+    pattern_length = len(pattern)
+    text_length = len(text)
+    matches = []
+
+    while text_index <= text_length - pattern_length:
+        scan_index = pattern_length - 1
+        while scan_index >= 0 and pattern[scan_index] == text[text_index + scan_index]:
+            scan_index -= 1
+        if scan_index < 0:
+            matches.append(text_index)
+            text_index += pattern_length
+        else:
+            shift = bad_char_table.get(text[text_index + scan_index], pattern_length)
+            text_index += max(1, shift)
+
+    return matches
+
+
+def main():
+    text = "HERE IS A SIMPLE EXAMPLE"
+    pattern = "EXAMPLE"
+    matches = boyer_moore_search(text, pattern)
+    print("Text:", text)
+    print("Pattern:", pattern)
+    print("Match indices:", matches)
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
+    "06_searching_exponential-search.py": """
+def binary_search(arr, left, right, target):
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        if arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+
+def exponential_search(arr, target):
+    if not arr:
+        return -1
+    if arr[0] == target:
+        return 0
+
+    index = 1
+    while index < len(arr) and arr[index] <= target:
+        index *= 2
+
+    return binary_search(arr, index // 2, min(index, len(arr) - 1), target)
+
+
+def main():
+    arr = [2, 3, 4, 10, 40, 55, 78, 91]
+    targetVal = 78
+    result = exponential_search(arr, targetVal)
+    if result != -1:
+        print("Value", targetVal, "found at index", result)
+    else:
+        print("Value", targetVal, "not found")
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
+    "49_string_z-algorithm.py": """
+def z_algorithm(text):
+    z = [0] * len(text)
+    left = right = 0
+    for i in range(1, len(text)):
+        if i <= right:
+            z[i] = min(right - i + 1, z[i - left])
+        while i + z[i] < len(text) and text[z[i]] == text[i + z[i]]:
+            z[i] += 1
+        if i + z[i] - 1 > right:
+            left = i
+            right = i + z[i] - 1
+    return z
+
+
+def main():
+    text = "aabxaabxcaabxaabxay"
+    z_values = z_algorithm(text)
+    print("Text:", text)
+    print("Z-array:", z_values)
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
+    "50_string_aho-korasick.py": """
+from collections import deque
+
+
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.fail = None
+        self.output = []
+
+
+def build_automaton(patterns):
+    root = Node()
+    for pattern in patterns:
+        current = root
+        for char in pattern:
+            current = current.children.setdefault(char, Node())
+        current.output.append(pattern)
+
+    queue = deque()
+    for child in root.children.values():
+        child.fail = root
+        queue.append(child)
+
+    while queue:
+        current = queue.popleft()
+        for char, child in current.children.items():
+            queue.append(child)
+            fallback = current.fail
+            while fallback and char not in fallback.children:
+                fallback = fallback.fail
+            child.fail = fallback.children[char] if fallback and char in fallback.children else root
+            child.output.extend(child.fail.output)
+    return root
+
+
+def aho_corasick_search(text, patterns):
+    root = build_automaton(patterns)
+    current = root
+    matches = []
+
+    for index, char in enumerate(text):
+        while current and char not in current.children:
+            current = current.fail
+        current = current.children[char] if current and char in current.children else root
+        for pattern in current.output:
+            matches.append((pattern, index - len(pattern) + 1))
+
+    return matches
+
+
+def main():
+    text = "ahishers"
+    patterns = ["he", "she", "hers", "his"]
+    matches = aho_corasick_search(text, patterns)
+    print("Text:", text)
+    print("Patterns:", patterns)
+    print("Matches:", matches)
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
+    "51_string_manachers.py": """
+def longest_palindromic_substring(text):
+    transformed = "^#" + "#".join(text) + "#$"
+    radius = [0] * len(transformed)
+    center = right = 0
+
+    for i in range(1, len(transformed) - 1):
+        mirror = 2 * center - i
+        if i < right:
+            radius[i] = min(right - i, radius[mirror])
+
+        while transformed[i + 1 + radius[i]] == transformed[i - 1 - radius[i]]:
+            radius[i] += 1
+
+        if i + radius[i] > right:
+            center = i
+            right = i + radius[i]
+
+    max_len = max(radius)
+    center_index = radius.index(max_len)
+    start = (center_index - max_len) // 2
+    return text[start:start + max_len]
+
+
+def main():
+    text = "forgeeksskeegfor"
+    result = longest_palindromic_substring(text)
+    print("Text:", text)
+    print("Longest palindromic substring:", result)
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
+    "55_backtracking_knight-tour.py": """
+MOVES = [
+    (2, 1), (1, 2), (-1, 2), (-2, 1),
+    (-2, -1), (-1, -2), (1, -2), (2, -1),
+]
+
+
+def is_valid(row, col, n, board):
+    return 0 <= row < n and 0 <= col < n and board[row][col] == -1
+
+
+def onward_count(row, col, n, board):
+    return sum(1 for dr, dc in MOVES if is_valid(row + dr, col + dc, n, board))
+
+
+def knight_tour(n, start_row=0, start_col=0):
+    board = [[-1 for _ in range(n)] for _ in range(n)]
+    board[start_row][start_col] = 0
+    row, col = start_row, start_col
+
+    for step in range(1, n * n):
+        candidates = []
+        for dr, dc in MOVES:
+            next_row = row + dr
+            next_col = col + dc
+            if is_valid(next_row, next_col, n, board):
+                candidates.append((onward_count(next_row, next_col, n, board), next_row, next_col))
+
+        if not candidates:
+            return None
+
+        _, row, col = min(candidates)
+        board[row][col] = step
+
+    return board
+
+
+def main():
+    n = 5
+    board = knight_tour(n)
+    if board is None:
+        print("No tour found.")
+        return
+    for row in board:
+        print(" ".join(f"{cell:2d}" for cell in row))
+
+
+if __name__ == "__main__":
+    main()
+""".strip(),
 }
 
 
@@ -190,6 +546,61 @@ def split_imports_and_body(code: str) -> tuple[list[str], str]:
         else:
             body_nodes.append(node)
     return import_nodes, nodes_to_source(body_nodes).strip()
+
+
+def extract_main_guard_body(node: ast.If) -> list[ast.stmt] | None:
+    test = node.test
+    if not (
+        isinstance(test, ast.Compare)
+        and isinstance(test.left, ast.Name)
+        and test.left.id == "__name__"
+        and len(test.ops) == 1
+        and isinstance(test.ops[0], ast.Eq)
+        and len(test.comparators) == 1
+        and isinstance(test.comparators[0], ast.Constant)
+        and test.comparators[0].value == "__main__"
+    ):
+        return None
+    return node.body
+
+
+def split_runnable_script(source: str) -> tuple[list[str], str, str]:
+    try:
+        module = ast.parse(source)
+    except SyntaxError:
+        import_lines, action_body = split_imports_and_body(source)
+        return import_lines, "", action_body
+
+    import_lines: list[str] = []
+    support_nodes: list[ast.AST] = []
+    main_body_nodes: list[ast.AST] | None = None
+
+    for node in module.body:
+        if isinstance(node, ast.Import):
+            import_lines.append(node_to_source(node))
+            continue
+        if isinstance(node, ast.ImportFrom):
+            if node.module == "scripts.common":
+                continue
+            import_lines.append(node_to_source(node))
+            continue
+        if isinstance(node, ast.FunctionDef) and node.name == "main":
+            main_body_nodes = list(node.body)
+            continue
+        if isinstance(node, ast.If):
+            guard_body = extract_main_guard_body(node)
+            if guard_body is not None:
+                continue
+        support_nodes.append(node)
+
+    if main_body_nodes is None:
+        return dedupe_preserve_order(import_lines), "", nodes_to_source(support_nodes).strip()
+
+    return (
+        dedupe_preserve_order(import_lines),
+        nodes_to_source(support_nodes).strip(),
+        nodes_to_source(main_body_nodes).strip(),
+    )
 
 
 def indent_block(text: str, spaces: int = 4) -> str:
@@ -332,6 +743,117 @@ def build_minimum_test_cases(
         }
         for index in range(1, minimum + 1)
     ]
+
+
+def build_description(prompt: str, notes: list[str], has_tests: bool) -> str:
+    prompt_text = prompt.strip().rstrip(".")
+    if not prompt_text:
+        prompt_text = "Complete the exercise"
+
+    standalone_note = any("standalone" in note.lower() for note in notes)
+    if has_tests:
+        suffix = "Implement the logic in main(...) and match the expected output for the provided cases."
+    elif standalone_note:
+        suffix = "Run the snippet in main() and compare the result with the example output."
+    else:
+        suffix = "Use main() to produce the expected result shown in the example."
+    return f"{prompt_text}. {suffix}"
+
+
+def filter_user_notes(notes: list[str]) -> list[str]:
+    return [
+        note for note in notes
+        if not any(note.startswith(prefix) for prefix in INTERNAL_NOTE_PREFIXES)
+    ]
+
+
+def override_prompt(path: Path, title: str, fallback: str) -> str:
+    overrides = PROMPT_OVERRIDES.get(path.name, {})
+    if title in overrides:
+        return overrides[title]
+
+    normalized_title = slugify(title)
+    for candidate, prompt in overrides.items():
+        if slugify(candidate) == normalized_title:
+            return prompt
+    return fallback
+
+
+def fallback_example_input_from_prompt(prompt: str) -> str:
+    cleaned = prompt.strip().rstrip(".")
+    if not cleaned:
+        return "No external input. Use the constants, expressions, and helper calls already shown in the scaffold."
+
+    cleaned = re.sub(r"^Inside main\(\),\s*", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"^Implement\s+(.+?)\s+inside main\(\)\s*", r"\1: ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return f"Use this setup idea:\n{cleaned}"
+
+
+def summarize_example_input(solution_code: str, prompt: str = "", max_lines: int = 6) -> str:
+    try:
+        module = ast.parse(solution_code)
+    except SyntaxError:
+        return fallback_example_input_from_prompt(prompt)
+
+    body_nodes = module.body
+    main_node = next(
+        (node for node in body_nodes if isinstance(node, ast.FunctionDef) and node.name == "main"),
+        None,
+    )
+    if main_node:
+        body_nodes = main_node.body
+
+    lines: list[str] = []
+    for node in body_nodes:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            continue
+        if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)):
+            lines.append(ast.unparse(node).strip())
+        elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
+            if isinstance(node.value.func, ast.Name) and node.value.func.id == "print":
+                continue
+            lines.append(ast.unparse(node).strip())
+        if len(lines) >= max_lines:
+            break
+
+    if not lines:
+        return fallback_example_input_from_prompt(prompt)
+    return "Use the sample setup:\n" + "\n".join(lines[:max_lines])
+
+
+def normalize_algo_source(path: Path, source: str) -> str:
+    """Patch a few reference snippets so they can execute cleanly as examples."""
+    if (not source.strip() or path.name == "48_string_boyer-moore.py") and path.name in ALGO_SOURCE_FALLBACKS:
+        source = ALGO_SOURCE_FALLBACKS[path.name]
+    if path.name == "38_dp_travelling-salesman-problem.py":
+        source = source.replace(
+            "print(nearest_neighbor_tsp(graph))",
+            "print(nearest_neighbor_tsp(graph, 0))",
+            1,
+        )
+    return source
+
+
+def algo_file_meta(path: Path) -> tuple[str, int, str]:
+    """Return algorithm group, global order, and learner-facing title for a file."""
+    match = re.match(r"^(?P<order>\d+)_(?P<group>[a-zA-Z]+)_(?P<slug>.+)\.py$", path.name)
+    if match:
+        group = match.group("group").lower()
+        if group == "searchng":
+            group = "searching"
+        order = int(match.group("order"))
+        title = pretty_name(match.group("slug"))
+        return group, order, title
+
+    stem = path.stem
+    misc_order = {"factorial": 1, "fibonacci": 2}.get(stem, 99)
+    return "misc", misc_order, pretty_name(stem)
+
+
+def build_algo_prompt(group: str, title: str) -> str:
+    template = ALGO_PROMPT_BY_GROUP.get(group, ALGO_PROMPT_BY_GROUP["misc"])
+    return template.format(title=title)
 
 
 def is_pure_data_expression(node: ast.AST) -> bool:
@@ -497,6 +1019,34 @@ def run_solution_test_case(solution_code: str, test_input: str, call_expression:
     return run_code_capture_output("\n\n".join(parts))
 
 
+def build_standalone_artifacts(solution_code: str, prompt: str = "") -> tuple[list[dict], list[dict], list[str]]:
+    examples: list[dict] = []
+    test_cases: list[dict] = []
+    notes: list[str] = []
+    example_input = summarize_example_input(solution_code, prompt=prompt)
+
+    try:
+        example_output = run_code_capture_output(solution_code)
+        examples = [{"input": example_input, "output": example_output}]
+    except Exception as exc:
+        notes.append(f"Example output could not be generated automatically: {exc}")
+        return examples, test_cases, notes
+
+    if should_disable_tests(solution_code):
+        return examples, test_cases, notes
+
+    try:
+        expected_output = run_solution_test_case(solution_code, "", "main()")
+        if "__name__" in solution_code and expected_output != example_output:
+            notes.append("Automated tests are skipped because runtime module naming changes the output.")
+            return examples, test_cases, notes
+        test_cases = build_minimum_test_cases("", expected_output, "main()", minimum=1)
+    except Exception as exc:
+        notes.append(f"Automatic test generation was skipped: {exc}")
+
+    return examples, test_cases, notes
+
+
 def generate_unique_test_cases(
     solution_code: str,
     setup_source: str,
@@ -589,14 +1139,14 @@ def build_storage_problem(
         "category_id": category["id"],
         "category_name": category["name"],
         "title": problem.title,
-        "description": problem.prompt,
+        "description": build_description(problem.prompt, problem.notes, bool(problem.test_cases)),
         "prompt": problem.prompt,
         "difficulty": problem.difficulty,
         "starter_code": problem.starter_code,
         "solution": problem.solution,
         "examples": problem.examples,
         "test_cases": problem.test_cases,
-        "notes": problem.notes,
+        "notes": filter_user_notes(problem.notes),
         "source_reference": problem.source_reference,
     }
     return storage_problem
@@ -854,23 +1404,54 @@ def executable_nodes_from_block(block: list[ast.AST]) -> list[ast.AST]:
     return [node for node in block if not is_print_call(node)]
 
 
-def derived_output_statements(block: list[ast.AST]) -> tuple[list[str], list[ast.AST]]:
+def derived_output_statements(source: str, block: list[ast.AST]) -> tuple[list[str], list[ast.AST]]:
     statements = []
+    fallback_statements = []
     output_nodes: list[ast.AST] = []
+    seen_action = False
     for node in block:
+        if not is_print_call(node):
+            if isinstance(
+                node,
+                (
+                    ast.Assign,
+                    ast.AnnAssign,
+                    ast.AugAssign,
+                    ast.Expr,
+                    ast.Delete,
+                    ast.For,
+                    ast.While,
+                    ast.If,
+                    ast.Try,
+                ),
+            ):
+                seen_action = True
+            continue
+        segment = ast.get_source_segment(source, node)
         text = first_print_text(node)
         if not text:
+            if seen_action and segment and ('Output' in segment or 'Answer' in segment):
+                statements.append(segment.strip())
             continue
         stripped = text.strip()
-        if not stripped.startswith(("Output", "Answer")):
+        if (
+            is_question_block_start(text)
+            or stripped.startswith(("Question:", "Description:", "Input:", "Code:"))
+            or stripped == "-" * 20
+        ):
             continue
         call = node.value
         extra_args = call.args[1:]
-        if not extra_args:
+        if stripped.startswith(("Output", "Answer")):
+            if extra_args:
+                statements.append(f"print({', '.join(ast.unparse(arg) for arg in extra_args)})")
+                output_nodes.extend(extra_args)
+            elif segment:
+                statements.append(segment.strip())
             continue
-        statements.append(f"print({', '.join(ast.unparse(arg) for arg in extra_args)})")
-        output_nodes.extend(extra_args)
-    return statements, output_nodes
+        if seen_action and segment:
+            fallback_statements.append(segment.strip())
+    return (statements or fallback_statements), output_nodes
 
 
 def fallback_block_source(source: str, block: list[ast.AST]) -> str:
@@ -1137,7 +1718,7 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
 
         state_nodes = context_nodes_from_block(block)
         all_exec_nodes = executable_nodes_from_block(block)
-        output_lines, output_expr_nodes = derived_output_statements(block)
+        output_lines, output_expr_nodes = derived_output_statements(source, block)
         block_fallback_mode = False
 
         try:
@@ -1155,6 +1736,10 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
             action_source = normalize_code_block("\n".join(code_lines))
             if output_lines and "print(" not in action_source:
                 action_source = action_source + "\n" + "\n".join(output_lines)
+            fallback_source = fallback_block_source(source, block)
+            if fallback_source and should_disable_tests(fallback_source):
+                action_source = fallback_block_source(source, block)
+                block_fallback_mode = True
         else:
             action_nodes = all_exec_nodes[action_start:] if all_exec_nodes else []
             action_source = nodes_to_source(action_nodes).strip()
@@ -1199,6 +1784,8 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
             import_lines, fallback_body = split_imports_and_body(action_source)
             starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
             solution = build_wrapped_code(import_lines, main_body=fallback_body)
+            examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+            notes.extend(extra_notes)
         else:
             support_source, input_source = split_support_and_input_setup(setup_source)
             if not input_source.strip():
@@ -1231,6 +1818,9 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
                     notes.append(f"Automatic test generation was skipped: {exc}")
                     test_cases = []
                     examples = []
+            elif not examples:
+                examples, _, extra_notes = build_standalone_artifacts(solution, prompt)
+                notes.extend(extra_notes)
         problems.append(
             ProblemRecord(
                 title=title,
@@ -1330,12 +1920,10 @@ def parse_arrays_file(path: Path, source: str) -> list[ProblemRecord]:
         ).strip()
         import_lines, action_body = split_imports_and_body(action_source)
         starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
-        examples = []
-        if not should_disable_tests(action_source):
-            try:
-                examples = [{"input": "Standalone snippet", "output": run_code_capture_output(action_source)}]
-            except Exception:
-                examples = []
+        solution = build_wrapped_code(import_lines, main_body=action_body)
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+        notes = ["This problem is stored as a runnable standalone snippet."]
+        notes.extend(extra_notes)
 
         problems.append(
             ProblemRecord(
@@ -1343,9 +1931,10 @@ def parse_arrays_file(path: Path, source: str) -> list[ProblemRecord]:
                 prompt=prompt,
                 sequence=sequence,
                 starter_code=starter_code,
-                solution=build_wrapped_code(import_lines, main_body=action_body),
+                solution=solution,
+                test_cases=test_cases,
                 examples=examples,
-                notes=["This problem is stored as a runnable standalone snippet."],
+                notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
         )
@@ -1384,6 +1973,11 @@ def parse_demo_functions(path: Path, source: str) -> list[ProblemRecord]:
                 if cleaned:
                     prompt = cleaned if cleaned.endswith(".") else cleaned + "."
                     break
+        prompt = override_prompt(
+            path,
+            title,
+            f"{prompt.rstrip('.')} Use the sample setup shown below and match the example output.",
+        )
 
         filtered_body = [child for child in function_node.body if not is_print_function_call(child)]
         function_clone = ast.FunctionDef(
@@ -1399,9 +1993,12 @@ def parse_demo_functions(path: Path, source: str) -> list[ProblemRecord]:
         action_source = "\n\n".join(part for part in action_parts if part.strip())
         import_lines, action_body = split_imports_and_body(action_source)
         starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
-        notes = ["This category uses standalone demo snippets in the problem bank."]
+        notes: list[str] = []
         if "input(" in action_source or "sys.argv" in action_source:
             notes.append("Tests are disabled because this example expects live user input or command-line arguments.")
+        solution = build_wrapped_code(import_lines, main_body=action_body)
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+        notes.extend(extra_notes)
 
         problems.append(
             ProblemRecord(
@@ -1409,7 +2006,9 @@ def parse_demo_functions(path: Path, source: str) -> list[ProblemRecord]:
                 prompt=prompt,
                 sequence=sequence,
                 starter_code=starter_code,
-                solution=build_wrapped_code(import_lines, main_body=action_body),
+                solution=solution,
+                test_cases=test_cases,
+                examples=examples,
                 notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
@@ -1445,18 +2044,27 @@ def parse_heading_sections(path: Path, source: str) -> list[ProblemRecord]:
         heading_line = block_lines[0].strip()
         heading_match = re.search(r'print\("([^"]+)"\)', heading_line)
         title = pretty_name((heading_match.group(1) if heading_match else f"Section {sequence}").replace("---", " "))
-        prompt = title + "."
+        prompt = override_prompt(
+            path,
+            title,
+            f'Recreate the "{title}" demonstration inside main() using the sample values shown below, and print the same labeled output as the example.',
+        )
         action_source = "\n".join(block_lines).strip() + "\n"
         import_lines, action_body = split_imports_and_body(action_source)
         starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
+        solution = build_wrapped_code(import_lines, main_body=action_body)
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+        notes = list(extra_notes)
         problems.append(
             ProblemRecord(
                 title=title,
                 prompt=prompt,
                 sequence=sequence,
                 starter_code=starter_code,
-                solution=build_wrapped_code(import_lines, main_body=action_body),
-                notes=["This section is stored as a standalone reference snippet."],
+                solution=solution,
+                test_cases=test_cases,
+                examples=examples,
+                notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
         )
@@ -1509,14 +2117,19 @@ def parse_bitwise(path: Path, source: str) -> list[ProblemRecord]:
                 action_source = "\n\n".join(part for part in action_parts if part.strip()) + "\n"
                 import_lines, action_body = split_imports_and_body(action_source)
                 starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
+                solution = build_wrapped_code(import_lines, main_body=action_body)
+                examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+                notes = list(extra_notes)
                 problems.append(
                     ProblemRecord(
                         title=pretty_name(prompt.split(".")[0]),
                         prompt=prompt,
                         sequence=sequence,
                         starter_code=starter_code,
-                        solution=build_wrapped_code(import_lines, main_body=action_body),
-                        notes=["Stored as a runnable standalone snippet from the bitwise reference material."],
+                        solution=solution,
+                        test_cases=test_cases,
+                        examples=examples,
+                        notes=notes,
                         source_reference={"file": path.name, "question": sequence},
                     )
                 )
@@ -1542,27 +2155,44 @@ def parse_underscore_and_dunder(path: Path, source: str) -> list[ProblemRecord]:
     sequence = 1
     for name, node in wrapper_map.items():
         action_source = node_to_source(node) + f"\n\n{name}()\n"
+        solution = build_wrapped_code([], main_body=action_source.strip())
+        title = title_map.get(name, pretty_name(name))
+        prompt = override_prompt(
+            path,
+            title,
+            f"Recreate the {title.lower()} example inside main() using the sample setup shown below, and match the example output.",
+        )
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+        notes = list(extra_notes)
         problems.append(
             ProblemRecord(
-                title=title_map.get(name, pretty_name(name)),
-                prompt=title_map.get(name, pretty_name(name)) + ".",
+                title=title,
+                prompt=prompt,
                 sequence=sequence,
                 starter_code=build_wrapped_code([], parameter_names=[], placeholder=True),
-                solution=build_wrapped_code([], main_body=action_source.strip()),
-                notes=["Stored as a standalone wrapper demo from the underscore/dunder reference file."],
+                solution=solution,
+                test_cases=test_cases,
+                examples=examples,
+                notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
         )
         sequence += 1
 
+    solution = build_wrapped_code([], main_body="print(__name__)")
+    module_name_prompt = override_prompt(path, "Module __name__ Value", "Print the module __name__ value.")
+    examples, test_cases, extra_notes = build_standalone_artifacts(solution, module_name_prompt)
+    notes = list(extra_notes)
     problems.append(
         ProblemRecord(
             title="Module __name__ Value",
-            prompt="Print the module __name__ value.",
+            prompt=module_name_prompt,
             sequence=sequence,
             starter_code=build_wrapped_code([], parameter_names=[], placeholder=True),
-            solution=build_wrapped_code([], main_body="print(__name__)"),
-            notes=["This mirrors the final __name__ line from the reference file."],
+            solution=solution,
+            test_cases=test_cases,
+            examples=examples,
+            notes=notes,
             source_reference={"file": path.name, "question": sequence},
         )
     )
@@ -1575,6 +2205,26 @@ def parse_inheritance_types(path: Path, source: str) -> list[ProblemRecord]:
         ("##Multilevel", "Multilevel Inheritance"),
         ("### Multiple", "Multiple Inheritance"),
     ]
+    prompt_map = {
+        "Single Inheritance": (
+            "Create an Animal class with a speak() method and a Dog class that inherits from Animal "
+            "and adds a bark() method. Inside main(), instantiate Dog and call speak() first, then bark()."
+        ),
+        "Multilevel Inheritance": (
+            "Create an Animal class with speak(), a Dog class that inherits from Animal with bark(), "
+            "and a Puppy class that inherits from Dog with weep(). Inside main(), instantiate Puppy and "
+            "call speak(), bark(), and weep() in that order."
+        ),
+        "Multiple Inheritance": (
+            "Create a Father class with height(), a Mother class with intelligence(), and a Child class "
+            "that inherits from both. Inside main(), instantiate Child and call height() first, then intelligence()."
+        ),
+    }
+    example_input_map = {
+        "Single Inheritance": "Define Animal.speak() and Dog.bark(), then run:\nbuddy = Dog()\nbuddy.speak()\nbuddy.bark()",
+        "Multilevel Inheritance": "Define Animal.speak(), Dog.bark(), and Puppy.weep(), then run:\ntiny = Puppy()\ntiny.speak()\ntiny.bark()\ntiny.weep()",
+        "Multiple Inheritance": "Define Father.height() and Mother.intelligence(), inherit both in Child, then run:\nchild = Child()\nchild.height()\nchild.intelligence()",
+    }
     problems = []
     for sequence, (marker, title) in enumerate(markers, start=1):
         start = source.find(marker)
@@ -1586,14 +2236,21 @@ def parse_inheritance_types(path: Path, source: str) -> list[ProblemRecord]:
         snippet = source[start:end]
         cleaned = "\n".join(line for line in snippet.splitlines() if not line.strip().startswith("#"))
         import_lines, action_body = split_imports_and_body(cleaned)
+        solution = build_wrapped_code(import_lines, main_body=action_body)
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt_map[title])
+        if examples:
+            examples[0]["input"] = example_input_map[title]
+        notes = [note for note in extra_notes if not note.startswith("Stored as ")]
         problems.append(
             ProblemRecord(
                 title=title,
-                prompt=title + ".",
+                prompt=prompt_map[title],
                 sequence=sequence,
                 starter_code=build_wrapped_code(import_lines, parameter_names=[], placeholder=True),
-                solution=build_wrapped_code(import_lines, main_body=action_body),
-                notes=["Stored as a standalone inheritance demo."],
+                solution=solution,
+                test_cases=test_cases,
+                examples=examples,
+                notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
         )
@@ -1620,16 +2277,42 @@ def parse_polymorphism(path: Path, source: str) -> list[ProblemRecord]:
         code_start = snippet.find("class ")
         if code_start == -1:
             continue
-        action_source = snippet[code_start:].strip() + "\n"
+        action_source = snippet[code_start:]
+        trailing_docstring = action_source.find('\n"""')
+        if trailing_docstring != -1:
+            action_source = action_source[:trailing_docstring]
+        action_source = action_source.strip() + "\n"
+        if title == "Save Data with Duck Typing":
+            action_source = action_source.replace(
+                "with open('data.txt', 'w') as file:\n            file.write(data)",
+                "print(f'Saved to file: {data}')",
+            )
+        if title == "Error Potential When Methods Are Missing":
+            action_source = re.sub(
+                r"^(\s*)start_trip\(bicycle\).*$",
+                "\\1try:\n\\1    start_trip(bicycle)\n\\1except AttributeError as error:\n\\1    print(f\"AttributeError: {error}\")",
+                action_source,
+                flags=re.MULTILINE,
+            )
+        prompt = override_prompt(
+            path,
+            title,
+            f"Recreate the {title.lower()} example inside main() using the sample setup shown below, and match the example output.",
+        )
         import_lines, action_body = split_imports_and_body(action_source)
+        solution = build_wrapped_code(import_lines, main_body=action_body)
+        examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+        notes = list(extra_notes)
         problems.append(
             ProblemRecord(
                 title=title,
-                prompt=title + ".",
+                prompt=prompt,
                 sequence=sequence,
                 starter_code=build_wrapped_code(import_lines, parameter_names=[], placeholder=True),
-                solution=build_wrapped_code(import_lines, main_body=action_body),
-                notes=["Stored as a standalone duck-typing snippet."],
+                solution=solution,
+                test_cases=test_cases,
+                examples=examples,
+                notes=notes,
                 source_reference={"file": path.name, "question": sequence},
             )
         )
@@ -1638,20 +2321,63 @@ def parse_polymorphism(path: Path, source: str) -> list[ProblemRecord]:
 
 def parse_single_snippet(path: Path, source: str) -> list[ProblemRecord]:
     title = TITLE_FROM_FILENAME_MAP.get(path.name, CATEGORY_NAME_MAP.get(path.name, pretty_name(path.stem)))
-    prompt = title + "."
+    prompt = override_prompt(
+        path,
+        title,
+        f"Recreate the {title.lower()} example inside main() using the same structure and sample values shown below, and match the example output.",
+    )
     import_lines, action_body = split_imports_and_body(source)
     starter_code = build_wrapped_code(import_lines, parameter_names=[], placeholder=True)
+    solution = build_wrapped_code(import_lines, main_body=action_body)
+    examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+    notes = list(extra_notes)
     return [
         ProblemRecord(
             title=title,
             prompt=prompt,
             sequence=1,
             starter_code=starter_code,
-            solution=build_wrapped_code(import_lines, main_body=action_body),
-            notes=["Stored as a standalone reference snippet."],
+            solution=solution,
+            test_cases=test_cases,
+            examples=examples,
+            notes=notes,
             source_reference={"file": path.name, "question": 1},
         )
     ]
+
+
+def parse_algo_problem_file(path: Path) -> tuple[str, int, ProblemRecord]:
+    """Convert a single algorithm reference file into one runnable problem."""
+    raw_source = path.read_text()
+    source = normalize_algo_source(path, raw_source)
+    group, order, title = algo_file_meta(path)
+    prompt = build_algo_prompt(group, title)
+    import_lines, support_source, action_body = split_runnable_script(source)
+    starter_code = build_wrapped_code(
+        import_lines,
+        support_source=support_source,
+        parameter_names=[],
+        placeholder=True,
+    )
+    solution = build_wrapped_code(
+        import_lines,
+        support_source=support_source,
+        main_body=action_body,
+    )
+    examples, test_cases, extra_notes = build_standalone_artifacts(solution, prompt)
+
+    problem = ProblemRecord(
+        title=title,
+        prompt=prompt,
+        sequence=0,
+        starter_code=starter_code,
+        solution=solution,
+        test_cases=test_cases,
+        examples=examples,
+        notes=list(extra_notes),
+        source_reference={"file": path.name, "question": 1},
+    )
+    return group, order, problem
 
 
 def parse_category_file(path: Path) -> list[ProblemRecord]:
@@ -1699,6 +2425,30 @@ def parse_category_file(path: Path) -> list[ProblemRecord]:
     return parse_single_snippet(path, source)
 
 
+def write_category_storage(category: dict, problems: list[ProblemRecord]) -> dict:
+    storage_problems = [build_storage_problem(category, problem) for problem in problems]
+    category_storage = {
+        "category_id": category["id"],
+        "category_name": category["name"],
+        "sequence": category["sequence"],
+        "source_reference": category["source_reference"],
+        "problems": storage_problems,
+    }
+
+    category_filename = f"{category['sequence']:02d}_{category['id']}.json"
+    category_path = PROBLEM_BANK_CATEGORIES_DIR / category_filename
+    category_path.write_text(json.dumps(category_storage, indent=2))
+
+    return {
+        "id": category["id"],
+        "name": category["name"],
+        "sequence": category["sequence"],
+        "file": f"categories/{category_filename}",
+        "problem_count": len(storage_problems),
+        "source_reference": category["source_reference"],
+    }
+
+
 def build_problem_bank() -> dict:
     PROBLEM_BANK_CATEGORIES_DIR.mkdir(parents=True, exist_ok=True)
     categories_index = []
@@ -1709,29 +2459,34 @@ def build_problem_bank() -> dict:
 
         category = category_meta(path)
         problems = parse_category_file(path)
-        storage_problems = [build_storage_problem(category, problem) for problem in problems]
-        category_storage = {
-            "category_id": category["id"],
-            "category_name": category["name"],
-            "sequence": category["sequence"],
-            "source_reference": category["source_reference"],
-            "problems": storage_problems,
+        categories_index.append(write_category_storage(category, problems))
+
+    algo_buckets: dict[str, list[tuple[int, ProblemRecord]]] = {
+        group: [] for group in ALGO_CATEGORY_CONFIG
+    }
+    for path in sorted(REFERENCE_ALGOS_DIR.glob("*.py")):
+        if path.name == "__init__.py":
+            continue
+        group, order, problem = parse_algo_problem_file(path)
+        algo_buckets[group].append((order, problem))
+
+    for group, config in sorted(ALGO_CATEGORY_CONFIG.items(), key=lambda item: item[1]["sequence"]):
+        bucket = sorted(algo_buckets.get(group, []), key=lambda item: (item[0], item[1].title))
+        if not bucket:
+            continue
+
+        problems = []
+        for sequence, (_, problem) in enumerate(bucket, start=1):
+            problem.sequence = sequence
+            problems.append(problem)
+
+        category = {
+            "id": config["id"],
+            "name": config["name"],
+            "sequence": config["sequence"],
+            "source_reference": f"algos/{group}",
         }
-
-        category_filename = f"{category['sequence']:02d}_{category['id']}.json"
-        category_path = PROBLEM_BANK_CATEGORIES_DIR / category_filename
-        category_path.write_text(json.dumps(category_storage, indent=2))
-
-        categories_index.append(
-            {
-                "id": category["id"],
-                "name": category["name"],
-                "sequence": category["sequence"],
-                "file": f"categories/{category_filename}",
-                "problem_count": len(storage_problems),
-                "source_reference": category["source_reference"],
-            }
-        )
+        categories_index.append(write_category_storage(category, problems))
 
     index = {"categories": categories_index}
     PROBLEM_BANK_DIR.mkdir(parents=True, exist_ok=True)

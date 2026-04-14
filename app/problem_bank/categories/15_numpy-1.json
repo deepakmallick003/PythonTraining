@@ -10,7 +10,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Array Creation",
-      "description": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]",
+      "description": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [2, 4, 6, 8]\n    main(input_1)\n",
@@ -18,7 +18,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmphyli9jhi.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpx6o61vmb.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",
@@ -31,7 +31,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Linspace",
-      "description": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]",
+      "description": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 0\n\n    input_2 = 4\n\n    input_3 = 5\n    main(input_1, input_2, input_3)\n",
@@ -39,7 +39,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp_7t70uj6.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpuhok1i1q.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",
@@ -52,7 +52,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Arange",
-      "description": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]",
+      "description": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 10\n\n    input_3 = 2\n    main(input_1, input_2, input_3)\n",
@@ -60,7 +60,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpbkc7yvw8.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp6d78uzas.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",
@@ -73,7 +73,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Zeros",
-      "description": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]",
+      "description": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 5\n    main(input_1)\n",
@@ -81,7 +81,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpv2i23hu5.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpgvgirdf3.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",
@@ -94,7 +94,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Ones (Int)",
-      "description": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]",
+      "description": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 4\n    main(input_1)\n",
@@ -102,7 +102,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpyxj89cjj.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpvdkaho3z.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",
@@ -115,7 +115,7 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Logspace",
-      "description": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]",
+      "description": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]. Use main() to produce the expected result shown in the example.",
       "prompt": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 3\n\n    input_3 = 3\n    main(input_1, input_2, input_3)\n",
@@ -123,7 +123,7 @@
       "examples": [],
       "test_cases": [],
       "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpsvxd77ij.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp0altxbsy.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
       ],
       "source_reference": {
         "file": "15_numpy-1.py",

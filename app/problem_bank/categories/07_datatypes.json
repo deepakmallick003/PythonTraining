@@ -10,16 +10,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Nonetype",
-      "description": "Write a Python function to nonetype and print the result.",
-      "prompt": "Nonetype.",
+      "description": "Inside main(), assign `a = None`, then print the value and its type to show how Python represents the absence of a value. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), assign `a = None`, then print the value and its type to show how Python represents the absence of a value.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- NoneType ---')\n\n    print('Represents the absence of a value, similar to null in other languages.')\n\n    a = None\n\n    print('Example: a =', a)\n\n    print('Type of a:', type(a))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\na = None",
+          "output": "--- NoneType ---\nRepresents the absence of a value, similar to null in other languages.\nExample: a = None\nType of a: <class 'NoneType'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- NoneType ---\nRepresents the absence of a value, similar to null in other languages.\nExample: a = None\nType of a: <class 'NoneType'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Numbers",
-      "description": "Write a Python function to numbers and print the result.",
-      "prompt": "Numbers.",
+      "description": "Inside main(), create one integer, one float, and one complex number. Print each value and its type so the learner can compare the three numeric data types. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create one integer, one float, and one complex number. Print each value and its type so the learner can compare the three numeric data types.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Numbers ---')\n\n    print('Can be integers, floating-point numbers, or complex numbers.')\n\n    a = 5\n\n    print('\\nInteger Example: a =', a)\n\n    print('Type of a:', type(a))\n\n    num = 2.5\n\n    print('\\nFloat Example: num =', num)\n\n    print('Type of num:', type(num))\n\n    num = 2 + 9j\n\n    print('\\nComplex Example: num =', num)\n\n    print('Type of num:', type(num))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\na = 5\nnum = 2.5\nnum = 2 + 9j",
+          "output": "--- Numbers ---\nCan be integers, floating-point numbers, or complex numbers.\n\nInteger Example: a = 5\nType of a: <class 'int'>\n\nFloat Example: num = 2.5\nType of num: <class 'float'>\n\nComplex Example: num = (2+9j)\nType of num: <class 'complex'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Numbers ---\nCan be integers, floating-point numbers, or complex numbers.\n\nInteger Example: a = 5\nType of a: <class 'int'>\n\nFloat Example: num = 2.5\nType of num: <class 'float'>\n\nComplex Example: num = (2+9j)\nType of num: <class 'complex'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Type Conversion",
-      "description": "Write a Python function to type conversion and print the result.",
-      "prompt": "Type Conversion.",
+      "description": "Inside main(), convert a float to an int, convert that int back to a float, and create a complex number. Print each converted value together with its type. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert a float to an int, convert that int back to a float, and create a complex number. Print each converted value together with its type.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Type Conversion ---')\n\n    print('Converting one data type to another.')\n\n    a = 5.6\n\n    b = int(a)\n\n    k = float(b)\n\n    c = complex(4, 5)\n\n    print('Converted int:', b, 'Type:', type(b))\n\n    print('Converted float:', k, 'Type:', type(k))\n\n    print('Converted complex:', c, 'Type:', type(c))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\na = 5.6\nb = int(a)\nk = float(b)\nc = complex(4, 5)",
+          "output": "--- Type Conversion ---\nConverting one data type to another.\nConverted int: 5 Type: <class 'int'>\nConverted float: 5.0 Type: <class 'float'>\nConverted complex: (4+5j) Type: <class 'complex'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Type Conversion ---\nConverting one data type to another.\nConverted int: 5 Type: <class 'int'>\nConverted float: 5.0 Type: <class 'float'>\nConverted complex: (4+5j) Type: <class 'complex'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Booleans",
-      "description": "Write a Python function to booleans and print the result.",
-      "prompt": "Booleans.",
+      "description": "Inside main(), store `True` in one variable and evaluate `3 < 5` in another. Print both values and their types to show how booleans work in Python. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), store `True` in one variable and evaluate `3 < 5` in another. Print both values and their types to show how booleans work in Python.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Booleans ---')\n\n    print('Represent True or False.')\n\n    a = True\n\n    bool_val = 3 < 5\n\n    print('Boolean Example: a =', a, 'Type:', type(a))\n\n    print('Boolean Expression: 3 < 5 is', bool_val, 'Type:', type(bool_val))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\na = True\nbool_val = 3 < 5",
+          "output": "--- Booleans ---\nRepresent True or False.\nBoolean Example: a = True Type: <class 'bool'>\nBoolean Expression: 3 < 5 is True Type: <class 'bool'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Booleans ---\nRepresent True or False.\nBoolean Example: a = True Type: <class 'bool'>\nBoolean Expression: 3 < 5 is True Type: <class 'bool'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 4
@@ -94,16 +134,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Sequence Data Types",
-      "description": "Write a Python function to sequence data types and print the result.",
-      "prompt": "Sequence Data Types.",
+      "description": "Inside main(), print a short explanation that lists the common sequence-style containers shown in this lesson: list, tuple, set, string, and range. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print a short explanation that lists the common sequence-style containers shown in this lesson: list, tuple, set, string, and range.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Sequence Data Types ---')\n\n    print('Can hold multiple values: List, Tuple, Set, String, Range.')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint a short explanation that lists the common sequence-style containers shown in this lesson: list, tuple, set, string, and range",
+          "output": "--- Sequence Data Types ---\nCan hold multiple values: List, Tuple, Set, String, Range."
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Sequence Data Types ---\nCan hold multiple values: List, Tuple, Set, String, Range.",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 5
@@ -115,16 +165,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "List",
-      "description": "Write a Python function to list and print the result.",
-      "prompt": "List.",
+      "description": "Inside main(), create the sample list `lst = [25, 36, 45, 12]`, then print the list and its type. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create the sample list `lst = [25, 36, 45, 12]`, then print the list and its type.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- List ---')\n\n    print('Ordered and mutable sequence of objects enclosed in square brackets.')\n\n    lst = [25, 36, 45, 12]\n\n    print('Example: lst =', lst)\n\n    print('Type of lst:', type(lst))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nlst = [25, 36, 45, 12]",
+          "output": "--- List ---\nOrdered and mutable sequence of objects enclosed in square brackets.\nExample: lst = [25, 36, 45, 12]\nType of lst: <class 'list'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- List ---\nOrdered and mutable sequence of objects enclosed in square brackets.\nExample: lst = [25, 36, 45, 12]\nType of lst: <class 'list'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 6
@@ -136,16 +196,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Tuple",
-      "description": "Write a Python function to tuple and print the result.",
-      "prompt": "Tuple.",
+      "description": "Inside main(), create the sample tuple `t = (25, 36, 45, 12, 7)`, then print the tuple and its type. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create the sample tuple `t = (25, 36, 45, 12, 7)`, then print the tuple and its type.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Tuple ---')\n\n    print('Ordered and immutable sequence of objects enclosed in parentheses.')\n\n    t = (25, 36, 45, 12, 7)\n\n    print('Example: t =', t)\n\n    print('Type of t:', type(t))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nt = (25, 36, 45, 12, 7)",
+          "output": "--- Tuple ---\nOrdered and immutable sequence of objects enclosed in parentheses.\nExample: t = (25, 36, 45, 12, 7)\nType of t: <class 'tuple'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Tuple ---\nOrdered and immutable sequence of objects enclosed in parentheses.\nExample: t = (25, 36, 45, 12, 7)\nType of t: <class 'tuple'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 7
@@ -157,16 +227,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Set",
-      "description": "Write a Python function to set and print the result.",
-      "prompt": "Set.",
+      "description": "Inside main(), create the sample set `{25, 36, 45, 12, 25, 36}` and print the resulting set and its type so the learner can see that duplicates are removed. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create the sample set `{25, 36, 45, 12, 25, 36}` and print the resulting set and its type so the learner can see that duplicates are removed.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Set ---')\n\n    print('Unordered collection of unique elements enclosed in curly braces.')\n\n    s = {25, 36, 45, 12, 25, 36}\n\n    print('Example: s =', s)\n\n    print('Type of s:', type(s))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ns = {25, 36, 45, 12, 25, 36}",
+          "output": "--- Set ---\nUnordered collection of unique elements enclosed in curly braces.\nExample: s = {25, 12, 45, 36}\nType of s: <class 'set'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Set ---\nUnordered collection of unique elements enclosed in curly braces.\nExample: s = {25, 12, 45, 36}\nType of s: <class 'set'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 8
@@ -178,16 +258,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "String",
-      "description": "Write a Python function to string and print the result.",
-      "prompt": "String.",
+      "description": "Inside main(), assign `str_val = \"hello\"`, then print the string and its type. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), assign `str_val = \"hello\"`, then print the string and its type.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- String ---')\n\n    print('Sequence of characters enclosed in single or double quotes.')\n\n    str_val = 'hello'\n\n    print('Example: str_val =', str_val)\n\n    print('Type of str_val:', type(str_val))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nstr_val = 'hello'",
+          "output": "--- String ---\nSequence of characters enclosed in single or double quotes.\nExample: str_val = hello\nType of str_val: <class 'str'>"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- String ---\nSequence of characters enclosed in single or double quotes.\nExample: str_val = hello\nType of str_val: <class 'str'>",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 9
@@ -199,16 +289,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Range",
-      "description": "Write a Python function to range and print the result.",
-      "prompt": "Range.",
+      "description": "Inside main(), create `r = range(10)`, print the range object and its type, then print `list(range(2, 10, 2))` to show the generated values. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create `r = range(10)`, print the range object and its type, then print `list(range(2, 10, 2))` to show the generated values.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Range ---')\n\n    print('Immutable and iterable sequence of numbers.')\n\n    r = range(10)\n\n    print('Example: r =', r)\n\n    print('Type of r:', type(r))\n\n    print('List converted from range:', list(range(2, 10, 2)))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nr = range(10)",
+          "output": "--- Range ---\nImmutable and iterable sequence of numbers.\nExample: r = range(0, 10)\nType of r: <class 'range'>\nList converted from range: [2, 4, 6, 8]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Range ---\nImmutable and iterable sequence of numbers.\nExample: r = range(0, 10)\nType of r: <class 'range'>\nList converted from range: [2, 4, 6, 8]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 10
@@ -220,16 +320,26 @@
       "category_id": "datatypes",
       "category_name": "Data Types",
       "title": "Dictionary",
-      "description": "Write a Python function to dictionary and print the result.",
-      "prompt": "Dictionary.",
+      "description": "Inside main(), create the sample dictionaries, then print the dictionary, its type, its keys, its values, direct access with `['rahul']`, and access with `.get('kiran')`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), create the sample dictionaries, then print the dictionary, its type, its keys, its values, direct access with `['rahul']`, and access with `.get('kiran')`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Dictionary ---')\n\n    print('Collection of key-value pairs enclosed in curly braces.')\n\n    d = {1: 'a', 2: 'b', 3: 'c'}\n\n    print('Example: d =', d)\n\n    print('Type of d:', type(d))\n\n    d1 = {'navin': 'samsung', 'rahul': 'iphone', 'kiran': 'oneplus'}\n\n    print('Example: d1 =', d1)\n\n    print('Values of d1:', d1.values())\n\n    print('Keys of d1:', d1.keys())\n\n    print(\"Accessing element by key 'rahul':\", d1['rahul'])\n\n    print(\"Using get method for key 'kiran':\", d1.get('kiran'))\n\n    print('\\n' + '-' * 50 + '\\n')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nd = {1: 'a', 2: 'b', 3: 'c'}\nd1 = {'navin': 'samsung', 'rahul': 'iphone', 'kiran': 'oneplus'}",
+          "output": "--- Dictionary ---\nCollection of key-value pairs enclosed in curly braces.\nExample: d = {1: 'a', 2: 'b', 3: 'c'}\nType of d: <class 'dict'>\nExample: d1 = {'navin': 'samsung', 'rahul': 'iphone', 'kiran': 'oneplus'}\nValues of d1: dict_values(['samsung', 'iphone', 'oneplus'])\nKeys of d1: dict_keys(['navin', 'rahul', 'kiran'])\nAccessing element by key 'rahul': iphone\nUsing get method for key 'kiran': oneplus\n\n--------------------------------------------------"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Dictionary ---\nCollection of key-value pairs enclosed in curly braces.\nExample: d = {1: 'a', 2: 'b', 3: 'c'}\nType of d: <class 'dict'>\nExample: d1 = {'navin': 'samsung', 'rahul': 'iphone', 'kiran': 'oneplus'}\nValues of d1: dict_values(['samsung', 'iphone', 'oneplus'])\nKeys of d1: dict_keys(['navin', 'rahul', 'kiran'])\nAccessing element by key 'rahul': iphone\nUsing get method for key 'kiran': oneplus\n\n--------------------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "07_datatypes.py",
         "question": 11

@@ -141,18 +141,24 @@
 
             <div class="problem-description">
                 <h3>Description</h3>
-                <p>{{ problem.description }}</p>
+                <div class="problem-body-text">{{ problem.description }}</div>
                 {% if problem.source_reference %}
                 <p class="problem-source">Source: {{ problem.source_reference.file }}</p>
                 {% endif %}
             </div>
 
-            {% if problem.notes %}
+            {% set visible_notes = namespace(items=[]) %}
+            {% for note in problem.notes or [] %}
+                {% if not note.startswith('Stored as ') %}
+                    {% set visible_notes.items = visible_notes.items + [note] %}
+                {% endif %}
+            {% endfor %}
+            {% if visible_notes.items %}
             <div class="examples">
                 <h3>Notes</h3>
-                {% for note in problem.notes %}
+                {% for note in visible_notes.items %}
                 <div class="example">
-                    <p>{{ note }}</p>
+                    <p class="problem-body-text">{{ note }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -269,6 +275,10 @@
                 window.location.href = '/category/' + categoryId;
             }
         }
+    </script>
+
+    <script>
+        const trueStarterCode = {{ problem.starter_code | tojson }};
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>

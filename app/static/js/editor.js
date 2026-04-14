@@ -279,12 +279,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.getElementById('confirmResetBtn').addEventListener('click', function() {
-        setEditorValue(starterCode);
-        updateCharCount();
-        updateDirtyState();
-        output.style.display = 'none';
-        testResults.style.display = 'none';
-        document.getElementById('confirmModal').style.display = 'none';
+        // Clear saved code on server
+        fetch(`/api/progress/${problemId}/clear-code`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(response => response.json()).then(data => {
+            if (data.status === 'success') {
+                setEditorValue(trueStarterCode);
+                savedCode = trueStarterCode;
+                updateCharCount();
+                updateDirtyState();
+                output.style.display = 'none';
+                testResults.style.display = 'none';
+                document.getElementById('confirmModal').style.display = 'none';
+            } else {
+                alert('Failed to reset code');
+            }
+        }).catch(error => {
+            console.error('Error resetting code:', error);
+            alert('Error resetting code');
+        });
     });
     
     // Show solution

@@ -10,16 +10,26 @@
       "category_id": "decorator",
       "category_name": "Decorator",
       "title": "Smart Division Decorator",
-      "description": "Write a Python function to smart division decorator and print the result.",
-      "prompt": "Smart Division Decorator.",
+      "description": "Create a `div(a, b)` function and a `smart_div` decorator. The decorator should swap the numbers when `a < b`, then call the original function so dividing `2` and `4` still prints the result of `4 / 2`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `div(a, b)` function and a `smart_div` decorator. The decorator should swap the numbers when `a < b`, then call the original function so dividing `2` and `4` still prints the result of `4 / 2`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def div(a, b):\n        print(a / b)\n\n    def smart_div(func):\n\n        def inner(a, b):\n            if a < b:\n                a, b = (b, a)\n            return func(a, b)\n        return inner\n\n    div = smart_div(div)\n\n    div(2, 4)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndiv = smart_div(div)\ndiv(2, 4)",
+          "output": "2.0"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "2.0",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "22_decorator.py",
         "question": 1

@@ -10,16 +10,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Arithmetic Operators",
-      "description": "Write a Python function to arithmetic operators and print the result.",
-      "prompt": "Arithmetic Operators.",
+      "description": "Inside main(), print worked examples for the arithmetic operators `+`, `-`, `*`, `/`, `//`, `%`, and `**` using the numbers `5` and `3`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples for the arithmetic operators `+`, `-`, `*`, `/`, `//`, `%`, and `**` using the numbers `5` and `3`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Arithmetic Operators ---')\n\n    print('Operator: + (Addition)\\nDescription: Adds two operands\\nExample: 5 + 3 =', 5 + 3)\n\n    print('\\nOperator: - (Subtraction)\\nDescription: Subtracts the second operand from the first\\nExample: 5 - 3 =', 5 - 3)\n\n    print('\\nOperator: * (Multiplication)\\nDescription: Multiplies two operands\\nExample: 5 * 3 =', 5 * 3)\n\n    print('\\nOperator: / (Division - float)\\nDescription: Divides the first operand by the second and returns a floating-point number\\nExample: 5 / 3 =', 5 / 3)\n\n    print('\\nOperator: // (Division - floor)\\nDescription: Divides the first operand by the second and returns the largest integer not greater than the result\\nExample: 5 // 3 =', 5 // 3)\n\n    print('\\nOperator: % (Modulus)\\nDescription: Returns the remainder when the first operand is divided by the second\\nExample: 5 % 3 =', 5 % 3)\n\n    print('\\nOperator: ** (Exponentiation)\\nDescription: Raises the first operand to the power of the second\\nExample: 5 ** 3 =', 5 ** 3)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples for the arithmetic operators `+`, `-`, `*`, `/`, `//`, `%`, and `**` using the numbers `5` and `3`",
+          "output": "--- Arithmetic Operators ---\nOperator: + (Addition)\nDescription: Adds two operands\nExample: 5 + 3 = 8\n\nOperator: - (Subtraction)\nDescription: Subtracts the second operand from the first\nExample: 5 - 3 = 2\n\nOperator: * (Multiplication)\nDescription: Multiplies two operands\nExample: 5 * 3 = 15\n\nOperator: / (Division - float)\nDescription: Divides the first operand by the second and returns a floating-point number\nExample: 5 / 3 = 1.6666666666666667\n\nOperator: // (Division - floor)\nDescription: Divides the first operand by the second and returns the largest integer not greater than the result\nExample: 5 // 3 = 1\n\nOperator: % (Modulus)\nDescription: Returns the remainder when the first operand is divided by the second\nExample: 5 % 3 = 2\n\nOperator: ** (Exponentiation)\nDescription: Raises the first operand to the power of the second\nExample: 5 ** 3 = 125"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Arithmetic Operators ---\nOperator: + (Addition)\nDescription: Adds two operands\nExample: 5 + 3 = 8\n\nOperator: - (Subtraction)\nDescription: Subtracts the second operand from the first\nExample: 5 - 3 = 2\n\nOperator: * (Multiplication)\nDescription: Multiplies two operands\nExample: 5 * 3 = 15\n\nOperator: / (Division - float)\nDescription: Divides the first operand by the second and returns a floating-point number\nExample: 5 / 3 = 1.6666666666666667\n\nOperator: // (Division - floor)\nDescription: Divides the first operand by the second and returns the largest integer not greater than the result\nExample: 5 // 3 = 1\n\nOperator: % (Modulus)\nDescription: Returns the remainder when the first operand is divided by the second\nExample: 5 % 3 = 2\n\nOperator: ** (Exponentiation)\nDescription: Raises the first operand to the power of the second\nExample: 5 ** 3 = 125",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Comparison Operators",
-      "description": "Write a Python function to comparison operators and print the result.",
-      "prompt": "Comparison Operators.",
+      "description": "Inside main(), print worked examples for the comparison operators `==`, `!=`, `>`, `<`, `>=`, and `<=` using the numbers `5` and `3`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples for the comparison operators `==`, `!=`, `>`, `<`, `>=`, and `<=` using the numbers `5` and `3`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Comparison Operators ---')\n\n    print('Operator: == (Equal to)\\nDescription: Checks if two operands are equal\\nExample: 5 == 3:', 5 == 3)\n\n    print('\\nOperator: != (Not equal to)\\nDescription: Checks if two operands are not equal\\nExample: 5 != 3:', 5 != 3)\n\n    print('\\nOperator: > (Greater than)\\nDescription: Checks if the left operand is greater than the right\\nExample: 5 > 3:', 5 > 3)\n\n    print('\\nOperator: < (Less than)\\nDescription: Checks if the left operand is less than the right\\nExample: 5 < 3:', 5 < 3)\n\n    print('\\nOperator: >= (Greater than or equal to)\\nDescription: Checks if the left operand is greater than or equal to the right\\nExample: 5 >= 3:', 5 >= 3)\n\n    print('\\nOperator: <= (Less than or equal to)\\nDescription: Checks if the left operand is less than or equal to the right\\nExample: 5 <= 3:', 5 <= 3)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples for the comparison operators `==`, `!=`, `>`, `<`, `>=`, and `<=` using the numbers `5` and `3`",
+          "output": "--- Comparison Operators ---\nOperator: == (Equal to)\nDescription: Checks if two operands are equal\nExample: 5 == 3: False\n\nOperator: != (Not equal to)\nDescription: Checks if two operands are not equal\nExample: 5 != 3: True\n\nOperator: > (Greater than)\nDescription: Checks if the left operand is greater than the right\nExample: 5 > 3: True\n\nOperator: < (Less than)\nDescription: Checks if the left operand is less than the right\nExample: 5 < 3: False\n\nOperator: >= (Greater than or equal to)\nDescription: Checks if the left operand is greater than or equal to the right\nExample: 5 >= 3: True\n\nOperator: <= (Less than or equal to)\nDescription: Checks if the left operand is less than or equal to the right\nExample: 5 <= 3: False"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Comparison Operators ---\nOperator: == (Equal to)\nDescription: Checks if two operands are equal\nExample: 5 == 3: False\n\nOperator: != (Not equal to)\nDescription: Checks if two operands are not equal\nExample: 5 != 3: True\n\nOperator: > (Greater than)\nDescription: Checks if the left operand is greater than the right\nExample: 5 > 3: True\n\nOperator: < (Less than)\nDescription: Checks if the left operand is less than the right\nExample: 5 < 3: False\n\nOperator: >= (Greater than or equal to)\nDescription: Checks if the left operand is greater than or equal to the right\nExample: 5 >= 3: True\n\nOperator: <= (Less than or equal to)\nDescription: Checks if the left operand is less than or equal to the right\nExample: 5 <= 3: False",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Logical Operators",
-      "description": "Write a Python function to logical operators and print the result.",
-      "prompt": "Logical Operators.",
+      "description": "Inside main(), print worked examples for `and`, `or`, and `not` using boolean expressions based on `5`, `3`, and `4`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples for `and`, `or`, and `not` using boolean expressions based on `5`, `3`, and `4`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Logical Operators ---')\n\n    print('Operator: and (Logical AND)\\nDescription: Returns True if both operands are true\\nExample: (5 > 3) and (5 > 4):', 5 > 3 and 5 > 4)\n\n    print('\\nOperator: or (Logical OR)\\nDescription: Returns True if at least one of the operands is true\\nExample: (5 > 3) or (5 < 4):', 5 > 3 or 5 < 4)\n\n    print('\\nOperator: not (Logical NOT)\\nDescription: Reverses the logical state of the operand\\nExample: not (5 > 3):', not 5 > 3)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples for `and`, `or`, and `not` using boolean expressions based on `5`, `3`, and `4`",
+          "output": "--- Logical Operators ---\nOperator: and (Logical AND)\nDescription: Returns True if both operands are true\nExample: (5 > 3) and (5 > 4): True\n\nOperator: or (Logical OR)\nDescription: Returns True if at least one of the operands is true\nExample: (5 > 3) or (5 < 4): True\n\nOperator: not (Logical NOT)\nDescription: Reverses the logical state of the operand\nExample: not (5 > 3): False"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Logical Operators ---\nOperator: and (Logical AND)\nDescription: Returns True if both operands are true\nExample: (5 > 3) and (5 > 4): True\n\nOperator: or (Logical OR)\nDescription: Returns True if at least one of the operands is true\nExample: (5 > 3) or (5 < 4): True\n\nOperator: not (Logical NOT)\nDescription: Reverses the logical state of the operand\nExample: not (5 > 3): False",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Bitwise Operators",
-      "description": "Write a Python function to bitwise operators and print the result.",
-      "prompt": "Bitwise Operators.",
+      "description": "Inside main(), print worked examples for the bitwise operators `&`, `|`, `^`, `~`, `<<`, and `>>` using `5` and `3`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples for the bitwise operators `&`, `|`, `^`, `~`, `<<`, and `>>` using `5` and `3`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Bitwise Operators ---')\n\n    print('Operator: & (Bitwise AND)\\nDescription: Sets each bit to 1 if both bits are 1.\\nExample: 5 & 3 =', 5 & 3)\n\n    print('Operator: | (Bitwise OR)\\nDescription: Sets each bit to 1 if one of two bits is 1.\\nExample: 5 | 3 =', 5 | 3)\n\n    print('Operator: ^ (Bitwise XOR)\\nDescription: Sets each bit to 1 if only one of two bits is 1.\\nExample: 5 ^ 3 =', 5 ^ 3)\n\n    print('Operator: ~ (Bitwise NOT)\\nDescription: Inverts all the bits.\\nExample: ~5 =', ~5)\n\n    print('Operator: << (Bitwise left shift)\\nDescription: Shifts left by pushing zeros in from the right and lets the leftmost bits fall off.\\nExample: 5 << 1 =', 5 << 1)\n\n    print('Operator: >> (Bitwise right shift)\\nDescription: Shifts right by pushing copies of the leftmost bit in from the left, and lets the rightmost bits fall off.\\nExample: 5 >> 1 =', 5 >> 1)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples for the bitwise operators `&`, `|`, `^`, `~`, `<<`, and `>>` using `5` and `3`",
+          "output": "--- Bitwise Operators ---\nOperator: & (Bitwise AND)\nDescription: Sets each bit to 1 if both bits are 1.\nExample: 5 & 3 = 1\nOperator: | (Bitwise OR)\nDescription: Sets each bit to 1 if one of two bits is 1.\nExample: 5 | 3 = 7\nOperator: ^ (Bitwise XOR)\nDescription: Sets each bit to 1 if only one of two bits is 1.\nExample: 5 ^ 3 = 6\nOperator: ~ (Bitwise NOT)\nDescription: Inverts all the bits.\nExample: ~5 = -6\nOperator: << (Bitwise left shift)\nDescription: Shifts left by pushing zeros in from the right and lets the leftmost bits fall off.\nExample: 5 << 1 = 10\nOperator: >> (Bitwise right shift)\nDescription: Shifts right by pushing copies of the leftmost bit in from the left, and lets the rightmost bits fall off.\nExample: 5 >> 1 = 2"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Bitwise Operators ---\nOperator: & (Bitwise AND)\nDescription: Sets each bit to 1 if both bits are 1.\nExample: 5 & 3 = 1\nOperator: | (Bitwise OR)\nDescription: Sets each bit to 1 if one of two bits is 1.\nExample: 5 | 3 = 7\nOperator: ^ (Bitwise XOR)\nDescription: Sets each bit to 1 if only one of two bits is 1.\nExample: 5 ^ 3 = 6\nOperator: ~ (Bitwise NOT)\nDescription: Inverts all the bits.\nExample: ~5 = -6\nOperator: << (Bitwise left shift)\nDescription: Shifts left by pushing zeros in from the right and lets the leftmost bits fall off.\nExample: 5 << 1 = 10\nOperator: >> (Bitwise right shift)\nDescription: Shifts right by pushing copies of the leftmost bit in from the left, and lets the rightmost bits fall off.\nExample: 5 >> 1 = 2",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 4
@@ -94,16 +134,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Membership Operators",
-      "description": "Write a Python function to membership operators and print the result.",
-      "prompt": "Membership Operators.",
+      "description": "Inside main(), print worked examples that show how `in` and `not in` behave with the strings `'Hello'`, `'Goodbye'`, and `'Hello World'`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples that show how `in` and `not in` behave with the strings `'Hello'`, `'Goodbye'`, and `'Hello World'`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Membership Operators ---')\n\n    print(\"Operator: in\\nDescription: Evaluates to True if it finds a variable in the specified sequence and False otherwise.\\nExample: 'Hello' in 'Hello World':\", 'Hello' in 'Hello World')\n\n    print(\"Operator: not in\\nDescription: Evaluates to True if it does not find a variable in the specified sequence and False otherwise.\\nExample: 'Goodbye' not in 'Hello World':\", 'Goodbye' not in 'Hello World')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples that show how `in` and `not in` behave with the strings `'Hello'`, `'Goodbye'`, and `'Hello World'`",
+          "output": "--- Membership Operators ---\nOperator: in\nDescription: Evaluates to True if it finds a variable in the specified sequence and False otherwise.\nExample: 'Hello' in 'Hello World': True\nOperator: not in\nDescription: Evaluates to True if it does not find a variable in the specified sequence and False otherwise.\nExample: 'Goodbye' not in 'Hello World': True"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Membership Operators ---\nOperator: in\nDescription: Evaluates to True if it finds a variable in the specified sequence and False otherwise.\nExample: 'Hello' in 'Hello World': True\nOperator: not in\nDescription: Evaluates to True if it does not find a variable in the specified sequence and False otherwise.\nExample: 'Goodbye' not in 'Hello World': True",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 5
@@ -115,16 +165,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Identity Operators",
-      "description": "Write a Python function to identity operators and print the result.",
-      "prompt": "Identity Operators.",
+      "description": "Inside main(), print worked examples that show the difference between `is` and `is not` using two separate empty lists. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print worked examples that show the difference between `is` and `is not` using two separate empty lists.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Identity Operators ---')\n\n    print('Operator: is\\nDescription: Evaluates to True if the variables on either side of the operator point to the same object and False otherwise.\\nExample: [] is []:', [] is [])\n\n    print('Operator: is not\\nDescription: Evaluates to True if the variables on either side of the operator do not point to the same object and False otherwise.\\nExample: [] is not []:', [] is not [])\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint worked examples that show the difference between `is` and `is not` using two separate empty lists",
+          "output": "--- Identity Operators ---\nOperator: is\nDescription: Evaluates to True if the variables on either side of the operator point to the same object and False otherwise.\nExample: [] is []: False\nOperator: is not\nDescription: Evaluates to True if the variables on either side of the operator do not point to the same object and False otherwise.\nExample: [] is not []: True"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Identity Operators ---\nOperator: is\nDescription: Evaluates to True if the variables on either side of the operator point to the same object and False otherwise.\nExample: [] is []: False\nOperator: is not\nDescription: Evaluates to True if the variables on either side of the operator do not point to the same object and False otherwise.\nExample: [] is not []: True",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 6
@@ -136,16 +196,26 @@
       "category_id": "operators",
       "category_name": "Operators",
       "title": "Assignment Operators",
-      "description": "Write a Python function to assignment operators and print the result.",
-      "prompt": "Assignment Operators.",
+      "description": "Inside main(), demonstrate assignment operators by updating `x` step by step and printing the result after each one: `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `//=`, `**=`, `&=`, `|=`, `^=`, `>>=`, and `<<=`. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), demonstrate assignment operators by updating `x` step by step and printing the result after each one: `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `//=`, `**=`, `&=`, `|=`, `^=`, `>>=`, and `<<=`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Assignment Operators ---')\n\n    print('Operator: =\\nDescription: Assigns a value to a variable.\\nExample: x = 5')\n\n    x = 5\n\n    print('Result:', x)\n\n    print('\\nOperator: +=\\nDescription: Adds the right operand to the left operand and assigns the result to the left operand.\\nExample: x = 5; x += 3')\n\n    x = 5\n\n    x += 3\n\n    print('Result:', x)\n\n    print('\\nOperator: -=\\nDescription: Subtracts the right operand from the left operand and assigns the result to the left operand.\\nExample: x = 8; x -= 3')\n\n    x = 8\n\n    x -= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: *=\\nDescription: Multiplies the right operand with the left operand and assigns the result to the left operand.\\nExample: x = 5; x *= 3')\n\n    x = 5\n\n    x *= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: /=\\nDescription: Divides the left operand by the right operand and assigns the result to the left operand.\\nExample: x = 15; x /= 3')\n\n    x = 15\n\n    x /= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: %=\\nDescription: Takes modulus using two operands and assigns the result to the left operand.\\nExample: x = 19; x %= 4')\n\n    x = 19\n\n    x %= 4\n\n    print('Result:', x)\n\n    print('\\nOperator: //=\\nDescription: Performs floor division on operands and assigns the result to the left operand.\\nExample: x = 17; x //= 4')\n\n    x = 17\n\n    x //= 4\n\n    print('Result:', x)\n\n    print('\\nOperator: **=\\nDescription: Performs exponential calculation on operators and assigns the result to the left operand.\\nExample: x = 5; x **= 3')\n\n    x = 5\n\n    x **= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: &=\\nDescription: Performs bitwise AND on operands and assigns the result to the left operand.\\nExample: x = 5; x &= 3')\n\n    x = 5\n\n    x &= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: |=\\nDescription: Performs bitwise OR on operands and assigns the result to the left operand.\\nExample: x = 5; x |= 3')\n\n    x = 5\n\n    x |= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: ^=\\nDescription: Performs bitwise XOR on operands and assigns the result to the left operand.\\nExample: x = 5; x ^= 3')\n\n    x = 5\n\n    x ^= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: >>=\\nDescription: Performs bitwise right shift on operands and assigns the result to the left operand.\\nExample: x = 20; x >>= 3')\n\n    x = 20\n\n    x >>= 3\n\n    print('Result:', x)\n\n    print('\\nOperator: <<=\\nDescription: Performs bitwise left shift on operands and assigns the result to the left operand.\\nExample: x = 5; x <<= 3')\n\n    x = 5\n\n    x <<= 3\n\n    print('Result:', x)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nx = 5\nx = 5\nx += 3\nx = 8\nx -= 3\nx = 5",
+          "output": "--- Assignment Operators ---\nOperator: =\nDescription: Assigns a value to a variable.\nExample: x = 5\nResult: 5\n\nOperator: +=\nDescription: Adds the right operand to the left operand and assigns the result to the left operand.\nExample: x = 5; x += 3\nResult: 8\n\nOperator: -=\nDescription: Subtracts the right operand from the left operand and assigns the result to the left operand.\nExample: x = 8; x -= 3\nResult: 5\n\nOperator: *=\nDescription: Multiplies the right operand with the left operand and assigns the result to the left operand.\nExample: x = 5; x *= 3\nResult: 15\n\nOperator: /=\nDescription: Divides the left operand by the right operand and assigns the result to the left operand.\nExample: x = 15; x /= 3\nResult: 5.0\n\nOperator: %=\nDescription: Takes modulus using two operands and assigns the result to the left operand.\nExample: x = 19; x %= 4\nResult: 3\n\nOperator: //=\nDescription: Performs floor division on operands and assigns the result to the left operand.\nExample: x = 17; x //= 4\nResult: 4\n\nOperator: **=\nDescription: Performs exponential calculation on operators and assigns the result to the left operand.\nExample: x = 5; x **= 3\nResult: 125\n\nOperator: &=\nDescription: Performs bitwise AND on operands and assigns the result to the left operand.\nExample: x = 5; x &= 3\nResult: 1\n\nOperator: |=\nDescription: Performs bitwise OR on operands and assigns the result to the left operand.\nExample: x = 5; x |= 3\nResult: 7\n\nOperator: ^=\nDescription: Performs bitwise XOR on operands and assigns the result to the left operand.\nExample: x = 5; x ^= 3\nResult: 6\n\nOperator: >>=\nDescription: Performs bitwise right shift on operands and assigns the result to the left operand.\nExample: x = 20; x >>= 3\nResult: 2\n\nOperator: <<=\nDescription: Performs bitwise left shift on operands and assigns the result to the left operand.\nExample: x = 5; x <<= 3\nResult: 40"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Assignment Operators ---\nOperator: =\nDescription: Assigns a value to a variable.\nExample: x = 5\nResult: 5\n\nOperator: +=\nDescription: Adds the right operand to the left operand and assigns the result to the left operand.\nExample: x = 5; x += 3\nResult: 8\n\nOperator: -=\nDescription: Subtracts the right operand from the left operand and assigns the result to the left operand.\nExample: x = 8; x -= 3\nResult: 5\n\nOperator: *=\nDescription: Multiplies the right operand with the left operand and assigns the result to the left operand.\nExample: x = 5; x *= 3\nResult: 15\n\nOperator: /=\nDescription: Divides the left operand by the right operand and assigns the result to the left operand.\nExample: x = 15; x /= 3\nResult: 5.0\n\nOperator: %=\nDescription: Takes modulus using two operands and assigns the result to the left operand.\nExample: x = 19; x %= 4\nResult: 3\n\nOperator: //=\nDescription: Performs floor division on operands and assigns the result to the left operand.\nExample: x = 17; x //= 4\nResult: 4\n\nOperator: **=\nDescription: Performs exponential calculation on operators and assigns the result to the left operand.\nExample: x = 5; x **= 3\nResult: 125\n\nOperator: &=\nDescription: Performs bitwise AND on operands and assigns the result to the left operand.\nExample: x = 5; x &= 3\nResult: 1\n\nOperator: |=\nDescription: Performs bitwise OR on operands and assigns the result to the left operand.\nExample: x = 5; x |= 3\nResult: 7\n\nOperator: ^=\nDescription: Performs bitwise XOR on operands and assigns the result to the left operand.\nExample: x = 5; x ^= 3\nResult: 6\n\nOperator: >>=\nDescription: Performs bitwise right shift on operands and assigns the result to the left operand.\nExample: x = 20; x >>= 3\nResult: 2\n\nOperator: <<=\nDescription: Performs bitwise left shift on operands and assigns the result to the left operand.\nExample: x = 5; x <<= 3\nResult: 40",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "08_operators.py",
         "question": 7

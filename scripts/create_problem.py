@@ -13,13 +13,15 @@ import json
 import sys
 from pathlib import Path
 
-from problem_bank_builder import (
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from scripts.problem_bank_builder import (
     PROBLEM_BANK_CATEGORIES_DIR,
     PROBLEM_BANK_DIR,
     build_minimum_test_cases,
     build_problem_bank,
     build_problem_id,
-    slugify,
 )
 
 
@@ -81,7 +83,7 @@ def list_storage() -> None:
     index = load_index()
     categories = index.get("categories", [])
     if not categories:
-        print("No problem bank found yet. Run: python3 create_problem.py sync")
+        print("No problem bank found yet. Run: python -m scripts.create_problem sync")
         return
 
     total = sum(category["problem_count"] for category in categories)
@@ -180,7 +182,7 @@ def add_problem_interactive() -> None:
         "solution": solution if solution.endswith("\n") else solution + "\n",
         "examples": [],
         "test_cases": [],
-        "notes": ["Added manually through create_problem.py."],
+        "notes": ["Added manually through scripts.create_problem."],
         "source_reference": {"file": "manual-entry", "question": None},
     }
 
@@ -230,7 +232,7 @@ def remove_problem_interactive() -> None:
 
 
 def print_usage() -> None:
-    print("Usage: python3 create_problem.py [sync|list|new|remove <problem_id>]")
+    print("Usage: python -m scripts.create_problem [sync|list|new|remove <problem_id>]")
 
 
 def main() -> None:

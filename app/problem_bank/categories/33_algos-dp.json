@@ -1,0 +1,256 @@
+{
+  "category_id": "algos-dp",
+  "category_name": "Dynamic Programming",
+  "sequence": 33,
+  "source_reference": "algos/dp",
+  "problems": [
+    {
+      "id": "algos-dp_01_fibonacci",
+      "sequence": 1,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Fibonacci",
+      "description": "Implement Fibonacci inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Fibonacci inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def fib_recursive(n):\n        if n <= 1:\n            return n\n        return fib_recursive(n - 1) + fib_recursive(n - 2)\n\n    def fib_memoization(n, memo={}):\n        if n in memo:\n            return memo[n]\n        if n <= 1:\n            return n\n        memo[n] = fib_memoization(n - 1, memo) + fib_memoization(n - 2, memo)\n        return memo[n]\n\n    print(fib_memoization(6))\n\n    def fib_tabulation(n):\n        if n <= 1:\n            return n\n        fib = [0] * (n + 1)\n        fib[1] = 1\n        for i in range(2, n + 1):\n            fib[i] = fib[i - 1] + fib[i - 2]\n        return fib[n]\n\n    print(fib_tabulation(6))\n\n    def fib_optimized(n):\n        if n <= 1:\n            return n\n        a, b = (0, 1)\n        for _ in range(2, n + 1):\n            a, b = (b, a + b)\n        return b\n\n    print(fib_optimized(6))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use this setup idea:\nFibonacci: using the sample input shown below, then print the computed dynamic-programming result in the same format as the example",
+          "output": "8\n8\n8"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "8\n8\n8",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "31_dp_fibonacci.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_02_longestcommonsubsequence",
+      "sequence": 2,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Longestcommonsubsequence",
+      "description": "Implement Longestcommonsubsequence inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Longestcommonsubsequence inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def lcs_recursive(X, Y, m, n):\n        if m == 0 or n == 0:\n            return 0\n        elif X[m - 1] == Y[n - 1]:\n            return 1 + lcs_recursive(X, Y, m - 1, n - 1)\n        else:\n            return max(lcs_recursive(X, Y, m - 1, n), lcs_recursive(X, Y, m, n - 1))\n\n    X = 'ABCBDAB'\n\n    Y = 'BDCAB'\n\n    print('Length of LCS is', lcs_recursive(X, Y, len(X), len(Y)))\n\n    def lcs_memoization(S1, S2, m, n, memo):\n        if memo[m][n] != -1:\n            return memo[m][n]\n        if m == 0 or n == 0:\n            memo[m][n] = 0\n        elif S1[m - 1] == S2[n - 1]:\n            memo[m][n] = 1 + lcs_memoization(S1, S2, m - 1, n - 1, memo)\n        else:\n            memo[m][n] = max(lcs_memoization(S1, S2, m - 1, n, memo), lcs_memoization(S1, S2, m, n - 1, memo))\n        return memo[m][n]\n\n    S1 = 'AXYT'\n\n    S2 = 'AYZX'\n\n    m = len(S1)\n\n    n = len(S2)\n\n    memo = [[-1] * (n + 1) for _ in range(m + 1)]\n\n    print('Length of LCS:', lcs_memoization(S1, S2, m, n, memo))\n\n    def lcs_tabulation(X, Y):\n        m, n = (len(X), len(Y))\n        dp = [[0] * (n + 1) for _ in range(m + 1)]\n        for i in range(1, m + 1):\n            for j in range(1, n + 1):\n                if X[i - 1] == Y[j - 1]:\n                    dp[i][j] = dp[i - 1][j - 1] + 1\n                else:\n                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n        return dp[m][n]\n\n    X = 'ABCBDAB'\n\n    Y = 'BDCAB'\n\n    print('Length of LCS:', lcs_tabulation(X, Y))\n\n    def lcs_optimized(S1, S2):\n        m, n = (len(S1), len(S2))\n        prev = [0] * (n + 1)\n        for i in range(1, m + 1):\n            curr = [0] * (n + 1)\n            for j in range(1, n + 1):\n                if S1[i - 1] == S2[j - 1]:\n                    curr[j] = prev[j - 1] + 1\n                else:\n                    curr[j] = max(prev[j], curr[j - 1])\n            prev = curr\n        return prev[n]\n\n    S1 = 'AXYT'\n\n    S2 = 'AYZX'\n\n    print('Length of LCS:', lcs_optimized(S1, S2))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nX = 'ABCBDAB'\nY = 'BDCAB'\nS1 = 'AXYT'\nS2 = 'AYZX'\nm = len(S1)\nn = len(S2)",
+          "output": "Length of LCS is 4\nLength of LCS: 2\nLength of LCS: 4\nLength of LCS: 2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Length of LCS is 4\nLength of LCS: 2\nLength of LCS: 4\nLength of LCS: 2",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "32_dp_longestcommonsubsequence.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_03_longest-increasing-subsequence",
+      "sequence": 3,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Longest Increasing Subsequence",
+      "description": "Implement Longest Increasing Subsequence inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Longest Increasing Subsequence inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "from bisect import bisect_left\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "from bisect import bisect_left\n\ndef main():\n    def lis_end_at_i(arr, i):\n        if i == 0:\n            return 1\n        mx = 1\n        for prev in range(i):\n            if arr[prev] < arr[i]:\n                mx = max(mx, lis_end_at_i(arr, prev) + 1)\n        return mx\n\n    def lis_recursive(arr):\n        n = len(arr)\n        res = 1\n        for i in range(1, n):\n            res = max(res, lis_end_at_i(arr, i))\n        return res\n\n    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\n\n    print('Length of LIS:', lis_recursive(arr))\n\n    def lis_memoization(arr):\n        n = len(arr)\n        memo = [-1] * n\n\n        def lis_ending_at(i):\n            if memo[i] != -1:\n                return memo[i]\n            max_len = 1\n            for j in range(i):\n                if arr[j] < arr[i]:\n                    max_len = max(max_len, 1 + lis_ending_at(j))\n            memo[i] = max_len\n            return max_len\n        return max((lis_ending_at(i) for i in range(n)))\n\n    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\n\n    print('Length of LIS:', lis_memoization(arr))\n\n    def lis_tabulation(arr):\n        n = len(arr)\n        dp = [1] * n\n        for i in range(1, n):\n            for j in range(i):\n                if arr[i] > arr[j]:\n                    dp[i] = max(dp[i], dp[j] + 1)\n        return max(dp)\n\n    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\n\n    print('Length of LIS:', lis_tabulation(arr))\n\n    def lis_optimized(arr):\n        lis = []\n        for num in arr:\n            pos = bisect_left(lis, num)\n            if pos == len(lis):\n                lis.append(num)\n            else:\n                lis[pos] = num\n        return len(lis)\n\n    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\n\n    print('Length of LIS:', lis_optimized(arr))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\narr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\narr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\narr = [10, 22, 9, 33, 21, 50, 41, 60, 80]",
+          "output": "Length of LIS: 6\nLength of LIS: 6\nLength of LIS: 6\nLength of LIS: 6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Length of LIS: 6\nLength of LIS: 6\nLength of LIS: 6\nLength of LIS: 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "33_dp_longest-increasing-subsequence.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_04_edit-distance",
+      "sequence": 4,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Edit Distance",
+      "description": "Implement Edit Distance inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Edit Distance inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def edit_distance_recursive(str1, str2, m, n):\n        if m == 0:\n            return n\n        if n == 0:\n            return m\n        if str1[m - 1] == str2[n - 1]:\n            return edit_distance_recursive(str1, str2, m - 1, n - 1)\n        return 1 + min(edit_distance_recursive(str1, str2, m, n - 1), edit_distance_recursive(str1, str2, m - 1, n), edit_distance_recursive(str1, str2, m - 1, n - 1))\n\n    str1 = 'kitten'\n\n    str2 = 'sitting'\n\n    print('Edit Distance:', edit_distance_recursive(str1, str2, len(str1), len(str2)))\n\n    def edit_distance_memoization(str1, str2, m, n, memo):\n        if memo[m][n] != -1:\n            return memo[m][n]\n        if m == 0:\n            memo[m][n] = n\n        elif n == 0:\n            memo[m][n] = m\n        elif str1[m - 1] == str2[n - 1]:\n            memo[m][n] = edit_distance_memoization(str1, str2, m - 1, n - 1, memo)\n        else:\n            memo[m][n] = 1 + min(edit_distance_memoization(str1, str2, m, n - 1, memo), edit_distance_memoization(str1, str2, m - 1, n, memo), edit_distance_memoization(str1, str2, m - 1, n - 1, memo))\n        return memo[m][n]\n\n    str1 = 'kitten'\n\n    str2 = 'sitting'\n\n    m = len(str1)\n\n    n = len(str2)\n\n    memo = [[-1] * (n + 1) for _ in range(m + 1)]\n\n    print('Edit Distance:', edit_distance_memoization(str1, str2, m, n, memo))\n\n    def edit_distance_tabulation(str1, str2):\n        m = len(str1)\n        n = len(str2)\n        dp = [[0] * (n + 1) for _ in range(m + 1)]\n        for i in range(m + 1):\n            for j in range(n + 1):\n                if i == 0:\n                    dp[i][j] = j\n                elif j == 0:\n                    dp[i][j] = i\n                elif str1[i - 1] == str2[j - 1]:\n                    dp[i][j] = dp[i - 1][j - 1]\n                else:\n                    dp[i][j] = 1 + min(dp[i][j - 1], dp[i - 1][j], dp[i - 1][j - 1])\n        return dp[m][n]\n\n    str1 = 'kitten'\n\n    str2 = 'sitting'\n\n    print('Edit Distance:', edit_distance_tabulation(str1, str2))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nstr1 = 'kitten'\nstr2 = 'sitting'\nstr1 = 'kitten'\nstr2 = 'sitting'\nm = len(str1)\nn = len(str2)",
+          "output": "Edit Distance: 3\nEdit Distance: 3\nEdit Distance: 3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Edit Distance: 3\nEdit Distance: 3\nEdit Distance: 3",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "34_dp_edit-distance.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_05_coin-change-problem",
+      "sequence": 5,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Coin Change Problem",
+      "description": "Implement Coin Change Problem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Coin Change Problem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def coin_change_tabulation(coins, amount):\n        dp = [float('inf')] * (amount + 1)\n        dp[0] = 0\n        for i in range(1, amount + 1):\n            for coin in coins:\n                if i >= coin:\n                    dp[i] = min(dp[i], dp[i - coin] + 1)\n        return dp[amount] if dp[amount] != float('inf') else -1\n\n    coins = [5, 9]\n\n    amount = 12\n\n    print('Fewest coins needed:', coin_change_tabulation(coins, amount))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ncoins = [5, 9]\namount = 12",
+          "output": "Fewest coins needed: -1"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Fewest coins needed: -1",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "35_dp_coin-change-problem.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_06_01-knapsackproblem",
+      "sequence": 6,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "01 Knapsackproblem",
+      "description": "Implement 01 Knapsackproblem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement 01 Knapsackproblem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def knapsack_brute_force(capacity, n):\n        print(f'knapsack_brute_force({capacity},{n})')\n        if n == len(values) or capacity == 0:\n            return 0\n        elif weights[n] > capacity:\n            return knapsack_brute_force(capacity, n + 1)\n        else:\n            include_item = values[n] + knapsack_brute_force(capacity - weights[n], n + 1)\n            exclude_item = knapsack_brute_force(capacity, n + 1)\n            return max(include_item, exclude_item)\n\n    values = [300, 200, 400, 500]\n\n    weights = [2, 1, 5, 3]\n\n    capacity = 10\n\n    n = 0\n\n    print('\\nMaximum value in Knapsack =', knapsack_brute_force(capacity, n))\n\n    def knapsack_tabulation():\n        n = len(values)\n        tab = [[0] * (capacity + 1) for y in range(n + 1)]\n        for i in range(1, n + 1):\n            for w in range(1, capacity + 1):\n                if weights[i - 1] <= w:\n                    include_item = values[i - 1] + tab[i - 1][w - weights[i - 1]]\n                    exclude_item = tab[i - 1][w]\n                    tab[i][w] = max(include_item, exclude_item)\n                else:\n                    tab[i][w] = tab[i - 1][w]\n        for row in tab:\n            print(row)\n        return tab[n][capacity]\n\n    values = [300, 200, 400, 500]\n\n    weights = [2, 1, 5, 3]\n\n    capacity = 10\n\n    print('\\nMaximum value in Knapsack =', knapsack_tabulation())\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nvalues = [300, 200, 400, 500]\nweights = [2, 1, 5, 3]\ncapacity = 10\nn = 0\nvalues = [300, 200, 400, 500]\nweights = [2, 1, 5, 3]",
+          "output": "knapsack_brute_force(10,0)\nknapsack_brute_force(8,1)\nknapsack_brute_force(7,2)\nknapsack_brute_force(2,3)\nknapsack_brute_force(2,4)\nknapsack_brute_force(7,3)\nknapsack_brute_force(4,4)\nknapsack_brute_force(7,4)\nknapsack_brute_force(8,2)\nknapsack_brute_force(3,3)\nknapsack_brute_force(0,4)\nknapsack_brute_force(3,4)\nknapsack_brute_force(8,3)\nknapsack_brute_force(5,4)\nknapsack_brute_force(8,4)\nknapsack_brute_force(10,1)\nknapsack_brute_force(9,2)\nknapsack_brute_force(4,3)\nknapsack_brute_force(1,4)\nknapsack_brute_force(4,4)\nknapsack_brute_force(9,3)\nknapsack_brute_force(6,4)\nknapsack_brute_force(9,4)\nknapsack_brute_force(10,2)\nknapsack_brute_force(5,3)\nknapsack_brute_force(2,4)\nknapsack_brute_force(5,4)\nknapsack_brute_force(10,3)\nknapsack_brute_force(7,4)\nknapsack_brute_force(10,4)\n\nMaximum value in Knapsack = 1200\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n[0, 0, 300, 300, 300, 300, 300, 300, 300, 300, 300]\n[0, 200, 300, 500, 500, 500, 500, 500, 500, 500, 500]\n[0, 200, 300, 500, 500, 500, 600, 700, 900, 900, 900]\n[0, 200, 300, 500, 700, 800, 1000, 1000, 1000, 1100, 1200]\n\nMaximum value in Knapsack = 1200"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "knapsack_brute_force(10,0)\nknapsack_brute_force(8,1)\nknapsack_brute_force(7,2)\nknapsack_brute_force(2,3)\nknapsack_brute_force(2,4)\nknapsack_brute_force(7,3)\nknapsack_brute_force(4,4)\nknapsack_brute_force(7,4)\nknapsack_brute_force(8,2)\nknapsack_brute_force(3,3)\nknapsack_brute_force(0,4)\nknapsack_brute_force(3,4)\nknapsack_brute_force(8,3)\nknapsack_brute_force(5,4)\nknapsack_brute_force(8,4)\nknapsack_brute_force(10,1)\nknapsack_brute_force(9,2)\nknapsack_brute_force(4,3)\nknapsack_brute_force(1,4)\nknapsack_brute_force(4,4)\nknapsack_brute_force(9,3)\nknapsack_brute_force(6,4)\nknapsack_brute_force(9,4)\nknapsack_brute_force(10,2)\nknapsack_brute_force(5,3)\nknapsack_brute_force(2,4)\nknapsack_brute_force(5,4)\nknapsack_brute_force(10,3)\nknapsack_brute_force(7,4)\nknapsack_brute_force(10,4)\n\nMaximum value in Knapsack = 1200\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n[0, 0, 300, 300, 300, 300, 300, 300, 300, 300, 300]\n[0, 200, 300, 500, 500, 500, 500, 500, 500, 500, 500]\n[0, 200, 300, 500, 500, 500, 600, 700, 900, 900, 900]\n[0, 200, 300, 500, 700, 800, 1000, 1000, 1000, 1100, 1200]\n\nMaximum value in Knapsack = 1200",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "36_dp_01-knapsackproblem.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_07_matrix-chain-multiplication",
+      "sequence": 7,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Matrix Chain Multiplication",
+      "description": "Implement Matrix Chain Multiplication inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Matrix Chain Multiplication inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def matrix_chain_order(dims):\n        n = len(dims) - 1\n        m = [[0] * n for _ in range(n)]\n        for chain_len in range(2, n + 1):\n            for i in range(n - chain_len + 1):\n                j = i + chain_len - 1\n                m[i][j] = float('inf')\n                for k in range(i, j):\n                    q = m[i][k] + m[k + 1][j] + dims[i] * dims[k + 1] * dims[j + 1]\n                    if q < m[i][j]:\n                        m[i][j] = q\n        return m[0][n - 1]\n\n    dims = [5, 4, 6, 2, 7]\n\n    print('Minimum number of multiplications:', matrix_chain_order(dims))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndims = [5, 4, 6, 2, 7]",
+          "output": "Minimum number of multiplications: 158"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Minimum number of multiplications: 158",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "37_dp_matrix-chain-multiplication.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-dp_08_travelling-salesman-problem",
+      "sequence": 8,
+      "category_id": "algos-dp",
+      "category_name": "Dynamic Programming",
+      "title": "Travelling Salesman Problem",
+      "description": "Implement Travelling Salesman Problem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Travelling Salesman Problem inside main() using the sample input shown below, then print the computed dynamic-programming result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def nearest_neighbor_tsp(graph, start):\n        n = len(graph)\n        visited = [False] * n\n        visited[start] = True\n        route = [start]\n        total_distance = 0\n        current_city = start\n        while len(route) < n:\n            nearest_city = None\n            shortest_distance = float('inf')\n            for next_city in range(n):\n                if not visited[next_city] and graph[current_city][next_city] < shortest_distance:\n                    shortest_distance = graph[current_city][next_city]\n                    nearest_city = next_city\n            route.append(nearest_city)\n            visited[nearest_city] = True\n            total_distance += shortest_distance\n            current_city = nearest_city\n        total_distance += graph[current_city][start]\n        route.append(start)\n        return (route, total_distance)\n\n    graph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]\n\n    print(nearest_neighbor_tsp(graph, 0))\n\n    def tsp_held_karp(graph):\n        n = len(graph)\n        dp = {}\n\n        def visit(mask, pos):\n            if (mask, pos) in dp:\n                return dp[mask, pos]\n            if mask == (1 << n) - 1:\n                return graph[pos][0]\n            ans = float('inf')\n            for city in range(n):\n                if mask & 1 << city == 0:\n                    ans = min(ans, graph[pos][city] + visit(mask | 1 << city, city))\n            dp[mask, pos] = ans\n            return ans\n        return visit(1, 0)\n\n    graph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]\n\n    print(tsp_held_karp(graph))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]\ngraph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]",
+          "output": "([0, 1, 3, 2, 0], 80)\n80"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "([0, 1, 3, 2, 0], 80)\n80",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "38_dp_travelling-salesman-problem.py",
+        "question": 1
+      }
+    }
+  ]
+}

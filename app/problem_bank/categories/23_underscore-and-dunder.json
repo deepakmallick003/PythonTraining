@@ -10,16 +10,26 @@
       "category_id": "underscore-and-dunder",
       "category_name": "Underscore and Dunder",
       "title": "Single Underscore for Internal Use",
-      "description": "Single Underscore for Internal Use.",
-      "prompt": "Single Underscore for Internal Use.",
+      "description": "Create a `Car` class with an internal `_engine_type` attribute and a `start()` method. Inside main(), instantiate the class and print both the start message and the internal attribute to demonstrate the underscore convention. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Car` class with an internal `_engine_type` attribute and a `start()` method. Inside main(), instantiate the class and print both the start message and the internal attribute to demonstrate the underscore convention.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def wrapper_single_underscore_for_internal():\n\n        class Car:\n\n            def __init__(self):\n                self._engine_type = 'V6'\n\n            def start(self):\n                return f'Starting the {self._engine_type} engine.'\n        my_car = Car()\n        print(my_car.start())\n        print(my_car._engine_type)\n\n    wrapper_single_underscore_for_internal()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone wrapper demo from the underscore/dunder reference file."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nwrapper_single_underscore_for_internal()",
+          "output": "Starting the V6 engine.\nV6"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Starting the V6 engine.\nV6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "23_underscore-and-dunder.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "underscore-and-dunder",
       "category_name": "Underscore and Dunder",
       "title": "Single Underscore as an Ignored Variable",
-      "description": "Single Underscore as an Ignored Variable.",
-      "prompt": "Single Underscore as an Ignored Variable.",
+      "description": "Use `_` as the ignored loop variable in a `for` loop and print `Hello!` five times inside main(). Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Use `_` as the ignored loop variable in a `for` loop and print `Hello!` five times inside main().",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def wrapper_single_underscore_for_ignore():\n        for _ in range(5):\n            print('Hello!')\n\n    wrapper_single_underscore_for_ignore()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone wrapper demo from the underscore/dunder reference file."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nwrapper_single_underscore_for_ignore()",
+          "output": "Hello!\nHello!\nHello!\nHello!\nHello!"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Hello!\nHello!\nHello!\nHello!\nHello!",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "23_underscore-and-dunder.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "underscore-and-dunder",
       "category_name": "Underscore and Dunder",
       "title": "Double Underscore Name Mangling",
-      "description": "Write a Python function to double underscore name mangling and print the result.",
-      "prompt": "Double Underscore Name Mangling.",
+      "description": "Create `Vehicle` and `Car` classes to demonstrate double-underscore name mangling. Print the parent identification value and the child-specific identification value to show that they stay separate. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create `Vehicle` and `Car` classes to demonstrate double-underscore name mangling. Print the parent identification value and the child-specific identification value to show that they stay separate.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def wrapper_double_underscore_for_avoiding_conflicts():\n\n        class Vehicle:\n\n            def __init__(self, identification):\n                self.__identification = identification\n\n            def get_identification(self):\n                return self.__identification\n\n        class Car(Vehicle):\n\n            def __init__(self, identification, car_model):\n                super().__init__(identification)\n                self.car_model = car_model\n                self.__identification = 'CAR' + identification\n\n            def get_car_identification(self):\n                return self.__identification\n        my_car = Car('123ABC', 'Toyota Corolla')\n        print(my_car.get_identification())\n        print(my_car.get_car_identification())\n\n    wrapper_double_underscore_for_avoiding_conflicts()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone wrapper demo from the underscore/dunder reference file."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nwrapper_double_underscore_for_avoiding_conflicts()",
+          "output": "123ABC\nCAR123ABC"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "123ABC\nCAR123ABC",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "23_underscore-and-dunder.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "underscore-and-dunder",
       "category_name": "Underscore and Dunder",
       "title": "Dunder Special Methods",
-      "description": "Write a Python function to dunder special methods and print the result.",
-      "prompt": "Dunder Special Methods.",
+      "description": "Create a `Book` class with `__init__` and `__str__`. Inside main(), instantiate a book and print it so Python uses the custom string representation. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Book` class with `__init__` and `__str__`. Inside main(), instantiate a book and print it so Python uses the custom string representation.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def wrapper_double_underscore_for_special_methods():\n\n        class Book:\n\n            def __init__(self, title):\n                self.title = title\n\n            def __str__(self):\n                return f'Book titled {self.title}'\n        my_book = Book('1984')\n        print(my_book)\n\n    wrapper_double_underscore_for_special_methods()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone wrapper demo from the underscore/dunder reference file."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nwrapper_double_underscore_for_special_methods()",
+          "output": "Book titled 1984"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Book titled 1984",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "23_underscore-and-dunder.py",
         "question": 4
@@ -94,15 +134,20 @@
       "category_id": "underscore-and-dunder",
       "category_name": "Underscore and Dunder",
       "title": "Module __name__ Value",
-      "description": "Print the module __name__ value.",
-      "prompt": "Print the module __name__ value.",
+      "description": "Inside main(), print the module `__name__` value so the learner can see what Python sets for the current module. Use main() to produce the expected result shown in the example.",
+      "prompt": "Inside main(), print the module `__name__` value so the learner can see what Python sets for the current module.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print(__name__)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint the module `__name__` value so the learner can see what Python sets for the current module",
+          "output": "__main__"
+        }
+      ],
       "test_cases": [],
       "notes": [
-        "This mirrors the final __name__ line from the reference file."
+        "Automated tests are skipped because runtime module naming changes the output."
       ],
       "source_reference": {
         "file": "23_underscore-and-dunder.py",

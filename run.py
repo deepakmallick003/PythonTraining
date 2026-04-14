@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Main entry point for the Coding Practice UI
-"""
+"""Main entry point for the Python Training practice app."""
 import os
 import socket
 import subprocess
@@ -16,7 +14,7 @@ import signal
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR / 'app'))
 
-from app import create_app
+from app import create_app, env_flag
 
 
 def _is_port_available(host: str, port: int) -> bool:
@@ -124,7 +122,8 @@ def _open_browser(host: str, port: int) -> None:
 if __name__ == '__main__':
     app = create_app()
     host = os.getenv('HOST', '127.0.0.1')
-    debug = os.getenv('FLASK_DEBUG', '0') == '1'
+    debug = env_flag('FLASK_DEBUG', default=False)
+    open_browser = env_flag('OPEN_BROWSER', default=True)
     port = int(os.getenv('PORT', '5000'))
 
     killed = _terminate_stale_project_servers(port)
@@ -138,7 +137,7 @@ if __name__ == '__main__':
         )
         sys.exit(1)
 
-    if os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
+    if open_browser and os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
         threading.Timer(1.0, _open_browser, args=(host, port)).start()
 
-    app.run(debug=debug, host=host, port=port)
+    app.run(debug=debug, host=host, port=port, use_reloader=False)

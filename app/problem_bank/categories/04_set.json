@@ -10,7 +10,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Create Set",
-      "description": "Create a set with elements {1, 2, 3}. Expected output: {1, 2, 3}",
+      "description": "Create a set with elements {1, 2, 3}. Expected output: {1, 2, 3}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a set with elements {1, 2, 3}. Expected output: {1, 2, 3}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n    main(set1)\n",
@@ -53,7 +53,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Add Element",
-      "description": "Add element '4' to the set. Expected output: {1, 2, 3, 4}",
+      "description": "Add element '4' to the set. Expected output: {1, 2, 3, 4}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Add element '4' to the set. Expected output: {1, 2, 3, 4}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n    main(set1)\n",
@@ -96,7 +96,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Remove Element",
-      "description": "Remove element '2' from the set. Expected output: {1, 3, 4}",
+      "description": "Remove element '2' from the set. Expected output: {1, 3, 4}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Remove element '2' from the set. Expected output: {1, 3, 4}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3, 4}\n    main(set1)\n",
@@ -139,7 +139,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set Union",
-      "description": "Union of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 3, 4, 5}",
+      "description": "Union of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 3, 4, 5}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Union of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 3, 4, 5}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n\n    set2 = {3, 4, 5}\n    main(set1, set2)\n",
@@ -182,7 +182,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set Intersection",
-      "description": "Intersection of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {2, 3}",
+      "description": "Intersection of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {2, 3}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Intersection of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {2, 3}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n\n    set2 = {2, 3, 4}\n    main(set1, set2)\n",
@@ -225,7 +225,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set Difference",
-      "description": "Difference of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {1}",
+      "description": "Difference of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {1}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Difference of two sets {1, 2, 3} and {2, 3, 4}. Expected output: {1}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n\n    set2 = {2, 3, 4}\n    main(set1, set2)\n",
@@ -268,7 +268,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set Symmetric Difference",
-      "description": "Symmetric difference of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 4, 5}",
+      "description": "Symmetric difference of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 4, 5}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Symmetric difference of two sets {1, 2, 3} and {3, 4, 5}. Expected output: {1, 2, 4, 5}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n\n    set2 = {3, 4, 5}\n    main(set1, set2)\n",
@@ -311,7 +311,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Check Subset",
-      "description": "Check if {1, 2} is a subset of {1, 2, 3}. Expected output: True",
+      "description": "Check if {1, 2} is a subset of {1, 2, 3}. Expected output: True. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Check if {1, 2} is a subset of {1, 2, 3}. Expected output: True",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2}\n\n    set2 = {1, 2, 3}\n    main(set1, set2)\n",
@@ -354,7 +354,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Check Superset",
-      "description": "Check if {1, 2, 3} is a superset of {1, 2}. Expected output: True",
+      "description": "Check if {1, 2, 3} is a superset of {1, 2}. Expected output: True. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Check if {1, 2, 3} is a superset of {1, 2}. Expected output: True",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(set1, set2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    set1 = {1, 2, 3}\n\n    set2 = {1, 2}\n    main(set1, set2)\n",
@@ -397,7 +397,7 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Convert List to Set",
-      "description": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}",
+      "description": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 2, 3, 3]\n    main(list1)\n",
@@ -440,12 +440,17 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set vs List - Efficiency in Membership Testing",
-      "description": "Set vs List - Efficiency in Membership Testing",
+      "description": "Set vs List - Efficiency in Membership Testing. Run the snippet in main() and compare the result with the example output.",
       "prompt": "Set vs List - Efficiency in Membership Testing",
       "difficulty": "Easy",
-      "starter_code": "import time\nimport random\n\ndef main(large_set, large_list, search_element):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    import random\n\n    large_set = set(range(1000000))\n\n    large_list = list(range(1000000))\n\n    search_element = random.randint(0, 1000000)\n    main(large_set, large_list, search_element)\n",
-      "solution": "import time\nimport random\n\ndef main(large_set, large_list, search_element):\n    is_member_set = search_element in large_set\n    is_member_list = search_element in large_list\n\nif __name__ == \"__main__\":\n    import random\n\n    large_set = set(range(1000000))\n\n    large_list = list(range(1000000))\n\n    search_element = random.randint(0, 1000000)\n    main(large_set, large_list, search_element)\n",
-      "examples": [],
+      "starter_code": "import time\nimport random\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import time\nimport random\n\ndef main():\n    print('Compare the time taken to check the membership of an element in a large set and a large list.')\n\n    large_set = set(range(1000000))\n\n    large_list = list(range(1000000))\n\n    search_element = random.randint(0, 1000000)\n\n    start_time = time.time()\n\n    is_member_set = search_element in large_set\n\n    set_time = time.time() - start_time\n\n    print('Set Membership Test Time:\\n {:.6f} seconds'.format(set_time))\n\n    start_time = time.time()\n\n    is_member_list = search_element in large_list\n\n    list_time = time.time() - start_time\n\n    print('List Membership Test Time:\\n {:.6f} seconds'.format(list_time))\n\n    print('-' * 20)\n\n    print()\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nlarge_set = set(range(1000000))\nlarge_list = list(range(1000000))\nsearch_element = random.randint(0, 1000000)\nstart_time = time.time()\nis_member_set = search_element in large_set\nset_time = time.time() - start_time",
+          "output": "Compare the time taken to check the membership of an element in a large set and a large list.\nSet Membership Test Time:\n 0.000007 seconds\nList Membership Test Time:\n 0.006031 seconds\n--------------------"
+        }
+      ],
       "test_cases": [],
       "notes": [
         "Compare the time taken to check the membership of an element in a large set and a large list."
@@ -461,33 +466,33 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set vs List - Unordered Nature of Sets",
-      "description": "Set vs List - Unordered Nature of Sets",
+      "description": "Set vs List - Unordered Nature of Sets. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Set vs List - Unordered Nature of Sets",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(initial_list):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    initial_list = [11, 4, 42, 23]\n    main(initial_list)\n",
-      "solution": "import time\nimport random\n\ndef main(initial_list):\n    converted_set = set(initial_list)\n\nif __name__ == \"__main__\":\n    initial_list = [11, 4, 42, 23]\n    main(initial_list)\n",
+      "solution": "import time\nimport random\n\ndef main(initial_list):\n    converted_set = set(initial_list)\n    print('Initial List:\\n', initial_list)\n    print('Converted Set:\\n', converted_set)\n    print(\"NOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\")\n    print(\"The order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\")\n    print(\"The observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\")\n    print(\"But this consistency is not guaranteed and should not be relied upon.\")\n\nif __name__ == \"__main__\":\n    initial_list = [11, 4, 42, 23]\n    main(initial_list)\n",
       "examples": [
         {
           "input": "initial_list = [11, 4, 42, 23]",
-          "output": ""
+          "output": "Initial List:\n [11, 4, 42, 23]\nConverted Set:\n {42, 11, 4, 23}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon."
         }
       ],
       "test_cases": [
         {
           "input": "initial_list = [11, 4, 42, 23]",
-          "expected_output": "",
+          "expected_output": "Initial List:\n [11, 4, 42, 23]\nConverted Set:\n {42, 11, 4, 23}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
           "call": "main(initial_list)",
           "label": "Test 1"
         },
         {
           "input": "initial_list = [13, 6, 44, 25]",
-          "expected_output": "",
+          "expected_output": "Initial List:\n [13, 6, 44, 25]\nConverted Set:\n {25, 44, 13, 6}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
           "call": "main(initial_list)",
           "label": "Test 2"
         },
         {
           "input": "initial_list = [14, 7, 45, 26]",
-          "expected_output": "",
+          "expected_output": "Initial List:\n [14, 7, 45, 26]\nConverted Set:\n {26, 45, 14, 7}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
           "call": "main(initial_list)",
           "label": "Test 3"
         }

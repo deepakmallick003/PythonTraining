@@ -231,6 +231,78 @@
       "file": "categories/29_polymorphism-ducktyping.json",
       "problem_count": 5,
       "source_reference": "29_polymorphism-ducktyping.py"
+    },
+    {
+      "id": "algos-searching",
+      "name": "Searching Algorithms",
+      "sequence": 30,
+      "file": "categories/30_algos-searching.json",
+      "problem_count": 8,
+      "source_reference": "algos/searching"
+    },
+    {
+      "id": "algos-sorting",
+      "name": "Sorting Algorithms",
+      "sequence": 31,
+      "file": "categories/31_algos-sorting.json",
+      "problem_count": 13,
+      "source_reference": "algos/sorting"
+    },
+    {
+      "id": "algos-graph",
+      "name": "Graph Algorithms",
+      "sequence": 32,
+      "file": "categories/32_algos-graph.json",
+      "problem_count": 10,
+      "source_reference": "algos/graph"
+    },
+    {
+      "id": "algos-dp",
+      "name": "Dynamic Programming",
+      "sequence": 33,
+      "file": "categories/33_algos-dp.json",
+      "problem_count": 8,
+      "source_reference": "algos/dp"
+    },
+    {
+      "id": "algos-greedy",
+      "name": "Greedy Algorithms",
+      "sequence": 34,
+      "file": "categories/34_algos-greedy.json",
+      "problem_count": 6,
+      "source_reference": "algos/greedy"
+    },
+    {
+      "id": "algos-string",
+      "name": "String Algorithms",
+      "sequence": 35,
+      "file": "categories/35_algos-string.json",
+      "problem_count": 6,
+      "source_reference": "algos/string"
+    },
+    {
+      "id": "algos-backtracking",
+      "name": "Backtracking Algorithms",
+      "sequence": 36,
+      "file": "categories/36_algos-backtracking.json",
+      "problem_count": 4,
+      "source_reference": "algos/backtracking"
+    },
+    {
+      "id": "algos-maths",
+      "name": "Math Algorithms",
+      "sequence": 37,
+      "file": "categories/37_algos-maths.json",
+      "problem_count": 6,
+      "source_reference": "algos/maths"
+    },
+    {
+      "id": "algos-recursion",
+      "name": "Recursion Foundations",
+      "sequence": 38,
+      "file": "categories/38_algos-recursion.json",
+      "problem_count": 2,
+      "source_reference": "algos/misc"
     }
   ]
 }

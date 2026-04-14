@@ -1,0 +1,194 @@
+{
+  "category_id": "algos-string",
+  "category_name": "String Algorithms",
+  "sequence": 35,
+  "source_reference": "algos/string",
+  "problems": [
+    {
+      "id": "algos-string_01_rabin-karp",
+      "sequence": 1,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Rabin Karp",
+      "description": "Implement Rabin Karp inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Rabin Karp inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    prime = 101\n\n    def rabin_karp(pattern, text):\n        n = len(text)\n        m = len(pattern)\n        p_hash = 0\n        t_hash = 0\n        base = 256\n        h = 1\n        for i in range(m - 1):\n            h = h * base % prime\n        for i in range(m):\n            p_hash = (base * p_hash + ord(pattern[i])) % prime\n            t_hash = (base * t_hash + ord(text[i])) % prime\n        for i in range(n - m + 1):\n            if p_hash == t_hash:\n                if text[i:i + m] == pattern:\n                    print(f'Pattern found at index {i}')\n            if i < n - m:\n                t_hash = (base * (t_hash - ord(text[i]) * h) + ord(text[i + m])) % prime\n                if t_hash < 0:\n                    t_hash += prime\n\n    text = 'ababcab'\n\n    pattern = 'abc'\n\n    rabin_karp(pattern, text)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nprime = 101\ntext = 'ababcab'\npattern = 'abc'\nrabin_karp(pattern, text)",
+          "output": "Pattern found at index 2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Pattern found at index 2",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "45_string_rabin-karp.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-string_02_knuth-morris-pratt-kmp",
+      "sequence": 2,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Knuth Morris Pratt(Kmp)",
+      "description": "Implement Knuth Morris Pratt(Kmp) inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Knuth Morris Pratt(Kmp) inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def computeLPSArray(pattern):\n        lps = [0] * len(pattern)\n        length = 0\n        i = 1\n        while i < len(pattern):\n            if pattern[i] == pattern[length]:\n                length += 1\n                lps[i] = length\n                i += 1\n            elif length != 0:\n                length = lps[length - 1]\n            else:\n                lps[i] = 0\n                i += 1\n        return lps\n\n    def KMP_search(text, pattern):\n        n = len(text)\n        m = len(pattern)\n        lps = computeLPSArray(pattern)\n        i = 0\n        j = 0\n        while i < n:\n            if pattern[j] == text[i]:\n                i += 1\n                j += 1\n            if j == m:\n                print(f'Found pattern at index {i - j}')\n                j = lps[j - 1]\n            elif i < n and pattern[j] != text[i]:\n                if j != 0:\n                    j = lps[j - 1]\n                else:\n                    i += 1\n\n    text = 'ababcabcabababd'\n\n    pattern = 'ababd'\n\n    KMP_search(text, pattern)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ntext = 'ababcabcabababd'\npattern = 'ababd'\nKMP_search(text, pattern)",
+          "output": "Found pattern at index 10"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Found pattern at index 10",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "46_string_knuth-morris-pratt(kmp).py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-string_03_boyer-moore",
+      "sequence": 3,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Boyer Moore",
+      "description": "Implement Boyer Moore inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Boyer Moore inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def create_bad_char_table(pattern):\n    table = {}\n    length = len(pattern)\n    for index, char in enumerate(pattern):\n        table[char] = max(1, length - index - 1)\n    return table\n\ndef boyer_moore_search(text, pattern):\n    bad_char_table = create_bad_char_table(pattern)\n    text_index = 0\n    pattern_length = len(pattern)\n    text_length = len(text)\n    matches = []\n    while text_index <= text_length - pattern_length:\n        scan_index = pattern_length - 1\n        while scan_index >= 0 and pattern[scan_index] == text[text_index + scan_index]:\n            scan_index -= 1\n        if scan_index < 0:\n            matches.append(text_index)\n            text_index += pattern_length\n        else:\n            shift = bad_char_table.get(text[text_index + scan_index], pattern_length)\n            text_index += max(1, shift)\n    return matches\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def create_bad_char_table(pattern):\n    table = {}\n    length = len(pattern)\n    for index, char in enumerate(pattern):\n        table[char] = max(1, length - index - 1)\n    return table\n\ndef boyer_moore_search(text, pattern):\n    bad_char_table = create_bad_char_table(pattern)\n    text_index = 0\n    pattern_length = len(pattern)\n    text_length = len(text)\n    matches = []\n    while text_index <= text_length - pattern_length:\n        scan_index = pattern_length - 1\n        while scan_index >= 0 and pattern[scan_index] == text[text_index + scan_index]:\n            scan_index -= 1\n        if scan_index < 0:\n            matches.append(text_index)\n            text_index += pattern_length\n        else:\n            shift = bad_char_table.get(text[text_index + scan_index], pattern_length)\n            text_index += max(1, shift)\n    return matches\n\ndef main():\n    text = 'HERE IS A SIMPLE EXAMPLE'\n\n    pattern = 'EXAMPLE'\n\n    matches = boyer_moore_search(text, pattern)\n\n    print('Text:', text)\n\n    print('Pattern:', pattern)\n\n    print('Match indices:', matches)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ntext = 'HERE IS A SIMPLE EXAMPLE'\npattern = 'EXAMPLE'\nmatches = boyer_moore_search(text, pattern)",
+          "output": "Text: HERE IS A SIMPLE EXAMPLE\nPattern: EXAMPLE\nMatch indices: [17]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Text: HERE IS A SIMPLE EXAMPLE\nPattern: EXAMPLE\nMatch indices: [17]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "48_string_boyer-moore.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-string_04_z-algorithm",
+      "sequence": 4,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Z Algorithm",
+      "description": "Implement Z Algorithm inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Z Algorithm inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def z_algorithm(text):\n    z = [0] * len(text)\n    left = right = 0\n    for i in range(1, len(text)):\n        if i <= right:\n            z[i] = min(right - i + 1, z[i - left])\n        while i + z[i] < len(text) and text[z[i]] == text[i + z[i]]:\n            z[i] += 1\n        if i + z[i] - 1 > right:\n            left = i\n            right = i + z[i] - 1\n    return z\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def z_algorithm(text):\n    z = [0] * len(text)\n    left = right = 0\n    for i in range(1, len(text)):\n        if i <= right:\n            z[i] = min(right - i + 1, z[i - left])\n        while i + z[i] < len(text) and text[z[i]] == text[i + z[i]]:\n            z[i] += 1\n        if i + z[i] - 1 > right:\n            left = i\n            right = i + z[i] - 1\n    return z\n\ndef main():\n    text = 'aabxaabxcaabxaabxay'\n\n    z_values = z_algorithm(text)\n\n    print('Text:', text)\n\n    print('Z-array:', z_values)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ntext = 'aabxaabxcaabxaabxay'\nz_values = z_algorithm(text)",
+          "output": "Text: aabxaabxcaabxaabxay\nZ-array: [0, 1, 0, 0, 4, 1, 0, 0, 0, 8, 1, 0, 0, 5, 1, 0, 0, 1, 0]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Text: aabxaabxcaabxaabxay\nZ-array: [0, 1, 0, 0, 4, 1, 0, 0, 0, 8, 1, 0, 0, 5, 1, 0, 0, 1, 0]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "49_string_z-algorithm.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-string_05_aho-korasick",
+      "sequence": 5,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Aho Korasick",
+      "description": "Implement Aho Korasick inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Aho Korasick inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "from collections import deque\n\nclass Node:\n\n    def __init__(self):\n        self.children = {}\n        self.fail = None\n        self.output = []\n\ndef build_automaton(patterns):\n    root = Node()\n    for pattern in patterns:\n        current = root\n        for char in pattern:\n            current = current.children.setdefault(char, Node())\n        current.output.append(pattern)\n    queue = deque()\n    for child in root.children.values():\n        child.fail = root\n        queue.append(child)\n    while queue:\n        current = queue.popleft()\n        for char, child in current.children.items():\n            queue.append(child)\n            fallback = current.fail\n            while fallback and char not in fallback.children:\n                fallback = fallback.fail\n            child.fail = fallback.children[char] if fallback and char in fallback.children else root\n            child.output.extend(child.fail.output)\n    return root\n\ndef aho_corasick_search(text, patterns):\n    root = build_automaton(patterns)\n    current = root\n    matches = []\n    for index, char in enumerate(text):\n        while current and char not in current.children:\n            current = current.fail\n        current = current.children[char] if current and char in current.children else root\n        for pattern in current.output:\n            matches.append((pattern, index - len(pattern) + 1))\n    return matches\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "from collections import deque\n\nclass Node:\n\n    def __init__(self):\n        self.children = {}\n        self.fail = None\n        self.output = []\n\ndef build_automaton(patterns):\n    root = Node()\n    for pattern in patterns:\n        current = root\n        for char in pattern:\n            current = current.children.setdefault(char, Node())\n        current.output.append(pattern)\n    queue = deque()\n    for child in root.children.values():\n        child.fail = root\n        queue.append(child)\n    while queue:\n        current = queue.popleft()\n        for char, child in current.children.items():\n            queue.append(child)\n            fallback = current.fail\n            while fallback and char not in fallback.children:\n                fallback = fallback.fail\n            child.fail = fallback.children[char] if fallback and char in fallback.children else root\n            child.output.extend(child.fail.output)\n    return root\n\ndef aho_corasick_search(text, patterns):\n    root = build_automaton(patterns)\n    current = root\n    matches = []\n    for index, char in enumerate(text):\n        while current and char not in current.children:\n            current = current.fail\n        current = current.children[char] if current and char in current.children else root\n        for pattern in current.output:\n            matches.append((pattern, index - len(pattern) + 1))\n    return matches\n\ndef main():\n    text = 'ahishers'\n\n    patterns = ['he', 'she', 'hers', 'his']\n\n    matches = aho_corasick_search(text, patterns)\n\n    print('Text:', text)\n\n    print('Patterns:', patterns)\n\n    print('Matches:', matches)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ntext = 'ahishers'\npatterns = ['he', 'she', 'hers', 'his']\nmatches = aho_corasick_search(text, patterns)",
+          "output": "Text: ahishers\nPatterns: ['he', 'she', 'hers', 'his']\nMatches: [('his', 1), ('she', 3), ('he', 4), ('hers', 4)]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Text: ahishers\nPatterns: ['he', 'she', 'hers', 'his']\nMatches: [('his', 1), ('she', 3), ('he', 4), ('hers', 4)]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "50_string_aho-korasick.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-string_06_manachers",
+      "sequence": 6,
+      "category_id": "algos-string",
+      "category_name": "String Algorithms",
+      "title": "Manachers",
+      "description": "Implement Manachers inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Manachers inside main() using the sample text or pattern shown below, then print the string-processing result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def longest_palindromic_substring(text):\n    transformed = '^#' + '#'.join(text) + '#$'\n    radius = [0] * len(transformed)\n    center = right = 0\n    for i in range(1, len(transformed) - 1):\n        mirror = 2 * center - i\n        if i < right:\n            radius[i] = min(right - i, radius[mirror])\n        while transformed[i + 1 + radius[i]] == transformed[i - 1 - radius[i]]:\n            radius[i] += 1\n        if i + radius[i] > right:\n            center = i\n            right = i + radius[i]\n    max_len = max(radius)\n    center_index = radius.index(max_len)\n    start = (center_index - max_len) // 2\n    return text[start:start + max_len]\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def longest_palindromic_substring(text):\n    transformed = '^#' + '#'.join(text) + '#$'\n    radius = [0] * len(transformed)\n    center = right = 0\n    for i in range(1, len(transformed) - 1):\n        mirror = 2 * center - i\n        if i < right:\n            radius[i] = min(right - i, radius[mirror])\n        while transformed[i + 1 + radius[i]] == transformed[i - 1 - radius[i]]:\n            radius[i] += 1\n        if i + radius[i] > right:\n            center = i\n            right = i + radius[i]\n    max_len = max(radius)\n    center_index = radius.index(max_len)\n    start = (center_index - max_len) // 2\n    return text[start:start + max_len]\n\ndef main():\n    text = 'forgeeksskeegfor'\n\n    result = longest_palindromic_substring(text)\n\n    print('Text:', text)\n\n    print('Longest palindromic substring:', result)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ntext = 'forgeeksskeegfor'\nresult = longest_palindromic_substring(text)",
+          "output": "Text: forgeeksskeegfor\nLongest palindromic substring: geeksskeeg"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Text: forgeeksskeegfor\nLongest palindromic substring: geeksskeeg",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "51_string_manachers.py",
+        "question": 1
+      }
+    }
+  ]
+}

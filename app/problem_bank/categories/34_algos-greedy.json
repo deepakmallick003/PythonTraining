@@ -1,0 +1,194 @@
+{
+  "category_id": "algos-greedy",
+  "category_name": "Greedy Algorithms",
+  "sequence": 34,
+  "source_reference": "algos/greedy",
+  "problems": [
+    {
+      "id": "algos-greedy_01_fractional-knapsack-problem",
+      "sequence": 1,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Fractional Knapsack Problem",
+      "description": "Implement Fractional Knapsack Problem inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Fractional Knapsack Problem inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def knapsack_brute_force(weights, profits, capacity, n):\n        if n == 0 or capacity == 0:\n            return 0\n        if weights[n - 1] > capacity:\n            return knapsack_brute_force(weights, profits, capacity, n - 1)\n        else:\n            include_item = profits[n - 1] + knapsack_brute_force(weights, profits, capacity - weights[n - 1], n - 1)\n            exclude_item = knapsack_brute_force(weights, profits, capacity, n - 1)\n            return max(include_item, exclude_item)\n\n    weights = [9, 4, 5, 3]\n\n    profits = [90, 60, 100, 45]\n\n    capacity = 15\n\n    max_profit = knapsack_brute_force(weights, profits, capacity, len(weights))\n\n    print(f'Maximum profit with brute force approach: {max_profit}')\n\n    class Fruit:\n\n        def __init__(self, weight, profit):\n            self.weight = weight\n            self.profit = profit\n            self.value_per_kg = profit / weight\n\n    def fractional_knapsack(fruits, capacity):\n        fruits.sort(key=lambda fruit: fruit.value_per_kg, reverse=True)\n        total_profit = 0\n        for fruit in fruits:\n            if capacity >= fruit.weight:\n                capacity -= fruit.weight\n                total_profit += fruit.profit\n            else:\n                total_profit += fruit.value_per_kg * capacity\n                break\n        return total_profit\n\n    fruits = [Fruit(9, 90), Fruit(4, 60), Fruit(5, 100), Fruit(3, 45)]\n\n    capacity = 15\n\n    max_profit = fractional_knapsack(fruits, capacity)\n\n    print(f'Maximum profit with greedy approach: {max_profit}')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nweights = [9, 4, 5, 3]\nprofits = [90, 60, 100, 45]\ncapacity = 15\nmax_profit = knapsack_brute_force(weights, profits, capacity, len(weights))\nfruits = [Fruit(9, 90), Fruit(4, 60), Fruit(5, 100), Fruit(3, 45)]\ncapacity = 15",
+          "output": "Maximum profit with brute force approach: 205\nMaximum profit with greedy approach: 235.0"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Maximum profit with brute force approach: 205\nMaximum profit with greedy approach: 235.0",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "39_greedy_fractional-knapsack-problem.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-greedy_02_huffman-coding",
+      "sequence": 2,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Huffman Coding",
+      "description": "Implement Huffman Coding inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Huffman Coding inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    class Node:\n\n        def __init__(self, char=None, freq=0):\n            self.char = char\n            self.freq = freq\n            self.left = None\n            self.right = None\n\n    nodes = []\n\n    def calculate_frequencies(word):\n        frequencies = {}\n        for char in word:\n            if char not in frequencies:\n                freq = word.count(char)\n                frequencies[char] = freq\n                nodes.append(Node(char, freq))\n\n    def build_huffman_tree():\n        while len(nodes) > 1:\n            nodes.sort(key=lambda x: x.freq)\n            left = nodes.pop(0)\n            right = nodes.pop(0)\n            merged = Node(freq=left.freq + right.freq)\n            merged.left = left\n            merged.right = right\n            nodes.append(merged)\n        return nodes[0]\n\n    def generate_huffman_codes(node, current_code, codes):\n        if node is None:\n            return\n        if node.char is not None:\n            codes[node.char] = current_code\n        generate_huffman_codes(node.left, current_code + '0', codes)\n        generate_huffman_codes(node.right, current_code + '1', codes)\n\n    def huffman_encoding(word):\n        global nodes\n        nodes = []\n        calculate_frequencies(word)\n        root = build_huffman_tree()\n        codes = {}\n        generate_huffman_codes(root, '', codes)\n        return codes\n\n    word = 'lossless'\n\n    codes = huffman_encoding(word)\n\n    encoded_word = ''.join((codes[char] for char in word))\n\n    print('Word:', word)\n\n    print('Huffman code:', encoded_word)\n\n    print('Conversion table:', codes)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nnodes = []\nword = 'lossless'\ncodes = huffman_encoding(word)\nencoded_word = ''.join((codes[char] for char in word))",
+          "output": "Word: lossless\nHuffman code: 10110001011100\nConversion table: {'s': '0', 'l': '10', 'o': '110', 'e': '111'}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Word: lossless\nHuffman code: 10110001011100\nConversion table: {'s': '0', 'l': '10', 'o': '110', 'e': '111'}",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "40_greedy_huffman-coding.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-greedy_03_activity-selection-problem",
+      "sequence": 3,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Activity Selection Problem",
+      "description": "Implement Activity Selection Problem inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Activity Selection Problem inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def activity_selection(start_times, end_times):\n        n = len(start_times)\n        activities = [(start_times[i], end_times[i]) for i in range(n)]\n        activities.sort(key=lambda x: x[1])\n        selected_activities = [activities[0]]\n        for i in range(1, n):\n            if activities[i][0] >= selected_activities[-1][1]:\n                selected_activities.append(activities[i])\n        return selected_activities\n\n    start_times = [1, 3, 0, 5, 8, 5]\n\n    end_times = [2, 4, 6, 7, 9, 9]\n\n    selected = activity_selection(start_times, end_times)\n\n    print('Selected activities:', selected)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nstart_times = [1, 3, 0, 5, 8, 5]\nend_times = [2, 4, 6, 7, 9, 9]\nselected = activity_selection(start_times, end_times)",
+          "output": "Selected activities: [(1, 2), (3, 4), (5, 7), (8, 9)]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Selected activities: [(1, 2), (3, 4), (5, 7), (8, 9)]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "41_greedy_activity-selection-problem.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-greedy_04_job-sequencing",
+      "sequence": 4,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Job Sequencing",
+      "description": "Implement Job Sequencing inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Job Sequencing inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def job_sequencing_greedy(jobs, profits, deadlines):\n        jobs_with_profits = sorted(zip(jobs, profits, deadlines), key=lambda x: x[1], reverse=True)\n        n = len(jobs)\n        time_slots = [-1] * n\n        total_profit = 0\n        for job, profit, deadline in jobs_with_profits:\n            for t in range(min(n, deadline) - 1, -1, -1):\n                if time_slots[t] == -1:\n                    time_slots[t] = job\n                    total_profit += profit\n                    break\n        scheduled_jobs = [time_slots[i] for i in range(n) if time_slots[i] != -1]\n        return (scheduled_jobs, total_profit)\n\n    jobs = ['J1', 'J2', 'J3', 'J4', 'J5']\n\n    profits = [100, 19, 27, 25, 15]\n\n    deadlines = [2, 1, 2, 1, 3]\n\n    scheduled_jobs, total_profit = job_sequencing_greedy(jobs, profits, deadlines)\n\n    print('Scheduled Jobs:', scheduled_jobs)\n\n    print('Total Profit:', total_profit)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\njobs = ['J1', 'J2', 'J3', 'J4', 'J5']\nprofits = [100, 19, 27, 25, 15]\ndeadlines = [2, 1, 2, 1, 3]\nscheduled_jobs, total_profit = job_sequencing_greedy(jobs, profits, deadlines)",
+          "output": "Scheduled Jobs: ['J3', 'J1', 'J5']\nTotal Profit: 142"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Scheduled Jobs: ['J3', 'J1', 'J5']\nTotal Profit: 142",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "42_greedy_job-sequencing.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-greedy_05_minimum-no-of-platforms",
+      "sequence": 5,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Minimum No Of Platforms",
+      "description": "Implement Minimum No Of Platforms inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Minimum No Of Platforms inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def findPlatform(arrivals, departures):\n        n = len(arrivals)\n        arrivals.sort()\n        departures.sort()\n        platform_needed = 0\n        max_platforms = 0\n        i = 0\n        j = 0\n        while i < n and j < n:\n            if arrivals[i] < departures[j]:\n                platform_needed += 1\n                i += 1\n                max_platforms = max(max_platforms, platform_needed)\n            else:\n                platform_needed -= 1\n                j += 1\n        return max_platforms\n\n    arrivals = [900, 940, 950, 1100, 1500, 1800]\n\n    departures = [910, 1200, 1120, 1130, 1900, 2000]\n\n    print('Minimum Number of Platforms Required =', findPlatform(arrivals, departures))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narrivals = [900, 940, 950, 1100, 1500, 1800]\ndepartures = [910, 1200, 1120, 1130, 1900, 2000]",
+          "output": "Minimum Number of Platforms Required = 3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Minimum Number of Platforms Required = 3",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "43_greedy_minimum-no-of-platforms.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-greedy_06_egyptian-fraction",
+      "sequence": 6,
+      "category_id": "algos-greedy",
+      "category_name": "Greedy Algorithms",
+      "title": "Egyptian Fraction",
+      "description": "Implement Egyptian Fraction inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Egyptian Fraction inside main() using the sample input shown below, then print the greedy algorithm result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def egyptian_fraction(numerator, denominator):\n        result = []\n        while numerator != 0:\n            unit_fraction_denom = (denominator + numerator - 1) // numerator\n            result.append(unit_fraction_denom)\n            numerator = numerator * unit_fraction_denom - denominator\n            denominator *= unit_fraction_denom\n        return result\n\n    numerator = 5\n\n    denominator = 6\n\n    fractions = egyptian_fraction(numerator, denominator)\n\n    print('Egyptian Fraction representation of {}/{}: '.format(numerator, denominator), end='')\n\n    for denom in fractions:\n        print(f'1/{denom}', end=' + ' if denom != fractions[-1] else '')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nnumerator = 5\ndenominator = 6\nfractions = egyptian_fraction(numerator, denominator)",
+          "output": "Egyptian Fraction representation of 5/6: 1/2 + 1/3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Egyptian Fraction representation of 5/6: 1/2 + 1/3",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "44_greedy_egyptian-fraction.py",
+        "question": 1
+      }
+    }
+  ]
+}

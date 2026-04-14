@@ -1,0 +1,132 @@
+{
+  "category_id": "algos-backtracking",
+  "category_name": "Backtracking Algorithms",
+  "sequence": 36,
+  "source_reference": "algos/backtracking",
+  "problems": [
+    {
+      "id": "algos-backtracking_01_n-queens",
+      "sequence": 1,
+      "category_id": "algos-backtracking",
+      "category_name": "Backtracking Algorithms",
+      "title": "N Queens",
+      "description": "Implement N Queens inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement N Queens inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def is_safe(board, row, col, n):\n        for i in range(col):\n            if board[row][i] == 'Q':\n                return False\n        for i, j in zip(range(row, -1, -1), range(col, -1, -1)):\n            if board[i][j] == 'Q':\n                return False\n        for i, j in zip(range(row, n, 1), range(col, -1, -1)):\n            if board[i][j] == 'Q':\n                return False\n        return True\n\n    def solve_n_queens_util(board, col, n):\n        if col >= n:\n            return True\n        for i in range(n):\n            if is_safe(board, i, col, n):\n                board[i][col] = 'Q'\n                if solve_n_queens_util(board, col + 1, n):\n                    return True\n                board[i][col] = '-'\n        return False\n\n    def solve_n_queens(n):\n        board = [['-' for _ in range(n)] for _ in range(n)]\n        if solve_n_queens_util(board, 0, n):\n            for row in board:\n                print(' '.join(row))\n        else:\n            print('No solution exists.')\n\n    n = 4\n\n    solve_n_queens(n)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nn = 4\nsolve_n_queens(n)",
+          "output": "- - Q -\nQ - - -\n- - - Q\n- Q - -"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "- - Q -\nQ - - -\n- - - Q\n- Q - -",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "52_backtracking_n-queens.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-backtracking_02_sudoku-solver",
+      "sequence": 2,
+      "category_id": "algos-backtracking",
+      "category_name": "Backtracking Algorithms",
+      "title": "Sudoku Solver",
+      "description": "Implement Sudoku Solver inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Sudoku Solver inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def is_valid(board, row, col, num):\n        for x in range(9):\n            if board[row][x] == num:\n                return False\n        for x in range(9):\n            if board[x][col] == num:\n                return False\n        start_row = row - row % 3\n        start_col = col - col % 3\n        for i in range(3):\n            for j in range(3):\n                if board[i + start_row][j + start_col] == num:\n                    return False\n        return True\n\n    def solve_sudoku(board):\n        empty = find_empty_location(board)\n        if not empty:\n            return True\n        row, col = empty\n        for num in range(1, 10):\n            if is_valid(board, row, col, num):\n                board[row][col] = num\n                if solve_sudoku(board):\n                    return True\n                board[row][col] = 0\n        return False\n\n    def find_empty_location(board):\n        for i in range(9):\n            for j in range(9):\n                if board[i][j] == 0:\n                    return (i, j)\n        return None\n\n    board = [[5, 3, 0, 0, 7, 0, 0, 0, 0], [6, 0, 0, 1, 9, 5, 0, 0, 0], [0, 9, 8, 0, 0, 0, 0, 6, 0], [8, 0, 0, 0, 6, 0, 0, 0, 3], [4, 0, 0, 8, 0, 3, 0, 0, 1], [7, 0, 0, 0, 2, 0, 0, 0, 6], [0, 6, 0, 0, 0, 0, 2, 8, 0], [0, 0, 0, 4, 1, 9, 0, 0, 5], [0, 0, 0, 0, 8, 0, 0, 7, 9]]\n\n    if solve_sudoku(board):\n        for row in board:\n            print(row)\n    else:\n        print('No solution exists')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nboard = [[5, 3, 0, 0, 7, 0, 0, 0, 0], [6, 0, 0, 1, 9, 5, 0, 0, 0], [0, 9, 8, 0, 0, 0, 0, 6, 0], [8, 0, 0, 0, 6, 0, 0, 0, 3], [4, 0, 0, 8, 0, 3, 0, 0, 1], [7, 0, 0, 0, 2, 0, 0, 0, 6], [0, 6, 0, 0, 0, 0, 2, 8, 0], [0, 0, 0, 4, 1, 9, 0, 0, 5], [0, 0, 0, 0, 8, 0, 0, 7, 9]]",
+          "output": "[5, 3, 4, 6, 7, 8, 9, 1, 2]\n[6, 7, 2, 1, 9, 5, 3, 4, 8]\n[1, 9, 8, 3, 4, 2, 5, 6, 7]\n[8, 5, 9, 7, 6, 1, 4, 2, 3]\n[4, 2, 6, 8, 5, 3, 7, 9, 1]\n[7, 1, 3, 9, 2, 4, 8, 5, 6]\n[9, 6, 1, 5, 3, 7, 2, 8, 4]\n[2, 8, 7, 4, 1, 9, 6, 3, 5]\n[3, 4, 5, 2, 8, 6, 1, 7, 9]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "[5, 3, 4, 6, 7, 8, 9, 1, 2]\n[6, 7, 2, 1, 9, 5, 3, 4, 8]\n[1, 9, 8, 3, 4, 2, 5, 6, 7]\n[8, 5, 9, 7, 6, 1, 4, 2, 3]\n[4, 2, 6, 8, 5, 3, 7, 9, 1]\n[7, 1, 3, 9, 2, 4, 8, 5, 6]\n[9, 6, 1, 5, 3, 7, 2, 8, 4]\n[2, 8, 7, 4, 1, 9, 6, 3, 5]\n[3, 4, 5, 2, 8, 6, 1, 7, 9]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "53_backtracking_sudoku-solver.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-backtracking_03_hamiltonian-cycle",
+      "sequence": 3,
+      "category_id": "algos-backtracking",
+      "category_name": "Backtracking Algorithms",
+      "title": "Hamiltonian Cycle",
+      "description": "Implement Hamiltonian Cycle inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Hamiltonian Cycle inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def is_safe(v, graph, path, pos):\n        if graph[path[pos - 1]][v] == 0:\n            return False\n        if v in path:\n            return False\n        return True\n\n    def hamiltonian_cycle_util(graph, path, pos):\n        if pos == len(graph):\n            if graph[path[pos - 1]][path[0]] == 1:\n                return True\n            else:\n                return False\n        for v in range(1, len(graph)):\n            if is_safe(v, graph, path, pos):\n                path[pos] = v\n                if hamiltonian_cycle_util(graph, path, pos + 1):\n                    return True\n                path[pos] = -1\n        return False\n\n    def hamiltonian_cycle(graph):\n        n = len(graph)\n        path = [-1] * n\n        path[0] = 0\n        if not hamiltonian_cycle_util(graph, path, 1):\n            print('No Hamiltonian Cycle found')\n            return False\n        print('Hamiltonian Cycle found:', path + [path[0]])\n        return True\n\n    graph = [[0, 1, 0, 1, 1], [1, 0, 1, 1, 0], [0, 1, 0, 1, 1], [1, 1, 1, 0, 1], [1, 0, 1, 1, 0]]\n\n    hamiltonian_cycle(graph)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[0, 1, 0, 1, 1], [1, 0, 1, 1, 0], [0, 1, 0, 1, 1], [1, 1, 1, 0, 1], [1, 0, 1, 1, 0]]\nhamiltonian_cycle(graph)",
+          "output": "Hamiltonian Cycle found: [0, 1, 2, 3, 4, 0]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Hamiltonian Cycle found: [0, 1, 2, 3, 4, 0]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "54_backtracking_hamiltonian-cycle.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-backtracking_04_knight-tour",
+      "sequence": 4,
+      "category_id": "algos-backtracking",
+      "category_name": "Backtracking Algorithms",
+      "title": "Knight Tour",
+      "description": "Implement Knight Tour inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Knight Tour inside main() using the sample board or input shown below, then print the constructed solution in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "MOVES = [(2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1)]\n\ndef is_valid(row, col, n, board):\n    return 0 <= row < n and 0 <= col < n and (board[row][col] == -1)\n\ndef onward_count(row, col, n, board):\n    return sum((1 for dr, dc in MOVES if is_valid(row + dr, col + dc, n, board)))\n\ndef knight_tour(n, start_row=0, start_col=0):\n    board = [[-1 for _ in range(n)] for _ in range(n)]\n    board[start_row][start_col] = 0\n    row, col = (start_row, start_col)\n    for step in range(1, n * n):\n        candidates = []\n        for dr, dc in MOVES:\n            next_row = row + dr\n            next_col = col + dc\n            if is_valid(next_row, next_col, n, board):\n                candidates.append((onward_count(next_row, next_col, n, board), next_row, next_col))\n        if not candidates:\n            return None\n        _, row, col = min(candidates)\n        board[row][col] = step\n    return board\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "MOVES = [(2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1)]\n\ndef is_valid(row, col, n, board):\n    return 0 <= row < n and 0 <= col < n and (board[row][col] == -1)\n\ndef onward_count(row, col, n, board):\n    return sum((1 for dr, dc in MOVES if is_valid(row + dr, col + dc, n, board)))\n\ndef knight_tour(n, start_row=0, start_col=0):\n    board = [[-1 for _ in range(n)] for _ in range(n)]\n    board[start_row][start_col] = 0\n    row, col = (start_row, start_col)\n    for step in range(1, n * n):\n        candidates = []\n        for dr, dc in MOVES:\n            next_row = row + dr\n            next_col = col + dc\n            if is_valid(next_row, next_col, n, board):\n                candidates.append((onward_count(next_row, next_col, n, board), next_row, next_col))\n        if not candidates:\n            return None\n        _, row, col = min(candidates)\n        board[row][col] = step\n    return board\n\ndef main():\n    n = 5\n\n    board = knight_tour(n)\n\n    if board is None:\n        print('No tour found.')\n        return\n\n    for row in board:\n        print(' '.join((f'{cell:2d}' for cell in row)))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nn = 5\nboard = knight_tour(n)",
+          "output": "0 19  8 13  2\n 9 14  1 18 23\n20  7 22  3 12\n15 10  5 24 17\n 6 21 16 11  4"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "0 19  8 13  2\n 9 14  1 18 23\n20  7 22  3 12\n15 10  5 24 17\n 6 21 16 11  4",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "55_backtracking_knight-tour.py",
+        "question": 1
+      }
+    }
+  ]
+}

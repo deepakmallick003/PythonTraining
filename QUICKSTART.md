@@ -23,20 +23,27 @@ http://127.0.0.1:5000
 ## Rebuild Problem Bank
 
 ```bash
-python problem_bank_builder.py
+python -m scripts.problem_bank_builder
 ```
 
 ## Manage Problems
 
 ```bash
-python create_problem.py list
-python create_problem.py sync
-python create_problem.py new
-python create_problem.py remove <problem_id>
+python -m scripts.create_problem list
+python -m scripts.create_problem sync
+python -m scripts.create_problem new
+python -m scripts.create_problem remove <problem_id>
+```
+
+## Docker
+
+```bash
+docker build -t python-training .
+docker run --rm -p 5000:5000 python-training
 ```
 
 ## Notes
 
-- The live app reads from `app/problem_bank/`, not `app/problems/`.
+- The live app reads from `app/problem_bank/`.
 - `reference/pythonbasics/` is authoring/reference material.
 - See `README.md` for architecture, publishing, scaling, and troubleshooting details.

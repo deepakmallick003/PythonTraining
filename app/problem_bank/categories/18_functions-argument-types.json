@@ -10,7 +10,7 @@
       "category_id": "functions-argument-types",
       "category_name": "Function Argument Types",
       "title": "Positional Arguments",
-      "description": "Call the function 'greet' with positional arguments 'Alice' and 30. Expected output: Hello, Alice! You are 30 years old.",
+      "description": "Call the function 'greet' with positional arguments 'Alice' and 30. Expected output: Hello, Alice! You are 30 years old. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Call the function 'greet' with positional arguments 'Alice' and 30. Expected output: Hello, Alice! You are 30 years old.",
       "difficulty": "Easy",
       "starter_code": "def main(name, age):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    name = 'Alice'\n\n    age = 30\n    main(name, age)\n",
@@ -53,34 +53,34 @@
       "category_id": "functions-argument-types",
       "category_name": "Function Argument Types",
       "title": "Keyword Arguments",
-      "description": "Call the function 'greet' using keyword arguments. Expected output: Hello, Bob! You are 25 years old.",
+      "description": "Call the function 'greet' using keyword arguments. Expected output: Hello, Bob! You are 25 years old. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Call the function 'greet' using keyword arguments. Expected output: Hello, Bob! You are 25 years old.",
       "difficulty": "Easy",
-      "starter_code": "def greet(name, age):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(age, name):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    age = 25\n\n    name = 'Bob'\n    main(age, name)\n",
-      "solution": "def greet(name, age):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(age, name):\n    greet(age=age, name=name)\n\nif __name__ == \"__main__\":\n    age = 25\n\n    name = 'Bob'\n    main(age, name)\n",
+      "starter_code": "def greet(name, age):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(age, name, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    age = 25\n\n    name = 'Bob'\n\n    input_3 = 'Output:\\n Hello, Bob! You are 25 years old.'\n    main(age, name, input_3)\n",
+      "solution": "def greet(name, age):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(age, name, input_3):\n    greet(age=age, name=name)\n    print(input_3)\n\nif __name__ == \"__main__\":\n    age = 25\n\n    name = 'Bob'\n\n    input_3 = 'Output:\\n Hello, Bob! You are 25 years old.'\n    main(age, name, input_3)\n",
       "examples": [
         {
-          "input": "age = 25\n\nname = 'Bob'",
-          "output": "Hello, Bob! You are 25 years old."
+          "input": "age = 25\n\nname = 'Bob'\n\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
+          "output": "Hello, Bob! You are 25 years old.\nOutput:\n Hello, Bob! You are 25 years old."
         }
       ],
       "test_cases": [
         {
-          "input": "age = 25\n\nname = 'Bob'",
-          "expected_output": "Hello, Bob! You are 25 years old.",
-          "call": "main(age, name)",
+          "input": "age = 25\n\nname = 'Bob'\n\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
+          "expected_output": "Hello, Bob! You are 25 years old.\nOutput:\n Hello, Bob! You are 25 years old.",
+          "call": "main(age, name, input_3)",
           "label": "Test 1"
         },
         {
-          "input": "age = 27\nname = 'Dqd'",
-          "expected_output": "Hello, Dqd! You are 27 years old.",
-          "call": "main(age, name)",
+          "input": "age = 27\nname = 'Dqd'\ninput_3 = 'Qwvrwv:\\n Jgnnq, Dqd! Aqw ctg 47 agctu qnf.'",
+          "expected_output": "Hello, Dqd! You are 27 years old.\nQwvrwv:\n Jgnnq, Dqd! Aqw ctg 47 agctu qnf.",
+          "call": "main(age, name, input_3)",
           "label": "Test 2"
         },
         {
-          "input": "age = 28\nname = 'Ere'",
-          "expected_output": "Hello, Ere! You are 28 years old.",
-          "call": "main(age, name)",
+          "input": "age = 28\nname = 'Ere'\ninput_3 = 'Rxwsxw:\\n Khoor, Ere! Brx duh 58 bhduv rog.'",
+          "expected_output": "Hello, Ere! You are 28 years old.\nRxwsxw:\n Khoor, Ere! Brx duh 58 bhduv rog.",
+          "call": "main(age, name, input_3)",
           "label": "Test 3"
         }
       ],
@@ -96,34 +96,34 @@
       "category_id": "functions-argument-types",
       "category_name": "Function Argument Types",
       "title": "Default Arguments",
-      "description": "Call the function 'greet' with default age. Expected output: Hello, Charlie! You are 30 years old.",
+      "description": "Call the function 'greet' with default age. Expected output: Hello, Charlie! You are 30 years old. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Call the function 'greet' with default age. Expected output: Hello, Charlie! You are 30 years old.",
       "difficulty": "Easy",
-      "starter_code": "def greet(name, age=30):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(name):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    name = 'Charlie'\n    main(name)\n",
-      "solution": "def greet(name, age=30):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(name):\n    greet(name)\n\nif __name__ == \"__main__\":\n    name = 'Charlie'\n    main(name)\n",
+      "starter_code": "def greet(name, age=30):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(name, input_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    name = 'Charlie'\n\n    input_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'\n    main(name, input_2)\n",
+      "solution": "def greet(name, age=30):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(name, input_2):\n    greet(name)\n    print(input_2)\n\nif __name__ == \"__main__\":\n    name = 'Charlie'\n\n    input_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'\n    main(name, input_2)\n",
       "examples": [
         {
-          "input": "name = 'Charlie'",
-          "output": "Hello, Charlie! You are 30 years old."
+          "input": "name = 'Charlie'\n\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
+          "output": "Hello, Charlie! You are 30 years old.\nOutput:\n Hello, Charlie! You are 30 years old."
         }
       ],
       "test_cases": [
         {
-          "input": "name = 'Charlie'",
-          "expected_output": "Hello, Charlie! You are 30 years old.",
-          "call": "main(name)",
+          "input": "name = 'Charlie'\n\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
+          "expected_output": "Hello, Charlie! You are 30 years old.\nOutput:\n Hello, Charlie! You are 30 years old.",
+          "call": "main(name, input_2)",
           "label": "Test 1"
         },
         {
-          "input": "name = 'Ejctnkg'",
-          "expected_output": "Hello, Ejctnkg! You are 30 years old.",
-          "call": "main(name)",
+          "input": "name = 'Ejctnkg'\ninput_2 = 'Qwvrwv:\\n Jgnnq, Ejctnkg! Aqw ctg 52 agctu qnf.'",
+          "expected_output": "Hello, Ejctnkg! You are 30 years old.\nQwvrwv:\n Jgnnq, Ejctnkg! Aqw ctg 52 agctu qnf.",
+          "call": "main(name, input_2)",
           "label": "Test 2"
         },
         {
-          "input": "name = 'Fkduolh'",
-          "expected_output": "Hello, Fkduolh! You are 30 years old.",
-          "call": "main(name)",
+          "input": "name = 'Fkduolh'\ninput_2 = 'Rxwsxw:\\n Khoor, Fkduolh! Brx duh 63 bhduv rog.'",
+          "expected_output": "Hello, Fkduolh! You are 30 years old.\nRxwsxw:\n Khoor, Fkduolh! Brx duh 63 bhduv rog.",
+          "call": "main(name, input_2)",
           "label": "Test 3"
         }
       ],
@@ -139,34 +139,34 @@
       "category_id": "functions-argument-types",
       "category_name": "Function Argument Types",
       "title": "Variable Length Arguments",
-      "description": "Call the function 'sum_numbers' with variable length arguments. Expected output: Sum: 15",
+      "description": "Call the function 'sum_numbers' with variable length arguments. Expected output: Sum: 15. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Call the function 'sum_numbers' with variable length arguments. Expected output: Sum: 15",
       "difficulty": "Easy",
-      "starter_code": "def sum_numbers(*args):\n    print('Sum:', sum(args))\n\ndef main(args_1, args_2, args_3, args_4, args_5):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    args_1 = 1\n\n    args_2 = 2\n\n    args_3 = 3\n\n    args_4 = 4\n\n    args_5 = 5\n    main(args_1, args_2, args_3, args_4, args_5)\n",
-      "solution": "def sum_numbers(*args):\n    print('Sum:', sum(args))\n\ndef main(args_1, args_2, args_3, args_4, args_5):\n    sum_numbers(args_1, args_2, args_3, args_4, args_5)\n\nif __name__ == \"__main__\":\n    args_1 = 1\n\n    args_2 = 2\n\n    args_3 = 3\n\n    args_4 = 4\n\n    args_5 = 5\n    main(args_1, args_2, args_3, args_4, args_5)\n",
+      "starter_code": "def sum_numbers(*args):\n    print('Sum:', sum(args))\n\ndef main(args_1, args_2, args_3, args_4, args_5, input_6):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    args_1 = 1\n\n    args_2 = 2\n\n    args_3 = 3\n\n    args_4 = 4\n\n    args_5 = 5\n\n    input_6 = 'Output:\\n Sum: 15'\n    main(args_1, args_2, args_3, args_4, args_5, input_6)\n",
+      "solution": "def sum_numbers(*args):\n    print('Sum:', sum(args))\n\ndef main(args_1, args_2, args_3, args_4, args_5, input_6):\n    sum_numbers(args_1, args_2, args_3, args_4, args_5)\n    print(input_6)\n\nif __name__ == \"__main__\":\n    args_1 = 1\n\n    args_2 = 2\n\n    args_3 = 3\n\n    args_4 = 4\n\n    args_5 = 5\n\n    input_6 = 'Output:\\n Sum: 15'\n    main(args_1, args_2, args_3, args_4, args_5, input_6)\n",
       "examples": [
         {
-          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5",
-          "output": "Sum: 15"
+          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5\n\ninput_6 = 'Output:\\n Sum: 15'",
+          "output": "Sum: 15\nOutput:\n Sum: 15"
         }
       ],
       "test_cases": [
         {
-          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5",
-          "expected_output": "Sum: 15",
-          "call": "main(args_1, args_2, args_3, args_4, args_5)",
+          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5\n\ninput_6 = 'Output:\\n Sum: 15'",
+          "expected_output": "Sum: 15\nOutput:\n Sum: 15",
+          "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 1"
         },
         {
-          "input": "args_1 = 3\nargs_2 = 4\nargs_3 = 5\nargs_4 = 6\nargs_5 = 7",
-          "expected_output": "Sum: 25",
-          "call": "main(args_1, args_2, args_3, args_4, args_5)",
+          "input": "args_1 = 3\nargs_2 = 4\nargs_3 = 5\nargs_4 = 6\nargs_5 = 7\ninput_6 = 'Qwvrwv:\\n Uwo: 37'",
+          "expected_output": "Sum: 25\nQwvrwv:\n Uwo: 37",
+          "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 2"
         },
         {
-          "input": "args_1 = 4\nargs_2 = 5\nargs_3 = 6\nargs_4 = 7\nargs_5 = 8",
-          "expected_output": "Sum: 30",
-          "call": "main(args_1, args_2, args_3, args_4, args_5)",
+          "input": "args_1 = 4\nargs_2 = 5\nargs_3 = 6\nargs_4 = 7\nargs_5 = 8\ninput_6 = 'Rxwsxw:\\n Vxp: 48'",
+          "expected_output": "Sum: 30\nRxwsxw:\n Vxp: 48",
+          "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 3"
         }
       ],
@@ -182,34 +182,34 @@
       "category_id": "functions-argument-types",
       "category_name": "Function Argument Types",
       "title": "Keyword Variable Length Arguments",
-      "description": "Call the function 'person_data' with keyword variable length arguments. Expected output: Name: Dave, Age: 40, City: New York",
+      "description": "Call the function 'person_data' with keyword variable length arguments. Expected output: Name: Dave, Age: 40, City: New York. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Call the function 'person_data' with keyword variable length arguments. Expected output: Name: Dave, Age: 40, City: New York",
       "difficulty": "Easy",
-      "starter_code": "def person_data(name, **data):\n    print('Name:', name)\n    for key, value in data.items():\n        print(key.title() + ':', value)\n\ndef main(name, age, city):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    name = 'Dave'\n\n    age = 40\n\n    city = 'New York'\n    main(name, age, city)\n",
-      "solution": "def person_data(name, **data):\n    print('Name:', name)\n    for key, value in data.items():\n        print(key.title() + ':', value)\n\ndef main(name, age, city):\n    person_data(name, age=age, city=city)\n\nif __name__ == \"__main__\":\n    name = 'Dave'\n\n    age = 40\n\n    city = 'New York'\n    main(name, age, city)\n",
+      "starter_code": "def person_data(name, **data):\n    print('Name:', name)\n    for key, value in data.items():\n        print(key.title() + ':', value)\n\ndef main(name, age, city, input_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    name = 'Dave'\n\n    age = 40\n\n    city = 'New York'\n\n    input_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'\n    main(name, age, city, input_4)\n",
+      "solution": "def person_data(name, **data):\n    print('Name:', name)\n    for key, value in data.items():\n        print(key.title() + ':', value)\n\ndef main(name, age, city, input_4):\n    person_data(name, age=age, city=city)\n    print(input_4)\n\nif __name__ == \"__main__\":\n    name = 'Dave'\n\n    age = 40\n\n    city = 'New York'\n\n    input_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'\n    main(name, age, city, input_4)\n",
       "examples": [
         {
-          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'",
-          "output": "Name: Dave\nAge: 40\nCity: New York"
+          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'\n\ninput_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'",
+          "output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave, Age: 40, City: New York"
         }
       ],
       "test_cases": [
         {
-          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'",
-          "expected_output": "Name: Dave\nAge: 40\nCity: New York",
-          "call": "main(name, age, city)",
+          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'\n\ninput_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'",
+          "expected_output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave, Age: 40, City: New York",
+          "call": "main(name, age, city, input_4)",
           "label": "Test 1"
         },
         {
-          "input": "name = 'Fcxg'\nage = 42\ncity = 'Pgy Aqtm'",
-          "expected_output": "Name: Fcxg\nAge: 42\nCity: Pgy Aqtm",
-          "call": "main(name, age, city)",
+          "input": "name = 'Fcxg'\nage = 42\ncity = 'Pgy Aqtm'\ninput_4 = 'Qwvrwv:\\n Pcog: Fcxg, Cig: 62, Ekva: Pgy Aqtm'",
+          "expected_output": "Name: Fcxg\nAge: 42\nCity: Pgy Aqtm\nQwvrwv:\n Pcog: Fcxg, Cig: 62, Ekva: Pgy Aqtm",
+          "call": "main(name, age, city, input_4)",
           "label": "Test 2"
         },
         {
-          "input": "name = 'Gdyh'\nage = 43\ncity = 'Qhz Brun'",
-          "expected_output": "Name: Gdyh\nAge: 43\nCity: Qhz Brun",
-          "call": "main(name, age, city)",
+          "input": "name = 'Gdyh'\nage = 43\ncity = 'Qhz Brun'\ninput_4 = 'Rxwsxw:\\n Qdph: Gdyh, Djh: 73, Flwb: Qhz Brun'",
+          "expected_output": "Name: Gdyh\nAge: 43\nCity: Qhz Brun\nRxwsxw:\n Qdph: Gdyh, Djh: 73, Flwb: Qhz Brun",
+          "call": "main(name, age, city, input_4)",
           "label": "Test 3"
         }
       ],

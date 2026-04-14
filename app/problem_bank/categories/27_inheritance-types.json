@@ -10,16 +10,26 @@
       "category_id": "inheritance-types",
       "category_name": "Inheritance Types",
       "title": "Single Inheritance",
-      "description": "Write a Python function to single inheritance and print the result.",
-      "prompt": "Single Inheritance.",
+      "description": "Create an Animal class with a speak() method and a Dog class that inherits from Animal and adds a bark() method. Inside main(), instantiate Dog and call speak() first, then bark(). Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create an Animal class with a speak() method and a Dog class that inherits from Animal and adds a bark() method. Inside main(), instantiate Dog and call speak() first, then bark().",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Animal:\n\n        def speak(self):\n            print('Animal speaks')\n\n    class Dog(Animal):\n\n        def bark(self):\n            print('Dog barks')\n\n    buddy = Dog()\n\n    buddy.speak()\n\n    buddy.bark()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone inheritance demo."
+      "examples": [
+        {
+          "input": "Define Animal.speak() and Dog.bark(), then run:\nbuddy = Dog()\nbuddy.speak()\nbuddy.bark()",
+          "output": "Animal speaks\nDog barks"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Animal speaks\nDog barks",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "27_inheritance_types.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "inheritance-types",
       "category_name": "Inheritance Types",
       "title": "Multilevel Inheritance",
-      "description": "Write a Python function to multilevel inheritance and print the result.",
-      "prompt": "Multilevel Inheritance.",
+      "description": "Create an Animal class with speak(), a Dog class that inherits from Animal with bark(), and a Puppy class that inherits from Dog with weep(). Inside main(), instantiate Puppy and call speak(), bark(), and weep() in that order. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create an Animal class with speak(), a Dog class that inherits from Animal with bark(), and a Puppy class that inherits from Dog with weep(). Inside main(), instantiate Puppy and call speak(), bark(), and weep() in that order.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Animal:\n\n        def speak(self):\n            print('Animal speaks')\n\n    class Dog(Animal):\n\n        def bark(self):\n            print('Dog barks')\n\n    class Puppy(Dog):\n\n        def weep(self):\n            print('Puppy weeps')\n\n    tiny = Puppy()\n\n    tiny.speak()\n\n    tiny.bark()\n\n    tiny.weep()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone inheritance demo."
+      "examples": [
+        {
+          "input": "Define Animal.speak(), Dog.bark(), and Puppy.weep(), then run:\ntiny = Puppy()\ntiny.speak()\ntiny.bark()\ntiny.weep()",
+          "output": "Animal speaks\nDog barks\nPuppy weeps"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Animal speaks\nDog barks\nPuppy weeps",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "27_inheritance_types.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "inheritance-types",
       "category_name": "Inheritance Types",
       "title": "Multiple Inheritance",
-      "description": "Write a Python function to multiple inheritance and print the result.",
-      "prompt": "Multiple Inheritance.",
+      "description": "Create a Father class with height(), a Mother class with intelligence(), and a Child class that inherits from both. Inside main(), instantiate Child and call height() first, then intelligence(). Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a Father class with height(), a Mother class with intelligence(), and a Child class that inherits from both. Inside main(), instantiate Child and call height() first, then intelligence().",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Father:\n\n        def height(self):\n            print('Height from father')\n\n    class Mother:\n\n        def intelligence(self):\n            print('Intelligence from mother')\n\n    class Child(Father, Mother):\n        pass\n\n    child = Child()\n\n    child.height()\n\n    child.intelligence()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone inheritance demo."
+      "examples": [
+        {
+          "input": "Define Father.height() and Mother.intelligence(), inherit both in Child, then run:\nchild = Child()\nchild.height()\nchild.intelligence()",
+          "output": "Height from father\nIntelligence from mother"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Height from father\nIntelligence from mother",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "27_inheritance_types.py",
         "question": 3

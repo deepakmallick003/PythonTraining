@@ -1,8 +1,8 @@
 # Python Training Practice App
 
-An interactive Flask app for practicing Python fundamentals through ordered, category-based exercises.
+An interactive Flask app for practicing Python fundamentals and classic algorithms through ordered, category-based exercises.
 
-This project turns the reference material in `reference/pythonbasics/` into a structured runtime problem bank, then serves those problems in a browser UI with:
+This project turns the reference material in `reference/pythonbasics/` and `reference/algos/` into a structured runtime problem bank, then serves those problems in a browser UI with:
 
 - category navigation in learning order
 - starter code and reference solutions
@@ -14,7 +14,7 @@ This project turns the reference material in `reference/pythonbasics/` into a st
 
 This app is a local-first Python practice environment.
 
-It is designed for gradual learning: each file in `reference/pythonbasics/` maps to a practice category, and the generated problem bank preserves the original category order and in-file sequence so learners can move through topics progressively.
+It is designed for gradual learning: Python basics are generated from `reference/pythonbasics/`, and a second algorithms track is generated from `reference/algos/`, so learners can move from language fundamentals into common algorithm patterns progressively.
 
 ## Why This Exists
 
@@ -22,17 +22,17 @@ The reference files are useful for authoring and maintenance, but they are not i
 
 This project separates those concerns:
 
-- `reference/pythonbasics/` is the human-maintained source material
+- `reference/pythonbasics/` and `reference/algos/` are the human-maintained source material
 - `app/problem_bank/` is the structured runtime dataset used by the app
-- `problem_bank_builder.py` converts reference material into the editable problem bank
-- `create_problem.py` lets you inspect, add, remove, or resync stored problems without making the app parse the reference files on every request
+- `scripts/problem_bank_builder.py` converts reference material into the editable problem bank
+- `scripts/create_problem.py` lets you inspect, add, remove, or resync stored problems without making the app parse the reference files on every request
 
 That split keeps the runtime simple while still making the content maintainable.
 
 ## Current Capabilities
 
-- 29 ordered problem categories
-- 242 generated problems
+- 38 ordered problem categories
+- 305 generated problems
 - starter code with `main(...)` scaffolds where applicable
 - at least 3 test cases for test-backed exercises
 - unique input variants for generated tests
@@ -44,11 +44,14 @@ That split keeps the runtime simple while still making the content maintainable.
 
 ```text
 PythonTraining/
-├── run.py                         # App entry point, fixed to port 5000
+├── run.py                         # App entry point, defaults to port 5000
 ├── requirements.txt               # Python dependencies
-├── problem_bank_builder.py        # Builds runtime problem bank from reference files
-├── create_problem.py              # Problem bank manager (sync/list/new/remove)
-├── reference/pythonbasics/        # Manual source/reference material
+├── Dockerfile                     # Containerized app runtime
+├── scripts/
+│   ├── problem_bank_builder.py    # Builds runtime problem bank from reference files
+│   └── create_problem.py          # Problem bank manager (sync/list/new/remove)
+├── reference/pythonbasics/        # Manual source/reference material for Python basics
+├── reference/algos/               # Manual source/reference material for algorithms
 ├── app/
 │   ├── __init__.py                # Flask app factory
 │   ├── routes.py                  # UI and API routes
@@ -66,8 +69,8 @@ PythonTraining/
 
 ### Content flow
 
-1. Reference content lives in `reference/pythonbasics/`.
-2. `problem_bank_builder.py` parses those files and writes normalized storage into `app/problem_bank/`.
+1. Reference content lives in `reference/pythonbasics/` and `reference/algos/`.
+2. `scripts/problem_bank_builder.py` parses those files and writes normalized storage into `app/problem_bank/`.
 3. `ProblemLoader` reads only from `app/problem_bank/`.
 4. The Flask app renders categories and problems from that bank.
 
@@ -119,6 +122,33 @@ That config:
 - launches `run.py`
 - targets port `5000`
 
+## Run With Docker
+
+Build the image:
+
+```bash
+docker build -t python-training .
+```
+
+Run the app in a container:
+
+```bash
+docker run --rm -p 5000:5000 python-training
+```
+
+If you want progress and local users to persist on the host, mount the data folder:
+
+```bash
+docker run --rm -p 5000:5000 -v "$(pwd)/app/data:/app/app/data" python-training
+```
+
+The container runs with:
+
+- `HOST=0.0.0.0`
+- `PORT=5000`
+- `FLASK_DEBUG=0`
+- `OPEN_BROWSER=0`
+
 ## Demo
 
 A visible demo of the running app:
@@ -142,7 +172,7 @@ Use the builder when the reference files change:
 
 ```bash
 source venv/bin/activate
-python problem_bank_builder.py
+python -m scripts.problem_bank_builder
 ```
 
 That regenerates:
@@ -155,10 +185,10 @@ That regenerates:
 Use the manager for bank operations:
 
 ```bash
-python create_problem.py sync
-python create_problem.py list
-python create_problem.py new
-python create_problem.py remove <problem_id>
+python -m scripts.create_problem sync
+python -m scripts.create_problem list
+python -m scripts.create_problem new
+python -m scripts.create_problem remove <problem_id>
 ```
 
 ### Command meanings
@@ -242,7 +272,7 @@ Then stop that process and run the app again.
 Rebuild the bank:
 
 ```bash
-python problem_bank_builder.py
+python -m scripts.problem_bank_builder
 ```
 
 If you changed only runtime bank JSON files directly, refresh the page and reload the relevant problem.
@@ -263,12 +293,6 @@ The local state files can be reset by deleting:
 - `app/data/progress.json`
 
 They will be recreated automatically on next run.
-
-### Legacy `app/problems/` JSON files are confusing
-
-`app/problems/` is legacy content and is not used by the current runtime path.
-
-The active runtime source is `app/problem_bank/`.
 
 ## Security Notes
 
@@ -291,6 +315,7 @@ These should be committed:
 - templates, static assets, and icons used by the app
 - `reference/pythonbasics/`
 - generated runtime bank in `app/problem_bank/`
+- maintenance scripts in `scripts/`
 - documentation and repo metadata
 
 These should not be committed:
@@ -300,7 +325,6 @@ These should not be committed:
 - `__pycache__` and `.pyc` files
 - OS/editor junk files
 - temporary assets and scratch files
-- the legacy `app/problems/` folder
 
 ## Publishing Notes
 

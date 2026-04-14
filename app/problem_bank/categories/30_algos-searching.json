@@ -1,0 +1,256 @@
+{
+  "category_id": "algos-searching",
+  "category_name": "Searching Algorithms",
+  "sequence": 30,
+  "source_reference": "algos/searching",
+  "problems": [
+    {
+      "id": "algos-searching_01_linear-search",
+      "sequence": 1,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Linear Search",
+      "description": "Implement Linear Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Linear Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def linearSearch(arr, targetVal):\n        for i in range(len(arr)):\n            if arr[i] == targetVal:\n                return i\n        return -1\n\n    arr = [3, 7, 2, 9, 5]\n\n    targetVal = 9\n\n    result = linearSearch(arr, targetVal)\n\n    if result != -1:\n        print('Value', targetVal, 'found at index', result)\n    else:\n        print('Value', targetVal, 'not found')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [3, 7, 2, 9, 5]\ntargetVal = 9\nresult = linearSearch(arr, targetVal)",
+          "output": "Value 9 found at index 3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Value 9 found at index 3",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "01_searching_linear-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_02_sentinel-linear-search",
+      "sequence": 2,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Sentinel Linear Search",
+      "description": "Implement Sentinel Linear Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Sentinel Linear Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def sentinelLinearSearch(arr, targetVal):\n        n = len(arr)\n        arr.append(targetVal)\n        i = 0\n        while arr[i] != targetVal:\n            i += 1\n        arr.pop()\n        if i < n:\n            print(key, 'is present at index', i)\n        else:\n            print('Element Not found')\n\n    arr = [10, 20, 180, 30, 60, 50, 110, 100, 70]\n\n    key = 180\n\n    sentinelLinearSearch(arr, key)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [10, 20, 180, 30, 60, 50, 110, 100, 70]\nkey = 180\nsentinelLinearSearch(arr, key)",
+          "output": "180 is present at index 2"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "180 is present at index 2",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "02_searching_sentinel-linear-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_03_binary-search",
+      "sequence": 3,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Binary Search",
+      "description": "Implement Binary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Binary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def binary_search(list, item):\n        low = 0\n        high = len(list) - 1\n        while low <= high:\n            mid = (low + high) // 2\n            guess = list[mid]\n            if guess == item:\n                return mid\n            if guess > item:\n                high = mid - 1\n            else:\n                low = mid + 1\n        return None\n\n    list = [1, 3, 5, 7, 9]\n\n    print(binary_search(list, 7))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nlist = [1, 3, 5, 7, 9]",
+          "output": "3"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "3",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "03_searching_binary-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_04_jump-search",
+      "sequence": 4,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Jump Search",
+      "description": "Implement Jump Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Jump Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "import math\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import math\n\ndef main():\n    def jumpSearch(arr, x, n):\n        step = math.sqrt(n)\n        prev = 0\n        while arr[int(min(step, n) - 1)] < x:\n            prev = step\n            step += math.sqrt(n)\n            if prev >= n:\n                return -1\n        while arr[int(prev)] < x:\n            prev += 1\n            if prev == min(step, n):\n                return -1\n        if arr[int(prev)] == x:\n            return prev\n        return -1\n\n    arr = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]\n\n    x = 55\n\n    n = len(arr)\n\n    index = jumpSearch(arr, x, n)\n\n    print('Number', x, 'is at index', '%.0f' % index)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]\nx = 55\nn = len(arr)\nindex = jumpSearch(arr, x, n)",
+          "output": "Number 55 is at index 10"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Number 55 is at index 10",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "04_searchng_jump-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_05_interpolation-search",
+      "sequence": 5,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Interpolation Search",
+      "description": "Implement Interpolation Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Interpolation Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def interpolationSearch(arr, n, x):\n        low = 0\n        high = n - 1\n        while low <= high and x >= arr[low] and (x <= arr[high]):\n            if low == high:\n                if arr[low] == x:\n                    return low\n                return -1\n            pos = int(low + float(high - low) / (arr[high] - arr[low]) * (x - arr[low]))\n            if arr[pos] == x:\n                return pos\n            if arr[pos] < x:\n                low = pos + 1\n            else:\n                high = pos - 1\n        return -1\n\n    arr = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47]\n\n    n = len(arr)\n\n    x = 18\n\n    index = interpolationSearch(arr, n, x)\n\n    if index != -1:\n        print('Element found at index', index)\n    else:\n        print('Element not found')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47]\nn = len(arr)\nx = 18\nindex = interpolationSearch(arr, n, x)",
+          "output": "Element found at index 4"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Element found at index 4",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "05_searching_interpolation-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_06_exponential-search",
+      "sequence": 6,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Exponential Search",
+      "description": "Implement Exponential Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Exponential Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def binary_search(arr, left, right, target):\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef exponential_search(arr, target):\n    if not arr:\n        return -1\n    if arr[0] == target:\n        return 0\n    index = 1\n    while index < len(arr) and arr[index] <= target:\n        index *= 2\n    return binary_search(arr, index // 2, min(index, len(arr) - 1), target)\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def binary_search(arr, left, right, target):\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef exponential_search(arr, target):\n    if not arr:\n        return -1\n    if arr[0] == target:\n        return 0\n    index = 1\n    while index < len(arr) and arr[index] <= target:\n        index *= 2\n    return binary_search(arr, index // 2, min(index, len(arr) - 1), target)\n\ndef main():\n    arr = [2, 3, 4, 10, 40, 55, 78, 91]\n\n    targetVal = 78\n\n    result = exponential_search(arr, targetVal)\n\n    if result != -1:\n        print('Value', targetVal, 'found at index', result)\n    else:\n        print('Value', targetVal, 'not found')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [2, 3, 4, 10, 40, 55, 78, 91]\ntargetVal = 78\nresult = exponential_search(arr, targetVal)",
+          "output": "Value 78 found at index 6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Value 78 found at index 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "06_searching_exponential-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_07_ternary-search",
+      "sequence": 7,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Ternary Search",
+      "description": "Implement Ternary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Ternary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def ternary_search(arr, key):\n        left, right = (0, len(arr) - 1)\n        while right >= left:\n            mid1 = left + (right - left) // 3\n            mid2 = right - (right - left) // 3\n            if arr[mid1] == key:\n                return mid1\n            if arr[mid2] == key:\n                return mid2\n            if key < arr[mid1]:\n                right = mid1 - 1\n            elif key > arr[mid2]:\n                left = mid2 + 1\n            else:\n                left = mid1 + 1\n                right = mid2 - 1\n        return -1\n\n    arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]\n\n    key = 13\n\n    index = ternary_search(arr, key)\n\n    print(f'Element {key} is at index {index}')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]\nkey = 13\nindex = ternary_search(arr, key)",
+          "output": "Element 13 is at index 6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Element 13 is at index 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "07_searching_ternary-search.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-searching_08_meta-binary-search",
+      "sequence": 8,
+      "category_id": "algos-searching",
+      "category_name": "Searching Algorithms",
+      "title": "Meta Binary Search",
+      "description": "Implement Meta Binary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Meta Binary Search inside main() using the sample array and target shown below, then print the search result in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def meta_binary_search(arr, key):\n        n = len(arr)\n        if n == 0:\n            return -1\n        left, right = (0, n - 1)\n        bit = 1 << right.bit_length() - 1\n        while bit > 0:\n            mid = left + bit\n            if mid < n and arr[mid] <= key:\n                left = mid\n            bit >>= 1\n        if arr[left] == key:\n            return left\n        else:\n            return -1\n\n    arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]\n\n    key = 13\n\n    index = meta_binary_search(arr, key)\n\n    print(f'Element {key} is at index {index}')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\narr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]\nkey = 13\nindex = meta_binary_search(arr, key)",
+          "output": "Element 13 is at index 6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Element 13 is at index 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "08_searching_meta-binary-search.py",
+        "question": 1
+      }
+    }
+  ]
+}

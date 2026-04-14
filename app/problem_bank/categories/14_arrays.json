@@ -10,21 +10,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Create And Delete",
-      "description": "Create an array with 5 elements and delete element with index value 2.",
+      "description": "Create an array with 5 elements and delete element with index value 2. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array with 5 elements and delete element with index value 2.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [])\n\n    for i in range(5):\n        arr.append(i + 1)\n\n    arr.pop(2)\n\n    print('Output:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [])\narr.pop(2)",
           "output": "Output: array('i', [1, 2, 4, 5])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('i', [1, 2, 4, 5])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 1
@@ -36,21 +41,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Reverse Array",
-      "description": "Write a Python function to reverse an array and print the result.",
+      "description": "Reverse an array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Reverse an array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('u', ['a', 'b', 'c', 'd'])\n\n    for i in range(int(len(arr) / 2)):\n        arr[i], arr[len(arr) - i - 1] = (arr[len(arr) - i - 1], arr[i])\n\n    print('Output:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('u', ['a', 'b', 'c', 'd'])",
           "output": "Output: array('u', 'dcba')\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('u', 'dcba')\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 2
@@ -62,21 +72,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Create Reverse Array",
-      "description": "Create a new array with the reverse of an existing array.",
+      "description": "Create a new array with the reverse of an existing array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a new array with the reverse of an existing array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('u', ['a', 'b', 'c', 'd'])\n\n    arr1 = array(arr.typecode, [])\n\n    for i in range(len(arr)):\n        arr1.append(arr[len(arr) - i - 1])\n\n    print('Output:', arr, end='\\n' + '-' * 401)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('u', ['a', 'b', 'c', 'd'])\narr1 = array(arr.typecode, [])",
           "output": "Output: array('u', 'abcd')\n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('u', 'abcd')\n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 3
@@ -88,21 +103,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Append Element",
-      "description": "Append an element to the array.",
+      "description": "Append an element to the array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Append an element to the array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3])\n\n    arr.append(4)\n\n    print('Output:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3])\narr.append(4)",
           "output": "Output: array('i', [1, 2, 3, 4])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('i', [1, 2, 3, 4])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 4
@@ -114,21 +134,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Insert Element",
-      "description": "Insert an element at a specific position.",
+      "description": "Insert an element at a specific position. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Insert an element at a specific position.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 4])\n\n    arr.insert(2, 3)\n\n    print('Output:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 4])\narr.insert(2, 3)",
           "output": "Output: array('i', [1, 2, 3, 4])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('i', [1, 2, 3, 4])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 5
@@ -140,21 +165,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Remove Element",
-      "description": "Remove the first occurrence of an element.",
+      "description": "Remove the first occurrence of an element. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Remove the first occurrence of an element.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 2, 4])\n\n    arr.remove(2)\n\n    print('Output:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 2, 4])\narr.remove(2)",
           "output": "Output: array('i', [1, 3, 2, 4])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: array('i', [1, 3, 2, 4])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 6
@@ -166,21 +196,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Find Index",
-      "description": "Find the index of the first occurrence of an element.",
+      "description": "Find the index of the first occurrence of an element. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Find the index of the first occurrence of an element.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 4, 5])\n\n    index = arr.index(3)\n\n    print('Output: Index of the first occurrence of 3 is:', index, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 4, 5])\nindex = arr.index(3)",
           "output": "Output: Index of the first occurrence of 3 is: 2\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Index of the first occurrence of 3 is: 2\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 7
@@ -192,21 +227,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Convert To List",
-      "description": "Convert the array to a list.",
+      "description": "Convert the array to a list. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert the array to a list.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 4, 5])\n\n    arr_list = arr.tolist()\n\n    print('Output: Array converted to list:', arr_list, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 4, 5])\narr_list = arr.tolist()",
           "output": "Output: Array converted to list: [1, 2, 3, 4, 5]\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Array converted to list: [1, 2, 3, 4, 5]\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 8
@@ -218,21 +258,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Slice Array",
-      "description": "Write a Python function to slice the array and print the result.",
+      "description": "Slice the array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Slice the array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 4, 5])\n\n    sliced_arr = arr[1:4]\n\n    print('Output: Sliced array:', sliced_arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 4, 5])\nsliced_arr = arr[1:4]",
           "output": "Output: Sliced array: array('i', [2, 3, 4])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Sliced array: array('i', [2, 3, 4])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 9
@@ -244,21 +289,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Count Occurrences",
-      "description": "Count occurrences of an element.",
+      "description": "Count occurrences of an element. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Count occurrences of an element.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 2, 4, 2])\n\n    count = arr.count(2)\n\n    print('Output: Number of occurrences of 2:', count, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 2, 4, 2])\ncount = arr.count(2)",
           "output": "Output: Number of occurrences of 2: 3\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Number of occurrences of 2: 3\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 10
@@ -270,21 +320,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Extend Array",
-      "description": "Extend array by appending elements from another array.",
+      "description": "Extend array by appending elements from another array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Extend array by appending elements from another array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr1 = array('i', [1, 2, 3])\n\n    arr2 = array('i', [4, 5, 6])\n\n    arr1.extend(arr2)\n\n    print('Output: Extended array:', arr1, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr1 = array('i', [1, 2, 3])\narr2 = array('i', [4, 5, 6])\narr1.extend(arr2)",
           "output": "Output: Extended array: array('i', [1, 2, 3, 4, 5, 6])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Extended array: array('i', [1, 2, 3, 4, 5, 6])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 11
@@ -296,21 +351,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Create Char Array",
-      "description": "Create an array of characters.",
+      "description": "Create an array of characters. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array of characters.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    char_arr = array('u', ['a', 'b', 'c'])\n\n    print('Output: Character array:', char_arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\nchar_arr = array('u', ['a', 'b', 'c'])",
           "output": "Output: Character array: array('u', 'abc')\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Character array: array('u', 'abc')\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 12
@@ -322,21 +382,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Bytes To String",
-      "description": "Convert an array of bytes to a string.",
+      "description": "Convert an array of bytes to a string. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert an array of bytes to a string.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    byte_arr = array('b', [97, 98, 99])\n\n    byte_str = byte_arr.tobytes().decode('utf-8')\n\n    print('Output: String from bytes array:', byte_str, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\nbyte_arr = array('b', [97, 98, 99])\nbyte_str = byte_arr.tobytes().decode('utf-8')",
           "output": "Output: String from bytes array: abc\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: String from bytes array: abc\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 13
@@ -348,21 +413,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Copy Array",
-      "description": "Create a copy of the array.",
+      "description": "Create a copy of the array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a copy of the array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3])\n\n    arr_copy = array(arr.typecode, arr)\n\n    print('Output: Copy of the array:', arr_copy, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3])\narr_copy = array(arr.typecode, arr)",
           "output": "Output: Copy of the array: array('i', [1, 2, 3])\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Copy of the array: array('i', [1, 2, 3])\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 14
@@ -374,21 +444,26 @@
       "category_id": "arrays",
       "category_name": "Arrays",
       "title": "Clear Array",
-      "description": "Clear all elements from the array.",
+      "description": "Clear all elements from the array. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Clear all elements from the array.",
       "difficulty": "Easy",
       "starter_code": "from array import array\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "from array import array\n\ndef main():\n    arr = array('i', [1, 2, 3, 4, 5])\n\n    arr = array(arr.typecode)\n\n    print('Output: Array after clearing all elements:', arr, end='\\n' + '-' * 40)\n\nif __name__ == \"__main__\":\n    main()\n",
       "examples": [
         {
-          "input": "Standalone snippet",
+          "input": "Use the sample setup:\narr = array('i', [1, 2, 3, 4, 5])\narr = array(arr.typecode)",
           "output": "Output: Array after clearing all elements: array('i')\n----------------------------------------"
         }
       ],
-      "test_cases": [],
-      "notes": [
-        "This problem is stored as a runnable standalone snippet."
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Output: Array after clearing all elements: array('i')\n----------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
       ],
+      "notes": [],
       "source_reference": {
         "file": "14_arrays.py",
         "question": 15

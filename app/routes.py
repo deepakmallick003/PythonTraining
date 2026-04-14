@@ -1,7 +1,8 @@
 """
 Flask routes for the application
 """
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, current_app
+from . import env_flag
 from .problem_loader import ProblemLoader
 from .code_executor import CodeExecutor
 from .user_manager import UserManager
@@ -16,6 +17,17 @@ user_manager = UserManager()
 def _get_current_user():
     """Get current logged in user from session"""
     return session.get('user')
+
+
+def _get_active_user():
+    """Return the active user, falling back to the local developer profile in debug mode."""
+    if _require_auth():
+        return _get_current_user()
+    return 'developer'
+
+def _require_auth():
+    """Check if authentication is required (skip in debug mode)"""
+    return not env_flag('FLASK_DEBUG', default=False)
 
 def _get_navigation_data(problem_id):
     """Get navigation data for prev/next problem and category"""
@@ -80,23 +92,24 @@ def logout():
 @main_bp.route('/settings')
 def settings():
     """Settings and admin page"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return redirect(url_for('main.login'))
     
-    all_users = user_manager.get_all_users()
+    all_users = user_manager.get_all_users() if _require_auth() else []
     user_progress = {}
-    for u in all_users:
-        progress = user_manager.get_user_progress(u['username'])
-        user_progress[u['username']] = len([p for p in progress.values() if p.get('solved')])
+    if _require_auth():
+        for u in all_users:
+            progress = user_manager.get_user_progress(u['username'])
+            user_progress[u['username']] = len([p for p in progress.values() if p.get('solved')])
     
     return render_template('settings.html', users=all_users, user_progress=user_progress, current_user=user)
 
 @main_bp.route('/')
 def index():
     """Main page - category list"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return redirect(url_for('main.login'))
     
     categories = ProblemLoader.get_categories()
@@ -105,8 +118,8 @@ def index():
 @main_bp.route('/category/<category_id>')
 def category(category_id):
     """Category page - problems in category"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return redirect(url_for('main.login'))
     
     category_data = ProblemLoader.get_category(category_id)
@@ -129,16 +142,16 @@ def category(category_id):
 @main_bp.route('/problem/<problem_id>')
 def problem(problem_id):
     """Problem detail page"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return redirect(url_for('main.login'))
     
     problem_data = ProblemLoader.get_problem(problem_id)
     if not problem_data:
         return render_template('404.html'), 404
 
-    problem_data['solved'] = user_manager.is_problem_solved(user, problem_id)
-    problem_data['saved_code'] = user_manager.get_saved_code(user, problem_id)
+    problem_data['solved'] = user_manager.is_problem_solved(user, problem_id) if user else False
+    problem_data['saved_code'] = user_manager.get_saved_code(user, problem_id) if user else problem_data.get('starter_code', '')
     problem_data['nav'] = _get_navigation_data(problem_id)
 
     return render_template('problem.html', problem=problem_data, current_user=user)
@@ -190,10 +203,10 @@ def run_code():
     result = CodeExecutor.execute(code, test_cases=test_cases)
     
     # Save the successful code state for this problem if it ran cleanly
-    user = _get_current_user()
+    user = _get_active_user()
     if user and problem_id and result.get('status') == 'success':
         user_manager.save_problem_code(user, problem_id, code)
-
+    
     # Mark problem as solved if all tests pass
     if user and result.get('status') == 'success' and test_cases and problem_id:
         if result.get('passed') == result.get('total'):
@@ -202,40 +215,42 @@ def run_code():
     
     return jsonify(result)
 
-@api_bp.route('/validate', methods=['POST'])
-def validate_code():
-    """Validate code syntax"""
-    data = request.get_json()
-    code = data.get('code', '')
-    
-    result = CodeExecutor.validate_syntax(code)
-    return jsonify(result)
-
 @api_bp.route('/progress/<problem_id>', methods=['POST'])
 def save_progress(problem_id):
     """Save user progress for a problem"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return jsonify({'error': 'Not authenticated'}), 401
     
     data = request.get_json()
-    if data.get('solved'):
+    if data.get('solved') and user:
         user_manager.mark_problem_solved(user, problem_id)
         return jsonify({'status': 'success', 'solved': True})
     
     return jsonify({'status': 'success'})
 
+@api_bp.route('/progress/<problem_id>/clear-code', methods=['POST'])
+def clear_saved_code(problem_id):
+    """Clear saved code for a problem"""
+    user = _get_active_user()
+    if _require_auth() and not user:
+        return jsonify({'error': 'Not authenticated'}), 401
+    
+    if user:
+        user_manager.clear_saved_code(user, problem_id)
+    return jsonify({'status': 'success'})
+
 @api_bp.route('/user/settings/delete-user', methods=['POST'])
 def delete_user_endpoint():
     """Delete a user (admin only)"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return jsonify({'error': 'Not authenticated'}), 401
     
     data = request.get_json()
     target_user = data.get('username')
     
-    if target_user:
+    if target_user and _require_auth():
         user_manager.delete_user(target_user)
         return jsonify({'status': 'success'})
     
@@ -244,12 +259,13 @@ def delete_user_endpoint():
 @api_bp.route('/user/settings/reset-progress', methods=['POST'])
 def reset_user_progress():
     """Reset user's progress"""
-    user = _get_current_user()
-    if not user:
+    user = _get_active_user()
+    if _require_auth() and not user:
         return jsonify({'error': 'Not authenticated'}), 401
     
     data = request.get_json()
     target_user = data.get('username', user)
     
-    user_manager.reset_user_progress(target_user)
+    if target_user:
+        user_manager.reset_user_progress(target_user)
     return jsonify({'status': 'success'})

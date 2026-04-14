@@ -10,7 +10,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Create Tuple",
-      "description": "Create a tuple with elements (1, 2, 3). Expected output: (1, 2, 3)",
+      "description": "Create a tuple with elements (1, 2, 3). Expected output: (1, 2, 3). Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a tuple with elements (1, 2, 3). Expected output: (1, 2, 3)",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
@@ -53,7 +53,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Count Element",
-      "description": "Count how many times '3' appears in the tuple. Expected output: 1",
+      "description": "Count how many times '3' appears in the tuple. Expected output: 1. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Count how many times '3' appears in the tuple. Expected output: 1",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
@@ -96,7 +96,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Index of Element",
-      "description": "Find the index of the first element equal to 3. Expected output: 2",
+      "description": "Find the index of the first element equal to 3. Expected output: 2. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Find the index of the first element equal to 3. Expected output: 2",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 3)\n    main(tuple1)\n",
@@ -139,33 +139,33 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Unpacking Tuple",
-      "description": "Unpack the tuple into three variables a, b, c. Expected output: a=1, b=2, c=3",
+      "description": "Unpack the tuple into three variables a, b, c. Expected output: a=1, b=2, c=3. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Unpack the tuple into three variables a, b, c. Expected output: a=1, b=2, c=3",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
-      "solution": "import time\n\ndef main(tuple1):\n    a, b, c = tuple1\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
+      "solution": "import time\n\ndef main(tuple1):\n    a, b, c = tuple1\n    print('Output:\\n a={}, b={}, c={}'.format(a, b, c))\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
       "examples": [
         {
           "input": "tuple1 = (1, 2, 3)",
-          "output": ""
+          "output": "Output:\n a=1, b=2, c=3"
         }
       ],
       "test_cases": [
         {
           "input": "tuple1 = (1, 2, 3)",
-          "expected_output": "",
+          "expected_output": "Output:\n a=1, b=2, c=3",
           "call": "main(tuple1)",
           "label": "Test 1"
         },
         {
           "input": "tuple1 = (3, 4, 5)",
-          "expected_output": "",
+          "expected_output": "Output:\n a=3, b=4, c=5",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
           "input": "tuple1 = (4, 5, 6)",
-          "expected_output": "",
+          "expected_output": "Output:\n a=4, b=5, c=6",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -182,7 +182,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Concatenate Tuples",
-      "description": "Concatenate two tuples. Expected output: (1, 2, 3, 4, 5)",
+      "description": "Concatenate two tuples. Expected output: (1, 2, 3, 4, 5). Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Concatenate two tuples. Expected output: (1, 2, 3, 4, 5)",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1, tuple2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    tuple2 = (4, 5)\n    main(tuple1, tuple2)\n",
@@ -225,7 +225,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Check Element in Tuple",
-      "description": "Check if '4' is in the tuple. Expected output: True",
+      "description": "Check if '4' is in the tuple. Expected output: True. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Check if '4' is in the tuple. Expected output: True",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
@@ -268,7 +268,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple Length",
-      "description": "Find the length of the tuple. Expected output: 5",
+      "description": "Find the length of the tuple. Expected output: 5. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Find the length of the tuple. Expected output: 5",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
@@ -311,7 +311,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Nested Tuple Access",
-      "description": "Access the element 'b' from the nested tuple. Expected output: 'b'",
+      "description": "Access the element 'b' from the nested tuple. Expected output: 'b'. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Access the element 'b' from the nested tuple. Expected output: 'b'",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, ('a', 'b', 'c'), 3)\n    main(tuple1)\n",
@@ -354,7 +354,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple to List Conversion",
-      "description": "Convert the tuple to a list. Expected output: [1, 2, 3, 4, 5]",
+      "description": "Convert the tuple to a list. Expected output: [1, 2, 3, 4, 5]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert the tuple to a list. Expected output: [1, 2, 3, 4, 5]",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
@@ -397,7 +397,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Immutable Nature of Tuples",
-      "description": "Attempt to change the first element of the tuple to 100. Expected output: TypeError",
+      "description": "Attempt to change the first element of the tuple to 100. Expected output: TypeError. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Attempt to change the first element of the tuple to 100. Expected output: TypeError",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1, value, value_2, input_3, input_4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    value = 0\n\n    value_2 = 100\n\n    input_3 = 'Code: \\n tuple1[0] = 100'\n\n    input_4 = 'Output:\\n'\n    main(tuple1, value, value_2, input_3, input_4)\n",
@@ -440,7 +440,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple Repetition",
-      "description": "Repeat the elements of the tuple three times. Expected output: (1, 2, 3, 1, 2, 3, 1, 2, 3)",
+      "description": "Repeat the elements of the tuple three times. Expected output: (1, 2, 3, 1, 2, 3, 1, 2, 3). Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Repeat the elements of the tuple three times. Expected output: (1, 2, 3, 1, 2, 3, 1, 2, 3)",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n    main(tuple1)\n",
@@ -483,7 +483,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Minimum and Maximum",
-      "description": "Find the minimum and maximum values in the tuple. Expected output: Min: 1, Max: 5",
+      "description": "Find the minimum and maximum values in the tuple. Expected output: Min: 1, Max: 5. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Find the minimum and maximum values in the tuple. Expected output: Min: 1, Max: 5",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (2, 3, 5, 1, 4)\n    main(tuple1)\n",
@@ -526,7 +526,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple and List Conversion",
-      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
+      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
@@ -569,7 +569,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple Slicing",
-      "description": "Slice the tuple to get the first three elements. Expected output: (1, 2, 3)",
+      "description": "Slice the tuple to get the first three elements. Expected output: (1, 2, 3). Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Slice the tuple to get the first three elements. Expected output: (1, 2, 3)",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(tuple1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3, 4, 5)\n    main(tuple1)\n",
@@ -612,7 +612,7 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Nested Tuples",
-      "description": "Create a nested tuple and access the second element of the first tuple. Expected output: 'b'",
+      "description": "Create a nested tuple and access the second element of the first tuple. Expected output: 'b'. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a nested tuple and access the second element of the first tuple. Expected output: 'b'",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(nested_tuple):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    nested_tuple = (('a', 'b'), ('c', 'd'))\n    main(nested_tuple)\n",
@@ -655,16 +655,20 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "List vs Tuple - Performance Comparison",
-      "description": "List vs Tuple - Performance Comparison",
+      "description": "List vs Tuple - Performance Comparison. Run the snippet in main() and compare the result with the example output.",
       "prompt": "List vs Tuple - Performance Comparison",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "import time\n\ndef main():\n    print('Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.')\n\n    large_list = list(range(1000000))\n\n    large_tuple = tuple(range(1000000))\n\n    def access_elements(collection):\n        for element in collection:\n            _ = element\n\n    start_time = time.time()\n\n    access_elements(large_list)\n\n    list_time = time.time() - start_time\n\n    print('List Access Time:\\n {:.6f} seconds'.format(list_time))\n\n    start_time = time.time()\n\n    access_elements(large_tuple)\n\n    tuple_time = time.time() - start_time\n\n    print('Tuple Access Time:\\n {:.6f} seconds'.format(tuple_time))\n\n    print('-' * 20)\n\n    print()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
+      "examples": [
+        {
+          "input": "Use the sample setup:\nlarge_list = list(range(1000000))\nlarge_tuple = tuple(range(1000000))\nstart_time = time.time()\naccess_elements(large_list)\nlist_time = time.time() - start_time\nstart_time = time.time()",
+          "output": "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.\nList Access Time:\n 0.009411 seconds\nTuple Access Time:\n 0.059872 seconds\n--------------------"
+        }
+      ],
       "test_cases": [],
       "notes": [
-        "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.",
-        "Stored as a standalone snippet because the block is not a simple hidden-setup exercise."
+        "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple."
       ],
       "source_reference": {
         "file": "03_tuple.py",
@@ -677,33 +681,33 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "List vs Tuple - Data Integrity and Mutability",
-      "description": "List vs Tuple - Data Integrity and Mutability",
+      "description": "List vs Tuple - Data Integrity and Mutability. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "List vs Tuple - Data Integrity and Mutability",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef add_item_to_inventory(inventory, item):\n    inventory.append(item)\n\ndef display_coordinates(coords):\n    print('Coordinates:\\n Latitude:', coords[0], '\\n Longitude:', coords[1])\n\ninventory = ['apples', 'oranges', 'bananas']\n\ndef main(coordinates):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    coordinates = (40.7128, -74.006)\n    main(coordinates)\n",
-      "solution": "import time\n\ndef add_item_to_inventory(inventory, item):\n    inventory.append(item)\n\ndef display_coordinates(coords):\n    print('Coordinates:\\n Latitude:', coords[0], '\\n Longitude:', coords[1])\n\ninventory = ['apples', 'oranges', 'bananas']\n\ndef main(coordinates):\n    add_item_to_inventory(inventory, \"grapes\")\n    display_coordinates(coordinates)\n\nif __name__ == \"__main__\":\n    coordinates = (40.7128, -74.006)\n    main(coordinates)\n",
+      "solution": "import time\n\ndef add_item_to_inventory(inventory, item):\n    inventory.append(item)\n\ndef display_coordinates(coords):\n    print('Coordinates:\\n Latitude:', coords[0], '\\n Longitude:', coords[1])\n\ninventory = ['apples', 'oranges', 'bananas']\n\ndef main(coordinates):\n    add_item_to_inventory(inventory, \"grapes\")\n    display_coordinates(coordinates)\n    print('Updated Inventory:\\n', inventory)\n    print(\"\\n--- Scenario 2: Immutable Data (Tuple) ---\")\n    print(\"Store fixed geographical coordinates that should not change.\")\n\nif __name__ == \"__main__\":\n    coordinates = (40.7128, -74.006)\n    main(coordinates)\n",
       "examples": [
         {
           "input": "coordinates = (40.7128, -74.006)",
-          "output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006"
+          "output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006\nUpdated Inventory:\n ['apples', 'oranges', 'bananas', 'grapes']\n\n--- Scenario 2: Immutable Data (Tuple) ---\nStore fixed geographical coordinates that should not change."
         }
       ],
       "test_cases": [
         {
           "input": "coordinates = (40.7128, -74.006)",
-          "expected_output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006",
+          "expected_output": "Coordinates:\n Latitude: 40.7128 \n Longitude: -74.006\nUpdated Inventory:\n ['apples', 'oranges', 'bananas', 'grapes']\n\n--- Scenario 2: Immutable Data (Tuple) ---\nStore fixed geographical coordinates that should not change.",
           "call": "main(coordinates)",
           "label": "Test 1"
         },
         {
           "input": "coordinates = (42.7128, -76.006)",
-          "expected_output": "Coordinates:\n Latitude: 42.7128 \n Longitude: -76.006",
+          "expected_output": "Coordinates:\n Latitude: 42.7128 \n Longitude: -76.006\nUpdated Inventory:\n ['apples', 'oranges', 'bananas', 'grapes']\n\n--- Scenario 2: Immutable Data (Tuple) ---\nStore fixed geographical coordinates that should not change.",
           "call": "main(coordinates)",
           "label": "Test 2"
         },
         {
           "input": "coordinates = (43.7128, -77.006)",
-          "expected_output": "Coordinates:\n Latitude: 43.7128 \n Longitude: -77.006",
+          "expected_output": "Coordinates:\n Latitude: 43.7128 \n Longitude: -77.006\nUpdated Inventory:\n ['apples', 'oranges', 'bananas', 'grapes']\n\n--- Scenario 2: Immutable Data (Tuple) ---\nStore fixed geographical coordinates that should not change.",
           "call": "main(coordinates)",
           "label": "Test 3"
         }

@@ -1,0 +1,70 @@
+{
+  "category_id": "algos-recursion",
+  "category_name": "Recursion Foundations",
+  "sequence": 38,
+  "source_reference": "algos/misc",
+  "problems": [
+    {
+      "id": "algos-recursion_01_factorial",
+      "sequence": 1,
+      "category_id": "algos-recursion",
+      "category_name": "Recursion Foundations",
+      "title": "Factorial",
+      "description": "Implement Factorial inside main() using the sample values shown below, then print the computed result or generated sequence in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Factorial inside main() using the sample values shown below, then print the computed result or generated sequence in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def factorial(num):\n        res = num\n        while num > 1:\n            res = res * (num - 1)\n            num -= 1\n        return res\n\n    def factorial(num):\n        res = 1\n        for i in range(1, num + 1):\n            res = res * i\n        return res\n\n    def factorial_rec(num):\n        if num == 1:\n            return num\n        else:\n            return num * factorial_rec(num - 1)\n\n    print(factorial(5))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use this setup idea:\nFactorial: using the sample values shown below, then print the computed result or generated sequence in the same format as the example",
+          "output": "120"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "120",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "factorial.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-recursion_02_fibonacci",
+      "sequence": 2,
+      "category_id": "algos-recursion",
+      "category_name": "Recursion Foundations",
+      "title": "Fibonacci",
+      "description": "Implement Fibonacci inside main() using the sample values shown below, then print the computed result or generated sequence in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Fibonacci inside main() using the sample values shown below, then print the computed result or generated sequence in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def fibo_max_count(maxcount):\n        if maxcount > 0:\n            num1 = 0\n            num2 = 1\n            for i in range(maxcount):\n                print(num1)\n                sum = num1 + num2\n                num1 = num2\n                num2 = sum\n\n    def fibo_maxcount_rec(maxcount, num1=0, num2=1):\n        if maxcount <= 0:\n            return\n        print(num1)\n        sum = num1 + num2\n        maxcount -= 1\n        fibo_maxcount_rec(maxcount, num1=num2, num2=sum)\n\n    def fibo_max_num(maxnum):\n        num1 = sum = 0\n        num2 = 1\n        while num1 < maxnum:\n            print(num1)\n            sum = num1 + num2\n            num1 = num2\n            num2 = sum\n\n    fibo_max_count(10)\n\n    fibo_maxcount_rec(10)\n\n    fibo_max_num(100)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nfibo_max_count(10)\nfibo_maxcount_rec(10)\nfibo_max_num(100)",
+          "output": "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n55\n89"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n55\n89",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "fibonacci.py",
+        "question": 1
+      }
+    }
+  ]
+}

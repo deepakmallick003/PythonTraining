@@ -10,16 +10,26 @@
       "category_id": "loop-breakers",
       "category_name": "Loop Breakers",
       "title": "Explain Continue",
-      "description": "Write a Python function to explain continue and print the result.",
-      "prompt": "Explain Continue.",
+      "description": "Explain Continue Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Explain Continue Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def explain_continue():\n        print('\\n--- Explain Continue ---')\n        print(\"The 'continue' statement skips the current iteration of a loop and proceeds to the next iteration.\")\n        for i in range(5):\n            if i == 2:\n                continue\n            print(i)\n\n    explain_continue()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nexplain_continue()",
+          "output": "--- Explain Continue ---\nThe 'continue' statement skips the current iteration of a loop and proceeds to the next iteration.\n0\n1\n3\n4"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Explain Continue ---\nThe 'continue' statement skips the current iteration of a loop and proceeds to the next iteration.\n0\n1\n3\n4",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "13_loop-breakers.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "loop-breakers",
       "category_name": "Loop Breakers",
       "title": "Explain Pass",
-      "description": "Write a Python function to explain pass and print the result.",
-      "prompt": "Explain Pass.",
+      "description": "Explain Pass Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Explain Pass Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def explain_pass():\n        print('\\n--- Explain Pass ---')\n        print(\"The 'pass' statement is a null operation; it's a placeholder used when a statement is syntactically required but you don't want any command or code to execute.\")\n        for i in range(5):\n            if i == 2:\n                pass\n            print(i)\n\n    explain_pass()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nexplain_pass()",
+          "output": "--- Explain Pass ---\nThe 'pass' statement is a null operation; it's a placeholder used when a statement is syntactically required but you don't want any command or code to execute.\n0\n1\n2\n3\n4"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Explain Pass ---\nThe 'pass' statement is a null operation; it's a placeholder used when a statement is syntactically required but you don't want any command or code to execute.\n0\n1\n2\n3\n4",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "13_loop-breakers.py",
         "question": 2

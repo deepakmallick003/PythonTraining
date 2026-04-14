@@ -10,16 +10,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Behavior Expectation",
-      "description": "Write a Python function to behavior expectation and print the result.",
-      "prompt": "Behavior Expectation.",
+      "description": "Behavior Expectation Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Behavior Expectation Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def behavior_expectation():\n        print('\\n--- Behavior Expectation ---')\n        print(\"Description: Immutable objects can't be modified, so functions can't change them. Mutable objects can be changed, so functions can alter them.\")\n\n        def append_suffix(name):\n            return name + '_suffix'\n        print('\\nFunction: append_suffix')\n        original_name = 'deepak'\n        print('Input: original_name =', original_name)\n        modified_name = append_suffix(original_name)\n        print('Output: modified_name =', modified_name)\n\n        def add_item_to_list(lst):\n            lst.append('new item')\n            return lst\n        print('\\nFunction: add_item_to_list')\n        my_list = ['item1', 'item2']\n        print('Input: my_list =', my_list)\n        modified_list = add_item_to_list(my_list.copy())\n        print('Output: modified_list =', modified_list)\n\n    behavior_expectation()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nbehavior_expectation()",
+          "output": "--- Behavior Expectation ---\nDescription: Immutable objects can't be modified, so functions can't change them. Mutable objects can be changed, so functions can alter them.\n\nFunction: append_suffix\nInput: original_name = deepak\nOutput: modified_name = deepak_suffix\n\nFunction: add_item_to_list\nInput: my_list = ['item1', 'item2']\nOutput: modified_list = ['item1', 'item2', 'new item']"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Behavior Expectation ---\nDescription: Immutable objects can't be modified, so functions can't change them. Mutable objects can be changed, so functions can alter them.\n\nFunction: append_suffix\nInput: original_name = deepak\nOutput: modified_name = deepak_suffix\n\nFunction: add_item_to_list\nInput: my_list = ['item1', 'item2']\nOutput: modified_list = ['item1', 'item2', 'new item']",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Function Side Effects",
-      "description": "Write a Python function to function side-effects and print the result.",
-      "prompt": "Function Side-Effects.",
+      "description": "Function Side-Effects Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Function Side-Effects Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def function_side_effects():\n        print('\\n--- Function Side-Effects ---')\n        print('Description: Functions can have side effects on mutable objects, changing their state.')\n\n        def modify_list(lst):\n            lst.append('modified')\n            return lst\n        print('\\nFunction: modify_list')\n        my_list = ['original']\n        print('Input: my_list =', my_list)\n        new_list = modify_list(my_list)\n        print('Output: new_list =', new_list)\n        print('Original list after modification:', my_list)\n\n    function_side_effects()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nfunction_side_effects()",
+          "output": "--- Function Side-Effects ---\nDescription: Functions can have side effects on mutable objects, changing their state.\n\nFunction: modify_list\nInput: my_list = ['original']\nOutput: new_list = ['original', 'modified']\nOriginal list after modification: ['original', 'modified']"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Function Side-Effects ---\nDescription: Functions can have side effects on mutable objects, changing their state.\n\nFunction: modify_list\nInput: my_list = ['original']\nOutput: new_list = ['original', 'modified']\nOriginal list after modification: ['original', 'modified']",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Copying Behavior",
-      "description": "Write a Python function to copying behavior and print the result.",
-      "prompt": "Copying Behavior.",
+      "description": "Copying Behavior Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Copying Behavior Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def copying_behavior():\n        print('\\n--- Copying Behavior ---')\n        print('Description: Shallow copying of mutable objects allows independent modifications of the copy and original.')\n        original_list = [1, 2, 3]\n        copied_list = original_list.copy()\n        copied_list.append(4)\n        print('\\nOriginal List:', original_list)\n        print('Copied List:', copied_list)\n\n    copying_behavior()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ncopying_behavior()",
+          "output": "--- Copying Behavior ---\nDescription: Shallow copying of mutable objects allows independent modifications of the copy and original.\n\nOriginal List: [1, 2, 3]\nCopied List: [1, 2, 3, 4]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Copying Behavior ---\nDescription: Shallow copying of mutable objects allows independent modifications of the copy and original.\n\nOriginal List: [1, 2, 3]\nCopied List: [1, 2, 3, 4]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Design Intent",
-      "description": "Write a Python function to design intent and print the result.",
-      "prompt": "Design Intent.",
+      "description": "Design Intent Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Design Intent Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def design_intent():\n        print('\\n--- Design Intent ---')\n        print('Description: Using immutable objects signals that the data should not be modified.')\n        coordinates = (10.0, 20.0)\n        print('\\nImmutable Tuple (Coordinates):', coordinates)\n\n    design_intent()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndesign_intent()",
+          "output": "--- Design Intent ---\nDescription: Using immutable objects signals that the data should not be modified.\n\nImmutable Tuple (Coordinates): (10.0, 20.0)"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Design Intent ---\nDescription: Using immutable objects signals that the data should not be modified.\n\nImmutable Tuple (Coordinates): (10.0, 20.0)",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 4
@@ -94,16 +134,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Optimization Memory Usage",
-      "description": "Write a Python function to optimization and memory usage and print the result.",
-      "prompt": "Optimization and Memory Usage.",
+      "description": "Optimization and Memory Usage Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Optimization and Memory Usage Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def optimization_memory_usage():\n        print('\\n--- Optimization and Memory Usage ---')\n        print('Description: Python optimizes the usage of immutable objects.')\n        a = 10\n        b = 10\n        print(\"\\nInteger Caching Example: 'a' is 'b':\", a is b)\n\n    optimization_memory_usage()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\noptimization_memory_usage()",
+          "output": "--- Optimization and Memory Usage ---\nDescription: Python optimizes the usage of immutable objects.\n\nInteger Caching Example: 'a' is 'b': True"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Optimization and Memory Usage ---\nDescription: Python optimizes the usage of immutable objects.\n\nInteger Caching Example: 'a' is 'b': True",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 5
@@ -115,16 +165,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Functional Programming Style",
-      "description": "Write a Python function to functional programming style and print the result.",
-      "prompt": "Functional Programming Style.",
+      "description": "Functional Programming Style Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Functional Programming Style Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def functional_programming_style():\n        print('\\n--- Functional Programming Style ---')\n        print('Description: Immutable data types are conducive to a functional programming style.')\n\n        def sum_values(values):\n            return sum(values)\n        print('\\nFunction: sum_values')\n        numbers = (1, 2, 3)\n        print('Input: numbers =', numbers)\n        result = sum_values(numbers)\n        print('Output: Sum =', result)\n\n    functional_programming_style()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nfunctional_programming_style()",
+          "output": "--- Functional Programming Style ---\nDescription: Immutable data types are conducive to a functional programming style.\n\nFunction: sum_values\nInput: numbers = (1, 2, 3)\nOutput: Sum = 6"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Functional Programming Style ---\nDescription: Immutable data types are conducive to a functional programming style.\n\nFunction: sum_values\nInput: numbers = (1, 2, 3)\nOutput: Sum = 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 6
@@ -136,16 +196,26 @@
       "category_id": "functions-mutable-immutable",
       "category_name": "Functions Mutable vs Immutable",
       "title": "Data Type Behaviors On Change",
-      "description": "Data Type Behaviors on Change.",
-      "prompt": "Data Type Behaviors on Change.",
+      "description": "Data Type Behaviors on Change Use the sample setup shown below and match the example output. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Data Type Behaviors on Change Use the sample setup shown below and match the example output.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    def data_type_behaviors_on_change():\n        print('\\n--- Data Type Behaviors on Change ---')\n        print('Description: This function demonstrates how different data types behave when they are modified.')\n\n        def change_int(n):\n            n += 10\n            print('Integer value in function after modification:', n)\n            return n\n\n        def change_str(s):\n            s = 'deepak mallick'\n            print('String value in function after modification:', s)\n            return s\n\n        def change_list(lst):\n            lst[0] = 0\n            print('List value in function after modification:', lst)\n            return lst\n\n        def reassign_tuple(t):\n            t = (4, 5, 6)\n            print('Tuple value in function after reassignment:', t)\n            return t\n\n        def change_set(st):\n            st.add(7)\n            print('Set value in function after modification:', st)\n            return st\n\n        def reassign_set(st):\n            st = {4, 5, 6}\n            print('Set value in function after reassignment:', st)\n            return st\n        n = 5\n        print('\\nOriginal integer:', n)\n        print('\\nFunction:')\n        change_int(n)\n        print('Original Integer value:', n)\n        s = 'deepak'\n        print('\\nOriginal string:', s)\n        print('\\nFunction:')\n        change_str(s)\n        print('Original String value:', s)\n        lst = [1, 2, 3]\n        print('\\nOriginal list:', lst)\n        print('\\nFunction:')\n        change_list(lst)\n        print('Original List value:', lst)\n        t = (1, 2, 3)\n        print('\\nOriginal tuple:', t)\n        print('\\nFunction:')\n        reassign_tuple(t)\n        print('Original Tuple value:', t)\n        st = {1, 2, 3}\n        print('\\nOriginal set:', st)\n        print('\\nFunction:')\n        change_set(st)\n        print('Original Set value:', st)\n        st = {1, 2, 3}\n        print('\\nOriginal set:', st)\n        print('\\nFunction:')\n        reassign_set(st)\n        print('Original Set value:', st)\n\n    data_type_behaviors_on_change()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This category uses standalone demo snippets in the problem bank."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndata_type_behaviors_on_change()",
+          "output": "--- Data Type Behaviors on Change ---\nDescription: This function demonstrates how different data types behave when they are modified.\n\nOriginal integer: 5\n\nFunction:\nInteger value in function after modification: 15\nOriginal Integer value: 5\n\nOriginal string: deepak\n\nFunction:\nString value in function after modification: deepak mallick\nOriginal String value: deepak\n\nOriginal list: [1, 2, 3]\n\nFunction:\nList value in function after modification: [0, 2, 3]\nOriginal List value: [0, 2, 3]\n\nOriginal tuple: (1, 2, 3)\n\nFunction:\nTuple value in function after reassignment: (4, 5, 6)\nOriginal Tuple value: (1, 2, 3)\n\nOriginal set: {1, 2, 3}\n\nFunction:\nSet value in function after modification: {1, 2, 3, 7}\nOriginal Set value: {1, 2, 3, 7}\n\nOriginal set: {1, 2, 3}\n\nFunction:\nSet value in function after reassignment: {4, 5, 6}\nOriginal Set value: {1, 2, 3}"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Data Type Behaviors on Change ---\nDescription: This function demonstrates how different data types behave when they are modified.\n\nOriginal integer: 5\n\nFunction:\nInteger value in function after modification: 15\nOriginal Integer value: 5\n\nOriginal string: deepak\n\nFunction:\nString value in function after modification: deepak mallick\nOriginal String value: deepak\n\nOriginal list: [1, 2, 3]\n\nFunction:\nList value in function after modification: [0, 2, 3]\nOriginal List value: [0, 2, 3]\n\nOriginal tuple: (1, 2, 3)\n\nFunction:\nTuple value in function after reassignment: (4, 5, 6)\nOriginal Tuple value: (1, 2, 3)\n\nOriginal set: {1, 2, 3}\n\nFunction:\nSet value in function after modification: {1, 2, 3, 7}\nOriginal Set value: {1, 2, 3, 7}\n\nOriginal set: {1, 2, 3}\n\nFunction:\nSet value in function after reassignment: {4, 5, 6}\nOriginal Set value: {1, 2, 3}",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "20_functions-mutable-immutable.py",
         "question": 7

@@ -10,15 +10,20 @@
       "category_id": "variables",
       "category_name": "Variables",
       "title": "Concept 1: Variables And Memory",
-      "description": "Concept 1: Variables And Memory.",
-      "prompt": "Concept 1: Variables And Memory.",
+      "description": "Inside main(), assign `x = 10`, copy it into `y`, then reassign `x = 15`. Print the values and object identities with `id()` to show that rebinding `x` does not change `y`. Use main() to produce the expected result shown in the example.",
+      "prompt": "Inside main(), assign `x = 10`, copy it into `y`, then reassign `x = 15`. Print the values and object identities with `id()` to show that rebinding `x` does not change `y`.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\nConcept 1: Variables and Memory')\n\n    print('- Every variable in Python has its own address.')\n\n    print(\"- The id() function returns the 'identity' of an object, which is unique and constant for this object during its lifetime.\")\n\n    x = 10\n\n    print('x =', x)\n\n    print('Address of x:', id(x))\n\n    y = x\n\n    print('\\ny = x')\n\n    print('Address of y:', id(y))\n\n    x = 15\n\n    print('\\nx = 15')\n\n    print('New value of x:', x)\n\n    print('Address of x after change:', id(x))\n\n    print('Value of y remains unchanged:', y)\n\n    print('Address of y remains unchanged:', id(y))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
+      "examples": [
+        {
+          "input": "Use the sample setup:\nx = 10\ny = x\nx = 15",
+          "output": "Concept 1: Variables and Memory\n- Every variable in Python has its own address.\n- The id() function returns the 'identity' of an object, which is unique and constant for this object during its lifetime.\nx = 10\nAddress of x: 4372095456\n\ny = x\nAddress of y: 4372095456\n\nx = 15\nNew value of x: 15\nAddress of x after change: 4372095616\nValue of y remains unchanged: 10\nAddress of y remains unchanged: 4372095456"
+        }
+      ],
       "test_cases": [],
       "notes": [
-        "This section is stored as a standalone reference snippet."
+        "Automated tests are skipped because runtime module naming changes the output."
       ],
       "source_reference": {
         "file": "06_variables.py",
@@ -31,15 +36,20 @@
       "category_id": "variables",
       "category_name": "Variables",
       "title": "Concept 2: Garbage Collection",
-      "description": "Write a Python function to concept 2: garbage collection and print the result.",
-      "prompt": "Concept 2: Garbage Collection.",
+      "description": "Inside main(), assign `z = 20`, print its identity with `id()`, then reassign `z = 25` and print the new identity. Use the output to demonstrate how Python can discard objects that are no longer referenced. Use main() to produce the expected result shown in the example.",
+      "prompt": "Inside main(), assign `z = 20`, print its identity with `id()`, then reassign `z = 25` and print the new identity. Use the output to demonstrate how Python can discard objects that are no longer referenced.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\nConcept 2: Garbage Collection')\n\n    print('- Python automatically removes data that is not referenced by any variable from memory.')\n\n    z = 20\n\n    print('\\nz = 20')\n\n    print('Address of z before reassignment:', id(z))\n\n    z = 25\n\n    print('\\nz = 25')\n\n    print('Address of z after reassignment:', id(z))\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
+      "examples": [
+        {
+          "input": "Use the sample setup:\nz = 20\nz = 25",
+          "output": "Concept 2: Garbage Collection\n- Python automatically removes data that is not referenced by any variable from memory.\n\nz = 20\nAddress of z before reassignment: 4312425248\n\nz = 25\nAddress of z after reassignment: 4312425408"
+        }
+      ],
       "test_cases": [],
       "notes": [
-        "This section is stored as a standalone reference snippet."
+        "Automated tests are skipped because runtime module naming changes the output."
       ],
       "source_reference": {
         "file": "06_variables.py",
@@ -52,15 +62,20 @@
       "category_id": "variables",
       "category_name": "Variables",
       "title": "Concept 3: Constants And Types",
-      "description": "Concept 3: Constants And Types.",
-      "prompt": "Concept 3: Constants And Types.",
+      "description": "Inside main(), demonstrate three ideas: print the type of a constant like `PI`, create a simple `Car` object and print its type, and show that two list variables can reference the same list by mutating one and printing both. Use main() to produce the expected result shown in the example.",
+      "prompt": "Inside main(), demonstrate three ideas: print the type of a constant like `PI`, create a simple `Car` object and print its type, and show that two list variables can reference the same list by mutating one and printing both.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\nConcept 3: Constants and Types')\n\n    print('- The value of variables can change, but constants should remain unchanged.')\n\n    print('- Constants are represented by all capital letters by convention.')\n\n    print('- The type() function returns the data type of the value of a variable.')\n\n    PI = 3.14159\n\n    print('\\nPI =', PI)\n\n    print('Type of PI:', type(PI))\n\n    class Car:\n\n        def __init__(self, brand):\n            self.brand = brand\n\n    my_car = Car('Toyota')\n\n    print(\"\\nmy_car = Car('Toyota')\")\n\n    print('Type of my_car:', type(my_car))\n\n    print('\\nAdditional Information on Python Variables')\n\n    print('- In Python, variables are references to objects in memory, similar to pointers in C.')\n\n    print(\"- The distinction between 'value types' and 'reference types' is not applicable in Python; all variables are references to objects.\")\n\n    list1 = [1, 2, 3]\n\n    list2 = list1\n\n    print('\\nlist1 =', list1)\n\n    print('list2 = list1')\n\n    list1.append(4)\n\n    print('After appending to list1, list2 reflects the change:', list2)\n\n    print('Address of list1:', id(list1))\n\n    print('Address of list2:', id(list2), ' (same as list1)')\n\n    print('\\n' + '-' * 50 + '\\n')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
+      "examples": [
+        {
+          "input": "Use the sample setup:\nPI = 3.14159\nmy_car = Car('Toyota')\nlist1 = [1, 2, 3]\nlist2 = list1\nlist1.append(4)",
+          "output": "Concept 3: Constants and Types\n- The value of variables can change, but constants should remain unchanged.\n- Constants are represented by all capital letters by convention.\n- The type() function returns the data type of the value of a variable.\n\nPI = 3.14159\nType of PI: <class 'float'>\n\nmy_car = Car('Toyota')\nType of my_car: <class '__main__.main.<locals>.Car'>\n\nAdditional Information on Python Variables\n- In Python, variables are references to objects in memory, similar to pointers in C.\n- The distinction between 'value types' and 'reference types' is not applicable in Python; all variables are references to objects.\n\nlist1 = [1, 2, 3]\nlist2 = list1\nAfter appending to list1, list2 reflects the change: [1, 2, 3, 4]\nAddress of list1: 4308600960\nAddress of list2: 4308600960  (same as list1)\n\n--------------------------------------------------"
+        }
+      ],
       "test_cases": [],
       "notes": [
-        "This section is stored as a standalone reference snippet."
+        "Automated tests are skipped because runtime module naming changes the output."
       ],
       "source_reference": {
         "file": "06_variables.py",

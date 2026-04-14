@@ -10,16 +10,26 @@
       "category_id": "polymorphism-ducktyping",
       "category_name": "Polymorphism and Duck Typing",
       "title": "Save Data with Duck Typing",
-      "description": "Save Data with Duck Typing.",
-      "prompt": "Save Data with Duck Typing.",
+      "description": "Create two saver classes that both expose a `save(data)` method. Inside main(), write a helper that accepts any saver object, then call it once with a file saver and once with a console saver to demonstrate duck typing. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create two saver classes that both expose a `save(data)` method. Inside main(), write a helper that accepts any saver object, then call it once with a file saver and once with a console saver to demonstrate duck typing.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
-      "solution": "def main():\n    class FileSaver:\n        def save(self, data):\n            with open('data.txt', 'w') as file:\n                file.write(data)\n\n    class ConsoleSaver:\n        def save(self, data):\n            print(data)\n\n    def store_data(saver, data):\n        saver.save(data)\n\n    file_saver = FileSaver()\n    console_saver = ConsoleSaver()\n\n    store_data(file_saver, 'Data to save')  # Saves to a file\n    store_data(console_saver, 'Data to save')  # Prints to the console\n\n\n\n\n    \"\"\"\n    Key Points with Code Examples:\n    \"\"\"\n\n    \"\"\"\n    1) Behavior Over Type:\n    Example: go_skyhigh function, accepts any object with a fly method.\n    \"\"\"\n\n    \"\"\"\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone duck-typing snippet."
+      "solution": "def main():\n    class FileSaver:\n\n        def save(self, data):\n            print(f'Saved to file: {data}')\n\n    class ConsoleSaver:\n\n        def save(self, data):\n            print(data)\n\n    def store_data(saver, data):\n        saver.save(data)\n\n    file_saver = FileSaver()\n\n    console_saver = ConsoleSaver()\n\n    store_data(file_saver, 'Data to save')\n\n    store_data(console_saver, 'Data to save')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nfile_saver = FileSaver()\nconsole_saver = ConsoleSaver()\nstore_data(file_saver, 'Data to save')\nstore_data(console_saver, 'Data to save')",
+          "output": "Saved to file: Data to save\nData to save"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Saved to file: Data to save\nData to save",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "29_polymorphism-ducktyping.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "polymorphism-ducktyping",
       "category_name": "Polymorphism and Duck Typing",
       "title": "Compose with Any Writer",
-      "description": "Write a Python function to compose with any writer and print the result.",
-      "prompt": "Compose with Any Writer.",
+      "description": "Create two classes, `Pen` and `Keyboard`, that both implement `write()`. Inside main(), pass each one into a shared `compose()` function and print the output from both objects. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create two classes, `Pen` and `Keyboard`, that both implement `write()`. Inside main(), pass each one into a shared `compose()` function and print the output from both objects.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
-      "solution": "def main():\n    class Pen:\n        def write(self):\n            print(\"Writing with a pen.\")\n\n    class Keyboard:\n        def write(self):\n            print(\"Typing with a keyboard.\")\n\n    def compose(writer):\n        writer.write()\n\n    pen = Pen()\n    keyboard = Keyboard()\n\n    compose(pen)       # Output: Writing with a pen.\n    compose(keyboard)  # Output: Typing with a keyboard.\n\n\n\n    \"\"\"\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone duck-typing snippet."
+      "solution": "def main():\n    class Pen:\n\n        def write(self):\n            print('Writing with a pen.')\n\n    class Keyboard:\n\n        def write(self):\n            print('Typing with a keyboard.')\n\n    def compose(writer):\n        writer.write()\n\n    pen = Pen()\n\n    keyboard = Keyboard()\n\n    compose(pen)\n\n    compose(keyboard)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\npen = Pen()\nkeyboard = Keyboard()\ncompose(pen)\ncompose(keyboard)",
+          "output": "Writing with a pen.\nTyping with a keyboard."
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Writing with a pen.\nTyping with a keyboard.",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "29_polymorphism-ducktyping.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "polymorphism-ducktyping",
       "category_name": "Polymorphism and Duck Typing",
       "title": "Runtime Type Checking with hasattr",
-      "description": "Runtime Type Checking with hasattr.",
-      "prompt": "Runtime Type Checking with hasattr.",
+      "description": "Create a `Dog` class with `bark()` and a `pet_speak()` helper that checks for `bark()` using `hasattr`. Inside main(), call it once with a dog and once with a string to show both branches. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Dog` class with `bark()` and a `pet_speak()` helper that checks for `bark()` using `hasattr`. Inside main(), call it once with a dog and once with a string to show both branches.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
-      "solution": "def main():\n    class Dog:\n        def bark(self):\n            print(\"Woof!\")\n\n    def pet_speak(pet):\n        if hasattr(pet, 'bark'):\n            pet.bark()\n        else:\n            print(\"This pet doesn't bark.\")\n\n    dog = Dog()\n    pet_speak(dog)  # Output: Woof!\n    pet_speak(\"I'm not a pet\")  # Output: This pet doesn't bark.\n\n\n    \"\"\"\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone duck-typing snippet."
+      "solution": "def main():\n    class Dog:\n\n        def bark(self):\n            print('Woof!')\n\n    def pet_speak(pet):\n        if hasattr(pet, 'bark'):\n            pet.bark()\n        else:\n            print(\"This pet doesn't bark.\")\n\n    dog = Dog()\n\n    pet_speak(dog)\n\n    pet_speak(\"I'm not a pet\")\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndog = Dog()\npet_speak(dog)\npet_speak(\"I'm not a pet\")",
+          "output": "Woof!\nThis pet doesn't bark."
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Woof!\nThis pet doesn't bark.",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "29_polymorphism-ducktyping.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "polymorphism-ducktyping",
       "category_name": "Polymorphism and Duck Typing",
       "title": "Error Potential When Methods Are Missing",
-      "description": "Error Potential When Methods Are Missing.",
-      "prompt": "Error Potential When Methods Are Missing.",
+      "description": "Create a `Car` class with `drive()` and a `start_trip()` helper that expects any object passed to it to implement `drive()`. Inside main(), show the successful car call and then catch and print the `AttributeError` raised by passing a plain string. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Car` class with `drive()` and a `start_trip()` helper that expects any object passed to it to implement `drive()`. Inside main(), show the successful car call and then catch and print the `AttributeError` raised by passing a plain string.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
-      "solution": "def main():\n    class Car:\n        def drive(self):\n            print(\"Car is driving.\")\n\n    def start_trip(vehicle):\n        vehicle.drive()  # Assuming that the vehicle can drive.\n\n    car = Car()\n    start_trip(car)  # Works fine.\n\n    bicycle = \"I'm a bicycle\"\n    start_trip(bicycle)  # AttributeError: 'str' object has no attribute 'drive'\n\n\n    \"\"\"\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone duck-typing snippet."
+      "solution": "def main():\n    class Car:\n\n        def drive(self):\n            print('Car is driving.')\n\n    def start_trip(vehicle):\n        vehicle.drive()\n\n    car = Car()\n\n    start_trip(car)\n\n    bicycle = \"I'm a bicycle\"\n\n    try:\n        start_trip(bicycle)\n    except AttributeError as error:\n        print(f'AttributeError: {error}')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ncar = Car()\nstart_trip(car)\nbicycle = \"I'm a bicycle\"",
+          "output": "Car is driving.\nAttributeError: 'str' object has no attribute 'drive'"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Car is driving.\nAttributeError: 'str' object has no attribute 'drive'",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "29_polymorphism-ducktyping.py",
         "question": 4
@@ -94,16 +134,26 @@
       "category_id": "polymorphism-ducktyping",
       "category_name": "Polymorphism and Duck Typing",
       "title": "hasattr and getattr in Practice",
-      "description": "hasattr and getattr in Practice.",
-      "prompt": "hasattr and getattr in Practice.",
+      "description": "Create a `Calculator` class with a `calculate()` method and a helper that uses `hasattr()` and `getattr()` to call an operation by name. Inside main(), demonstrate one supported operation and one unsupported one. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Calculator` class with a `calculate()` method and a helper that uses `hasattr()` and `getattr()` to call an operation by name. Inside main(), demonstrate one supported operation and one unsupported one.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Calculator:\n\n        def calculate(self):\n            return 'Calculating result.'\n\n    def perform_operation(machine, operation):\n        if hasattr(machine, operation):\n            func = getattr(machine, operation)\n            print(func())\n        else:\n            print(f'Operation {operation} not supported.')\n\n    calc = Calculator()\n\n    perform_operation(calc, 'calculate')\n\n    perform_operation(calc, 'print')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone duck-typing snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ncalc = Calculator()\nperform_operation(calc, 'calculate')\nperform_operation(calc, 'print')",
+          "output": "Calculating result.\nOperation print not supported."
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Calculating result.\nOperation print not supported.",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "29_polymorphism-ducktyping.py",
         "question": 5

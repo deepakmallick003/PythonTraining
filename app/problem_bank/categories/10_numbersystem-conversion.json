@@ -10,16 +10,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Decimal To Binary",
-      "description": "Write a Python function to decimal to binary and print the result.",
-      "prompt": "Decimal To Binary.",
+      "description": "Inside main(), convert `decimal_number = 5` to binary using `bin()` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `decimal_number = 5` to binary using `bin()` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Decimal to Binary ---')\n\n    print('Decimal is base-10 (0-9). Binary is base-2 (0-1).')\n\n    print('In binary, each digit represents a power of 2, starting from 2^0 from right.')\n\n    decimal_number = 5\n\n    binary_number = bin(decimal_number)\n\n    print('Decimal:', decimal_number, '-> Binary:', binary_number)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndecimal_number = 5\nbinary_number = bin(decimal_number)",
+          "output": "--- Decimal to Binary ---\nDecimal is base-10 (0-9). Binary is base-2 (0-1).\nIn binary, each digit represents a power of 2, starting from 2^0 from right.\nDecimal: 5 -> Binary: 0b101"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Decimal to Binary ---\nDecimal is base-10 (0-9). Binary is base-2 (0-1).\nIn binary, each digit represents a power of 2, starting from 2^0 from right.\nDecimal: 5 -> Binary: 0b101",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 1
@@ -31,16 +41,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Binary To Decimal",
-      "description": "Write a Python function to binary to decimal and print the result.",
-      "prompt": "Binary To Decimal.",
+      "description": "Inside main(), convert `binary_number = '0b101'` to decimal using `int(..., 2)` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `binary_number = '0b101'` to decimal using `int(..., 2)` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Binary to Decimal ---')\n\n    print('Converting binary to decimal involves multiplying each bit by its corresponding power of 2 and summing the results.')\n\n    binary_number = '0b101'\n\n    decimal_number = int(binary_number, 2)\n\n    print('Binary:', binary_number, '-> Decimal:', decimal_number)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nbinary_number = '0b101'\ndecimal_number = int(binary_number, 2)",
+          "output": "--- Binary to Decimal ---\nConverting binary to decimal involves multiplying each bit by its corresponding power of 2 and summing the results.\nBinary: 0b101 -> Decimal: 5"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Binary to Decimal ---\nConverting binary to decimal involves multiplying each bit by its corresponding power of 2 and summing the results.\nBinary: 0b101 -> Decimal: 5",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 2
@@ -52,16 +72,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Decimal To Hexadecimal",
-      "description": "Write a Python function to decimal to hexadecimal and print the result.",
-      "prompt": "Decimal To Hexadecimal.",
+      "description": "Inside main(), convert `decimal_number = 255` to hexadecimal using `hex()` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `decimal_number = 255` to hexadecimal using `hex()` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Decimal to Hexadecimal ---')\n\n    print('Hexadecimal is base-16 (0-9 and A-F). Each digit represents a power of 16.')\n\n    decimal_number = 255\n\n    hexadecimal_number = hex(decimal_number)\n\n    print('Decimal:', decimal_number, '-> Hexadecimal:', hexadecimal_number)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndecimal_number = 255\nhexadecimal_number = hex(decimal_number)",
+          "output": "--- Decimal to Hexadecimal ---\nHexadecimal is base-16 (0-9 and A-F). Each digit represents a power of 16.\nDecimal: 255 -> Hexadecimal: 0xff"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Decimal to Hexadecimal ---\nHexadecimal is base-16 (0-9 and A-F). Each digit represents a power of 16.\nDecimal: 255 -> Hexadecimal: 0xff",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 3
@@ -73,16 +103,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Hexadecimal To Decimal",
-      "description": "Write a Python function to hexadecimal to decimal and print the result.",
-      "prompt": "Hexadecimal To Decimal.",
+      "description": "Inside main(), convert `hexadecimal_number = '0xff'` to decimal using `int(..., 16)` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `hexadecimal_number = '0xff'` to decimal using `int(..., 16)` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Hexadecimal to Decimal ---')\n\n    print('Converting hexadecimal to decimal involves multiplying each digit by its corresponding power of 16 and summing the results.')\n\n    hexadecimal_number = '0xff'\n\n    decimal_number = int(hexadecimal_number, 16)\n\n    print('Hexadecimal:', hexadecimal_number, '-> Decimal:', decimal_number)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\nhexadecimal_number = '0xff'\ndecimal_number = int(hexadecimal_number, 16)",
+          "output": "--- Hexadecimal to Decimal ---\nConverting hexadecimal to decimal involves multiplying each digit by its corresponding power of 16 and summing the results.\nHexadecimal: 0xff -> Decimal: 255"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Hexadecimal to Decimal ---\nConverting hexadecimal to decimal involves multiplying each digit by its corresponding power of 16 and summing the results.\nHexadecimal: 0xff -> Decimal: 255",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 4
@@ -94,16 +134,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Decimal To Octal",
-      "description": "Write a Python function to decimal to octal and print the result.",
-      "prompt": "Decimal To Octal.",
+      "description": "Inside main(), convert `decimal_number = 64` to octal using `oct()` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `decimal_number = 64` to octal using `oct()` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Decimal to Octal ---')\n\n    print('Octal is base-8 (0-7). Each digit represents a power of 8.')\n\n    decimal_number = 64\n\n    octal_number = oct(decimal_number)\n\n    print('Decimal:', decimal_number, '-> Octal:', octal_number)\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ndecimal_number = 64\noctal_number = oct(decimal_number)",
+          "output": "--- Decimal to Octal ---\nOctal is base-8 (0-7). Each digit represents a power of 8.\nDecimal: 64 -> Octal: 0o100"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Decimal to Octal ---\nOctal is base-8 (0-7). Each digit represents a power of 8.\nDecimal: 64 -> Octal: 0o100",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 5
@@ -115,16 +165,26 @@
       "category_id": "numbersystem-conversion",
       "category_name": "Number System Conversion",
       "title": "Octal To Decimal",
-      "description": "Write a Python function to octal to decimal and print the result.",
-      "prompt": "Octal To Decimal.",
+      "description": "Inside main(), convert `octal_number = '0o100'` to decimal using `int(..., 8)` and print the labeled result. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), convert `octal_number = '0o100'` to decimal using `int(..., 8)` and print the labeled result.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\n--- Octal to Decimal ---')\n\n    print('Converting octal to decimal involves multiplying each digit by its corresponding power of 8 and summing the results.')\n\n    octal_number = '0o100'\n\n    decimal_number = int(octal_number, 8)\n\n    print('Octal:', octal_number, '-> Decimal:', decimal_number)\n\n    print('\\n' + '-' * 50 + '\\n')\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "This section is stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\noctal_number = '0o100'\ndecimal_number = int(octal_number, 8)",
+          "output": "--- Octal to Decimal ---\nConverting octal to decimal involves multiplying each digit by its corresponding power of 8 and summing the results.\nOctal: 0o100 -> Decimal: 64\n\n--------------------------------------------------"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "--- Octal to Decimal ---\nConverting octal to decimal involves multiplying each digit by its corresponding power of 8 and summing the results.\nOctal: 0o100 -> Decimal: 64\n\n--------------------------------------------------",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "10_numbersystem-conversion.py",
         "question": 6

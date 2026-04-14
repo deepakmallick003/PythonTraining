@@ -10,16 +10,26 @@
       "category_id": "innerclass",
       "category_name": "Inner Class",
       "title": "Student with Nested Laptop Class",
-      "description": "Student with Nested Laptop Class.",
-      "prompt": "Student with Nested Laptop Class.",
+      "description": "Create a `Student` class that owns a nested `Laptop` class. Inside main(), create a student object and print the student details followed by the laptop brand, CPU, and RAM. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Student` class that owns a nested `Laptop` class. Inside main(), create a student object and print the student details followed by the laptop brand, CPU, and RAM.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Student:\n\n        def __init__(self, name, rollno):\n            self.name = name\n            self.rollno = rollno\n            self.lap = self.Laptop()\n\n        def show(self):\n            print(self.name, self.rollno)\n            self.lap.show()\n\n        class Laptop:\n\n            def __init__(self):\n                self.brand = 'HP'\n                self.cpu = 'i5'\n                self.ram = 8\n\n            def show(self):\n                print(self.brand, self.cpu, self.ram)\n\n    s1 = Student('Navin', 2)\n\n    s2 = Student('Jenny', 3)\n\n    s1.show()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ns1 = Student('Navin', 2)\ns2 = Student('Jenny', 3)\ns1.show()",
+          "output": "Navin 2\nHP i5 8"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Navin 2\nHP i5 8",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "26_innerclass.py",
         "question": 1

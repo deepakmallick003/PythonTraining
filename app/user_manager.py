@@ -139,6 +139,16 @@ class UserManager:
         progress = self._read_progress()
         return progress.get(username, {}).get(problem_id, {}).get('saved_code')
 
+    def clear_saved_code(self, username, problem_id):
+        """Clear saved code for a problem"""
+        progress = self._read_progress()
+        if username in progress and problem_id in progress[username]:
+            if 'saved_code' in progress[username][problem_id]:
+                del progress[username][problem_id]['saved_code']
+                if 'code_saved_at' in progress[username][problem_id]:
+                    del progress[username][problem_id]['code_saved_at']
+                self._write_progress(progress)
+
     def get_user_progress(self, username):
         """Get user's progress"""
         progress = self._read_progress()

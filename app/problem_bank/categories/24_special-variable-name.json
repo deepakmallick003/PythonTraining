@@ -10,16 +10,26 @@
       "category_id": "special-variable-name",
       "category_name": "Special Variable __name__",
       "title": "The __name__ Guard",
-      "description": "Write a Python function to the __name__ guard and print the result.",
-      "prompt": "The __name__ Guard.",
+      "description": "Inside main(), print a short explanation of the `__name__` variable and show the common `if __name__ == \"__main__\":` guard pattern. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Inside main(), print a short explanation of the `__name__` variable and show the common `if __name__ == \"__main__\":` guard pattern.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    print('\\nStarting Point of Execution:\\n\\n__main__ is the starting point in Python. When a script is run directly, its __name__ is set to \"__main__\".\\nSpecial Variable __name__:\\n\\nA built-in variable that represents the name of the current module.\\nIts value changes depending on how the script is being used.\\nBehavior of __name__:\\n\\nIf a file is run as a main program, __name__ equals \"__main__\".\\nIf the file is imported as a module in another script, __name__ equals the name of the module (file name).\\nUse of __name__ in Scripts:\\n\\nHelps in differentiating between when a script is run directly or imported as a module.\\nControls which parts of the code to execute depending on the context.\\n\\n')\n\n    print('Common Usage Pattern:')\n\n    if __name__ == '__main__':\n        pass\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use this setup idea:\nprint a short explanation of the `__name__` variable and show the common `if __name__ == \"__main__\":` guard pattern",
+          "output": "Starting Point of Execution:\n\n__main__ is the starting point in Python. When a script is run directly, its __name__ is set to \"__main__\".\nSpecial Variable __name__:\n\nA built-in variable that represents the name of the current module.\nIts value changes depending on how the script is being used.\nBehavior of __name__:\n\nIf a file is run as a main program, __name__ equals \"__main__\".\nIf the file is imported as a module in another script, __name__ equals the name of the module (file name).\nUse of __name__ in Scripts:\n\nHelps in differentiating between when a script is run directly or imported as a module.\nControls which parts of the code to execute depending on the context.\n\n\nCommon Usage Pattern:"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Starting Point of Execution:\n\n__main__ is the starting point in Python. When a script is run directly, its __name__ is set to \"__main__\".\nSpecial Variable __name__:\n\nA built-in variable that represents the name of the current module.\nIts value changes depending on how the script is being used.\nBehavior of __name__:\n\nIf a file is run as a main program, __name__ equals \"__main__\".\nIf the file is imported as a module in another script, __name__ equals the name of the module (file name).\nUse of __name__ in Scripts:\n\nHelps in differentiating between when a script is run directly or imported as a module.\nControls which parts of the code to execute depending on the context.\n\n\nCommon Usage Pattern:",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "24_special_variable_name.py",
         "question": 1

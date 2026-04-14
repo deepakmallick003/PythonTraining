@@ -1,0 +1,318 @@
+{
+  "category_id": "algos-graph",
+  "category_name": "Graph Algorithms",
+  "sequence": 32,
+  "source_reference": "algos/graph",
+  "problems": [
+    {
+      "id": "algos-graph_01_dfs",
+      "sequence": 1,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Dfs",
+      "description": "Implement Dfs inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Dfs inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def dfs_iterative(graph, start):\n        visited = set()\n        stack = [start]\n        while stack:\n            vertex = stack.pop()\n            if vertex not in visited:\n                print(vertex, end=' ')\n                visited.add(vertex)\n                stack.extend((neighbor for neighbor in graph[vertex] if neighbor not in visited))\n\n    def dfs_recursive(graph, node, visited=None):\n        if visited is None:\n            visited = set()\n        visited.add(node)\n        print(node, end=' ')\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                dfs_recursive(graph, neighbor, visited)\n\n    graph = {'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E']}\n\n    print('\\nDFS iterative traversal starting from node A:')\n\n    dfs_iterative(graph, 'A')\n\n    print('\\nDFS recursive traversal starting from node A:')\n\n    dfs_recursive(graph, 'A')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = {'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E']}\ndfs_iterative(graph, 'A')\ndfs_recursive(graph, 'A')",
+          "output": "DFS iterative traversal starting from node A:\nA C F E B D \nDFS recursive traversal starting from node A:\nA B D E F C"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "DFS iterative traversal starting from node A:\nA C F E B D \nDFS recursive traversal starting from node A:\nA B D E F C",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "21_graph_dfs.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_02_bfs",
+      "sequence": 2,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Bfs",
+      "description": "Implement Bfs inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Bfs inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def bfs_iterative(graph, start):\n        visited = set()\n        queue = [start]\n        visited.add(start)\n        print(start, end=' ')\n        while queue:\n            vertex = queue.pop(0)\n            for neighbor in graph[vertex]:\n                if neighbor not in visited:\n                    print(neighbor, end=' ')\n                    visited.add(neighbor)\n                    queue.append(neighbor)\n\n    graph = {'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E']}\n\n    print('\\\\BFS iterative traversal starting from node A:')\n\n    bfs_iterative(graph, 'A')\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = {'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E']}\nbfs_iterative(graph, 'A')",
+          "output": "\\BFS iterative traversal starting from node A:\nA B C D E F"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "\\BFS iterative traversal starting from node A:\nA B C D E F",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "22_graph_bfs.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_03_dijkstras-algo",
+      "sequence": 3,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Dijkstras Algo",
+      "description": "Implement Dijkstras Algo inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Dijkstras Algo inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "import heapq\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import heapq\n\ndef main():\n    def minDistance(dist, visited, V):\n        min_val = float('infinity')\n        min_index = -1\n        for u in range(V):\n            if dist[u] < min_val and (not visited[u]):\n                min_val = dist[u]\n                min_index = u\n        return min_index\n\n    def dijkstra(graph, src):\n        V = len(graph)\n        dist = [float('infinity')] * V\n        dist[src] = 0\n        visited = [False] * V\n        for _ in range(V):\n            u = minDistance(dist, visited, V)\n            visited[u] = True\n            for v in range(V):\n                if graph[u][v] > 0 and (not visited[v]) and (dist[v] > dist[u] + graph[u][v]):\n                    dist[v] = dist[u] + graph[u][v]\n        print('Vertex \\tDistance from Source')\n        for i in range(V):\n            print(f'{i} \\t {dist[i]}')\n\n    def dijkstra(graph, src):\n        V = len(graph)\n        dist = [float('infinity')] * V\n        dist[src] = 0\n        pq = [(0, src)]\n        while pq:\n            current_dist, u = heapq.heappop(pq)\n            if current_dist > dist[u]:\n                continue\n            for v in range(V):\n                if graph[u][v] > 0:\n                    distance = current_dist + graph[u][v]\n                    if distance < dist[v]:\n                        dist[v] = distance\n                        heapq.heappush(pq, (distance, v))\n        print('Vertex \\tDistance from Source')\n        for i in range(V):\n            print(f'{i} \\t {dist[i]}')\n\n    graph = [[0, 2, 6, 0, 0, 0, 0], [2, 0, 0, 5, 0, 0, 0], [6, 0, 0, 8, 0, 0, 0], [0, 5, 8, 0, 10, 15, 0], [0, 0, 0, 10, 0, 0, 2], [0, 0, 0, 15, 0, 0, 6], [0, 0, 0, 0, 2, 6, 0]]\n\n    dijkstra(graph, 0)\n\n    graph = [[0, 2, 6, 0, 0, 0, 0], [2, 0, 0, 5, 0, 0, 0], [6, 0, 0, 8, 0, 0, 0], [0, 5, 8, 0, 10, 15, 0], [0, 0, 0, 10, 0, 0, 2], [0, 0, 0, 15, 0, 0, 6], [0, 0, 0, 0, 2, 6, 0]]\n\n    dijkstra(graph, 0)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[0, 2, 6, 0, 0, 0, 0], [2, 0, 0, 5, 0, 0, 0], [6, 0, 0, 8, 0, 0, 0], [0, 5, 8, 0, 10, 15, 0], [0, 0, 0, 10, 0, 0, 2], [0, 0, 0, 15, 0, 0, 6], [0, 0, 0, 0, 2, 6, 0]]\ndijkstra(graph, 0)\ngraph = [[0, 2, 6, 0, 0, 0, 0], [2, 0, 0, 5, 0, 0, 0], [6, 0, 0, 8, 0, 0, 0], [0, 5, 8, 0, 10, 15, 0], [0, 0, 0, 10, 0, 0, 2], [0, 0, 0, 15, 0, 0, 6], [0, 0, 0, 0, 2, 6, 0]]\ndijkstra(graph, 0)",
+          "output": "Vertex \tDistance from Source\n0 \t 0\n1 \t 2\n2 \t 6\n3 \t 7\n4 \t 17\n5 \t 22\n6 \t 19\nVertex \tDistance from Source\n0 \t 0\n1 \t 2\n2 \t 6\n3 \t 7\n4 \t 17\n5 \t 22\n6 \t 19"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Vertex \tDistance from Source\n0 \t 0\n1 \t 2\n2 \t 6\n3 \t 7\n4 \t 17\n5 \t 22\n6 \t 19\nVertex \tDistance from Source\n0 \t 0\n1 \t 2\n2 \t 6\n3 \t 7\n4 \t 17\n5 \t 22\n6 \t 19",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "23_graph_dijkstras-algo.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_04_bellman-ford",
+      "sequence": 4,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Bellman Ford",
+      "description": "Implement Bellman Ford inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Bellman Ford inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    def bellman_ford(graph, V, E, src):\n        dist = [float('infinity')] * V\n        dist[src] = 0\n        for _ in range(V - 1):\n            for u, v, w in graph:\n                if dist[u] != float('infinity') and dist[u] + w < dist[v]:\n                    dist[v] = dist[u] + w\n        for u, v, w in graph:\n            if dist[u] != float('infinity') and dist[u] + w < dist[v]:\n                print('Graph contains negative weight cycle')\n                return\n        print('Vertex Distance from Source')\n        for i in range(V):\n            print(f'{i}\\t\\t{dist[i]}')\n\n    graph = [(0, 1, -1), (0, 2, 4), (1, 2, 3), (1, 3, 2), (1, 4, 2), (3, 2, 5), (3, 1, 1), (4, 3, -3)]\n\n    V = 5\n\n    E = len(graph)\n\n    bellman_ford(graph, V, E, 0)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [(0, 1, -1), (0, 2, 4), (1, 2, 3), (1, 3, 2), (1, 4, 2), (3, 2, 5), (3, 1, 1), (4, 3, -3)]\nV = 5\nE = len(graph)\nbellman_ford(graph, V, E, 0)",
+          "output": "Vertex Distance from Source\n0\t\t0\n1\t\t-1\n2\t\t2\n3\t\t-2\n4\t\t1"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Vertex Distance from Source\n0\t\t0\n1\t\t-1\n2\t\t2\n3\t\t-2\n4\t\t1",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "24_graph_bellman-ford.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_05_floyd-warshall",
+      "sequence": 5,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Floyd Warshall",
+      "description": "Implement Floyd Warshall inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Floyd Warshall inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    V = 4\n\n    INF = float('inf')\n\n    def print_solution(dist):\n        print('Shortest distances between every pair of vertices:')\n        for i in range(V):\n            for j in range(V):\n                if dist[i][j] == INF:\n                    print('INF', end=' ')\n                else:\n                    print(dist[i][j], end='  ')\n            print(' ')\n\n    def floyd_warshall(graph):\n        dist = [[INF] * V for _ in range(V)]\n        for i in range(V):\n            for j in range(V):\n                dist[i][j] = graph[i][j]\n        for k in range(V):\n            for i in range(V):\n                for j in range(V):\n                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])\n        print_solution(dist)\n\n    graph = [[0, 3, INF, 7], [8, 0, 2, INF], [5, INF, 0, 1], [2, INF, INF, 0]]\n\n    floyd_warshall(graph)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\nV = 4\nINF = float('inf')\ngraph = [[0, 3, INF, 7], [8, 0, 2, INF], [5, INF, 0, 1], [2, INF, INF, 0]]\nfloyd_warshall(graph)",
+          "output": "Shortest distances between every pair of vertices:\n0  3  5  6   \n5  0  2  3   \n3  6  0  1   \n2  5  7  0"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Shortest distances between every pair of vertices:\n0  3  5  6   \n5  0  2  3   \n3  6  0  1   \n2  5  7  0",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "25_graph_floyd-warshall.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_06_prims",
+      "sequence": 6,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Prims",
+      "description": "Implement Prims inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Prims inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "import heapq\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import heapq\n\ndef main():\n    def prims_algorithm(graph):\n        V = len(graph)\n        key = [float('inf')] * V\n        parent = [-1] * V\n        key[0] = 0\n        mstSet = [False] * V\n        for _ in range(V):\n            u = min_key(key, mstSet)\n            mstSet[u] = True\n            for v in range(V):\n                if graph[u][v] > 0 and (not mstSet[v]) and (key[v] > graph[u][v]):\n                    key[v] = graph[u][v]\n                    parent[v] = u\n        print('Edge \\tWeight')\n        for i in range(1, V):\n            print(parent[i], '-', i, '\\t', graph[i][parent[i]])\n\n    def min_key(key, mstSet):\n        min_val = float('inf')\n        min_index = -1\n        for v in range(len(key)):\n            if key[v] < min_val and (not mstSet[v]):\n                min_val = key[v]\n                min_index = v\n        return min_index\n\n    graph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\n\n    prims_algorithm(graph)\n\n    def prims_algorithm_with_pq(graph):\n        V = len(graph)\n        mstSet = [False] * V\n        edge_count = 0\n        min_heap = [(0, 0)]\n        parent = [-1] * V\n        key = [float('inf')] * V\n        key[0] = 0\n        while edge_count < V - 1:\n            weight, u = heapq.heappop(min_heap)\n            if mstSet[u]:\n                continue\n            mstSet[u] = True\n            edge_count += 1\n            for v in range(V):\n                if graph[u][v] and (not mstSet[v]) and (graph[u][v] < key[v]):\n                    key[v] = graph[u][v]\n                    parent[v] = u\n                    heapq.heappush(min_heap, (graph[u][v], v))\n        print('Edge \\tWeight')\n        for i in range(1, V):\n            print(parent[i], '-', i, '\\t', graph[i][parent[i]])\n\n    graph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\n\n    prims_algorithm_with_pq(graph)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\nprims_algorithm(graph)\ngraph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\nprims_algorithm_with_pq(graph)",
+          "output": "Edge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n0 - 3 \t 6\n1 - 4 \t 5\nEdge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n0 - 3 \t 6\n1 - 4 \t 5"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Edge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n0 - 3 \t 6\n1 - 4 \t 5\nEdge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n0 - 3 \t 6\n1 - 4 \t 5",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "26_graph_prims.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_07_kruskal",
+      "sequence": 7,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Kruskal",
+      "description": "Implement Kruskal inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Kruskal inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "def main():\n    class UnionFind:\n\n        def __init__(self, n):\n            self.parent = list(range(n))\n            self.rank = [0] * n\n\n        def find(self, u):\n            if self.parent[u] != u:\n                self.parent[u] = self.find(self.parent[u])\n            return self.parent[u]\n\n        def union(self, u, v):\n            root_u = self.find(u)\n            root_v = self.find(v)\n            if root_u != root_v:\n                if self.rank[root_u] > self.rank[root_v]:\n                    self.parent[root_v] = root_u\n                elif self.rank[root_u] < self.rank[root_v]:\n                    self.parent[root_u] = root_v\n                else:\n                    self.parent[root_v] = root_u\n                    self.rank[root_u] += 1\n\n    def kruskal_algorithm(graph):\n        V = len(graph)\n        edges = []\n        for u in range(V):\n            for v in range(u, V):\n                if graph[u][v] != 0:\n                    edges.append((graph[u][v], u, v))\n        edges.sort()\n        uf = UnionFind(V)\n        mst = []\n        for weight, u, v in edges:\n            if uf.find(u) != uf.find(v):\n                uf.union(u, v)\n                mst.append((u, v, weight))\n                if len(mst) == V - 1:\n                    break\n        print('Edge \\tWeight')\n        for u, v, weight in mst:\n            print(f'{u} - {v} \\t {weight}')\n\n    graph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\n\n    kruskal_algorithm(graph)\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]\nkruskal_algorithm(graph)",
+          "output": "Edge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n1 - 4 \t 5\n0 - 3 \t 6"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Edge \tWeight\n0 - 1 \t 2\n1 - 2 \t 3\n1 - 4 \t 5\n0 - 3 \t 6",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "27_graph_kruskal.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_08_toplogical-sorting",
+      "sequence": 8,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Toplogical Sorting",
+      "description": "Implement Toplogical Sorting inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Toplogical Sorting inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "from collections import deque\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "from collections import deque\n\ndef main():\n    def topological_sort_bfs_kahn(graph):\n        V = len(graph)\n        indegree = [0] * V\n        topo_order = []\n        for u in range(V):\n            for v in graph[u]:\n                indegree[v] += 1\n        queue = deque([i for i in range(V) if indegree[i] == 0])\n        while queue:\n            u = queue.popleft()\n            topo_order.append(u)\n            for v in graph[u]:\n                indegree[v] -= 1\n                if indegree[v] == 0:\n                    queue.append(v)\n        if len(topo_order) == V:\n            return topo_order\n        else:\n            raise ValueError('Graph has at least one cycle')\n\n    graph = [[1, 2], [3], [3], []]\n\n    def topological_sort_dfs(graph):\n\n        def dfs(v):\n            visited[v] = True\n            for neighbor in graph[v]:\n                if not visited[neighbor]:\n                    dfs(neighbor)\n            stack.append(v)\n        V = len(graph)\n        visited = [False] * V\n        stack = []\n        for i in range(V):\n            if not visited[i]:\n                dfs(i)\n        return stack[::-1]\n\n    graph = [[], [], [3], [1], [0, 1], [2, 0]]\n\n    print('Topological Sorting of the graph:', topological_sort_dfs(graph))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = [[1, 2], [3], [3], []]\ngraph = [[], [], [3], [1], [0, 1], [2, 0]]",
+          "output": "Topological Sorting of the graph: [5, 4, 2, 3, 1, 0]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Topological Sorting of the graph: [5, 4, 2, 3, 1, 0]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "28_graph_toplogical-sorting.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_09_scc",
+      "sequence": 9,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "Scc",
+      "description": "Implement Scc inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement Scc inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "from collections import defaultdict\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "from collections import defaultdict\n\ndef main():\n    def kosaraju_scc(graph):\n\n        def dfs(v, visited, stack):\n            visited[v] = True\n            for neighbor in graph[v]:\n                if not visited[neighbor]:\n                    dfs(neighbor, visited, stack)\n            stack.append(v)\n\n        def reverse_graph(graph):\n            reversed_graph = defaultdict(list)\n            for src in graph:\n                for dest in graph[src]:\n                    reversed_graph[dest].append(src)\n            return reversed_graph\n\n        def dfs_collect(v, visited, component, graph):\n            visited[v] = True\n            component.append(v)\n            for neighbor in graph[v]:\n                if not visited[neighbor]:\n                    dfs_collect(neighbor, visited, component, graph)\n        stack = []\n        visited = [False] * len(graph)\n        for v in range(len(graph)):\n            if not visited[v]:\n                dfs(v, visited, stack)\n        reversed_graph = reverse_graph(graph)\n        visited = [False] * len(graph)\n        scc = []\n        while stack:\n            v = stack.pop()\n            if not visited[v]:\n                component = []\n                dfs_collect(v, visited, component, reversed_graph)\n                scc.append(component)\n        return scc\n\n    graph = {0: [1], 1: [2], 2: [0, 3], 3: [4], 4: [5, 7], 5: [6], 6: [4], 7: []}\n\n    print('Strongly Connected Components:', kosaraju_scc(graph))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = {0: [1], 1: [2], 2: [0, 3], 3: [4], 4: [5, 7], 5: [6], 6: [4], 7: []}",
+          "output": "Strongly Connected Components: [[0, 2, 1], [3], [4, 6, 5], [7]]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Strongly Connected Components: [[0, 2, 1], [3], [4, 6, 5], [7]]",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "29_graph_scc.py",
+        "question": 1
+      }
+    },
+    {
+      "id": "algos-graph_10_a-star",
+      "sequence": 10,
+      "category_id": "algos-graph",
+      "category_name": "Graph Algorithms",
+      "title": "A Star",
+      "description": "Implement A Star inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Implement A Star inside main() using the sample graph shown below, then print the traversal, path summary, or distance table in the same format as the example.",
+      "difficulty": "Easy",
+      "starter_code": "import heapq\n\ndef main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
+      "solution": "import heapq\n\ndef main():\n    def a_star(graph, start, goal, h):\n        open_list = []\n        heapq.heappush(open_list, (0, start))\n        came_from = {}\n        g_score = {node: float('inf') for node in graph}\n        g_score[start] = 0\n        f_score = {node: float('inf') for node in graph}\n        f_score[start] = h(start, goal)\n        while open_list:\n            _, current = heapq.heappop(open_list)\n            if current == goal:\n                return reconstruct_path(came_from, current)\n            for neighbor, cost in graph[current].items():\n                tentative_g_score = g_score[current] + cost\n                if tentative_g_score < g_score[neighbor]:\n                    came_from[neighbor] = current\n                    g_score[neighbor] = tentative_g_score\n                    f_score[neighbor] = g_score[neighbor] + h(neighbor, goal)\n                    heapq.heappush(open_list, (f_score[neighbor], neighbor))\n        return None\n\n    def reconstruct_path(came_from, current):\n        path = [current]\n        while current in came_from:\n            current = came_from[current]\n            path.append(current)\n        return path[::-1]\n\n    def heuristic(node, goal):\n        return 1\n\n    graph = {'A': {'B': 1, 'C': 4}, 'B': {'A': 1, 'C': 2, 'D': 5}, 'C': {'A': 4, 'B': 2, 'D': 1}, 'D': {'B': 5, 'C': 1}}\n\n    start = 'A'\n\n    goal = 'D'\n\n    print('Path from {} to {}: {}'.format(start, goal, a_star(graph, start, goal, heuristic)))\n\nif __name__ == \"__main__\":\n    main()\n",
+      "examples": [
+        {
+          "input": "Use the sample setup:\ngraph = {'A': {'B': 1, 'C': 4}, 'B': {'A': 1, 'C': 2, 'D': 5}, 'C': {'A': 4, 'B': 2, 'D': 1}, 'D': {'B': 5, 'C': 1}}\nstart = 'A'\ngoal = 'D'",
+          "output": "Path from A to D: ['A', 'B', 'C', 'D']"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "Path from A to D: ['A', 'B', 'C', 'D']",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
+      "source_reference": {
+        "file": "30_graph_a-star.py",
+        "question": 1
+      }
+    }
+  ]
+}

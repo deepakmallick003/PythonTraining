@@ -10,16 +10,26 @@
       "category_id": "methodtypes",
       "category_name": "Method Types",
       "title": "Instance, Class, and Static Methods",
-      "description": "Instance, Class, and Static Methods.",
-      "prompt": "Instance, Class, and Static Methods.",
+      "description": "Create a `Student` class with three marks, an `avg()` instance method, a `get_school()` class method, and an `info()` static method. Inside main(), create a student, print the average, print the school name, and call the static method. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "prompt": "Create a `Student` class with three marks, an `avg()` instance method, a `get_school()` class method, and an `info()` static method. Inside main(), create a student, print the average, print the school name, and call the static method.",
       "difficulty": "Easy",
       "starter_code": "def main():\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    main()\n",
       "solution": "def main():\n    class Student:\n        school = 'Telusko'\n\n        def __init__(self, m1, m2, m3):\n            self.m1 = m1\n            self.m2 = m2\n            self.m3 = m3\n\n        def avg(self):\n            return (self.m1 + self.m2 + self.m3) / 3\n\n        def get_m1(self):\n            return self.m1\n\n        def set_m1(self, value):\n            self.m1 = value\n\n        @classmethod\n        def get_school(cls):\n            return cls.school\n\n        @staticmethod\n        def info():\n            print('this is a static method')\n\n    s1 = Student(34, 47, 32)\n\n    s2 = Student(89, 32, 112)\n\n    print(s1.avg())\n\n    print(Student.get_school())\n\n    Student.info()\n\nif __name__ == \"__main__\":\n    main()\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Stored as a standalone reference snippet."
+      "examples": [
+        {
+          "input": "Use the sample setup:\ns1 = Student(34, 47, 32)\ns2 = Student(89, 32, 112)\nStudent.info()",
+          "output": "37.666666666666664\nTelusko\nthis is a static method"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "",
+          "expected_output": "37.666666666666664\nTelusko\nthis is a static method",
+          "call": "main()",
+          "label": "Test 1"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "25_methodtypes.py",
         "question": 1
