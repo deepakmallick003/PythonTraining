@@ -149,6 +149,43 @@ The container runs with:
 - `FLASK_DEBUG=0`
 - `OPEN_BROWSER=0`
 
+## Deploy For Free
+
+### Best fit for this project: Render
+
+This app is a server-side Flask app, so it should be deployed as a web service, not as a static site.
+
+The repository now includes:
+
+- `wsgi.py` for a production WSGI entry point
+- `render.yaml` so Render can deploy directly from the repo
+- `gunicorn` in `requirements.txt` for the production web server
+
+To deploy from GitHub using the `main` branch:
+
+1. Push this repository to GitHub with the deployment files committed.
+2. Sign in to Render and choose **New +** -> **Blueprint**.
+3. Connect your GitHub account and select this repository.
+4. Render will detect `render.yaml`, create a free web service, and deploy from `main`.
+5. Keep the generated `SECRET_KEY` and default env vars.
+
+The app will be reachable on a Render URL like:
+
+```text
+https://python-training.onrender.com
+```
+
+### Important limitation on free hosting
+
+This app stores users and progress in local JSON files under `app/data/`.
+
+On free cloud hosting, that local filesystem should be treated as ephemeral:
+
+- data can reset after redeploys or instance replacement
+- user accounts and solved progress are not reliable long-term
+
+That means Render is a good free demo host, but not a durable host for saved learner progress unless you move that data into a real database.
+
 ## Demo
 
 A visible demo of the running app:
