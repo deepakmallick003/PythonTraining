@@ -29,14 +29,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'JgnnqYqtnf'",
-          "expected_output": "q",
+          "input": "text = 'Pipeline hub'",
+          "expected_output": "l",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'KhoorZruog'",
-          "expected_output": "r",
+          "input": "text = 'Dataset hub'",
+          "expected_output": "s",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -72,14 +72,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'Ravjqp'",
-          "expected_output": "p",
+          "input": "text = 'Pipeline'",
+          "expected_output": "e",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'Sbwkrq'",
-          "expected_output": "q",
+          "input": "text = 'Dataset'",
+          "expected_output": "t",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -115,14 +115,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'Rtqitcookpi'",
-          "expected_output": "itco",
+          "input": "text = 'Pipeline hub'",
+          "expected_output": "elin",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'Surjudpplqj'",
-          "expected_output": "judp",
+          "input": "text = 'Dataset hub'",
+          "expected_output": "aset",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -158,14 +158,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'cdefghij'",
-          "expected_output": "dfhj",
+          "input": "text = 'pipeline'",
+          "expected_output": "ieie",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'defghijk'",
-          "expected_output": "egik",
+          "input": "text = 'dataset hub'",
+          "expected_output": "aae u",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -201,14 +201,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'FcvcUekgpeg'",
-          "expected_output": "gepgkeUcvcF",
+          "input": "text = 'Pipeline hub'",
+          "expected_output": "buh enilepiP",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'GdwdVflhqfh'",
-          "expected_output": "hfqhlfVdwdG",
+          "input": "text = 'Dataset hub'",
+          "expected_output": "buh tesataD",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -244,14 +244,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text1 = 'Ravjqp'\ntext2 = 'Rtqitcookpi'",
-          "expected_output": "RavjqpRtqitcookpi",
+          "input": "text1 = 'Feature'\ntext2 = 'Toolkit hub'",
+          "expected_output": "FeatureToolkit hub",
           "call": "main(text1, text2)",
           "label": "Test 2"
         },
         {
-          "input": "text1 = 'Sbwkrq'\ntext2 = 'Surjudpplqj'",
-          "expected_output": "SbwkrqSurjudpplqj",
+          "input": "text1 = 'Debug hub'\ntext2 = 'Pipeline hub'",
+          "expected_output": "Debug hubPipeline hub",
           "call": "main(text1, text2)",
           "label": "Test 3"
         }
@@ -287,14 +287,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'CtvkhkekcnKpvgnnkigpeg'",
-          "expected_output": "22",
+          "input": "text = 'CloudMonitoring hub lab'",
+          "expected_output": "23",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'DuwlilfldoLqwhooljhqfh'",
-          "expected_output": "22",
+          "input": "text = 'ModelDeployment hub lab'",
+          "expected_output": "23",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -330,13 +330,13 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'eqfkpi kp Ravjqp'",
-          "expected_output": "False",
+          "input": "text = 'write code daily'",
+          "expected_output": "True",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'frglqj lq Sbwkrq'",
+          "input": "text = 'release planning board'",
           "expected_output": "False",
           "call": "main(text)",
           "label": "Test 3"
@@ -373,14 +373,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'K nqxg Lcxc'",
-          "expected_output": "K nqxg Lcxc",
+          "input": "text = 'Our legacy API still runs on Java'",
+          "expected_output": "Our legacy API still runs on Python",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'L oryh Mdyd'",
-          "expected_output": "L oryh Mdyd",
+          "input": "text = 'The workshop still teaches Java'",
+          "expected_output": "The workshop still teaches Python",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -416,14 +416,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'ocejkpg ngctpkpi'",
-          "expected_output": "OCEJKPG NGCTPKPI",
+          "input": "text = 'batch scoring hub'",
+          "expected_output": "BATCH SCORING HUB",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'pdfklqh ohduqlqj'",
-          "expected_output": "PDFKLQH OHDUQLQJ",
+          "input": "text = 'release notes hub'",
+          "expected_output": "RELEASE NOTES HUB",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -459,14 +459,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'FGGR NGCTPKPI'",
-          "expected_output": "fggr ngctpkpi",
+          "input": "text = 'BATCH SCORING'",
+          "expected_output": "batch scoring",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'GHHS OHDUQLQJ'",
-          "expected_output": "ghhs ohduqlqj",
+          "input": "text = 'RELEASE NOTES'",
+          "expected_output": "release notes",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -502,14 +502,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'cpcnavkeu'",
-          "expected_output": "False",
+          "input": "text = 'analysis hub'",
+          "expected_output": "True",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'dqdobwlfv'",
-          "expected_output": "False",
+          "input": "text = 'analytics'\n# Variant 3",
+          "expected_output": "True",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -545,13 +545,13 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'xkuwcnkbcvkqp'",
+          "input": "text = 'migration hub'",
           "expected_output": "False",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'ylvxdolcdwlrq'",
+          "input": "text = 'automation hub'",
           "expected_output": "False",
           "call": "main(text)",
           "label": "Test 3"
@@ -588,14 +588,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = '   fcvc   '",
-          "expected_output": "fcvc",
+          "input": "text = '   batch scoring   '",
+          "expected_output": "batch scoring",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = '   gdwd   '",
-          "expected_output": "gdwd",
+          "input": "text = '   release notes   '",
+          "expected_output": "release notes",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -631,14 +631,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'fcvcdcug'",
-          "expected_output": "-1",
+          "input": "text = 'dataflow'",
+          "expected_output": "1",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'gdwdedvh'",
-          "expected_output": "-1",
+          "input": "text = 'captain hub'",
+          "expected_output": "1",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -674,14 +674,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'fcvc cpcnauku'",
-          "expected_output": "1",
+          "input": "text = 'banana hub lab'",
+          "expected_output": "4",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'gdwd dqdobvlv'",
-          "expected_output": "0",
+          "input": "text = 'canada hub lab'",
+          "expected_output": "4",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -717,14 +717,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'urnkv,vjku,uvtkpi'",
-          "expected_output": "['urnkv', 'vjku', 'uvtkpi']",
+          "input": "text = 'api,worker,queue'",
+          "expected_output": "['api', 'worker', 'queue']",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'vsolw,wklv,vwulqj'",
-          "expected_output": "['vsolw', 'wklv', 'vwulqj']",
+          "input": "text = 'draft,review,publish'",
+          "expected_output": "['draft', 'review', 'publish']",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -741,38 +741,16 @@
       "category_id": "strings",
       "category_name": "Strings",
       "title": "Join Elements",
-      "description": "Join elements with a space. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "description": "Join elements with a space. Use main() to produce the expected result shown in the example.",
       "prompt": "Join elements with a space.",
       "difficulty": "Easy",
       "starter_code": "def main(list_elements):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
       "solution": "def main(list_elements):\n    print(\" \".join(list_elements))\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
-      "examples": [
-        {
-          "input": "list_elements = ['join', 'these', 'words']",
-          "output": "join these words"
-        }
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: unhashable type: 'list'"
       ],
-      "test_cases": [
-        {
-          "input": "list_elements = ['join', 'these', 'words']",
-          "expected_output": "join these words",
-          "call": "main(list_elements)",
-          "label": "Test 1"
-        },
-        {
-          "input": "list_elements = ['lqkp', 'vjgug', 'yqtfu']",
-          "expected_output": "lqkp vjgug yqtfu",
-          "call": "main(list_elements)",
-          "label": "Test 2"
-        },
-        {
-          "input": "list_elements = ['mrlq', 'wkhvh', 'zrugv']",
-          "expected_output": "mrlq wkhvh zrugv",
-          "call": "main(list_elements)",
-          "label": "Test 3"
-        }
-      ],
-      "notes": [],
       "source_reference": {
         "file": "01_strings.py",
         "question": 18
@@ -803,14 +781,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'unkeg vjku uvtkpi'",
-          "expected_output": "vjku uvtkpi",
+          "input": "text = 'batch scoring hub'",
+          "expected_output": "scoring hub",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'volfh wklv vwulqj'",
-          "expected_output": "wklv vwulqj",
+          "input": "text = 'release notes hub'",
+          "expected_output": "e notes hub",
           "call": "main(text)",
           "label": "Test 3"
         }
@@ -846,14 +824,14 @@
           "label": "Test 1"
         },
         {
-          "input": "text = 'dgikppkpi vq gpf'",
-          "expected_output": "dgikppkpi",
+          "input": "text = 'batch scoring hub'",
+          "expected_output": "batch sco",
           "call": "main(text)",
           "label": "Test 2"
         },
         {
-          "input": "text = 'ehjlqqlqj wr hqg'",
-          "expected_output": "ehjlqqlqj",
+          "input": "text = 'release notes hub'",
+          "expected_output": "release n",
           "call": "main(text)",
           "label": "Test 3"
         }

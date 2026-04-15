@@ -18,7 +18,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nx = 10\ny = x\nx = 15",
-          "output": "Concept 1: Variables and Memory\n- Every variable in Python has its own address.\n- The id() function returns the 'identity' of an object, which is unique and constant for this object during its lifetime.\nx = 10\nAddress of x: 4372095456\n\ny = x\nAddress of y: 4372095456\n\nx = 15\nNew value of x: 15\nAddress of x after change: 4372095616\nValue of y remains unchanged: 10\nAddress of y remains unchanged: 4372095456"
+          "output": "Concept 1: Variables and Memory\n- Every variable in Python has its own address.\n- The id() function returns the 'identity' of an object, which is unique and constant for this object during its lifetime.\nx = 10\nAddress of x: 4342178272\n\ny = x\nAddress of y: 4342178272\n\nx = 15\nNew value of x: 15\nAddress of x after change: 4342178432\nValue of y remains unchanged: 10\nAddress of y remains unchanged: 4342178272"
         }
       ],
       "test_cases": [],
@@ -44,7 +44,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nz = 20\nz = 25",
-          "output": "Concept 2: Garbage Collection\n- Python automatically removes data that is not referenced by any variable from memory.\n\nz = 20\nAddress of z before reassignment: 4312425248\n\nz = 25\nAddress of z after reassignment: 4312425408"
+          "output": "Concept 2: Garbage Collection\n- Python automatically removes data that is not referenced by any variable from memory.\n\nz = 20\nAddress of z before reassignment: 4384711456\n\nz = 25\nAddress of z after reassignment: 4384711616"
         }
       ],
       "test_cases": [],
@@ -70,7 +70,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nPI = 3.14159\nmy_car = Car('Toyota')\nlist1 = [1, 2, 3]\nlist2 = list1\nlist1.append(4)",
-          "output": "Concept 3: Constants and Types\n- The value of variables can change, but constants should remain unchanged.\n- Constants are represented by all capital letters by convention.\n- The type() function returns the data type of the value of a variable.\n\nPI = 3.14159\nType of PI: <class 'float'>\n\nmy_car = Car('Toyota')\nType of my_car: <class '__main__.main.<locals>.Car'>\n\nAdditional Information on Python Variables\n- In Python, variables are references to objects in memory, similar to pointers in C.\n- The distinction between 'value types' and 'reference types' is not applicable in Python; all variables are references to objects.\n\nlist1 = [1, 2, 3]\nlist2 = list1\nAfter appending to list1, list2 reflects the change: [1, 2, 3, 4]\nAddress of list1: 4308600960\nAddress of list2: 4308600960  (same as list1)\n\n--------------------------------------------------"
+          "output": "Concept 3: Constants and Types\n- The value of variables can change, but constants should remain unchanged.\n- Constants are represented by all capital letters by convention.\n- The type() function returns the data type of the value of a variable.\n\nPI = 3.14159\nType of PI: <class 'float'>\n\nmy_car = Car('Toyota')\nType of my_car: <class '__main__.main.<locals>.Car'>\n\nAdditional Information on Python Variables\n- In Python, variables are references to objects in memory, similar to pointers in C.\n- The distinction between 'value types' and 'reference types' is not applicable in Python; all variables are references to objects.\n\nlist1 = [1, 2, 3]\nlist2 = list1\nAfter appending to list1, list2 reflects the change: [1, 2, 3, 4]\nAddress of list1: 4371351680\nAddress of list2: 4371351680  (same as list1)\n\n--------------------------------------------------"
         }
       ],
       "test_cases": [],

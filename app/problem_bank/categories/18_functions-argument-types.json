@@ -29,14 +29,14 @@
           "label": "Test 1"
         },
         {
-          "input": "name = 'Cnkeg'\nage = 32",
-          "expected_output": "Hello, Cnkeg! You are 32 years old.",
+          "input": "name = 'Leo'\nage = 29",
+          "expected_output": "Hello, Leo! You are 29 years old.",
           "call": "main(name, age)",
           "label": "Test 2"
         },
         {
-          "input": "name = 'Dolfh'\nage = 33",
-          "expected_output": "Hello, Dolfh! You are 33 years old.",
+          "input": "name = 'Zara'\nage = 34",
+          "expected_output": "Hello, Zara! You are 34 years old.",
           "call": "main(name, age)",
           "label": "Test 3"
         }
@@ -60,26 +60,26 @@
       "solution": "def greet(name, age):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(age, name, input_3):\n    greet(age=age, name=name)\n    print(input_3)\n\nif __name__ == \"__main__\":\n    age = 25\n\n    name = 'Bob'\n\n    input_3 = 'Output:\\n Hello, Bob! You are 25 years old.'\n    main(age, name, input_3)\n",
       "examples": [
         {
-          "input": "age = 25\n\nname = 'Bob'\n\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
+          "input": "age = 25\nname = 'Bob'\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
           "output": "Hello, Bob! You are 25 years old.\nOutput:\n Hello, Bob! You are 25 years old."
         }
       ],
       "test_cases": [
         {
-          "input": "age = 25\n\nname = 'Bob'\n\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
+          "input": "age = 25\nname = 'Bob'\ninput_3 = 'Output:\\n Hello, Bob! You are 25 years old.'",
           "expected_output": "Hello, Bob! You are 25 years old.\nOutput:\n Hello, Bob! You are 25 years old.",
           "call": "main(age, name, input_3)",
           "label": "Test 1"
         },
         {
-          "input": "age = 27\nname = 'Dqd'\ninput_3 = 'Qwvrwv:\\n Jgnnq, Dqd! Aqw ctg 47 agctu qnf.'",
-          "expected_output": "Hello, Dqd! You are 27 years old.\nQwvrwv:\n Jgnnq, Dqd! Aqw ctg 47 agctu qnf.",
+          "input": "age = 29\nname = 'Leo'\ninput_3 = 'Output:\\n Hello, Leo! You are 29 years old.'",
+          "expected_output": "Hello, Leo! You are 29 years old.\nOutput:\n Hello, Leo! You are 29 years old.",
           "call": "main(age, name, input_3)",
           "label": "Test 2"
         },
         {
-          "input": "age = 28\nname = 'Ere'\ninput_3 = 'Rxwsxw:\\n Khoor, Ere! Brx duh 58 bhduv rog.'",
-          "expected_output": "Hello, Ere! You are 28 years old.\nRxwsxw:\n Khoor, Ere! Brx duh 58 bhduv rog.",
+          "input": "age = 34\nname = 'Zara'\ninput_3 = 'Output:\\n Hello, Zara! You are 34 years old.'",
+          "expected_output": "Hello, Zara! You are 34 years old.\nOutput:\n Hello, Zara! You are 34 years old.",
           "call": "main(age, name, input_3)",
           "label": "Test 3"
         }
@@ -103,26 +103,26 @@
       "solution": "def greet(name, age=30):\n    print(f'Hello, {name}! You are {age} years old.')\n\ndef main(name, input_2):\n    greet(name)\n    print(input_2)\n\nif __name__ == \"__main__\":\n    name = 'Charlie'\n\n    input_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'\n    main(name, input_2)\n",
       "examples": [
         {
-          "input": "name = 'Charlie'\n\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
+          "input": "name = 'Charlie'\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
           "output": "Hello, Charlie! You are 30 years old.\nOutput:\n Hello, Charlie! You are 30 years old."
         }
       ],
       "test_cases": [
         {
-          "input": "name = 'Charlie'\n\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
+          "input": "name = 'Charlie'\ninput_2 = 'Output:\\n Hello, Charlie! You are 30 years old.'",
           "expected_output": "Hello, Charlie! You are 30 years old.\nOutput:\n Hello, Charlie! You are 30 years old.",
           "call": "main(name, input_2)",
           "label": "Test 1"
         },
         {
-          "input": "name = 'Ejctnkg'\ninput_2 = 'Qwvrwv:\\n Jgnnq, Ejctnkg! Aqw ctg 52 agctu qnf.'",
-          "expected_output": "Hello, Ejctnkg! You are 30 years old.\nQwvrwv:\n Jgnnq, Ejctnkg! Aqw ctg 52 agctu qnf.",
+          "input": "name = 'Leo'\ninput_2 = 'Output:\\n Hello, Leo! You are 30 years old.'",
+          "expected_output": "Hello, Leo! You are 30 years old.\nOutput:\n Hello, Leo! You are 30 years old.",
           "call": "main(name, input_2)",
           "label": "Test 2"
         },
         {
-          "input": "name = 'Fkduolh'\ninput_2 = 'Rxwsxw:\\n Khoor, Fkduolh! Brx duh 63 bhduv rog.'",
-          "expected_output": "Hello, Fkduolh! You are 30 years old.\nRxwsxw:\n Khoor, Fkduolh! Brx duh 63 bhduv rog.",
+          "input": "name = 'Zara'\ninput_2 = 'Output:\\n Hello, Zara! You are 30 years old.'",
+          "expected_output": "Hello, Zara! You are 30 years old.\nOutput:\n Hello, Zara! You are 30 years old.",
           "call": "main(name, input_2)",
           "label": "Test 3"
         }
@@ -146,26 +146,26 @@
       "solution": "def sum_numbers(*args):\n    print('Sum:', sum(args))\n\ndef main(args_1, args_2, args_3, args_4, args_5, input_6):\n    sum_numbers(args_1, args_2, args_3, args_4, args_5)\n    print(input_6)\n\nif __name__ == \"__main__\":\n    args_1 = 1\n\n    args_2 = 2\n\n    args_3 = 3\n\n    args_4 = 4\n\n    args_5 = 5\n\n    input_6 = 'Output:\\n Sum: 15'\n    main(args_1, args_2, args_3, args_4, args_5, input_6)\n",
       "examples": [
         {
-          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5\n\ninput_6 = 'Output:\\n Sum: 15'",
+          "input": "args_1 = 1\nargs_2 = 2\nargs_3 = 3\nargs_4 = 4\nargs_5 = 5\ninput_6 = 'Output:\\n Sum: 15'",
           "output": "Sum: 15\nOutput:\n Sum: 15"
         }
       ],
       "test_cases": [
         {
-          "input": "args_1 = 1\n\nargs_2 = 2\n\nargs_3 = 3\n\nargs_4 = 4\n\nargs_5 = 5\n\ninput_6 = 'Output:\\n Sum: 15'",
+          "input": "args_1 = 1\nargs_2 = 2\nargs_3 = 3\nargs_4 = 4\nargs_5 = 5\ninput_6 = 'Output:\\n Sum: 15'",
           "expected_output": "Sum: 15\nOutput:\n Sum: 15",
           "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 1"
         },
         {
-          "input": "args_1 = 3\nargs_2 = 4\nargs_3 = 5\nargs_4 = 6\nargs_5 = 7\ninput_6 = 'Qwvrwv:\\n Uwo: 37'",
-          "expected_output": "Sum: 25\nQwvrwv:\n Uwo: 37",
+          "input": "args_1 = 3\nargs_2 = 4\nargs_3 = 5\nargs_4 = 6\nargs_5 = 7\ninput_6 = 'Output:\\n Sum: 25'",
+          "expected_output": "Sum: 25\nOutput:\n Sum: 25",
           "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 2"
         },
         {
-          "input": "args_1 = 4\nargs_2 = 5\nargs_3 = 6\nargs_4 = 7\nargs_5 = 8\ninput_6 = 'Rxwsxw:\\n Vxp: 48'",
-          "expected_output": "Sum: 30\nRxwsxw:\n Vxp: 48",
+          "input": "args_1 = 4\nargs_2 = 5\nargs_3 = 6\nargs_4 = 7\nargs_5 = 8\ninput_6 = 'Output:\\n Sum: 30'",
+          "expected_output": "Sum: 30\nOutput:\n Sum: 30",
           "call": "main(args_1, args_2, args_3, args_4, args_5, input_6)",
           "label": "Test 3"
         }
@@ -189,26 +189,26 @@
       "solution": "def person_data(name, **data):\n    print('Name:', name)\n    for key, value in data.items():\n        print(key.title() + ':', value)\n\ndef main(name, age, city, input_4):\n    person_data(name, age=age, city=city)\n    print(input_4)\n\nif __name__ == \"__main__\":\n    name = 'Dave'\n\n    age = 40\n\n    city = 'New York'\n\n    input_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'\n    main(name, age, city, input_4)\n",
       "examples": [
         {
-          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'\n\ninput_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'",
-          "output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave, Age: 40, City: New York"
+          "input": "name = 'Dave'\nage = 40\ncity = 'New York'\ninput_4 = 'Output:\\n Name: Dave\\n Age: 40\\n City: New York'",
+          "output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave\n Age: 40\n City: New York"
         }
       ],
       "test_cases": [
         {
-          "input": "name = 'Dave'\n\nage = 40\n\ncity = 'New York'\n\ninput_4 = 'Output:\\n Name: Dave, Age: 40, City: New York'",
-          "expected_output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave, Age: 40, City: New York",
+          "input": "name = 'Dave'\nage = 40\ncity = 'New York'\ninput_4 = 'Output:\\n Name: Dave\\n Age: 40\\n City: New York'",
+          "expected_output": "Name: Dave\nAge: 40\nCity: New York\nOutput:\n Name: Dave\n Age: 40\n City: New York",
           "call": "main(name, age, city, input_4)",
           "label": "Test 1"
         },
         {
-          "input": "name = 'Fcxg'\nage = 42\ncity = 'Pgy Aqtm'\ninput_4 = 'Qwvrwv:\\n Pcog: Fcxg, Cig: 62, Ekva: Pgy Aqtm'",
-          "expected_output": "Name: Fcxg\nAge: 42\nCity: Pgy Aqtm\nQwvrwv:\n Pcog: Fcxg, Cig: 62, Ekva: Pgy Aqtm",
+          "input": "name = 'Leo'\nage = 29\ncity = 'Lisbon'\ninput_4 = 'Output:\\n Name: Leo\\n Age: 29\\n City: Lisbon'",
+          "expected_output": "Name: Leo\nAge: 29\nCity: Lisbon\nOutput:\n Name: Leo\n Age: 29\n City: Lisbon",
           "call": "main(name, age, city, input_4)",
           "label": "Test 2"
         },
         {
-          "input": "name = 'Gdyh'\nage = 43\ncity = 'Qhz Brun'\ninput_4 = 'Rxwsxw:\\n Qdph: Gdyh, Djh: 73, Flwb: Qhz Brun'",
-          "expected_output": "Name: Gdyh\nAge: 43\nCity: Qhz Brun\nRxwsxw:\n Qdph: Gdyh, Djh: 73, Flwb: Qhz Brun",
+          "input": "name = 'Zara'\nage = 34\ncity = 'Nairobi'\ninput_4 = 'Output:\\n Name: Zara\\n Age: 34\\n City: Nairobi'",
+          "expected_output": "Name: Zara\nAge: 34\nCity: Nairobi\nOutput:\n Name: Zara\n Age: 34\n City: Nairobi",
           "call": "main(name, age, city, input_4)",
           "label": "Test 3"
         }

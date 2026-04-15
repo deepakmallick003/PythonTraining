@@ -19,7 +19,7 @@ import tempfile
 import textwrap
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Sequence, TypeVar, TypedDict, cast
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +29,13 @@ PROBLEM_BANK_DIR = BASE_DIR / "app" / "problem_bank"
 PROBLEM_BANK_CATEGORIES_DIR = PROBLEM_BANK_DIR / "categories"
 
 BUILTIN_NAMES = set(dir(builtins))
+T = TypeVar("T")
+
+
+class CallableSignature(TypedDict):
+    positional: list[str]
+    vararg: str | None
+    kwarg: str | None
 
 CATEGORY_NAME_MAP = {
     "01_strings.py": "Strings",
@@ -472,27 +479,41 @@ def nodes_to_source(nodes: Iterable[ast.AST]) -> str:
 
 
 def is_print_call(node: ast.AST) -> bool:
-    return (
-        isinstance(node, ast.Expr)
-        and isinstance(node.value, ast.Call)
-        and isinstance(node.value.func, ast.Name)
-        and node.value.func.id == "print"
-    )
+    if not isinstance(node, ast.Expr):
+        return False
+    call = node.value
+    if not isinstance(call, ast.Call):
+        return False
+    func = call.func
+    return isinstance(func, ast.Name) and func.id == "print"
 
 
 def is_print_function_call(node: ast.AST) -> bool:
-    return (
-        isinstance(node, ast.Expr)
-        and isinstance(node.value, ast.Call)
-        and isinstance(node.value.func, ast.Name)
-        and node.value.func.id == "print_function"
-    )
+    if not isinstance(node, ast.Expr):
+        return False
+    call = node.value
+    if not isinstance(call, ast.Call):
+        return False
+    func = call.func
+    return isinstance(func, ast.Name) and func.id == "print_function"
+
+
+def get_print_call(node: ast.AST) -> ast.Call | None:
+    if not isinstance(node, ast.Expr):
+        return None
+    call = node.value
+    if not isinstance(call, ast.Call):
+        return None
+    func = call.func
+    if isinstance(func, ast.Name) and func.id == "print":
+        return call
+    return None
 
 
 def first_print_text(node: ast.AST) -> str | None:
-    if not is_print_call(node):
+    call = get_print_call(node)
+    if call is None:
         return None
-    call = node.value
     if not call.args:
         return None
     first = call.args[0]
@@ -550,6 +571,7 @@ def split_imports_and_body(code: str) -> tuple[list[str], str]:
 
 def extract_main_guard_body(node: ast.If) -> list[ast.stmt] | None:
     test = node.test
+    comparator = test.comparators[0] if isinstance(test, ast.Compare) and len(test.comparators) == 1 else None
     if not (
         isinstance(test, ast.Compare)
         and isinstance(test.left, ast.Name)
@@ -557,8 +579,8 @@ def extract_main_guard_body(node: ast.If) -> list[ast.stmt] | None:
         and len(test.ops) == 1
         and isinstance(test.ops[0], ast.Eq)
         and len(test.comparators) == 1
-        and isinstance(test.comparators[0], ast.Constant)
-        and test.comparators[0].value == "__main__"
+        and isinstance(comparator, ast.Constant)
+        and comparator.value == "__main__"
     ):
         return None
     return node.body
@@ -572,8 +594,8 @@ def split_runnable_script(source: str) -> tuple[list[str], str, str]:
         return import_lines, "", action_body
 
     import_lines: list[str] = []
-    support_nodes: list[ast.AST] = []
-    main_body_nodes: list[ast.AST] | None = None
+    support_nodes: list[ast.stmt] = []
+    main_body_nodes: list[ast.stmt] | None = None
 
     for node in module.body:
         if isinstance(node, ast.Import):
@@ -661,9 +683,10 @@ def split_support_and_input_setup(setup_source: str) -> tuple[str, str]:
                     and isinstance(child.value.func, ast.Name)
                     and child.value.func.id == "globals"
                     and isinstance(child.slice, ast.Constant)
-                    and isinstance(child.slice.value, str)
                 ):
-                    support_refs.add(child.slice.value)
+                    slice_node = child.slice
+                    if isinstance(slice_node.value, str):
+                        support_refs.add(slice_node.value)
 
     for node in module.body:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
@@ -811,7 +834,8 @@ def summarize_example_input(solution_code: str, prompt: str = "", max_lines: int
         if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)):
             lines.append(ast.unparse(node).strip())
         elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
-            if isinstance(node.value.func, ast.Name) and node.value.func.id == "print":
+            call = node.value
+            if isinstance(call.func, ast.Name) and call.func.id == "print":
                 continue
             lines.append(ast.unparse(node).strip())
         if len(lines) >= max_lines:
@@ -868,6 +892,472 @@ def is_pure_data_expression(node: ast.AST) -> bool:
     return False
 
 
+NAME_VARIANTS = ["Maya", "Noah", "Aisha", "Leo", "Zara", "Ethan"]
+CITY_VARIANTS = ["London", "Seoul", "Denver", "Lisbon", "Nairobi", "Oslo"]
+COUNTRY_VARIANTS = ["India", "Canada", "Japan", "Brazil", "Kenya", "Spain"]
+LANGUAGE_VARIANTS = ["Python", "Rust", "Go", "JavaScript", "Ruby", "Swift"]
+WORD_VARIANTS = ["Notebook", "Compiler", "Debugger", "Pipeline", "Dataset", "ModelOps"]
+PHRASE_VARIANTS = [
+    "clean code",
+    "feature store",
+    "model training",
+    "batch scoring",
+    "release notes",
+    "cloud backup",
+]
+SENTENCE_VARIANTS = [
+    "Python powers dashboards",
+    "Unit tests guard releases",
+    "Data pipelines need checks",
+    "Clean code helps teams",
+    "Feature flags reduce risk",
+    "Logs reveal slow queries",
+]
+CONCAT_LEFT_VARIANTS = ["Data", "Clean", "Cloud", "Model", "Feature", "Debug"]
+CONCAT_RIGHT_VARIANTS = ["Pipeline", "Code", "Ops", "Metrics", "Store", "Toolkit"]
+CSV_VARIANTS = [
+    "red,green,blue",
+    "api,worker,queue",
+    "draft,review,publish",
+    "read,write,deploy",
+]
+JOIN_LIST_VARIANTS = [
+    ["ship", "clean", "code"],
+    ["build", "useful", "tools"],
+    ["write", "focused", "tests"],
+    ["track", "model", "drift"],
+]
+FRUIT_VARIANTS = ["apple", "mango", "pear", "grape", "orange", "peach"]
+ANIMAL_VARIANTS = ["otter", "falcon", "panda", "tiger", "koala", "lynx"]
+
+
+def select_variant(pool: Sequence[T], variant: int, salt: str = "") -> T:
+    if not pool:
+        raise ValueError("select_variant() requires a non-empty pool")
+    offset = sum(ord(char) for char in salt) % len(pool)
+    index = (max(variant, 2) - 2 + offset) % len(pool)
+    return cast(T, copy.deepcopy(pool[index]))
+
+
+def extract_quoted_literals(text: str) -> list[str]:
+    if not text:
+        return []
+    matches = re.findall(r"'([^']+)'|\"([^\"]+)\"|`([^`]+)`", text)
+    literals = []
+    for groups in matches:
+        literal = next((group for group in groups if group), "")
+        if literal:
+            literals.append(literal)
+    return literals
+
+
+def normalize_target_name(name: str) -> str:
+    return re.sub(r"_\d+$", "", name.strip().lower())
+
+
+def looks_like_text_target(target_name: str) -> bool:
+    normalized = normalize_target_name(target_name)
+    return any(
+        hint in normalized
+        for hint in (
+            "text",
+            "string",
+            "message",
+            "sentence",
+            "phrase",
+            "word",
+            "line",
+            "name",
+            "city",
+            "country",
+            "language",
+            "pattern",
+            "input",
+            "output",
+            "prefix",
+            "suffix",
+        )
+    )
+
+
+def apply_case_style(candidate: str, original: str) -> str:
+    stripped = original.strip()
+    if stripped.isupper():
+        return candidate.upper()
+    if stripped.islower():
+        return candidate.lower()
+    if stripped.istitle():
+        return candidate.title()
+    return candidate
+
+
+def ensure_min_length(candidate: str, minimum: int) -> str:
+    if len(candidate) >= minimum:
+        return candidate
+    suffixes = [" hub", " lab", " notes", " guide"]
+    result = candidate
+    index = 0
+    while len(result) < minimum:
+        result += suffixes[index % len(suffixes)]
+        index += 1
+    return result
+
+
+def fit_string_to_original(candidate: str, original: str) -> str:
+    if not original:
+        return candidate
+    if original.startswith(" ") or original.endswith(" "):
+        leading = len(original) - len(original.lstrip(" "))
+        trailing = len(original) - len(original.rstrip(" "))
+        candidate = (" " * leading) + candidate.strip() + (" " * trailing)
+    candidate = apply_case_style(candidate, original)
+    return ensure_min_length(candidate, len(original))
+
+
+def infer_delimiter(value: str) -> str:
+    for delimiter in (",", "|", ";", ":"):
+        if delimiter in value:
+            return delimiter
+    if " " in value:
+        return " "
+    return ","
+
+
+def build_string_with_token(token: str, variant: int, purpose: str) -> str:
+    if not token:
+        return select_variant(SENTENCE_VARIANTS, variant, purpose)
+    if purpose == "prefix":
+        suffixes = ["lytics", "conda", "logue", "gram", "lysis"]
+        return token + select_variant(suffixes, variant, token)
+    if purpose == "suffix":
+        prefixes = ["visualiza", "documen", "migra", "automa", "predic"]
+        return select_variant(prefixes, variant, token) + token
+    if purpose == "count" and len(token) == 1 and token.isalpha():
+        patterns = [
+            f"d{token}t{token} {token}n{token}lysis",
+            f"b{token}n{token}n{token}",
+            f"c{token}n{token}d{token}",
+            f"m{token}t{token}d{token}t{token}",
+        ]
+        return select_variant(patterns, variant, token)
+    if purpose == "find" and len(token) == 1 and token.isalpha():
+        patterns = [
+            f"met{token}data",
+            f"dat{token}flow",
+            f"capt{token}in",
+            f"an{token}lytics",
+        ]
+        return select_variant(patterns, variant, token)
+    if purpose == "contains":
+        containing = [
+            f"write {token} daily",
+            f"{token} review guide",
+            f"{token} quality checks",
+        ]
+        excluding = [
+            "debug session notes",
+            "release planning board",
+            "feature flag rollout",
+        ]
+        return select_variant(containing if variant % 2 == 0 else excluding, variant, token)
+    return select_variant(
+        [
+            f"{token} starter guide",
+            f"practical {token} example",
+            f"{token} workshop notes",
+        ],
+        variant,
+        token,
+    )
+
+
+def apply_known_replacements_to_string(value: str, replacements: dict[object, object]) -> str:
+    updated = value
+    string_replacements = [
+        (str(old), str(new))
+        for old, new in replacements.items()
+        if isinstance(old, str) and old and old != new
+    ]
+    for old, new in sorted(string_replacements, key=lambda item: len(item[0]), reverse=True):
+        updated = updated.replace(old, new)
+
+    numeric_replacements = [
+        (str(old), str(new))
+        for old, new in replacements.items()
+        if isinstance(old, (int, float)) and str(old) != str(new)
+    ]
+    for old, new in numeric_replacements:
+        updated = re.sub(rf"(?<!\w){re.escape(old)}(?!\w)", new, updated)
+    return updated
+
+
+def choose_named_string_variant(target_name: str, original: str, variant: int, prompt: str) -> str | None:
+    normalized = normalize_target_name(target_name)
+    prompt_lower = prompt.lower()
+
+    if normalized in {"text1", "left", "prefix"} or (
+        "concatenate" in prompt_lower and normalized.endswith("1")
+    ):
+        return select_variant(CONCAT_LEFT_VARIANTS, variant, normalized)
+    if normalized in {"text2", "right", "suffix"} or (
+        "concatenate" in prompt_lower and normalized.endswith("2")
+    ):
+        return select_variant(CONCAT_RIGHT_VARIANTS, variant, normalized)
+    if "name" in normalized:
+        return select_variant(NAME_VARIANTS, variant, normalized)
+    if "city" in normalized or "town" in normalized:
+        return select_variant(CITY_VARIANTS, variant, normalized)
+    if "country" in normalized:
+        return select_variant(COUNTRY_VARIANTS, variant, normalized)
+    if "language" in normalized or normalized == "lang":
+        return select_variant(LANGUAGE_VARIANTS, variant, normalized)
+    if "fruit" in normalized:
+        return select_variant(FRUIT_VARIANTS, variant, normalized)
+    if "animal" in normalized:
+        return select_variant(ANIMAL_VARIANTS, variant, normalized)
+    if "word" in normalized and "join" not in prompt_lower:
+        return select_variant([item.lower() for item in WORD_VARIANTS], variant, normalized)
+    if any(hint in normalized for hint in ("sentence", "message", "quote", "line")):
+        return select_variant(SENTENCE_VARIANTS, variant, normalized)
+    if any(hint in normalized for hint in ("text", "string", "pattern", "prefix", "suffix")):
+        if " " in original:
+            return select_variant(PHRASE_VARIANTS, variant, normalized)
+        return select_variant(WORD_VARIANTS, variant, normalized)
+    if normalized.startswith("input") or normalized.startswith("output"):
+        return select_variant(SENTENCE_VARIANTS, variant, normalized)
+    return None
+
+
+def choose_prompt_aware_string(target_name: str, original: str, variant: int, prompt: str) -> str | None:
+    normalized = normalize_target_name(target_name)
+    prompt_target = any(
+        hint in normalized
+        for hint in ("text", "string", "word", "pattern", "line", "message", "prefix", "suffix")
+    ) or normalized in {"text1", "text2"}
+    if not prompt_target:
+        return None
+
+    prompt_lower = prompt.lower()
+    literals = extract_quoted_literals(prompt)
+
+    if "replace" in prompt_lower and len(literals) >= 2:
+        source_token, replacement_token = literals[:2]
+        templates = [
+            f"I learned {source_token} in school",
+            f"Our legacy API still runs on {source_token}",
+            f"The workshop still teaches {source_token}",
+            f"{source_token} powers the old dashboard",
+        ]
+        return fit_string_to_original(select_variant(templates, variant, target_name), original)
+
+    if "starts with" in prompt_lower and literals:
+        return fit_string_to_original(build_string_with_token(literals[0], variant, "prefix"), original)
+
+    if "ends with" in prompt_lower and literals:
+        return fit_string_to_original(build_string_with_token(literals[0], variant, "suffix"), original)
+
+    if ("check if" in prompt_lower or "contains" in prompt_lower or "in the string" in prompt_lower) and literals:
+        return fit_string_to_original(build_string_with_token(literals[0], variant, "contains"), original)
+
+    if "find" in prompt_lower and literals:
+        return fit_string_to_original(build_string_with_token(literals[0], variant, "find"), original)
+
+    if "count" in prompt_lower and literals:
+        return fit_string_to_original(build_string_with_token(literals[0], variant, "count"), original)
+
+    if "split" in prompt_lower:
+        delimiter = infer_delimiter(original)
+        if delimiter == ",":
+            return select_variant(CSV_VARIANTS, variant, target_name)
+        items = [item.replace(",", delimiter) for item in CSV_VARIANTS]
+        return select_variant(items, variant, target_name)
+
+    if "strip" in prompt_lower:
+        core = select_variant(["dataset", "analytics", "payload", "training"], variant, target_name)
+        return fit_string_to_original(f"  {core}  ", original)
+
+    if "uppercase" in prompt_lower:
+        return fit_string_to_original(select_variant(PHRASE_VARIANTS, variant, target_name), original)
+
+    if "lowercase" in prompt_lower:
+        uppercase_phrases = [phrase.upper() for phrase in PHRASE_VARIANTS]
+        return fit_string_to_original(select_variant(uppercase_phrases, variant, target_name), original)
+
+    if "reverse" in prompt_lower:
+        return fit_string_to_original(select_variant(WORD_VARIANTS, variant, target_name), original)
+
+    if "length" in prompt_lower:
+        return fit_string_to_original(select_variant(["FeatureEngineering", "CloudMonitoring", "ModelDeployment", "TestingWorkflow"], variant, target_name), original)
+
+    return None
+
+
+def python_value_to_ast(value: object) -> ast.expr:
+    parsed = ast.parse(repr(value))
+    if not parsed.body:
+        raise ValueError(f"Could not convert value to AST: {value!r}")
+    first_stmt = parsed.body[0]
+    if not isinstance(first_stmt, ast.Expr):
+        raise ValueError(f"Could not convert value to AST: {value!r}")
+    return first_stmt.value
+
+
+def target_names_from_assignment(node: ast.AST) -> list[str]:
+    targets = []
+    if isinstance(node, ast.Assign):
+        for target in node.targets:
+            if isinstance(target, ast.Name):
+                targets.append(target.id)
+    elif isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name):
+        targets.append(node.target.id)
+    return targets
+
+
+def build_contextual_python_value(
+    target_name: str,
+    original_value: object,
+    variant: int,
+    prompt: str,
+    known_replacements: dict[object, object],
+    protected_values: set[object] | None = None,
+) -> object | None:
+    protected_values = protected_values or set()
+    try:
+        if original_value in protected_values:
+            return original_value
+    except TypeError:
+        pass
+
+    if isinstance(original_value, str):
+        normalized = normalize_target_name(target_name)
+        replaced = apply_known_replacements_to_string(original_value, known_replacements)
+        if replaced != original_value and (normalized.startswith("input") or normalized.startswith("output")):
+            return fit_string_to_original(replaced, original_value)
+        if normalized.startswith("input") or normalized.startswith("output"):
+            return original_value
+
+        prompt_aware = choose_prompt_aware_string(target_name, original_value, variant, prompt)
+        if prompt_aware is not None and looks_like_text_target(target_name):
+            return prompt_aware
+
+        named_variant = choose_named_string_variant(target_name, original_value, variant, prompt)
+        if named_variant is not None:
+            if any(
+                hint in normalize_target_name(target_name)
+                for hint in ("name", "city", "country", "language", "fruit", "animal")
+            ):
+                return apply_case_style(named_variant, original_value)
+            return fit_string_to_original(named_variant, original_value)
+
+        if " " in original_value:
+            return fit_string_to_original(select_variant(SENTENCE_VARIANTS, variant, target_name), original_value)
+        return fit_string_to_original(select_variant(WORD_VARIANTS, variant, target_name), original_value)
+
+    if isinstance(original_value, bool):
+        return not original_value if variant % 2 else original_value
+
+    if isinstance(original_value, int):
+        normalized = normalize_target_name(target_name)
+        if "age" in normalized:
+            ages = [24, 29, 34, 41, 46, 52]
+            return select_variant(ages, variant, normalized)
+        return original_value + variant
+
+    if isinstance(original_value, float):
+        return round(original_value + (variant * 0.5), 2)
+
+    if isinstance(original_value, list):
+        normalized = normalize_target_name(target_name)
+        if all(isinstance(item, str) for item in original_value):
+            if "join" in prompt.lower() or "list_elements" in normalized or "words" in normalized:
+                return select_variant(JOIN_LIST_VARIANTS, variant, normalized)
+            return [
+                build_contextual_python_value(f"{normalized}_item", item, variant + index, prompt, known_replacements, protected_values)
+                for index, item in enumerate(original_value)
+            ]
+        return [
+            build_contextual_python_value(f"{normalized}_{index}", item, variant + index, prompt, known_replacements, protected_values)
+            if isinstance(item, (str, int, float, bool, list, tuple, set, dict))
+            else item
+            for index, item in enumerate(original_value)
+        ]
+
+    if isinstance(original_value, tuple):
+        items = [
+            build_contextual_python_value(f"{target_name}_{index}", item, variant + index, prompt, known_replacements, protected_values)
+            if isinstance(item, (str, int, float, bool, list, tuple, set, dict))
+            else item
+            for index, item in enumerate(original_value)
+        ]
+        return tuple(items)
+
+    if isinstance(original_value, set):
+        items = [
+            build_contextual_python_value(f"{target_name}_{index}", item, variant + index, prompt, known_replacements, protected_values)
+            if isinstance(item, (str, int, float, bool))
+            else item
+            for index, item in enumerate(sorted(original_value, key=repr))
+        ]
+        return set(items)
+
+    if isinstance(original_value, dict):
+        updated = {}
+        for key, value in original_value.items():
+            new_key = key
+            new_value = value
+            if isinstance(value, (str, int, float, bool, list, tuple, set, dict)):
+                new_value = build_contextual_python_value(f"{target_name}_{key}", value, variant, prompt, known_replacements, protected_values)
+            updated[new_key] = new_value
+        return updated
+
+    return None
+
+
+def synchronize_output_hint_strings(setup_source: str, expected_output: str) -> str:
+    if not setup_source.strip() or not expected_output.strip():
+        return setup_source
+
+    try:
+        module = ast.parse(setup_source)
+    except SyntaxError:
+        return setup_source
+
+    output_lines = expected_output.splitlines()
+    marker_index = next(
+        (index for index, line in enumerate(output_lines) if line.strip() in {"Output:", "Expected:", "Result:"}),
+        None,
+    )
+    if marker_index is None or marker_index == 0:
+        return setup_source
+
+    summary = "\n ".join(output_lines[:marker_index])
+    changed = False
+    for node in module.body:
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        value_node = node.value if isinstance(node, ast.AnnAssign) else node.value
+        if not isinstance(value_node, ast.Constant) or not isinstance(value_node.value, str):
+            continue
+
+        target_names = target_names_from_assignment(node)
+        original_text = value_node.value
+        header = original_text.splitlines()[0].strip()
+        helper_target = any(
+            normalize_target_name(name).startswith(("output", "expected"))
+            for name in target_names
+        )
+        if header not in {"Output:", "Expected:", "Result:"} and not helper_target:
+            continue
+
+        value_node.value = f"{header}\n {summary}"
+        changed = True
+
+    if not changed:
+        return setup_source
+
+    return ast.unparse(module).strip()
+
+
 def mutate_string_literal(value: str, variant: int, protected_strings: list[str] | None = None) -> str:
     if not value:
         return f"sample{variant}"
@@ -919,11 +1409,11 @@ def collect_protected_literals(reference_code: str) -> tuple[set[object], list[s
 
 
 def mutate_expression_value(
-    node: ast.AST,
+    node: ast.expr,
     variant: int,
     protected_values: set[object] | None = None,
     protected_strings: list[str] | None = None,
-) -> ast.AST:
+) -> ast.expr:
     node = copy.deepcopy(node)
     protected_values = protected_values or set()
     protected_strings = protected_strings or []
@@ -958,7 +1448,10 @@ def mutate_expression_value(
         node.elts = [mutate_expression_value(element, variant, protected_values, protected_strings) for element in node.elts]
         return node
     if isinstance(node, ast.Dict):
-        node.keys = [mutate_expression_value(key, variant, protected_values, protected_strings) if key is not None else None for key in node.keys]
+        node.keys = [
+            mutate_expression_value(key, variant, protected_values, protected_strings) if key is not None else None
+            for key in node.keys
+        ]
         node.values = [mutate_expression_value(value, variant, protected_values, protected_strings) for value in node.values]
         return node
     if isinstance(node, ast.UnaryOp):
@@ -981,6 +1474,7 @@ def build_variant_input(
     variant: int,
     protected_values: set[object] | None = None,
     protected_strings: list[str] | None = None,
+    prompt: str = "",
 ) -> str:
     if not setup_source.strip():
         return f"# No explicit setup required\n# Variant {variant}"
@@ -991,13 +1485,45 @@ def build_variant_input(
         return setup_source if variant == 1 else setup_source + f"\n# Variant {variant}"
 
     changed = False
+    known_replacements: dict[object, object] = {}
     for node in module.body:
+        target_names = target_names_from_assignment(node)
         if isinstance(node, ast.Assign):
-            node.value = mutate_expression_value(node.value, variant, protected_values, protected_strings)
-            changed = True
+            original_node = node.value
         elif isinstance(node, ast.AnnAssign) and node.value is not None:
-            node.value = mutate_expression_value(node.value, variant, protected_values, protected_strings)
-            changed = True
+            original_node = node.value
+        else:
+            continue
+
+        replacement_node: ast.expr | None = None
+        if is_pure_data_expression(original_node):
+            try:
+                original_value = ast.literal_eval(original_node)
+            except Exception:
+                original_value = None
+            if original_value is not None:
+                contextual_name = target_names[0] if target_names else "value"
+                replacement_value = build_contextual_python_value(
+                    contextual_name,
+                    original_value,
+                    variant,
+                    prompt,
+                    known_replacements,
+                    protected_values,
+                )
+                if replacement_value is not None:
+                    replacement_node = python_value_to_ast(replacement_value)
+                    if isinstance(original_value, (str, int, float, bool)):
+                        if replacement_value != original_value:
+                            known_replacements[original_value] = replacement_value
+
+        if replacement_node is None:
+            replacement_node = mutate_expression_value(original_node, variant, protected_values, protected_strings)
+        if isinstance(node, ast.Assign):
+            node.value = replacement_node
+        else:
+            node.value = replacement_node
+        changed = True
 
     candidate = ast.unparse(module).strip()
     if not candidate:
@@ -1052,17 +1578,19 @@ def generate_unique_test_cases(
     setup_source: str,
     call_expression: str,
     reference_code: str = "",
+    prompt: str = "",
     minimum: int = 3,
 ) -> list[dict]:
     cases = []
     seen_inputs = set()
     protected_values, protected_strings = collect_protected_literals(reference_code)
+    protected_strings.extend(extract_quoted_literals(prompt))
 
     for variant in range(1, minimum + 1):
         candidate_input = (
             setup_source.strip()
             if variant == 1
-            else build_variant_input(setup_source, variant, protected_values, protected_strings)
+            else build_variant_input(setup_source, variant, protected_values, protected_strings, prompt=prompt)
         )
         if candidate_input in seen_inputs:
             candidate_input = (candidate_input + f"\n# Variant {variant}").strip()
@@ -1070,6 +1598,10 @@ def generate_unique_test_cases(
 
         try:
             expected_output = run_solution_test_case(solution_code, candidate_input, call_expression)
+            synchronized_input = synchronize_output_hint_strings(candidate_input, expected_output)
+            if synchronized_input != candidate_input:
+                candidate_input = synchronized_input
+                expected_output = run_solution_test_case(solution_code, candidate_input, call_expression)
         except Exception:
             if variant == 1:
                 raise
@@ -1207,7 +1739,13 @@ def parse_questions_assignment(path: Path, source: str) -> list[ProblemRecord]:
             parameter_names=parameter_names,
         )
         try:
-            test_cases = generate_unique_test_cases(solution, input_source, call_expression)
+            test_cases = generate_unique_test_cases(
+                solution,
+                input_source,
+                call_expression,
+                reference_code=action_code,
+                prompt=prompt,
+            )
             examples = [
                 {
                     "input": safe_example_input(test_cases[0]["input"]),
@@ -1259,9 +1797,9 @@ def parse_title_and_sequence(text: str, fallback_sequence: int) -> tuple[str, in
     return stripped or f"Question {fallback_sequence}", fallback_sequence
 
 
-def collect_print_blocks(module: ast.Module) -> list[list[ast.AST]]:
-    blocks = []
-    current: list[ast.AST] = []
+def collect_print_blocks(module: ast.Module) -> list[list[ast.stmt]]:
+    blocks: list[list[ast.stmt]] = []
+    current: list[ast.stmt] = []
     for node in module.body:
         text = first_print_text(node)
         if is_question_block_start(text):
@@ -1279,7 +1817,7 @@ def normalize_statement(node: ast.AST) -> str:
     return ast.dump(node, annotate_fields=False, include_attributes=False)
 
 
-def parse_code_statements(code_lines: list[str]) -> list[ast.AST]:
+def parse_code_statements(code_lines: list[str]) -> list[ast.stmt]:
     combined = normalize_code_block("\n".join(line for line in code_lines if line.strip()))
     if not combined:
         return []
@@ -1360,7 +1898,8 @@ def mutated_names(node: ast.AST) -> set[str]:
     if not isinstance(node, ast.Expr) or not isinstance(node.value, ast.Call):
         return set()
 
-    func = node.value.func
+    call = node.value
+    func = call.func
     if isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name):
         return {func.value.id}
     return set()
@@ -1375,8 +1914,8 @@ def loaded_names(nodes: Iterable[ast.AST]) -> set[str]:
     return names
 
 
-def context_nodes_from_block(block: list[ast.AST]) -> list[ast.AST]:
-    context_nodes = []
+def context_nodes_from_block(block: list[ast.stmt]) -> list[ast.stmt]:
+    context_nodes: list[ast.stmt] = []
     for node in block:
         if is_print_call(node):
             continue
@@ -1400,14 +1939,14 @@ def context_nodes_from_block(block: list[ast.AST]) -> list[ast.AST]:
     return context_nodes
 
 
-def executable_nodes_from_block(block: list[ast.AST]) -> list[ast.AST]:
+def executable_nodes_from_block(block: list[ast.stmt]) -> list[ast.stmt]:
     return [node for node in block if not is_print_call(node)]
 
 
-def derived_output_statements(source: str, block: list[ast.AST]) -> tuple[list[str], list[ast.AST]]:
-    statements = []
-    fallback_statements = []
-    output_nodes: list[ast.AST] = []
+def derived_output_statements(source: str, block: list[ast.stmt]) -> tuple[list[str], list[ast.expr]]:
+    statements: list[str] = []
+    fallback_statements: list[str] = []
+    output_nodes: list[ast.expr] = []
     seen_action = False
     for node in block:
         if not is_print_call(node):
@@ -1440,7 +1979,9 @@ def derived_output_statements(source: str, block: list[ast.AST]) -> tuple[list[s
             or stripped == "-" * 20
         ):
             continue
-        call = node.value
+        call = get_print_call(node)
+        if call is None:
+            continue
         extra_args = call.args[1:]
         if stripped.startswith(("Output", "Answer")):
             if extra_args:
@@ -1454,7 +1995,7 @@ def derived_output_statements(source: str, block: list[ast.AST]) -> tuple[list[s
     return (statements or fallback_statements), output_nodes
 
 
-def fallback_block_source(source: str, block: list[ast.AST]) -> str:
+def fallback_block_source(source: str, block: list[ast.stmt]) -> str:
     kept_segments = []
     for node in block:
         text = first_print_text(node)
@@ -1472,7 +2013,7 @@ def fallback_block_source(source: str, block: list[ast.AST]) -> str:
     return "\n\n".join(segment for segment in kept_segments if segment).strip()
 
 
-def find_action_start(state_nodes: list[ast.AST], code_nodes: list[ast.AST]) -> int:
+def find_action_start(state_nodes: list[ast.stmt], code_nodes: list[ast.stmt]) -> int:
     if not code_nodes:
         return 0
     needle = [normalize_statement(node) for node in code_nodes]
@@ -1486,11 +2027,16 @@ def find_action_start(state_nodes: list[ast.AST], code_nodes: list[ast.AST]) -> 
     return len(state_nodes)
 
 
-def build_minimal_setup(history: list[ast.AST], prefix_nodes: list[ast.AST], action_nodes: list[ast.AST], extra_output_nodes: list[ast.AST]) -> list[ast.AST]:
+def build_minimal_setup(
+    history: list[ast.stmt],
+    prefix_nodes: list[ast.stmt],
+    action_nodes: list[ast.stmt],
+    extra_output_nodes: list[ast.expr],
+) -> list[ast.stmt]:
     search_nodes = history + prefix_nodes
     needed = loaded_names(action_nodes + extra_output_nodes) - defined_names_from_nodes(action_nodes)
     needed -= BUILTIN_NAMES
-    chosen: list[ast.AST] = []
+    chosen: list[ast.stmt] = []
     for node in reversed(search_nodes):
         defs = defined_names(node)
         muts = mutated_names(node)
@@ -1510,8 +2056,8 @@ def defined_names_from_nodes(nodes: Iterable[ast.AST]) -> set[str]:
     return names
 
 
-def collect_callable_signatures(*sources: str) -> dict[str, dict[str, object]]:
-    signatures: dict[str, dict[str, object]] = {}
+def collect_callable_signatures(*sources: str) -> dict[str, CallableSignature]:
+    signatures: dict[str, CallableSignature] = {}
     for source in sources:
         if not source.strip():
             continue
@@ -1527,17 +2073,15 @@ def collect_callable_signatures(*sources: str) -> dict[str, dict[str, object]]:
                     "vararg": node.args.vararg.arg if node.args.vararg else None,
                     "kwarg": node.args.kwarg.arg if node.args.kwarg else None,
                 }
-            elif (
-                isinstance(node, ast.Assign)
-                and len(node.targets) == 1
-                and isinstance(node.targets[0], ast.Name)
-                and isinstance(node.value, ast.Lambda)
-            ):
-                signatures[node.targets[0].id] = {
-                    "positional": [arg.arg for arg in node.value.args.args],
-                    "vararg": node.value.args.vararg.arg if node.value.args.vararg else None,
-                    "kwarg": node.value.args.kwarg.arg if node.value.args.kwarg else None,
-                }
+            elif isinstance(node, ast.Assign) and len(node.targets) == 1 and isinstance(node.value, ast.Lambda):
+                target = node.targets[0]
+                lambda_node = node.value
+                if isinstance(target, ast.Name):
+                    signatures[target.id] = {
+                        "positional": [arg.arg for arg in lambda_node.args.args],
+                        "vararg": lambda_node.args.vararg.arg if lambda_node.args.vararg else None,
+                        "kwarg": lambda_node.args.kwarg.arg if lambda_node.args.kwarg else None,
+                    }
     return signatures
 
 
@@ -1600,10 +2144,12 @@ def parameterize_action_source(action_source: str, support_source: str = "") -> 
                 if is_pure_data_expression(argument):
                     if signature_data and index <= len(signature_data["positional"]):
                         hint = signature_data["positional"][index - 1]
-                    elif signature_data and signature_data.get("vararg"):
-                        hint = f"{signature_data['vararg']}_{index}"
                     else:
-                        hint = f"input_{input_counter + 1}"
+                        vararg_name = signature_data["vararg"] if signature_data else None
+                        if vararg_name is not None:
+                            hint = f"{vararg_name}_{index}"
+                        else:
+                            hint = f"input_{input_counter + 1}"
                     new_args.append(register_input(hint, argument))
                 else:
                     new_args.append(self.visit(argument))
@@ -1645,18 +2191,15 @@ def parameterize_action_source(action_source: str, support_source: str = "") -> 
             return node
 
     transformer = LiteralInputTransformer()
-    transformed_body: list[ast.AST] = []
+    transformed_body: list[ast.stmt] = []
     for statement in module.body:
-        if (
-            isinstance(statement, ast.Assign)
-            and len(statement.targets) == 1
-            and isinstance(statement.targets[0], ast.Name)
-            and is_pure_data_expression(statement.value)
-        ):
-            target_name = statement.targets[0].id
-            created_names.add(target_name)
-            input_assignments.append(f"{target_name} = {ast.unparse(statement.value).strip()}")
-            continue
+        if isinstance(statement, ast.Assign) and len(statement.targets) == 1 and is_pure_data_expression(statement.value):
+            target = statement.targets[0]
+            if isinstance(target, ast.Name):
+                target_name = target.id
+                created_names.add(target_name)
+                input_assignments.append(f"{target_name} = {ast.unparse(statement.value).strip()}")
+                continue
         if (
             isinstance(statement, ast.AnnAssign)
             and isinstance(statement.target, ast.Name)
@@ -1667,7 +2210,10 @@ def parameterize_action_source(action_source: str, support_source: str = "") -> 
             created_names.add(target_name)
             input_assignments.append(f"{target_name} = {ast.unparse(statement.value).strip()}")
             continue
-        transformed_body.append(transformer.visit(copy.deepcopy(statement)))
+        transformed_statement = transformer.visit(copy.deepcopy(statement))
+        if not isinstance(transformed_statement, ast.stmt):
+            raise ValueError("Expected transformed statement to remain an ast.stmt")
+        transformed_body.append(transformed_statement)
 
     transformed_module = ast.Module(body=transformed_body, type_ignores=[])
     ast.fix_missing_locations(transformed_module)
@@ -1688,7 +2234,7 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
         and not (isinstance(node, ast.ImportFrom) and node.module == "scripts.common")
     ]
     blocks = collect_print_blocks(module)
-    history_context: list[ast.AST] = []
+    history_context: list[ast.stmt] = []
     problems: list[ProblemRecord] = []
 
     for fallback_sequence, block in enumerate(blocks, start=1):
@@ -1812,7 +2358,13 @@ def parse_standard_question_file(path: Path, source: str) -> list[ProblemRecord]
             )
             if not should_disable_tests(solution):
                 try:
-                    test_cases = generate_unique_test_cases(solution, input_source, call_expression)
+                    test_cases = generate_unique_test_cases(
+                        solution,
+                        input_source,
+                        call_expression,
+                        reference_code=action_source,
+                        prompt=prompt,
+                    )
                     examples = [{"input": safe_example_input(test_cases[0]["input"]), "output": test_cases[0]["expected_output"]}]
                 except Exception as exc:
                     notes.append(f"Automatic test generation was skipped: {exc}")
@@ -1857,7 +2409,9 @@ def parse_operator_precedence(path: Path, source: str) -> list[ProblemRecord]:
             elif text and text.strip().startswith("Description:"):
                 description = text.split("Description:", 1)[1].strip()
             elif is_print_call(node):
-                call = node.value
+                call = get_print_call(node)
+                if call is None:
+                    continue
                 first = first_print_text(node)
                 if first and first.strip().startswith("Answer:") and len(call.args) > 1:
                     answer_expression = ast.unparse(call.args[1]).strip()
@@ -1873,7 +2427,13 @@ def parse_operator_precedence(path: Path, source: str) -> list[ProblemRecord]:
         call_expression = build_call_expression(parameter_names)
         starter_code = build_wrapped_code([], setup_source=input_source, parameter_names=parameter_names, placeholder=True)
         solution = build_wrapped_code([], setup_source=input_source, main_body=transformed_action, parameter_names=parameter_names)
-        test_cases = generate_unique_test_cases(solution, input_source, call_expression)
+        test_cases = generate_unique_test_cases(
+            solution,
+            input_source,
+            call_expression,
+            reference_code=transformed_action,
+            prompt=prompt,
+        )
         problems.append(
             ProblemRecord(
                 title=title,
@@ -1953,13 +2513,11 @@ def parse_demo_functions(path: Path, source: str) -> list[ProblemRecord]:
     function_map = {node.name: node for node in module.body if isinstance(node, ast.FunctionDef)}
     call_order = []
     for node in module.body:
-        if (
-            isinstance(node, ast.Expr)
-            and isinstance(node.value, ast.Call)
-            and isinstance(node.value.func, ast.Name)
-            and node.value.func.id in function_map
-        ):
-            call_order.append(node.value.func.id)
+        if isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
+            call = node.value
+            func = call.func
+            if isinstance(func, ast.Name) and func.id in function_map:
+                call_order.append(func.id)
 
     problems = []
     for sequence, function_name in enumerate(call_order, start=1):
@@ -2102,7 +2660,10 @@ def parse_bitwise(path: Path, source: str) -> list[ProblemRecord]:
                     if text and text.strip().startswith("Question:"):
                         prompt = text.split("Question:", 1)[1].strip()
                     if is_print_call(scan_node):
-                        call = scan_node.value
+                        call = get_print_call(scan_node)
+                        if call is None:
+                            scan_index += 1
+                            continue
                         label = first_print_text(scan_node)
                         if label and label.strip().startswith("Output:") and len(call.args) > 1:
                             call_expression = f"print({ast.unparse(call.args[1])})"

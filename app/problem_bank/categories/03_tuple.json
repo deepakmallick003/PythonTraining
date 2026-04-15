@@ -29,14 +29,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5)",
-          "expected_output": "(3, 4, 5)",
+          "input": "tuple1 = (3, 5, 7)",
+          "expected_output": "(3, 5, 7)",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6)",
-          "expected_output": "(4, 5, 6)",
+          "input": "tuple1 = (4, 6, 8)",
+          "expected_output": "(4, 6, 8)",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -72,14 +72,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 5)",
-          "expected_output": "1",
+          "input": "tuple1 = (3, 5, 3, 9, 3)",
+          "expected_output": "3",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6, 7, 6)",
-          "expected_output": "0",
+          "input": "tuple1 = (4, 6, 3, 10, 3)",
+          "expected_output": "2",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -115,13 +115,13 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 5)",
+          "input": "tuple1 = (3, 5, 3, 9, 3)",
           "expected_output": "0",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (1, 2, 3, 4, 3)\n# Variant 3",
+          "input": "tuple1 = (4, 6, 3, 10, 3)",
           "expected_output": "2",
           "call": "main(tuple1)",
           "label": "Test 3"
@@ -158,14 +158,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5)",
-          "expected_output": "Output:\n a=3, b=4, c=5",
+          "input": "tuple1 = (3, 5, 7)",
+          "expected_output": "Output:\n a=3, b=5, c=7",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6)",
-          "expected_output": "Output:\n a=4, b=5, c=6",
+          "input": "tuple1 = (4, 6, 8)",
+          "expected_output": "Output:\n a=4, b=6, c=8",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -201,14 +201,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5)\ntuple2 = (6, 7)",
-          "expected_output": "(3, 4, 5, 6, 7)",
+          "input": "tuple1 = (3, 5, 7)\ntuple2 = (6, 8)",
+          "expected_output": "(3, 5, 7, 6, 8)",
           "call": "main(tuple1, tuple2)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6)\ntuple2 = (7, 8)",
-          "expected_output": "(4, 5, 6, 7, 8)",
+          "input": "tuple1 = (4, 6, 8)\ntuple2 = (7, 9)",
+          "expected_output": "(4, 6, 8, 7, 9)",
           "call": "main(tuple1, tuple2)",
           "label": "Test 3"
         }
@@ -244,13 +244,13 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "input": "tuple1 = (3, 5, 7, 4, 11)",
           "expected_output": "True",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "input": "tuple1 = (4, 6, 8, 4, 12)",
           "expected_output": "True",
           "call": "main(tuple1)",
           "label": "Test 3"
@@ -287,13 +287,13 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 7)",
+          "input": "tuple1 = (3, 5, 7, 9, 11)",
           "expected_output": "5",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6, 7, 8)",
+          "input": "tuple1 = (4, 6, 8, 10, 12)",
           "expected_output": "5",
           "call": "main(tuple1)",
           "label": "Test 3"
@@ -330,14 +330,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, ('c', 'd', 'e'), 5)",
-          "expected_output": "d",
+          "input": "tuple1 = (1, ('pipeline', 'modelops', 'compiler'), 7)",
+          "expected_output": "modelops",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, ('d', 'e', 'f'), 6)",
-          "expected_output": "e",
+          "input": "tuple1 = (1, ('dataset', 'notebook', 'debugger'), 8)",
+          "expected_output": "notebook",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -373,14 +373,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 7)",
-          "expected_output": "[3, 4, 5, 6, 7]",
+          "input": "tuple1 = (3, 5, 7, 9, 11)",
+          "expected_output": "[3, 5, 7, 9, 11]",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6, 7, 8)",
-          "expected_output": "[4, 5, 6, 7, 8]",
+          "input": "tuple1 = (4, 6, 8, 10, 12)",
+          "expected_output": "[4, 6, 8, 10, 12]",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -404,26 +404,26 @@
       "solution": "import time\n\ndef main(tuple1, value, value_2, input_3, input_4):\n    try:\n        tuple1[value] = value_2\n    except TypeError as e:\n        print(input_3)\n        print(input_4, e)\n\nif __name__ == \"__main__\":\n    tuple1 = (1, 2, 3)\n\n    value = 0\n\n    value_2 = 100\n\n    input_3 = 'Code: \\n tuple1[0] = 100'\n\n    input_4 = 'Output:\\n'\n    main(tuple1, value, value_2, input_3, input_4)\n",
       "examples": [
         {
-          "input": "tuple1 = (1, 2, 3)\n\nvalue = 0\n\nvalue_2 = 100\n\ninput_3 = 'Code: \\n tuple1[0] = 100'\n\ninput_4 = 'Output:\\n'",
-          "output": "Code: \n tuple1[0] = 100\nOutput:\n 'tuple' object does not support item assignment"
+          "input": "tuple1 = (1, 2, 3)\nvalue = 0\nvalue_2 = 100\ninput_3 = 'Code: \\n tuple1[0] = 100'\ninput_4 = 'Output:\\n Code: \\n  tuple1[0] = 100'",
+          "output": "Code: \n tuple1[0] = 100\nOutput:\n Code: \n  tuple1[0] = 100 'tuple' object does not support item assignment"
         }
       ],
       "test_cases": [
         {
-          "input": "tuple1 = (1, 2, 3)\n\nvalue = 0\n\nvalue_2 = 100\n\ninput_3 = 'Code: \\n tuple1[0] = 100'\n\ninput_4 = 'Output:\\n'",
-          "expected_output": "Code: \n tuple1[0] = 100\nOutput:\n 'tuple' object does not support item assignment",
+          "input": "tuple1 = (1, 2, 3)\nvalue = 0\nvalue_2 = 100\ninput_3 = 'Code: \\n tuple1[0] = 100'\ninput_4 = 'Output:\\n Code: \\n  tuple1[0] = 100'",
+          "expected_output": "Code: \n tuple1[0] = 100\nOutput:\n Code: \n  tuple1[0] = 100 'tuple' object does not support item assignment",
           "call": "main(tuple1, value, value_2, input_3, input_4)",
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5)\nvalue = 2\nvalue_2 = 102\ninput_3 = 'Eqfg: \\n vwrng3[2] = 322'\ninput_4 = 'Qwvrwv:\\n'",
-          "expected_output": "Eqfg: \n vwrng3[2] = 322\nQwvrwv:\n 'tuple' object does not support item assignment",
+          "input": "tuple1 = (3, 5, 7)\nvalue = 2\nvalue_2 = 102\ninput_3 = 'Code: \\n tuple1[2] = 102'\ninput_4 = 'Output:\\n Code: \\n  tuple1[2] = 102'",
+          "expected_output": "Code: \n tuple1[2] = 102\nOutput:\n Code: \n  tuple1[2] = 102 'tuple' object does not support item assignment",
           "call": "main(tuple1, value, value_2, input_3, input_4)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6)\nvalue = 3\nvalue_2 = 103\ninput_3 = 'Frgh: \\n wxsoh4[3] = 433'\ninput_4 = 'Rxwsxw:\\n'",
-          "expected_output": "Frgh: \n wxsoh4[3] = 433\nRxwsxw:\n 'tuple' object does not support item assignment",
+          "input": "tuple1 = (4, 6, 8)\nvalue = 3\nvalue_2 = 103\ninput_3 = 'Code: \\n tuple1[3] = 103'\ninput_4 = 'Output:\\n Code: \\n  tuple1[3] = 103'",
+          "expected_output": "Code: \n tuple1[3] = 103\nOutput:\n Code: \n  tuple1[3] = 103 'tuple' object does not support item assignment",
           "call": "main(tuple1, value, value_2, input_3, input_4)",
           "label": "Test 3"
         }
@@ -459,14 +459,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5)",
-          "expected_output": "(3, 4, 5, 3, 4, 5, 3, 4, 5)",
+          "input": "tuple1 = (3, 5, 3)",
+          "expected_output": "(3, 5, 3, 3, 5, 3, 3, 5, 3)",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6)",
-          "expected_output": "(4, 5, 6, 4, 5, 6, 4, 5, 6)",
+          "input": "tuple1 = (4, 6, 3)",
+          "expected_output": "(4, 6, 3, 4, 6, 3, 4, 6, 3)",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -502,14 +502,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (4, 5, 7, 3, 6)",
-          "expected_output": "3 , Max: 7",
+          "input": "tuple1 = (4, 6, 9, 6, 10)",
+          "expected_output": "4 , Max: 10",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (5, 6, 8, 4, 7)",
-          "expected_output": "4 , Max: 8",
+          "input": "tuple1 = (5, 7, 10, 7, 11)",
+          "expected_output": "5 , Max: 11",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -526,38 +526,16 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple and List Conversion",
-      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
+      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]. Use main() to produce the expected result shown in the example.",
       "prompt": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
       "solution": "import time\n\ndef main(list1):\n    tuple_converted = tuple(list1)\n    list_converted = list(tuple_converted)\n    print(tuple_converted, ', List:', list_converted)\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
-      "examples": [
-        {
-          "input": "list1 = [1, 2, 3]",
-          "output": "(1, 2, 3) , List: [1, 2, 3]"
-        }
+      "examples": [],
+      "test_cases": [],
+      "notes": [
+        "Automatic test generation was skipped: unhashable type: 'list'"
       ],
-      "test_cases": [
-        {
-          "input": "list1 = [1, 2, 3]",
-          "expected_output": "(1, 2, 3) , List: [1, 2, 3]",
-          "call": "main(list1)",
-          "label": "Test 1"
-        },
-        {
-          "input": "list1 = [3, 4, 5]",
-          "expected_output": "(3, 4, 5) , List: [3, 4, 5]",
-          "call": "main(list1)",
-          "label": "Test 2"
-        },
-        {
-          "input": "list1 = [4, 5, 6]",
-          "expected_output": "(4, 5, 6) , List: [4, 5, 6]",
-          "call": "main(list1)",
-          "label": "Test 3"
-        }
-      ],
-      "notes": [],
       "source_reference": {
         "file": "03_tuple.py",
         "question": 13
@@ -588,14 +566,14 @@
           "label": "Test 1"
         },
         {
-          "input": "tuple1 = (3, 4, 5, 6, 7)",
-          "expected_output": "(3, 4, 5)",
+          "input": "tuple1 = (3, 5, 3, 9, 11)",
+          "expected_output": "(3, 5, 3)",
           "call": "main(tuple1)",
           "label": "Test 2"
         },
         {
-          "input": "tuple1 = (4, 5, 6, 7, 8)",
-          "expected_output": "(4, 5, 6)",
+          "input": "tuple1 = (4, 6, 3, 10, 12)",
+          "expected_output": "(4, 6, 3)",
           "call": "main(tuple1)",
           "label": "Test 3"
         }
@@ -631,14 +609,14 @@
           "label": "Test 1"
         },
         {
-          "input": "nested_tuple = (('c', 'd'), ('e', 'f'))",
-          "expected_output": "d",
+          "input": "nested_tuple = (('notebook', 'debugger'), ('debugger', 'dataset'))",
+          "expected_output": "debugger",
           "call": "main(nested_tuple)",
           "label": "Test 2"
         },
         {
-          "input": "nested_tuple = (('d', 'e'), ('f', 'g'))",
-          "expected_output": "e",
+          "input": "nested_tuple = (('compiler', 'pipeline'), ('pipeline', 'modelops'))",
+          "expected_output": "pipeline",
           "call": "main(nested_tuple)",
           "label": "Test 3"
         }
@@ -663,7 +641,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nlarge_list = list(range(1000000))\nlarge_tuple = tuple(range(1000000))\nstart_time = time.time()\naccess_elements(large_list)\nlist_time = time.time() - start_time\nstart_time = time.time()",
-          "output": "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.\nList Access Time:\n 0.009411 seconds\nTuple Access Time:\n 0.059872 seconds\n--------------------"
+          "output": "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.\nList Access Time:\n 0.006661 seconds\nTuple Access Time:\n 0.007058 seconds\n--------------------"
         }
       ],
       "test_cases": [],
