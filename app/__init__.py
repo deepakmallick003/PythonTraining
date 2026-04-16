@@ -57,3 +57,8 @@ def create_app():
     app.register_blueprint(api_bp, url_prefix='/api')
     
     return app
+
+
+# Expose a module-level WSGI app so hosts that import `app:app`
+# work as well as the dedicated `wsgi:app` entrypoint.
+app = create_app()
