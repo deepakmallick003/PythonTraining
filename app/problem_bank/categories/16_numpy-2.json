@@ -10,16 +10,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Vectorized Addition",
-      "description": "Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]. Use main() to produce the expected result shown in the example.",
+      "description": "Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Add 5 to each element of the array [1, 2, 3]. Expected output: [6 7 8]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, value):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n\n    value = 5\n    main(input_1, value)\n",
       "solution": "from numpy import *\n\ndef main(input_1, value):\n    arr = array(input_1) + value\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3]\n\n    value = 5\n    main(input_1, value)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmppjyr47pb.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = [1, 2, 3]\n\nvalue = 5",
+          "output": "[6 7 8]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = [1, 2, 3]\n\nvalue = 5",
+          "expected_output": "[6 7 8]",
+          "call": "main(input_1, value)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [3, 5, 7]\nvalue = 7",
+          "expected_output": "[10 12 14]",
+          "call": "main(input_1, value)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [4, 6, 8]\nvalue = 8",
+          "expected_output": "[12 14 16]",
+          "call": "main(input_1, value)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 1
@@ -31,16 +53,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Array Mathematical Operations",
-      "description": "Find the sine of each element in the array [\u03c0/2, \u03c0, 3\u03c0/2]. Expected output: [1. 0. -1.]. Use main() to produce the expected result shown in the example.",
+      "description": "Find the sine of each element in the array [\u03c0/2, \u03c0, 3\u03c0/2]. Expected output: [1. 0. -1.]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Find the sine of each element in the array [\u03c0/2, \u03c0, 3\u03c0/2]. Expected output: [1. 0. -1.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(value, value_2, value_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
       "solution": "from numpy import *\n\ndef main(value, value_2, value_3):\n    arr = sin(array([pi / value, pi, value_2 * pi / value_3]))\n    print(arr)\n\nif __name__ == \"__main__\":\n    value = 2\n\n    value_2 = 3\n\n    value_3 = 2\n    main(value, value_2, value_3)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpego953vd.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "output": "[ 1.0000000e+00  1.2246468e-16 -1.0000000e+00]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "value = 2\n\nvalue_2 = 3\n\nvalue_3 = 2",
+          "expected_output": "[ 1.0000000e+00  1.2246468e-16 -1.0000000e+00]",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "value = 4\nvalue_2 = 5\nvalue_3 = 4",
+          "expected_output": "[ 7.07106781e-01  1.22464680e-16 -7.07106781e-01]",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "value = 5\nvalue_2 = 6\nvalue_3 = 5",
+          "expected_output": "[ 5.87785252e-01  1.22464680e-16 -5.87785252e-01]",
+          "call": "main(value, value_2, value_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 2
@@ -52,16 +96,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Sum of Array Elements",
-      "description": "Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10. Use main() to produce the expected result shown in the example.",
+      "description": "Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Calculate the sum of the array [1, 2, 3, 4]. Expected output: 10",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n    main(input_1)\n",
       "solution": "from numpy import *\n\ndef main(input_1):\n    arr = sum(array(input_1))\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2, 3, 4]\n    main(input_1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmphlcjjugs.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = [1, 2, 3, 4]",
+          "output": "10"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = [1, 2, 3, 4]",
+          "expected_output": "10",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [3, 5, 7, 9]",
+          "expected_output": "24",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [4, 6, 8, 10]",
+          "expected_output": "28",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 3
@@ -73,16 +139,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Array Concatenation",
-      "description": "Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]. Use main() to produce the expected result shown in the example.",
+      "description": "Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Concatenate arrays [1, 2] and [3, 4]. Expected output: [1 2 3 4]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2]\n\n    input_2 = [3, 4]\n    main(input_1, input_2)\n",
       "solution": "from numpy import *\n\ndef main(input_1, input_2):\n    arr = concatenate((array(input_1), array(input_2)))\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [1, 2]\n\n    input_2 = [3, 4]\n    main(input_1, input_2)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpz0qdzqp6.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = [1, 2]\n\ninput_2 = [3, 4]",
+          "output": "[1 2 3 4]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = [1, 2]\n\ninput_2 = [3, 4]",
+          "expected_output": "[1 2 3 4]",
+          "call": "main(input_1, input_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [3, 5]\ninput_2 = [5, 7]",
+          "expected_output": "[3 5 5 7]",
+          "call": "main(input_1, input_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [4, 6]\ninput_2 = [6, 8]",
+          "expected_output": "[4 6 6 8]",
+          "call": "main(input_1, input_2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 4
@@ -94,16 +182,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Aliasing Arrays",
-      "description": "Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an alias for the array [1, 2, 3] and change the first element in the alias. Expected output: Original: [10 2 3], Alias: [10 2 3]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(arr, arr_alias):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n\n    arr_alias = arr\n    main(arr, arr_alias)\n",
       "solution": "from numpy import *\n\ndef main(arr, arr_alias):\n    arr_alias[0] = 10\n    print(arr, 'Alias:', arr_alias)\n\nif __name__ == \"__main__\":\n    arr = array([1, 2, 3])\n\n    arr_alias = arr\n    main(arr, arr_alias)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmppla_qkt_.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "arr = array([1, 2, 3])\n\narr_alias = arr",
+          "output": "[10  2  3] Alias: [10  2  3]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "arr = array([1, 2, 3])\n\narr_alias = arr",
+          "expected_output": "[10  2  3] Alias: [10  2  3]",
+          "call": "main(arr, arr_alias)",
+          "label": "Test 1"
+        },
+        {
+          "input": "arr = array([3, 4, 5])\narr_alias = arr",
+          "expected_output": "[10  4  5] Alias: [10  4  5]",
+          "call": "main(arr, arr_alias)",
+          "label": "Test 2"
+        },
+        {
+          "input": "arr = array([4, 5, 6])\narr_alias = arr",
+          "expected_output": "[10  5  6] Alias: [10  5  6]",
+          "call": "main(arr, arr_alias)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 5
@@ -115,16 +225,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Shallow Copy",
-      "description": "Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]. Use main() to produce the expected result shown in the example.",
+      "description": "Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a shallow copy of [1, 2, 3] using 'view()' and modify the first element of the copy. Expected output: Original: [10 2 3], Copy: [10 2 3]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(arr1, arr2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr1 = array([1, 2, 3])\n\n    arr2 = arr1.view()\n    main(arr1, arr2)\n",
       "solution": "from numpy import *\n\ndef main(arr1, arr2):\n    arr2[0] = 10\n    print(arr1, 'Copy:', arr2)\n\nif __name__ == \"__main__\":\n    arr1 = array([1, 2, 3])\n\n    arr2 = arr1.view()\n    main(arr1, arr2)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp05x5iuxz.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "arr1 = array([1, 2, 3])\n\narr2 = arr1.view()",
+          "output": "[10  2  3] Copy: [10  2  3]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "arr1 = array([1, 2, 3])\n\narr2 = arr1.view()",
+          "expected_output": "[10  2  3] Copy: [10  2  3]",
+          "call": "main(arr1, arr2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "arr1 = array([3, 4, 5])\narr2 = arr1.view()",
+          "expected_output": "[10  4  5] Copy: [10  4  5]",
+          "call": "main(arr1, arr2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "arr1 = array([4, 5, 6])\narr2 = arr1.view()",
+          "expected_output": "[10  5  6] Copy: [10  5  6]",
+          "call": "main(arr1, arr2)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 6
@@ -136,16 +268,38 @@
       "category_id": "numpy-2",
       "category_name": "NumPy 2",
       "title": "Deep Copy",
-      "description": "Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]. Use main() to produce the expected result shown in the example.",
+      "description": "Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create a deep copy of [1, 2, 3] using 'copy()' and modify the first element of the copy. Expected output: Original: [1 2 3], Copy: [10 2 3]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(arr3, arr4):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    arr3 = array([1, 2, 3])\n\n    arr4 = arr3.copy()\n    main(arr3, arr4)\n",
       "solution": "from numpy import *\n\ndef main(arr3, arr4):\n    arr4[0] = 10\n    print(arr3, 'Copy:', arr4)\n\nif __name__ == \"__main__\":\n    arr3 = array([1, 2, 3])\n\n    arr4 = arr3.copy()\n    main(arr3, arr4)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmpsj56bftv.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "arr3 = array([1, 2, 3])\n\narr4 = arr3.copy()",
+          "output": "[1 2 3] Copy: [10  2  3]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "arr3 = array([1, 2, 3])\n\narr4 = arr3.copy()",
+          "expected_output": "[1 2 3] Copy: [10  2  3]",
+          "call": "main(arr3, arr4)",
+          "label": "Test 1"
+        },
+        {
+          "input": "arr3 = array([3, 4, 5])\narr4 = arr3.copy()",
+          "expected_output": "[3 4 5] Copy: [10  4  5]",
+          "call": "main(arr3, arr4)",
+          "label": "Test 2"
+        },
+        {
+          "input": "arr3 = array([4, 5, 6])\narr4 = arr3.copy()",
+          "expected_output": "[4 5 6] Copy: [10  5  6]",
+          "call": "main(arr3, arr4)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "16_numpy-2.py",
         "question": 7

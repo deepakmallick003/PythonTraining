@@ -10,16 +10,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Basic Dictionary Initialization",
-      "description": "Basic Dictionary Initialization. Use main() to produce the expected result shown in the example.",
+      "description": "Basic Dictionary Initialization. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Basic Dictionary Initialization",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    print(my_dict)\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "output": "{'Tom': 1, 'Dick': 2, 'Harry': 3}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "expected_output": "{'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Tom': 3, 'Dick': 4, 'Harry': 5}",
+          "expected_output": "{'Tom': 3, 'Dick': 4, 'Harry': 5}",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Tom': 4, 'Dick': 5, 'Harry': 6}",
+          "expected_output": "{'Tom': 4, 'Dick': 5, 'Harry': 6}",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Initialize a dictionary with string keys and integer values.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Initialize a dictionary with string keys and integer values."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -32,16 +55,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Direct Access by Key",
-      "description": "Direct Access by Key. Use main() to produce the expected result shown in the example.",
+      "description": "Direct Access by Key. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Direct Access by Key",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    value = my_dict[\"Tom\"]\n    print(value)\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "output": "1"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "expected_output": "1",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Tom': 3, 'Dick': 4, 'Harry': 5}",
+          "expected_output": "3",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Tom': 4, 'Dick': 5, 'Harry': 6}",
+          "expected_output": "4",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Access a value by its key.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Access a value by its key."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -54,16 +100,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Safe Access with get()",
-      "description": "Safe Access with get(). Use main() to produce the expected result shown in the example.",
+      "description": "Safe Access with get(). Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Safe Access with get()",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    value = my_dict.get(\"Tom\")\n    not_found = my_dict.get(\"Sam\", \"Not Found\")\n    print(value)\n    print(not_found)\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "output": "1\nNot Found"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "expected_output": "1\nNot Found",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Tom': 3, 'Dick': 4, 'Harry': 5}",
+          "expected_output": "3\nNot Found",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Tom': 4, 'Dick': 5, 'Harry': 6}",
+          "expected_output": "4\nNot Found",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Access a value with get() to avoid KeyError.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Access a value with get() to avoid KeyError."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -76,16 +145,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Accessing Non-Existent Key",
-      "description": "Accessing Non-Existent Key. Use main() to produce the expected result shown in the example.",
+      "description": "Accessing Non-Existent Key. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Accessing Non-Existent Key",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    try:\n        value = my_dict[\"Sam\"]\n    except KeyError as e:\n        print(e)\n\nif __name__ == \"__main__\":\n    my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "output": "'Sam'"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Tom': 1, 'Dick': 2, 'Harry': 3}",
+          "expected_output": "'Sam'",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Tom': 3, 'Dick': 4, 'Harry': 5}",
+          "expected_output": "'Sam'",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Tom': 4, 'Dick': 5, 'Harry': 6}",
+          "expected_output": "'Sam'",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Access a non-existent key directly to demonstrate KeyError.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Access a non-existent key directly to demonstrate KeyError."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -98,16 +190,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Creating Dictionary from Lists",
-      "description": "Creating Dictionary from Lists. Use main() to produce the expected result shown in the example.",
+      "description": "Creating Dictionary from Lists. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Creating Dictionary from Lists",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n    main(keys, values)\n",
       "solution": "def main(keys, values):\n    my_dict = dict(zip(keys, values))\n    print(my_dict)\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n    main(keys, values)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']",
+          "output": "{'Navin': 'Python', 'Kiran': 'Java', 'Harish': 'JS'}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']",
+          "expected_output": "{'Navin': 'Python', 'Kiran': 'Java', 'Harish': 'JS'}",
+          "call": "main(keys, values)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']",
+          "expected_output": "{'Dataset': 'Notebook', 'Modelops': 'Compiler', 'Notebook': 'DEBUGGER'}",
+          "call": "main(keys, values)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']",
+          "expected_output": "{'Modelops': 'Compiler', 'Notebook': 'Debugger', 'Compiler': 'PIPELINE'}",
+          "call": "main(keys, values)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Use zip() to create a dictionary from two lists.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Use zip() to create a dictionary from two lists."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -120,16 +235,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Removing a Key-Value Pair",
-      "description": "Removing a Key-Value Pair. Use main() to produce the expected result shown in the example.",
+      "description": "Removing a Key-Value Pair. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Removing a Key-Value Pair",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    removed_value = my_dict.pop(\"Navin\")\n    print(removed_value)\n    print(my_dict)\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "Python\n{'Kiran': 'Java', 'Harish': 'JS'}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "Python\n{'Kiran': 'Java', 'Harish': 'JS'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Navin', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "Notebook\n{'Modelops': 'Compiler', 'Notebook': 'DEBUGGER'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Navin', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "Compiler\n{'Notebook': 'Debugger', 'Compiler': 'PIPELINE'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Remove a key-value pair and capture the removed value.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Remove a key-value pair and capture the removed value."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -142,16 +280,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Key Existence Check",
-      "description": "Key Existence Check. Use main() to produce the expected result shown in the example.",
+      "description": "Key Existence Check. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Key Existence Check",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    exists = \"Kiran\" in my_dict\n    print(exists)\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "True"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "True",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Kiran', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "True",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Kiran', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "True",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Check if a key exists in the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Check if a key exists in the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -164,16 +325,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "All Keys in Dictionary",
-      "description": "All Keys in Dictionary. Use main() to produce the expected result shown in the example.",
+      "description": "All Keys in Dictionary. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "All Keys in Dictionary",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    keys = my_dict.keys()\n    print(list(keys))\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "['Navin', 'Kiran', 'Harish']"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Navin', 'Kiran', 'Harish']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Dataset', 'Modelops', 'Notebook']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Modelops', 'Notebook', 'Compiler']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Retrieve all keys from the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Retrieve all keys from the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -186,16 +370,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "All Values in Dictionary",
-      "description": "All Values in Dictionary. Use main() to produce the expected result shown in the example.",
+      "description": "All Values in Dictionary. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "All Values in Dictionary",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    values = my_dict.values()\n    print(list(values))\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "['Python', 'Java', 'JS']"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Python', 'Java', 'JS']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Notebook', 'Compiler', 'DEBUGGER']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "['Compiler', 'Debugger', 'PIPELINE']",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Retrieve all values from the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Retrieve all values from the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -208,16 +415,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "All Items in Dictionary",
-      "description": "All Items in Dictionary. Use main() to produce the expected result shown in the example.",
+      "description": "All Items in Dictionary. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "All Items in Dictionary",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    items = my_dict.items()\n    print(list(items))\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "[('Navin', 'Python'), ('Kiran', 'Java'), ('Harish', 'JS')]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "[('Navin', 'Python'), ('Kiran', 'Java'), ('Harish', 'JS')]",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "[('Dataset', 'Notebook'), ('Modelops', 'Compiler'), ('Notebook', 'DEBUGGER')]",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "[('Modelops', 'Compiler'), ('Notebook', 'Debugger'), ('Compiler', 'PIPELINE')]",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Retrieve all key-value pairs from the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Retrieve all key-value pairs from the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -230,16 +460,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Dictionary Update",
-      "description": "Dictionary Update. Use main() to produce the expected result shown in the example.",
+      "description": "Dictionary Update. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Dictionary Update",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    my_dict.update({\"Harish\": \"C++\"})\n    print(my_dict)\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "output": "{'Navin': 'Python', 'Kiran': 'Java', 'Harish': 'C++'}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "{'Navin': 'Python', 'Kiran': 'Java', 'Harish': 'C++'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Harish']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "{'Dataset': 'Notebook', 'Modelops': 'Compiler', 'Harish': 'C++'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Harish']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))",
+          "expected_output": "{'Modelops': 'Compiler', 'Notebook': 'Debugger', 'Harish': 'C++'}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Update dictionary with another dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Update dictionary with another dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -252,16 +505,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Clear Dictionary",
-      "description": "Clear Dictionary. Use main() to produce the expected result shown in the example.",
+      "description": "Clear Dictionary. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Clear Dictionary",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n\n    my_dict.update({'Harish': 'C++'})\n    main(keys, values, my_dict)\n",
       "solution": "def main(keys, values, my_dict):\n    my_dict.clear()\n    print(my_dict)\n\nif __name__ == \"__main__\":\n    keys = ['Navin', 'Kiran', 'Harish']\n\n    values = ['Python', 'Java', 'JS']\n\n    my_dict = dict(zip(keys, values))\n\n    my_dict.update({'Harish': 'C++'})\n    main(keys, values, my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))\n\nmy_dict.update({'Harish': 'C++'})",
+          "output": "{}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['Navin', 'Kiran', 'Harish']\n\nvalues = ['Python', 'Java', 'JS']\n\nmy_dict = dict(zip(keys, values))\n\nmy_dict.update({'Harish': 'C++'})",
+          "expected_output": "{}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['Dataset', 'Modelops', 'Notebook']\nvalues = ['Notebook', 'Compiler', 'DEBUGGER']\nmy_dict = dict(zip(keys, values))\nmy_dict.update({'Harish': 'C++'})",
+          "expected_output": "{}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['Modelops', 'Notebook', 'Compiler']\nvalues = ['Compiler', 'Debugger', 'PIPELINE']\nmy_dict = dict(zip(keys, values))\nmy_dict.update({'Harish': 'C++'})",
+          "expected_output": "{}",
+          "call": "main(keys, values, my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Remove all items from the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Remove all items from the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -274,16 +550,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Dictionary Copy",
-      "description": "Dictionary Copy. Use main() to produce the expected result shown in the example.",
+      "description": "Dictionary Copy. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Dictionary Copy",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Navin': 'Python'}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    new_dict = my_dict.copy()\n    print(new_dict)\n\nif __name__ == \"__main__\":\n    my_dict = {'Navin': 'Python'}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Navin': 'Python'}",
+          "output": "{'Navin': 'Python'}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Navin': 'Python'}",
+          "expected_output": "{'Navin': 'Python'}",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Navin': 'Dataset'}",
+          "expected_output": "{'Navin': 'Dataset'}",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Navin': 'Modelops'}",
+          "expected_output": "{'Navin': 'Modelops'}",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Create a shallow copy of the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Create a shallow copy of the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -341,16 +640,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Nested Dictionary Access",
-      "description": "Nested Dictionary Access. Use main() to produce the expected result shown in the example.",
+      "description": "Nested Dictionary Access. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Nested Dictionary Access",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict, value, value_2):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'Navin': {'language': 'Python'}}\n\n    value = 'Navin'\n\n    value_2 = 'language'\n    main(my_dict, value, value_2)\n",
       "solution": "def main(my_dict, value, value_2):\n    language = my_dict[value][value_2]\n    print(language)\n\nif __name__ == \"__main__\":\n    my_dict = {'Navin': {'language': 'Python'}}\n\n    value = 'Navin'\n\n    value_2 = 'language'\n    main(my_dict, value, value_2)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'Navin': {'language': 'Python'}}\n\nvalue = 'Navin'\n\nvalue_2 = 'language'",
+          "output": "Python"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'Navin': {'language': 'Python'}}\n\nvalue = 'Navin'\n\nvalue_2 = 'language'",
+          "expected_output": "Python",
+          "call": "main(my_dict, value, value_2)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'Navin': {'language': 'Python'}}\n\nvalue = 'Navin'\n\nvalue_2 = 'language'\n# Variant 2",
+          "expected_output": "Python",
+          "call": "main(my_dict, value, value_2)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'Navin': {'language': 'Python'}}\n\nvalue = 'Navin'\n\nvalue_2 = 'language'\n# Variant 3",
+          "expected_output": "Python",
+          "call": "main(my_dict, value, value_2)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Access a nested dictionary value.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Access a nested dictionary value."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -363,16 +685,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Sorting Dictionary by Keys",
-      "description": "Sorting Dictionary by Keys. Use main() to produce the expected result shown in the example.",
+      "description": "Sorting Dictionary by Keys. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Sorting Dictionary by Keys",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    sorted_keys = sorted(my_dict.keys())\n    print([(key, my_dict[key]) for key in sorted_keys])\n\nif __name__ == \"__main__\":\n    my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}",
+          "output": "[('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}",
+          "expected_output": "[('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)]",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'banana': 5, 'apple': 6, 'pear': 3, 'orange': 4}",
+          "expected_output": "[('apple', 6), ('banana', 5), ('orange', 4), ('pear', 3)]",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'banana': 6, 'apple': 7, 'pear': 4, 'orange': 5}",
+          "expected_output": "[('apple', 7), ('banana', 6), ('orange', 5), ('pear', 4)]",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Sort the dictionary by its keys and display the key-value pairs in sorted order.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Sort the dictionary by its keys and display the key-value pairs in sorted order."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -385,16 +730,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Sorting Dictionary by Values",
-      "description": "Sorting Dictionary by Values. Use main() to produce the expected result shown in the example.",
+      "description": "Sorting Dictionary by Values. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Sorting Dictionary by Values",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    sorted_items = sorted(my_dict.items(), key=lambda item: item[1])\n    print(sorted_items)\n\nif __name__ == \"__main__\":\n    my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}",
+          "output": "[('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}",
+          "expected_output": "[('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)]",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'banana': 5, 'apple': 6, 'pear': 1, 'orange': 4}",
+          "expected_output": "[('pear', 1), ('orange', 4), ('banana', 5), ('apple', 6)]",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'banana': 6, 'apple': 7, 'pear': 1, 'orange': 5}",
+          "expected_output": "[('pear', 1), ('orange', 5), ('banana', 6), ('apple', 7)]",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Sort the dictionary by its values and display the key-value pairs in sorted order.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Sort the dictionary by its values and display the key-value pairs in sorted order."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -407,16 +775,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Reversing Dictionary Order",
-      "description": "Reversing Dictionary Order. Use main() to produce the expected result shown in the example.",
+      "description": "Reversing Dictionary Order. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Reversing Dictionary Order",
       "difficulty": "Easy",
       "starter_code": "def main(my_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    my_dict = {'one': 1, 'two': 2, 'three': 3}\n    main(my_dict)\n",
       "solution": "def main(my_dict):\n    reversed_items = list(my_dict.items())[::-1]\n    print(reversed_items)\n\nif __name__ == \"__main__\":\n    my_dict = {'one': 1, 'two': 2, 'three': 3}\n    main(my_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "my_dict = {'one': 1, 'two': 2, 'three': 3}",
+          "output": "[('three', 3), ('two', 2), ('one', 1)]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "my_dict = {'one': 1, 'two': 2, 'three': 3}",
+          "expected_output": "[('three', 3), ('two', 2), ('one', 1)]",
+          "call": "main(my_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "my_dict = {'one': 1, 'two': 4, 'three': 5}",
+          "expected_output": "[('three', 5), ('two', 4), ('one', 1)]",
+          "call": "main(my_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "my_dict = {'one': 1, 'two': 5, 'three': 6}",
+          "expected_output": "[('three', 6), ('two', 5), ('one', 1)]",
+          "call": "main(my_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Reverse the order of key-value pairs in the dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'dict'"
+        "Reverse the order of key-value pairs in the dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -429,16 +820,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Creating Dictionary from Two Lists with zip",
-      "description": "Creating Dictionary from Two Lists with zip. Use main() to produce the expected result shown in the example.",
+      "description": "Creating Dictionary from Two Lists with zip. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Creating Dictionary from Two Lists with zip",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['one', 'two', 'three']\n\n    values = [1, 2, 3]\n    main(keys, values)\n",
       "solution": "def main(keys, values):\n    combined_dict = dict(zip(keys, values))\n    print(combined_dict)\n\nif __name__ == \"__main__\":\n    keys = ['one', 'two', 'three']\n\n    values = [1, 2, 3]\n    main(keys, values)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['one', 'two', 'three']\n\nvalues = [1, 2, 3]",
+          "output": "{'one': 1, 'two': 2, 'three': 3}"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['one', 'two', 'three']\n\nvalues = [1, 2, 3]",
+          "expected_output": "{'one': 1, 'two': 2, 'three': 3}",
+          "call": "main(keys, values)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['dataset', 'modelops', 'notebook']\nvalues = [3, 5, 7]",
+          "expected_output": "{'dataset': 3, 'modelops': 5, 'notebook': 7}",
+          "call": "main(keys, values)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['modelops', 'notebook', 'compiler']\nvalues = [4, 6, 8]",
+          "expected_output": "{'modelops': 4, 'notebook': 6, 'compiler': 8}",
+          "call": "main(keys, values)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Create a dictionary by combining two lists using the zip function.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Create a dictionary by combining two lists using the zip function."
       ],
       "source_reference": {
         "file": "05_dictionary.py",
@@ -451,16 +865,39 @@
       "category_id": "dictionary",
       "category_name": "Dictionaries",
       "title": "Extracting Lists from a Dictionary",
-      "description": "Extracting Lists from a Dictionary. Use main() to produce the expected result shown in the example.",
+      "description": "Extracting Lists from a Dictionary. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Extracting Lists from a Dictionary",
       "difficulty": "Easy",
       "starter_code": "def main(keys, values, combined_dict):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    keys = ['one', 'two', 'three']\n\n    values = [1, 2, 3]\n\n    combined_dict = dict(zip(keys, values))\n    main(keys, values, combined_dict)\n",
       "solution": "def main(keys, values, combined_dict):\n    keys_list, values_list = zip(*combined_dict.items())\n    print(list(keys_list))\n    print(list(values_list))\n\nif __name__ == \"__main__\":\n    keys = ['one', 'two', 'three']\n\n    values = [1, 2, 3]\n\n    combined_dict = dict(zip(keys, values))\n    main(keys, values, combined_dict)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "keys = ['one', 'two', 'three']\n\nvalues = [1, 2, 3]\n\ncombined_dict = dict(zip(keys, values))",
+          "output": "['one', 'two', 'three']\n[1, 2, 3]"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "keys = ['one', 'two', 'three']\n\nvalues = [1, 2, 3]\n\ncombined_dict = dict(zip(keys, values))",
+          "expected_output": "['one', 'two', 'three']\n[1, 2, 3]",
+          "call": "main(keys, values, combined_dict)",
+          "label": "Test 1"
+        },
+        {
+          "input": "keys = ['dataset', 'modelops', 'notebook']\nvalues = [3, 5, 7]\ncombined_dict = dict(zip(keys, values))",
+          "expected_output": "['dataset', 'modelops', 'notebook']\n[3, 5, 7]",
+          "call": "main(keys, values, combined_dict)",
+          "label": "Test 2"
+        },
+        {
+          "input": "keys = ['modelops', 'notebook', 'compiler']\nvalues = [4, 6, 8]\ncombined_dict = dict(zip(keys, values))",
+          "expected_output": "['modelops', 'notebook', 'compiler']\n[4, 6, 8]",
+          "call": "main(keys, values, combined_dict)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
-        "Extract separate lists of keys and values from a dictionary.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "Extract separate lists of keys and values from a dictionary."
       ],
       "source_reference": {
         "file": "05_dictionary.py",

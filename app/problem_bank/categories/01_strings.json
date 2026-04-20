@@ -741,16 +741,38 @@
       "category_id": "strings",
       "category_name": "Strings",
       "title": "Join Elements",
-      "description": "Join elements with a space. Use main() to produce the expected result shown in the example.",
+      "description": "Join elements with a space. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Join elements with a space.",
       "difficulty": "Easy",
       "starter_code": "def main(list_elements):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
       "solution": "def main(list_elements):\n    print(\" \".join(list_elements))\n\nif __name__ == \"__main__\":\n    list_elements = ['join', 'these', 'words']\n    main(list_elements)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: unhashable type: 'list'"
+      "examples": [
+        {
+          "input": "list_elements = ['join', 'these', 'words']",
+          "output": "join these words"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "list_elements = ['join', 'these', 'words']",
+          "expected_output": "join these words",
+          "call": "main(list_elements)",
+          "label": "Test 1"
+        },
+        {
+          "input": "list_elements = ['ship', 'clean', 'code']",
+          "expected_output": "ship clean code",
+          "call": "main(list_elements)",
+          "label": "Test 2"
+        },
+        {
+          "input": "list_elements = ['build', 'useful', 'tools']",
+          "expected_output": "build useful tools",
+          "call": "main(list_elements)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "01_strings.py",
         "question": 18

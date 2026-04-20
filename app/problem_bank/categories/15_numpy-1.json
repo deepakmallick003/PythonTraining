@@ -10,16 +10,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Array Creation",
-      "description": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array using 'array()' with elements 2, 4, 6, 8. Expected output: [2 4 6 8]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = [2, 4, 6, 8]\n    main(input_1)\n",
       "solution": "from numpy import *\n\ndef main(input_1):\n    arr = array(input_1)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = [2, 4, 6, 8]\n    main(input_1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmppyp7pmwa.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = [2, 4, 6, 8]",
+          "output": "[2 4 6 8]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = [2, 4, 6, 8]",
+          "expected_output": "[2 4 6 8]",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = [4, 7, 10, 13]",
+          "expected_output": "[ 4  7 10 13]",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = [5, 8, 11, 14]",
+          "expected_output": "[ 5  8 11 14]",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 1
@@ -31,16 +53,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Linspace",
-      "description": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array with 'linspace()' from 0 to 4 with 5 elements. Expected output: [0. 1. 2. 3. 4.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 0\n\n    input_2 = 4\n\n    input_3 = 5\n    main(input_1, input_2, input_3)\n",
       "solution": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    arr = linspace(input_1, input_2, input_3)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = 0\n\n    input_2 = 4\n\n    input_3 = 5\n    main(input_1, input_2, input_3)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp0wwh5mkm.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = 0\n\ninput_2 = 4\n\ninput_3 = 5",
+          "output": "[0. 1. 2. 3. 4.]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = 0\n\ninput_2 = 4\n\ninput_3 = 5",
+          "expected_output": "[0. 1. 2. 3. 4.]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = 2\ninput_2 = 6\ninput_3 = 7",
+          "expected_output": "[2.         2.66666667 3.33333333 4.         4.66666667 5.33333333\n 6.        ]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = 3\ninput_2 = 7\ninput_3 = 8",
+          "expected_output": "[3.         3.57142857 4.14285714 4.71428571 5.28571429 5.85714286\n 6.42857143 7.        ]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 2
@@ -52,16 +96,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Arange",
-      "description": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array using 'arange()' from 1 to 10 with step size 2. Expected output: [1 3 5 7 9]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 10\n\n    input_3 = 2\n    main(input_1, input_2, input_3)\n",
       "solution": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    arr = arange(input_1, input_2, input_3)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 10\n\n    input_3 = 2\n    main(input_1, input_2, input_3)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp3k79b64i.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = 1\n\ninput_2 = 10\n\ninput_3 = 2",
+          "output": "[1 3 5 7 9]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = 1\n\ninput_2 = 10\n\ninput_3 = 2",
+          "expected_output": "[1 3 5 7 9]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = 3\ninput_2 = 12\ninput_3 = 4",
+          "expected_output": "[ 3  7 11]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = 4\ninput_2 = 13\ninput_3 = 5",
+          "expected_output": "[4 9]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 3
@@ -73,16 +139,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Zeros",
-      "description": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array of 5 zeros using 'zeros()'. Expected output: [0. 0. 0. 0. 0.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 5\n    main(input_1)\n",
       "solution": "from numpy import *\n\ndef main(input_1):\n    arr = zeros(input_1)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = 5\n    main(input_1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp8a88d4d_.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = 5",
+          "output": "[0. 0. 0. 0. 0.]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = 5",
+          "expected_output": "[0. 0. 0. 0. 0.]",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = 7",
+          "expected_output": "[0. 0. 0. 0. 0. 0. 0.]",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = 8",
+          "expected_output": "[0. 0. 0. 0. 0. 0. 0. 0.]",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 4
@@ -94,16 +182,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Ones (Int)",
-      "description": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an integer array of 4 ones using 'ones()'. Expected output: [1 1 1 1]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 4\n    main(input_1)\n",
       "solution": "from numpy import *\n\ndef main(input_1):\n    arr = ones(input_1, int)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = 4\n    main(input_1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp7c0aalmp.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = 4",
+          "output": "[1 1 1 1]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = 4",
+          "expected_output": "[1 1 1 1]",
+          "call": "main(input_1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = 6",
+          "expected_output": "[1 1 1 1 1 1]",
+          "call": "main(input_1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = 7",
+          "expected_output": "[1 1 1 1 1 1 1]",
+          "call": "main(input_1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 5
@@ -115,16 +225,38 @@
       "category_id": "numpy-1",
       "category_name": "NumPy 1",
       "title": "Numpy Logspace",
-      "description": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]. Use main() to produce the expected result shown in the example.",
+      "description": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Create an array using 'logspace()' from 1 to 3 with 3 elements. Expected output: [10. 100. 1000.]",
       "difficulty": "Easy",
       "starter_code": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 3\n\n    input_3 = 3\n    main(input_1, input_2, input_3)\n",
       "solution": "from numpy import *\n\ndef main(input_1, input_2, input_3):\n    arr = logspace(input_1, input_2, input_3)\n    print(arr)\n\nif __name__ == \"__main__\":\n    input_1 = 1\n\n    input_2 = 3\n\n    input_3 = 3\n    main(input_1, input_2, input_3)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: Traceback (most recent call last):\n  File \"/var/folders/qg/9tx0yp1n4_q7rr9wgm_26srh0000gn/T/tmp8mqda3re.py\", line 3, in <module>\n    from numpy import *\nModuleNotFoundError: No module named 'numpy'"
+      "examples": [
+        {
+          "input": "input_1 = 1\n\ninput_2 = 3\n\ninput_3 = 3",
+          "output": "[  10.  100. 1000.]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "input_1 = 1\n\ninput_2 = 3\n\ninput_3 = 3",
+          "expected_output": "[  10.  100. 1000.]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 1"
+        },
+        {
+          "input": "input_1 = 3\ninput_2 = 5\ninput_3 = 5",
+          "expected_output": "[  1000.           3162.27766017  10000.          31622.77660168\n 100000.        ]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 2"
+        },
+        {
+          "input": "input_1 = 4\ninput_2 = 6\ninput_3 = 6",
+          "expected_output": "[  10000.           25118.8643151    63095.73444802  158489.31924611\n  398107.1705535  1000000.        ]",
+          "call": "main(input_1, input_2, input_3)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "15_numpy-1.py",
         "question": 6

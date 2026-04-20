@@ -397,16 +397,38 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Convert List to Set",
-      "description": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}. Use main() to produce the expected result shown in the example.",
+      "description": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert list [1, 2, 2, 3, 3] to a set to remove duplicates. Expected output: {1, 2, 3}",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 2, 3, 3]\n    main(list1)\n",
       "solution": "import time\nimport random\n\ndef main(list1):\n    set_from_list = set(list1)\n    print(set_from_list)\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 2, 3, 3]\n    main(list1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: unhashable type: 'list'"
+      "examples": [
+        {
+          "input": "list1 = [1, 2, 2, 3, 3]",
+          "output": "{1, 2, 3}"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "list1 = [1, 2, 2, 3, 3]",
+          "expected_output": "{1, 2, 3}",
+          "call": "main(list1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "list1 = [3, 5, 6, 8, 9]",
+          "expected_output": "{3, 5, 6, 8, 9}",
+          "call": "main(list1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "list1 = [4, 6, 7, 9, 10]",
+          "expected_output": "{4, 6, 7, 9, 10}",
+          "call": "main(list1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "04_set.py",
         "question": 10
@@ -426,7 +448,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nlarge_set = set(range(1000000))\nlarge_list = list(range(1000000))\nsearch_element = random.randint(0, 1000000)\nstart_time = time.time()\nis_member_set = search_element in large_set\nset_time = time.time() - start_time",
-          "output": "Compare the time taken to check the membership of an element in a large set and a large list.\nSet Membership Test Time:\n 0.000003 seconds\nList Membership Test Time:\n 0.004667 seconds\n--------------------"
+          "output": "Compare the time taken to check the membership of an element in a large set and a large list.\nSet Membership Test Time:\n 0.000008 seconds\nList Membership Test Time:\n 0.001303 seconds\n--------------------"
         }
       ],
       "test_cases": [],
@@ -444,13 +466,37 @@
       "category_id": "set",
       "category_name": "Sets",
       "title": "Set vs List - Unordered Nature of Sets",
-      "description": "Set vs List - Unordered Nature of Sets. Use main() to produce the expected result shown in the example.",
+      "description": "Set vs List - Unordered Nature of Sets. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Set vs List - Unordered Nature of Sets",
       "difficulty": "Easy",
       "starter_code": "import time\nimport random\n\ndef main(initial_list):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    initial_list = [11, 4, 42, 23]\n    main(initial_list)\n",
       "solution": "import time\nimport random\n\ndef main(initial_list):\n    converted_set = set(initial_list)\n    print('Initial List:\\n', initial_list)\n    print('Converted Set:\\n', converted_set)\n    print(\"NOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\")\n    print(\"The order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\")\n    print(\"The observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\")\n    print(\"But this consistency is not guaranteed and should not be relied upon.\")\n\nif __name__ == \"__main__\":\n    initial_list = [11, 4, 42, 23]\n    main(initial_list)\n",
-      "examples": [],
-      "test_cases": [],
+      "examples": [
+        {
+          "input": "initial_list = [11, 4, 42, 23]",
+          "output": "Initial List:\n [11, 4, 42, 23]\nConverted Set:\n {42, 11, 4, 23}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon."
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "initial_list = [11, 4, 42, 23]",
+          "expected_output": "Initial List:\n [11, 4, 42, 23]\nConverted Set:\n {42, 11, 4, 23}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
+          "call": "main(initial_list)",
+          "label": "Test 1"
+        },
+        {
+          "input": "initial_list = [13, 7, 46, 28]",
+          "expected_output": "Initial List:\n [13, 7, 46, 28]\nConverted Set:\n {28, 13, 46, 7}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
+          "call": "main(initial_list)",
+          "label": "Test 2"
+        },
+        {
+          "input": "initial_list = [14, 8, 47, 29]",
+          "expected_output": "Initial List:\n [14, 8, 47, 29]\nConverted Set:\n {8, 29, 14, 47}\nNOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table\nThe order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.\nThe observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.\nBut this consistency is not guaranteed and should not be relied upon.",
+          "call": "main(initial_list)",
+          "label": "Test 3"
+        }
+      ],
       "notes": [
         "Illustrate that sets do not maintain the order of elements.",
         "Initial List:",
@@ -458,8 +504,7 @@
         "NOTE: When a set is initialized, Python uses a hash table to store its elements. Each element's hash value determines its position in the hash table",
         "The order of elements in a set is based on their hash values, not the order in which they are added. This results in the set being unordered.",
         "The observed order of elements in a set ({42, 11, 4, 23}) is consistent due to the specific hash function implementation in Python for integers.",
-        "But this consistency is not guaranteed and should not be relied upon.",
-        "Automatic test generation was skipped: unhashable type: 'list'"
+        "But this consistency is not guaranteed and should not be relied upon."
       ],
       "source_reference": {
         "file": "04_set.py",

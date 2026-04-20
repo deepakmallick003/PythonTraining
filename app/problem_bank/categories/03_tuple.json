@@ -526,16 +526,38 @@
       "category_id": "tuple",
       "category_name": "Tuples",
       "title": "Tuple and List Conversion",
-      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]. Use main() to produce the expected result shown in the example.",
+      "description": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]. Implement the logic in main(...) and match the expected output for the provided cases.",
       "prompt": "Convert a list to a tuple and vice versa. Expected output: Tuple: (1, 2, 3), List: [1, 2, 3]",
       "difficulty": "Easy",
       "starter_code": "import time\n\ndef main(list1):\n    # Write your solution here.\n    pass\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
       "solution": "import time\n\ndef main(list1):\n    tuple_converted = tuple(list1)\n    list_converted = list(tuple_converted)\n    print(tuple_converted, ', List:', list_converted)\n\nif __name__ == \"__main__\":\n    list1 = [1, 2, 3]\n    main(list1)\n",
-      "examples": [],
-      "test_cases": [],
-      "notes": [
-        "Automatic test generation was skipped: unhashable type: 'list'"
+      "examples": [
+        {
+          "input": "list1 = [1, 2, 3]",
+          "output": "(1, 2, 3) , List: [1, 2, 3]"
+        }
       ],
+      "test_cases": [
+        {
+          "input": "list1 = [1, 2, 3]",
+          "expected_output": "(1, 2, 3) , List: [1, 2, 3]",
+          "call": "main(list1)",
+          "label": "Test 1"
+        },
+        {
+          "input": "list1 = [3, 5, 7]",
+          "expected_output": "(3, 5, 7) , List: [3, 5, 7]",
+          "call": "main(list1)",
+          "label": "Test 2"
+        },
+        {
+          "input": "list1 = [4, 6, 8]",
+          "expected_output": "(4, 6, 8) , List: [4, 6, 8]",
+          "call": "main(list1)",
+          "label": "Test 3"
+        }
+      ],
+      "notes": [],
       "source_reference": {
         "file": "03_tuple.py",
         "question": 13
@@ -641,7 +663,7 @@
       "examples": [
         {
           "input": "Use the sample setup:\nlarge_list = list(range(1000000))\nlarge_tuple = tuple(range(1000000))\nstart_time = time.time()\naccess_elements(large_list)\nlist_time = time.time() - start_time\nstart_time = time.time()",
-          "output": "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.\nList Access Time:\n 0.006661 seconds\nTuple Access Time:\n 0.007058 seconds\n--------------------"
+          "output": "Measure the time taken to access all elements in a large list and a large tuple. Expected outcome: Faster access in tuple.\nList Access Time:\n 0.008771 seconds\nTuple Access Time:\n 0.007355 seconds\n--------------------"
         }
       ],
       "test_cases": [],
